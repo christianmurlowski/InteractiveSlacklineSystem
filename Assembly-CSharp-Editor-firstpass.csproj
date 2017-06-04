@@ -49,7 +49,20 @@
      <Compile Include="Assets\Standard Assets\Editor\KinectCopyPluginDataHelper.cs" />
      <Compile Include="Assets\Standard Assets\Editor\KinectFacePostBuildCopyPluginData.cs" />
      <Compile Include="Assets\Standard Assets\Editor\KinectVisualGestureBuilderPostBuildCopyPluginData.cs" />
-     <None Include="Assets\KinectView\Materials\GreenScreenShader.shader" />
+     <None Include="Assets\Resources\BlurShader.shader" />
+     <None Include="Assets\Resources\DepthShader.shader" />
+     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
+     <None Include="Assets\Resources\BlurShader3.shader" />
+     <None Include="Assets\Resources Old\Materials\GreenScreenShader.shader" />
+     <None Include="Assets\Resources\Color2DepthShader.shader" />
+     <None Include="Assets\Resources\BlurShader2.shader" />
+     <None Include="Assets\Resources\Depth2ColorShader.shader" />
+     <None Include="Assets\Resources\Erode.shader" />
+     <None Include="Assets\Resources\BodyShader.shader" />
+     <None Include="Assets\Resources\Dilate.shader" />
+     <None Include="Assets\Resources\BlurShader5.shader" />
+     <None Include="Assets\Resources\Color2BodyShader.shader" />
+     <None Include="Assets\Resources\BlurShader4.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -97,6 +110,12 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="LZ4Sharp">
+ <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>E:/Programme/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

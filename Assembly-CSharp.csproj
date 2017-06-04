@@ -47,25 +47,91 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Examples\Gesture\GestureDetector.cs" />
-     <Compile Include="Assets\Examples\Gesture\KinectManager.cs" />
+     <Compile Include="Assets\Examples\Gesture\GestureKinectManager.cs" />
      <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceManager.cs" />
      <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceView.cs" />
      <Compile Include="Assets\Examples\KinectView\Scripts\DisableOnStart.cs" />
-     <Compile Include="Assets\KinectUIModule\Scripts\KinectInputModule.cs" />
-     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\AbstractKinectUICursor.cs" />
-     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUICursor.cs" />
-     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitCursor.cs" />
-     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitOverButton.cs" />
-     <Compile Include="Assets\KinectView\Scripts\BodyManager.cs" />
-     <Compile Include="Assets\KinectView\Scripts\BodyView.cs" />
-     <Compile Include="Assets\KinectView\Scripts\Engagement.cs" />
-     <Compile Include="Assets\KinectView\Scripts\UserView.cs" />
-     <Compile Include="Assets\KinectView\Scripts\UserViewManager.cs" />
-     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
-     <Compile Include="Assets\Scripts\LevelButton.cs" />
-     <Compile Include="Assets\Scripts\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\Timer.cs" />
-     <None Include="Assets\KinectView\Materials\GreenScreenShader.shader" />
+     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
+     <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
+     <Compile Include="Assets\KinectScripts\AvatarScaler.cs" />
+     <Compile Include="Assets\KinectScripts\BackgroundRemovalManager.cs" />
+     <Compile Include="Assets\KinectScripts\BodySlicer.cs" />
+     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
+     <Compile Include="Assets\KinectScripts\Cubeman\PointmanController.cs" />
+     <Compile Include="Assets\KinectScripts\FacetrackingManager.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+     <Compile Include="Assets\KinectScripts\InteractionInputModule.cs" />
+     <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\DepthSensorInterface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\DummyK2Interface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\Kinect1Interface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\Kinect2Interface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\OpenNI2Interface.cs" />
+     <Compile Include="Assets\KinectScripts\KinectDataServer.cs" />
+     <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
+     <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
+     <Compile Include="Assets\KinectScripts\KinectManager.cs" />
+     <Compile Include="Assets\KinectScripts\KinectRecorderPlayer.cs" />
+     <Compile Include="Assets\KinectScripts\MultiScene\LoadFirstLevel.cs" />
+     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenNoUser.cs" />
+     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenUserDetected.cs" />
+     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWithDelay.cs" />
+     <Compile Include="Assets\KinectScripts\MultiScene\LocateAvatarsAndGestureListeners.cs" />
+     <Compile Include="Assets\KinectScripts\PortraitBackground.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\FollowUserRotation.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\GetFacePointsDemo.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\GetFaceSmileStatus.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\GetJointPositionDemo.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\JointOrientationView.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\JointPositionView.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\K2SensorChecker.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\MouseControl.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\PointCloudView.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\RaiseHandListener.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleBackgroundRemoval.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleGestureListener.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleInteractionListener.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleUserMovie.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleVisualGestureListener.cs" />
+     <Compile Include="Assets\KinectScripts\SpeechErrorHandler.cs" />
+     <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
+     <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
+     <Compile Include="Assets\Scripts\General\DataController.cs" />
+     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\Scripts\General\ExerciseData.cs" />
+     <Compile Include="Assets\Scripts\General\ExerciseLevelButton.cs" />
+     <Compile Include="Assets\Scripts\General\ExerciseLevelManager.cs" />
+     <Compile Include="Assets\Scripts\General\FinishExercise.cs" />
+     <Compile Include="Assets\Scripts\General\RepetitionData.cs" />
+     <Compile Include="Assets\Scripts\General\UserData.cs" />
+     <Compile Include="Assets\Scripts\KinectUIModule\KinectInputModule.cs" />
+     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\AbstractKinectUICursor.cs" />
+     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUICursor.cs" />
+     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitCursor.cs" />
+     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitOverButton.cs" />
+     <Compile Include="Assets\Scripts\KinectView\BodyManager.cs" />
+     <Compile Include="Assets\Scripts\KinectView\BodyView.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Engagement.cs" />
+     <Compile Include="Assets\Scripts\KinectView\UserView.cs" />
+     <Compile Include="Assets\Scripts\KinectView\UserViewManager.cs" />
+     <Compile Include="Assets\Scripts\Levels\LevelButton.cs" />
+     <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Levels\Timer.cs" />
+     <None Include="Assets\Resources\BlurShader.shader" />
+     <None Include="Assets\Resources\DepthShader.shader" />
+     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
+     <None Include="Assets\Resources\BlurShader3.shader" />
+     <None Include="Assets\Resources Old\Materials\GreenScreenShader.shader" />
+     <None Include="Assets\Resources\Color2DepthShader.shader" />
+     <None Include="Assets\Resources\BlurShader2.shader" />
+     <None Include="Assets\Resources\Depth2ColorShader.shader" />
+     <None Include="Assets\Resources\Erode.shader" />
+     <None Include="Assets\Resources\BodyShader.shader" />
+     <None Include="Assets\Resources\Dilate.shader" />
+     <None Include="Assets\Resources\BlurShader5.shader" />
+     <None Include="Assets\Resources\Color2BodyShader.shader" />
+     <None Include="Assets\Resources\BlurShader4.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -83,6 +149,12 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="LZ4Sharp">
+ <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
