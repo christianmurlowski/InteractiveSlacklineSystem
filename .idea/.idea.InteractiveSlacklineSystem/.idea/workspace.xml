@@ -5,29 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff780a82-55da-48ae-9d40-a1895a828ec0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FaceTrackData.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FaceTrackLib.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KinectBackgroundRemoval180_64.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KinectInteraction180_64.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KinectUnityWrapper.dll" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Library/assetDatabase3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988" afterPath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705" afterPath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36" afterPath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095" afterPath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb" afterPath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/27/2752e34e362c520418e5cab36f1d27e4" afterPath="$PROJECT_DIR$/Library/metadata/27/2752e34e362c520418e5cab36f1d27e4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveSlacklineSystem/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveSlacklineSystem/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InteractiveSlacklineSystem.sln" afterPath="$PROJECT_DIR$/InteractiveSlacklineSystem.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,10 +33,10 @@
           <file leaf-file-name="ExerciseData.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
                   <folding>
-                    <marker date="1496695636157" expanded="false" signature="6:107" ph="..." />
+                    <marker date="1496695636157" expanded="true" signature="6:107" ph="..." />
                     <marker date="1496695636157" expanded="true" signature="156:518" ph="{...}" />
                     <marker date="1496695636157" expanded="true" signature="362:516" ph="/* [System.Serializable] ... */" />
                   </folding>
@@ -71,7 +60,7 @@
           <file leaf-file-name="DataController.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/DataController.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
+                <state relative-caret-position="165">
                   <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
                   <folding>
                     <marker date="1496821477906" expanded="true" signature="6:130" ph="..." />
@@ -96,17 +85,33 @@
           <file leaf-file-name="ExerciseDataEditor.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+                <state relative-caret-position="713">
+                  <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="33" />
                   <folding>
-                    <marker date="1496826148445" expanded="true" signature="6:132" ph="..." />
-                    <marker date="1496826148445" expanded="true" signature="180:1300" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="391:534" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="552:573" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="614:1015" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="742:921" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="934:1009" ph="{...}" />
-                    <marker date="1496826148445" expanded="true" signature="1052:1293" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="6:132" ph="..." />
+                    <marker date="1496870560434" expanded="true" signature="180:1867" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="400:543" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="561:1149" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="607:1047" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="973:1037" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="1091:1143" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="1190:1591" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="1318:1497" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="1510:1585" ph="{...}" />
+                    <marker date="1496870560434" expanded="true" signature="1628:1860" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ExerciseObject.cs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+                  <folding>
+                    <marker date="1496868827332" expanded="false" signature="6:78" ph="..." />
+                    <marker date="1496868827332" expanded="true" signature="129:184" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -119,8 +124,8 @@
           <file leaf-file-name="ExerciseLevelButton.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding>
                     <marker date="1496500560398" expanded="true" signature="6:100" ph="..." />
                     <marker date="1496500560398" expanded="true" signature="150:204" ph="{...}" />
@@ -239,18 +244,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/KinectView/BodyView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/KinectUIModule/KinectUI/AbstractKinectUICursor.cs" />
         <option value="$PROJECT_DIR$/Assets/KinectScripts/KinectManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/FinishExercise.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/RepetitionData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ApplicationDataEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ExercisesDataEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" />
       </list>
     </option>
   </component>
@@ -413,12 +418,12 @@
       <workItem from="1496132218982" duration="12907000" />
       <workItem from="1496425298971" duration="57917000" />
       <workItem from="1496825816661" duration="143000" />
-      <workItem from="1496825989225" duration="761000" />
+      <workItem from="1496825989225" duration="3522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92867000" />
+    <option name="totallyTimeSpent" value="95628000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,7 +435,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -442,7 +447,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19652265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19652265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -723,28 +728,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ApplicationDataEditor.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ExercisesDataEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <marker date="1496500560398" expanded="true" signature="6:100" ph="..." />
-            <marker date="1496500560398" expanded="true" signature="150:204" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,19 +748,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
           <folding>
-            <marker date="1496695636157" expanded="false" signature="6:107" ph="..." />
+            <marker date="1496695636157" expanded="true" signature="6:107" ph="..." />
             <marker date="1496695636157" expanded="true" signature="156:518" ph="{...}" />
             <marker date="1496695636157" expanded="true" signature="362:516" ph="/* [System.Serializable] ... */" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <marker date="1496868827332" expanded="false" signature="6:78" ph="..." />
+            <marker date="1496868827332" expanded="true" signature="129:184" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/DataController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="165">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <marker date="1496821477906" expanded="true" signature="6:130" ph="..." />
@@ -796,17 +794,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="713">
+          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="33" />
           <folding>
-            <marker date="1496826148445" expanded="true" signature="6:132" ph="..." />
-            <marker date="1496826148445" expanded="true" signature="180:1300" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="391:534" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="552:573" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="614:1015" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="742:921" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="934:1009" ph="{...}" />
-            <marker date="1496826148445" expanded="true" signature="1052:1293" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="6:132" ph="..." />
+            <marker date="1496870560434" expanded="true" signature="180:1867" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="400:543" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="561:1149" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="607:1047" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="973:1037" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="1091:1143" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="1190:1591" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="1318:1497" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="1510:1585" ph="{...}" />
+            <marker date="1496870560434" expanded="true" signature="1628:1860" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1496500560398" expanded="true" signature="6:100" ph="..." />
+            <marker date="1496500560398" expanded="true" signature="150:204" ph="{...}" />
           </folding>
         </state>
       </provider>

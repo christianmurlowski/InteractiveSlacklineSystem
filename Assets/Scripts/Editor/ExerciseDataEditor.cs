@@ -9,7 +9,7 @@ public class ExerciseDataEditor : EditorWindow
 {
 
     public ExerciseObject exerciseDataObject;
-    private string exerciseDataProjectFilePath = "/StreamingAssets/exerciseData.json";
+    private string exerciseDataProjectFilePath = "/StreamingAssets/JSONData/exerciseData.json";
 
     [MenuItem ("Window/Game Data Editor")]
     private static void Init()
@@ -18,9 +18,27 @@ public class ExerciseDataEditor : EditorWindow
         window.Show();
     }
 
-    void OnGui()
+    void OnGUI()
     {
-        
+        if (exerciseDataObject != null)
+        {
+            SerializedObject serializedObject = new SerializedObject(this);
+            SerializedProperty serializedProperty = serializedObject.FindProperty("exerciseDataObject");
+
+            EditorGUILayout.PropertyField(serializedProperty, true);
+
+            serializedObject.ApplyModifiedProperties();
+
+            if (GUILayout.Button("Save Data"))
+            {
+                SaveExerciseData();
+            }
+        }
+
+        if (GUILayout.Button("Load Data"))
+        {
+            LoadExerciseData();
+        }
     }
     
     private void LoadExerciseData()
@@ -40,7 +58,6 @@ public class ExerciseDataEditor : EditorWindow
 
     private void SaveExerciseData()
     {
-        
         string exerciseDataAsJson = JsonUtility.ToJson(exerciseDataObject);
         string filePath = Application.dataPath + exerciseDataProjectFilePath;
         
