@@ -5,9 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class UserData
 {
+    
     public string name;
     public bool isCurrentUser;
 
 //    public ExerciseData[] exercises;
-    public ExerciseData.UserExerciseData[] userExerciseData;
+    public ExerciseData[] exerciseData;
 }

@@ -1,77 +1,107 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
 public class DataController : MonoBehaviour
 {
-	public UserData[] allUserData;
-	public ExerciseData[] allExerciseData;
-	public ExerciseData.UserExerciseData[] allUserExerciseData;
+	public ExerciseData[] allDefaultExercisesDataArray;
+	public ExerciseObject allDefaultExercisesDataObject;
 
 	public UserData currentUser;
+
+	private string exerciseDataFileName = "JSONData/exerciseData.json";
+	private string userDataFileName = "JSONData/christianMurlowski.json";
 	
-	void Start () 
+	void Start ()
 	{
-		// First get the current User
-		foreach (var user in allUserData)
-		{
-			if (user.isCurrentUser)
-			{
-				currentUser = user;
-			}
-		}
+		LoadGameData();
 		
-		currentUser.userExerciseData = allUserExerciseData;
-/*//		currentUser.userExerciseData = currentUserExerciseData;
-		Debug.Log("Datacontroller");
-		Debug.Log("allExerciseData: " + allExerciseData.Length);
-		Debug.Log("currentuser exercise: " + currentUser.userExerciseData.Length);
+		Debug.Log("currentuser exercise: " + currentUser.exerciseData.Length);
 		
 		// Initial fill current users exercises with exercise data
-		if (currentUser.userExerciseData.Length == 0)
+		if (currentUser.exerciseData.Length == 0)
 		{
-//			currentUser.userExerciseData = new ExerciseData.UserExerciseData[allExerciseData.Length];		
-			Debug.Log("currentuser exercise: " + currentUser.userExerciseData.Length);
-			Debug.Log("currentuser accom: " + currentUser.userExerciseData[0].unlocked);
-		}*/
+//			currentUser.exerciseData = ;
+			Debug.Log("in if currentuser exercise: " + currentUser.exerciseData.Length);
+		}
 	}
 	
-	public ExerciseData[] GetAllExerciseData()
+	public ExerciseData[] GetAllExercises()
 	{
-		return allExerciseData;
+		return currentUser.exerciseData;
 	}
 	
 	// TODO: Get current exercise data
-	public ExerciseData GetCurrentExerciseData()
+	public ExerciseData GetCurrentExercise()
 	{
-		return allExerciseData[0]; // change this
+		return currentUser.exerciseData[0]; // change this
 	}
 
 	public int GetAllExercisesLength()
 	{
-		return allExerciseData.Length;
+		return currentUser.exerciseData.Length;
 	}
 
-	public ExerciseData.UserExerciseData[] GetUserExerciseData()
-	{
-		return currentUser.userExerciseData;
-	}
-
-	// TODO: Get current exercise data from user
-	public ExerciseData.UserExerciseData GetUserCurrentExerciseData()
-	{
-		return currentUser.userExerciseData[0]; // Change this
-	}
-
-	public UserData[] GetAllUsers()
-	{
-		return allUserData;
-	}
-
-	public UserData GetCurrentUserData()
+	public UserData GetCurrentUser()
 	{
 		return currentUser;
+	}
+
+	private void LoadGameData()
+	{
+		string defaultExercisesFilePath = Path.Combine(Application.streamingAssetsPath, exerciseDataFileName);
+		string currentUserFilePath = Path.Combine(Application.streamingAssetsPath, userDataFileName);
+
+		if (File.Exists(defaultExercisesFilePath) && File.Exists(currentUserFilePath))
+		{
+			string defaultExercisesDataAsJson = File.ReadAllText(defaultExercisesFilePath );
+			string currentUserDataAsJson = File.ReadAllText(currentUserFilePath );
+			
+			Debug.Log(currentUserDataAsJson);
+			allDefaultExercisesDataObject = JsonUtility.FromJson<ExerciseObject>(defaultExercisesDataAsJson);
+			currentUser = JsonUtility.FromJson<UserData>(currentUserDataAsJson);
+
+			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
+			
+			
+			Debug.Log("----------DEFAULT EXERCISES----------");
+			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray.Length);
+			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray[0].description);
+			Debug.Log(allDefaultExercisesDataArray);
+			Debug.Log(allDefaultExercisesDataArray.Length);
+			Debug.Log(allDefaultExercisesDataArray[0].description);		
+
+			Debug.Log("----------CURRENT USER----------");
+			Debug.Log(currentUser.name);
+			
+			Debug.Log("----------CURRENT USER EXERCISES BEFORE----------");
+			Debug.Log(currentUser.exerciseData.Length);
+			Debug.Log(currentUser.exerciseData[0].exerciseName);
+
+			// if current user has no exercise data (initial state) fill with default exercises
+//			if (currentUser.exerciseData == null)
+//			{
+//				currentUser.exerciseData = allDefaultExercisesDataArray;
+//				//write into jsonfile
+//			}
+//			
+			currentUser.exerciseData = allDefaultExercisesDataArray;
+			
+			Debug.Log("----------CURRENT USER EXERCISES AFTER----------");
+			Debug.Log(currentUser.exerciseData.Length);
+			foreach (var userex in currentUser.exerciseData)
+			{
+				Debug.Log(userex.exerciseName);
+			}
+			
+		}
+		else
+		{
+			Debug.LogError("Cannot load game data!");
+		}
 	}
 	
 	// Update is called once per frame

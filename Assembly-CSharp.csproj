@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\General\ExerciseData.cs" />
      <Compile Include="Assets\Scripts\General\ExerciseLevelButton.cs" />
      <Compile Include="Assets\Scripts\General\ExerciseLevelManager.cs" />
+     <Compile Include="Assets\Scripts\General\ExerciseObject.cs" />
      <Compile Include="Assets\Scripts\General\FinishExercise.cs" />
      <Compile Include="Assets\Scripts\General\RepetitionData.cs" />
      <Compile Include="Assets\Scripts\General\UserData.cs" />

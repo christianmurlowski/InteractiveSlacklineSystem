@@ -6,20 +6,21 @@ using UnityEngine;
 [System.Serializable]
 public class ExerciseData
 {
-	public string name;
+	public string levelName;
+	public string exerciseName;
 	public string description;
 	
 	public RepetitionData[] repetitions;
-//	public bool accomplished;
-//	public int unlocked;
-//	public bool IsInteractable;
+	public bool accomplished;
+	public int unlocked;
+	public bool isInteractable;
 
 
-	[System.Serializable]
-	public class UserExerciseData
-	{
-		public bool accomplished;
-		public int unlocked;
-		public bool IsInteractable;
-	}
+//	[System.Serializable]
+//	public class UserExerciseData
+//	{
+//		public bool accomplished;
+//		public int unlocked;
+//		public bool IsInteractable;
+//	}
 }

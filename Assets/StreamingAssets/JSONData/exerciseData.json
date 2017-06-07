@@ -1,0 +1,92 @@
+{
+  "exerciseDataArray": [
+    {
+      "levelName": "0",
+      "exerciseName": "Right hand up",
+      "description": "Raise your right hand up over your head",
+      "accomplished": true,
+      "unlocked": 1,
+      "isInteractable": true,
+      "repetitions": [
+        {
+          "minTime": 5,
+          "accomplished": true
+        },
+        {
+          "minTime": 5,
+          "accomplished": true
+        },
+        {
+          "minTime": 5,
+          "accomplished": true
+        }
+      ]
+    },
+    {
+      "levelName": "1",
+      "exerciseName": "Left hand up",
+      "description": "Raise your left hand up over your head",
+      "accomplished": false,
+      "unlocked": 0,
+      "isInteractable": false,
+      "repetitions": [
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        }
+      ]
+    },
+    {
+      "levelName": "2",
+      "exerciseName": "Right hand right",
+      "description": "Move your right hand to the right",
+      "accomplished": false,
+      "unlocked": 0,
+      "isInteractable": false,
+      "repetitions": [
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        }
+      ]
+    },
+    {
+      "levelName": "3",
+      "exerciseName": "Left hand left",
+      "description": "Move your left hand to the left",
+      "accomplished": false,
+      "unlocked": 0,
+      "isInteractable": false,
+      "repetitions": [
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        },
+        {
+          "minTime": 5,
+          "accomplished": false
+        }
+      ]
+    }
+  ]
+}

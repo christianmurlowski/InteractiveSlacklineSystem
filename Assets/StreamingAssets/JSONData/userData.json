@@ -1,0 +1,31 @@
+{
+  "name": "Christian",
+  "isCurrentUser": false,
+  "exerciseData":[
+    {
+      "levelName": "Exercise1",
+      "exerciseName": "Right hand up",
+      "description": "Raise your hand up over your head",
+      "accomplished": true,
+      "unlocked": 1,
+      "isInteractable": true,
+      "repetitions": [
+        {
+          "minTime": 5,
+          "accomplished": true
+        },
+        {
+          "minTime": 5,
+          "accomplished": true
+        },
+        {
+          "minTime": 5,
+          "accomplished": true
+        }
+      ]
+    }
+  ]
+}
+
+
+

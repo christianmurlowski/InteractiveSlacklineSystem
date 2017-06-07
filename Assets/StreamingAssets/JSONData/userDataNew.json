@@ -1,0 +1,48 @@
+{
+  "userData":  [
+    {
+      "name": "Christian",
+      "isCurrentUser": false,
+      "exerciseData":[
+        {
+          "levelName": "Exercise1",
+          "exerciseName": "Right hand up",
+          "description": "Raise your hand up over your head",
+          "repetitions": [
+            {
+              "minTime": 5
+            },
+            {
+              "minTime": 5
+            },
+            {
+              "minTime": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tobias",
+      "isCurrentUser": false,
+      "exerciseData":[
+        {
+          "levelName": "Exercise1",
+          "exerciseName": "Right hand up",
+          "description": "Raise your hand up over your head",
+          "repetitions": [
+            {
+              "minTime": 5
+            },
+            {
+              "minTime": 5
+            },
+            {
+              "minTime": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

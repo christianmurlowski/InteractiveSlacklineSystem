@@ -13,21 +13,18 @@ public class ExerciseLevelManager : MonoBehaviour
 	public GameObject dataController;
 	private DataController _dataController;
 
+	private UserData currentUser;
+	
 	private ExerciseData[] _allExercises;
-	private ExerciseData.UserExerciseData[] _userExerciseDatas;
-	private ExerciseData.UserExerciseData _currentUserExerciseData;
 	
 	// Use this for initialization
 	void Start () {
-//	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
+	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
 
 		_dataController = dataController.GetComponent<DataController>();
-
-		_allExercises = _dataController.GetAllExerciseData();
-
-		_userExerciseDatas = _dataController.GetUserExerciseData();
-		Debug.Log("USERDATA: " + _userExerciseDatas);
-		
+		_allExercises = _dataController.GetAllExercises();
+		currentUser = _dataController.GetCurrentUser();
+			
 		PlayerPrefs.SetInt("ExerciseAmount", _dataController.GetAllExercisesLength());
 
 		FillMenu();
@@ -37,27 +34,20 @@ public class ExerciseLevelManager : MonoBehaviour
 	{
 		foreach (var exercise in _allExercises)
 		{
-			_currentUserExerciseData = _userExerciseDatas[System.Array.IndexOf(_allExercises, exercise)];
-
 			GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
 			ExerciseLevelButton button = gameObjectButton.GetComponent<ExerciseLevelButton>();
 			
-			button.buttonText.text = exercise.name;
+			button.buttonText.text = exercise.levelName;
 
 			// If PP key from current exercise is unlocked --> unlock and make current exercise interactive
 			if (PlayerPrefs.GetInt("Exercise" + button.buttonText.text)  == 1)
 			{
-				_currentUserExerciseData.IsInteractable = true;
-				_currentUserExerciseData.unlocked = 1;
-				
-//				exercise.IsInteractable = true;
-//				exercise.unlocked = 1;
+				exercise.isInteractable = true;
+				exercise.unlocked = 1;
 			}
 
-			button.unlocked = _currentUserExerciseData.unlocked;
-//			button.unlocked = exercise.unlocked;
-			button.GetComponent<Button>().interactable = _currentUserExerciseData.IsInteractable;
-//			button.GetComponent<Button>().interactable = exercise.IsInteractable;
+			button.unlocked = exercise.unlocked;
+			button.GetComponent<Button>().interactable = exercise.isInteractable;
 			button.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Exercise" + button.buttonText.text));
 		
 			gameObjectButton.transform.SetParent(spacer, false);
