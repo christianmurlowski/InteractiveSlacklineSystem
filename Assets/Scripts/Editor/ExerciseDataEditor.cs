@@ -11,7 +11,7 @@ public class ExerciseDataEditor : EditorWindow
     public ExerciseObject exerciseDataObject;
     private string exerciseDataProjectFilePath = "/StreamingAssets/JSONData/exerciseData.json";
 
-    [MenuItem ("Window/Game Data Editor")]
+    [MenuItem ("Window/Exercise Data Editor")]
     private static void Init()
     {
         ExerciseDataEditor window = (ExerciseDataEditor)EditorWindow.GetWindow(typeof(ExerciseDataEditor));
@@ -41,7 +41,7 @@ public class ExerciseDataEditor : EditorWindow
         }
     }
     
-    private void LoadExerciseData()
+     public void LoadExerciseData()
     {
         string filePath = Application.dataPath + exerciseDataProjectFilePath;
         
@@ -63,5 +63,4 @@ public class ExerciseDataEditor : EditorWindow
         
         File.WriteAllText(filePath, exerciseDataAsJson);
     }
-    
 }

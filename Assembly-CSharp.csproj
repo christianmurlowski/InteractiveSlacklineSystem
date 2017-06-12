@@ -106,6 +106,7 @@
      <Compile Include="Assets\Scripts\General\FinishExercise.cs" />
      <Compile Include="Assets\Scripts\General\RepetitionData.cs" />
      <Compile Include="Assets\Scripts\General\UserData.cs" />
+     <Compile Include="Assets\Scripts\General\UserDataObject.cs" />
      <Compile Include="Assets\Scripts\KinectUIModule\KinectInputModule.cs" />
      <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\AbstractKinectUICursor.cs" />
      <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUICursor.cs" />
@@ -119,6 +120,8 @@
      <Compile Include="Assets\Scripts\Levels\LevelButton.cs" />
      <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Levels\Timer.cs" />
+     <Compile Include="Assets\Scripts\UserSelection\UserSelectionButton.cs" />
+     <Compile Include="Assets\Scripts\UserSelection\UserSelectionManager.cs" />
      <None Include="Assets\Resources\BlurShader.shader" />
      <None Include="Assets\Resources\DepthShader.shader" />
      <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />

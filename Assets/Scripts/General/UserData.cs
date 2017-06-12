@@ -8,7 +8,8 @@ public class UserData
     
     public string name;
     public bool isCurrentUser;
-
+    
 //    public ExerciseData[] exercises;
     public ExerciseData[] exerciseData;
+
 }

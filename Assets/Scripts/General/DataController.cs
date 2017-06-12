@@ -11,58 +11,54 @@ public class DataController : MonoBehaviour
 	public ExerciseObject allDefaultExercisesDataObject;
 
 	public UserData currentUser;
+//	public UserDataObject currentUserDataObject;
 
 	private string exerciseDataFileName = "JSONData/exerciseData.json";
-	private string userDataFileName = "JSONData/christianMurlowski.json";
 	
 	void Start ()
 	{
+		currentUser = UserDataObject.currentUser;
+
+		Debug.Log("START " + currentUser.name);
+		
 		LoadGameData();
-		
-		Debug.Log("currentuser exercise: " + currentUser.exerciseData.Length);
-		
-		// Initial fill current users exercises with exercise data
-		if (currentUser.exerciseData.Length == 0)
-		{
-//			currentUser.exerciseData = ;
-			Debug.Log("in if currentuser exercise: " + currentUser.exerciseData.Length);
-		}
 	}
-	
-	public ExerciseData[] GetAllExercises()
-	{
-		return currentUser.exerciseData;
-	}
-	
-	// TODO: Get current exercise data
-	public ExerciseData GetCurrentExercise()
-	{
-		return currentUser.exerciseData[0]; // change this
-	}
-
-	public int GetAllExercisesLength()
-	{
-		return currentUser.exerciseData.Length;
-	}
-
-	public UserData GetCurrentUser()
-	{
-		return currentUser;
-	}
+//
+//	public void SetCurrentUser(UserData user)
+//	{
+//		currentUser = user;
+//	}
+//	
+//	public ExerciseData[] GetAllExercises()
+//	{
+//		return currentUser.exerciseData;
+//	}
+//	
+//	// TODO: Get current exercise data
+//	public ExerciseData GetCurrentExercise()
+//	{
+//		return currentUser.exerciseData[0]; // change this
+//	}
+//
+//	public int GetAllExercisesLength()
+//	{
+//		return currentUser.exerciseData.Length;
+//	}
+//
+//	public UserData GetCurrentUser()
+//	{
+//		return currentUser;
+//	}
 
 	private void LoadGameData()
 	{
 		string defaultExercisesFilePath = Path.Combine(Application.streamingAssetsPath, exerciseDataFileName);
-		string currentUserFilePath = Path.Combine(Application.streamingAssetsPath, userDataFileName);
 
-		if (File.Exists(defaultExercisesFilePath) && File.Exists(currentUserFilePath))
+		if (File.Exists(defaultExercisesFilePath) && currentUser != null)
 		{
 			string defaultExercisesDataAsJson = File.ReadAllText(defaultExercisesFilePath );
-			string currentUserDataAsJson = File.ReadAllText(currentUserFilePath );
 			
-			Debug.Log(currentUserDataAsJson);
 			allDefaultExercisesDataObject = JsonUtility.FromJson<ExerciseObject>(defaultExercisesDataAsJson);
-			currentUser = JsonUtility.FromJson<UserData>(currentUserDataAsJson);
 
 			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
 			
@@ -79,7 +75,10 @@ public class DataController : MonoBehaviour
 			
 			Debug.Log("----------CURRENT USER EXERCISES BEFORE----------");
 			Debug.Log(currentUser.exerciseData.Length);
-			Debug.Log(currentUser.exerciseData[0].exerciseName);
+			foreach (var userexer in currentUser.exerciseData)
+			{
+				Debug.Log(userexer.exerciseName);
+			}
 
 			// if current user has no exercise data (initial state) fill with default exercises
 //			if (currentUser.exerciseData == null)
@@ -88,7 +87,13 @@ public class DataController : MonoBehaviour
 //				//write into jsonfile
 //			}
 //			
-			currentUser.exerciseData = allDefaultExercisesDataArray;
+			// Initial fill current users exercises with exercise data
+			if (currentUser.exerciseData.Length == 0)
+			{
+				currentUser.exerciseData = allDefaultExercisesDataArray;
+				Debug.Log("in if currentuser exercise: " + currentUser.exerciseData.Length);
+				SaveUserData(currentUser);
+			}
 			
 			Debug.Log("----------CURRENT USER EXERCISES AFTER----------");
 			Debug.Log(currentUser.exerciseData.Length);
@@ -103,6 +108,16 @@ public class DataController : MonoBehaviour
 			Debug.LogError("Cannot load game data!");
 		}
 	}
+	
+	private void SaveUserData(UserData currentUserData)
+	{
+		string currentUserDataFilePath = PlayerPrefs.GetString("CurrentUserFilePath");
+		string currentUserDataAsJson = JsonUtility.ToJson(currentUserData);
+		string filePath = currentUserDataFilePath;
+        
+		File.WriteAllText(filePath, currentUserDataAsJson);
+	}
+
 	
 	// Update is called once per frame
 	void Update () 
