@@ -11,7 +11,6 @@ public class DataController : MonoBehaviour
 	public ExerciseObject allDefaultExercisesDataObject;
 
 	public UserData currentUser;
-//	public UserDataObject currentUserDataObject;
 
 	private string exerciseDataFileName = "JSONData/exerciseData.json";
 	
@@ -23,32 +22,6 @@ public class DataController : MonoBehaviour
 		
 		LoadGameData();
 	}
-//
-//	public void SetCurrentUser(UserData user)
-//	{
-//		currentUser = user;
-//	}
-//	
-//	public ExerciseData[] GetAllExercises()
-//	{
-//		return currentUser.exerciseData;
-//	}
-//	
-//	// TODO: Get current exercise data
-//	public ExerciseData GetCurrentExercise()
-//	{
-//		return currentUser.exerciseData[0]; // change this
-//	}
-//
-//	public int GetAllExercisesLength()
-//	{
-//		return currentUser.exerciseData.Length;
-//	}
-//
-//	public UserData GetCurrentUser()
-//	{
-//		return currentUser;
-//	}
 
 	private void LoadGameData()
 	{
@@ -62,24 +35,23 @@ public class DataController : MonoBehaviour
 
 			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
 			
-			
-			Debug.Log("----------DEFAULT EXERCISES----------");
-			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray.Length);
-			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray[0].description);
-			Debug.Log(allDefaultExercisesDataArray);
-			Debug.Log(allDefaultExercisesDataArray.Length);
-			Debug.Log(allDefaultExercisesDataArray[0].description);		
-
-			Debug.Log("----------CURRENT USER----------");
-			Debug.Log(currentUser.name);
-			
-			Debug.Log("----------CURRENT USER EXERCISES BEFORE----------");
-			Debug.Log(currentUser.exerciseData.Length);
-			foreach (var userexer in currentUser.exerciseData)
-			{
-				Debug.Log(userexer.exerciseName);
-			}
-
+//			
+//			Debug.Log("----------DEFAULT EXERCISES----------");
+//			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray.Length);
+//			Debug.Log(allDefaultExercisesDataObject.exerciseDataArray[0].description);
+//			Debug.Log(allDefaultExercisesDataArray);
+//			Debug.Log(allDefaultExercisesDataArray.Length);
+//			Debug.Log(allDefaultExercisesDataArray[0].description);		
+//
+//			Debug.Log("----------CURRENT USER----------");
+//			Debug.Log(currentUser.name);
+//			
+//			Debug.Log("----------CURRENT USER EXERCISES BEFORE----------");
+//			Debug.Log(currentUser.exerciseData.Length);
+//			foreach (var userexer in currentUser.exerciseData)
+//			{
+//				Debug.Log(userexer.exerciseName);
+//			}
 			// if current user has no exercise data (initial state) fill with default exercises
 //			if (currentUser.exerciseData == null)
 //			{
@@ -95,13 +67,13 @@ public class DataController : MonoBehaviour
 				SaveUserData(currentUser);
 			}
 			
-			Debug.Log("----------CURRENT USER EXERCISES AFTER----------");
-			Debug.Log(currentUser.exerciseData.Length);
-			foreach (var userex in currentUser.exerciseData)
-			{
-				Debug.Log(userex.exerciseName);
-			}
-			
+//			Debug.Log("----------CURRENT USER EXERCISES AFTER----------");
+//			Debug.Log(currentUser.exerciseData.Length);
+//			foreach (var userex in currentUser.exerciseData)
+//			{
+//				Debug.Log(userex.exerciseName);
+//			}
+//			
 		}
 		else
 		{

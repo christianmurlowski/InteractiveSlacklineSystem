@@ -20,10 +20,11 @@ public class ExerciseLevelManager : MonoBehaviour
 
 		_allExercises = UserDataObject.currentUser.exerciseData;
 			
+		Debug.Log("EXERCISEAMONT: " + UserDataObject.currentUser.exerciseData.Length);
 		PlayerPrefs.SetInt("ExercisesAmount", UserDataObject.currentUser.exerciseData.Length);
 
 		FillMenu();
-	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
+//	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
 	}
 
 	void FillMenu()
@@ -33,28 +34,37 @@ public class ExerciseLevelManager : MonoBehaviour
 			GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
 			ExerciseLevelButton button = gameObjectButton.GetComponent<ExerciseLevelButton>();
 
-			button.buttonExerciseData = exercise;
 			button.buttonText.text = exercise.levelName;
 			
-			Debug.Log("index of " + exercise.exerciseName + ": " + Array.IndexOf(_allExercises, exercise));
-
-			
+//			Debug.Log("index of " + exercise.exerciseName + ": " + Array.IndexOf(_allExercises, exercise));
+//
+//			if (exercise.isInteractable)
+//			{
+//				button.unlocked = exercise.unlocked;
+//				button.GetComponent<Button>().interactable = exercise.isInteractable;
+//			}
 			// If PP key from current exercise is unlocked --> unlock and make current exercise interactive
-			if (PlayerPrefs.GetInt("Exercise" + Array.IndexOf(_allExercises, exercise) + "Unlocked")  == 1)
-			{
-				exercise.isInteractable = true;
-				exercise.unlocked = 1;
-			}
-
+//			if (PlayerPrefs.GetInt("Exercise" + Array.IndexOf(_allExercises, exercise) + "Unlocked")  == 1)
+//			{
+//				exercise.isInteractable = true;
+//				exercise.unlocked = 1;
+//			}
+			
+			Debug.Log(exercise.exerciseName);
+			Debug.Log(exercise.unlocked);
 			button.unlocked = exercise.unlocked;
 			button.GetComponent<Button>().interactable = exercise.isInteractable;
-			button.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Exercise" + Array.IndexOf(_allExercises, exercise)));
+			button.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				PlayerPrefs.SetInt("CurrentExerciseId", Array.IndexOf(_allExercises, exercise));
+				SceneManager.LoadScene("Exercise" + Array.IndexOf(_allExercises, exercise));
+			});
 		
 			gameObjectButton.transform.SetParent(spacer, false);
 			
 			
 		}
-		SaveData();
+//		SaveData();
 	}
 
 	// Initial PlayerPrefs creation for each Level --> set unlock value

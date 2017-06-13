@@ -23,6 +23,7 @@ public class UserDataObject {
         return currentUser.exerciseData;
     }
 
+    // TODO: Get current exercise data
     public ExerciseData GetCurrentExercise()
     {
         return currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];

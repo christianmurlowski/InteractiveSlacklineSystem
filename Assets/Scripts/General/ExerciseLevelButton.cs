@@ -7,7 +7,6 @@ public class ExerciseLevelButton : MonoBehaviour
 {
 
 	public Text buttonText;
-	public ExerciseData buttonExerciseData;
 	public int unlocked;
 	
 }

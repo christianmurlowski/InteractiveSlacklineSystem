@@ -47,7 +47,7 @@ public class Engagement : MonoBehaviour
 
 					if (jointPosHandRight.y > jointPosHead.y)
 					{
-						SceneManager.LoadScene("MainMenu");
+						SceneManager.LoadScene("UserSelection");
 					}					
 
 				}

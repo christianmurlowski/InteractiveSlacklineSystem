@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,13 +8,16 @@ public class FinishExercise : MonoBehaviour
 {
 
 	private int _exerciseAmount;
-	private int _currentExercise;
+	private int _currentExerciseId;
 	private int _score = 5000;
 	
 	// Use this for initialization
 	void Start ()
 	{
-		_exerciseAmount = PlayerPrefs.GetInt("ExerciseAmount");
+		_currentExerciseId = PlayerPrefs.GetInt("CurrentExerciseId");
+		
+		_exerciseAmount = PlayerPrefs.GetInt("ExercisesAmount");
+		
 		CheckCurrentLevel();
 		StartCoroutine(Time());
 	}
@@ -26,28 +30,30 @@ public class FinishExercise : MonoBehaviour
 
 	void CheckCurrentLevel()
 	{
-		for (int i = 0; i < _exerciseAmount; i++)
-		{
-			if (SceneManager.GetActiveScene().name == "Exercise" + i)
-			{
-				_currentExercise = i;
-				SaveGame();
-			}
-		}
+		
+		SaveGame();
 	}
 
 	void SaveGame()
 	{
-		int nextExercise = _currentExercise + 1;
+		int nextExerciseId = _currentExerciseId + 1;
 
-		if (nextExercise < _exerciseAmount)
+		if (nextExerciseId < UserDataObject.currentUser.exerciseData.Length)
 		{
-			PlayerPrefs.SetInt("Exercise" + nextExercise, 1); // unlock next exercise
-			PlayerPrefs.SetInt("Exercise" + _currentExercise + "_score", _score);
+			// Set next exercise and unlock
+			PlayerPrefs.SetInt("CurrentExerciseId", nextExerciseId);
+			UserDataObject.currentUser.exerciseData[nextExerciseId].isInteractable = true;
+			UserDataObject.currentUser.exerciseData[nextExerciseId].unlocked = 1;
+			
+			// TODO: save it to json file
+
+			string currentExerciseAsJson = JsonUtility.ToJson(UserDataObject.currentUser);
+			File.WriteAllText(PlayerPrefs.GetString("CurrentUserFilePath"), currentExerciseAsJson);
+//			PlayerPrefs.SetInt("Exercise" + "_score", _score);
 		}
 		else
 		{
-			PlayerPrefs.SetInt("Exercise" + _currentExercise + "_score", _score);
+//			PlayerPrefs.SetInt("Exercise" + _currentExercise + "_score", _score);
 		}
 	}
 	
