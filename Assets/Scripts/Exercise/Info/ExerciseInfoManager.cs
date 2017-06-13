@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExerciseInfoManager : MonoBehaviour
 {
 
 	public GameObject exerciseTipPanel;
 	public Transform spacer;
+
+	public Text exerciseName;
 	
 	private ExerciseData _currentExercise;
 	// Use this for initialization
@@ -18,6 +21,8 @@ public class ExerciseInfoManager : MonoBehaviour
 		// TODO Just for test purposes -> Delete in production
 		_currentExercise = UserDataObject.currentUser.exerciseData[0];
 
+		exerciseName.text = _currentExercise.exerciseName.ToUpper();
+		
 		FillTipList();
 	}
 
@@ -42,9 +47,8 @@ public class ExerciseInfoManager : MonoBehaviour
 	}
 /*
 	TODO
+	- next button to go into exercise
 	- create default images
-	+ add per tip an image + name + desription text
-	+ add it to spacer
 	- load preview videofile into content
 */
 
