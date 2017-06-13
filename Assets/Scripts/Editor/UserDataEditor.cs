@@ -15,6 +15,8 @@ public class UserDataEditor : EditorWindow
 
     private ExerciseDataEditor _exerciseDataEditor;
 
+    private Vector2 scrollPos;
+
     [MenuItem("Window/User Data Editor")]
     private static void init()
     {        
@@ -24,6 +26,9 @@ public class UserDataEditor : EditorWindow
 
     void OnGUI()
     {        
+        GUILayout.BeginVertical();
+        scrollPos = GUILayout.BeginScrollView(scrollPos);
+        
         DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + allUserDataProjectFilePath);
 
         if (currentUser != null)
@@ -68,6 +73,8 @@ public class UserDataEditor : EditorWindow
         }
 //        Debug.Log(GetNumberOfUsers(directoryInfo));
 
+        GUILayout.EndScrollView();
+        GUILayout.EndVertical();
     }
 
     private void CreateNewUser(string username)

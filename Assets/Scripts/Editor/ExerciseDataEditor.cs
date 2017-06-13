@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class ExerciseDataEditor : EditorWindow
 {
-
     public ExerciseObject exerciseDataObject;
     private string exerciseDataProjectFilePath = "/StreamingAssets/JSONData/exerciseData.json";
 
+    private Vector2 scrollPos;
+    
     [MenuItem ("Window/Exercise Data Editor")]
     private static void Init()
     {
@@ -20,6 +21,9 @@ public class ExerciseDataEditor : EditorWindow
 
     void OnGUI()
     {
+        GUILayout.BeginVertical();
+        scrollPos = GUILayout.BeginScrollView(scrollPos);
+        
         if (exerciseDataObject != null)
         {
             SerializedObject serializedObject = new SerializedObject(this);
@@ -35,10 +39,14 @@ public class ExerciseDataEditor : EditorWindow
             }
         }
 
+        
         if (GUILayout.Button("Load Data"))
         {
             LoadExerciseData();
         }
+
+        GUILayout.EndScrollView();
+        GUILayout.EndVertical();
     }
     
      public void LoadExerciseData()

@@ -11,6 +11,7 @@ public class ExerciseData
 	public string description;
 	
 	public RepetitionData[] repetitions;
+	public TipsData[] tips;
 	public bool accomplished;
 	public int unlocked;
 	public bool isInteractable;

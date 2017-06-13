@@ -5,39 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff780a82-55da-48ae-9d40-a1895a828ec0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Level0.unity" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Level0.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Welcome.unity" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scenes/Welcome.unity.meta" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/RepetitionData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/RepetitionData.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/ExerciseInfo.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/ExerciseInfo.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Library/assetDatabase3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/expandedItems" afterPath="$PROJECT_DIR$/Library/expandedItems" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/05/05a639e6855471c4481f14ba06ac1eae" afterPath="$PROJECT_DIR$/Library/metadata/05/05a639e6855471c4481f14ba06ac1eae" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/05/05a639e6855471c4481f14ba06ac1eae.info" afterPath="$PROJECT_DIR$/Library/metadata/05/05a639e6855471c4481f14ba06ac1eae.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/05/05d8adfdb8b633145ae996bfa9772e6f" afterPath="$PROJECT_DIR$/Library/metadata/05/05d8adfdb8b633145ae996bfa9772e6f" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/05/05d8adfdb8b633145ae996bfa9772e6f.info" afterPath="$PROJECT_DIR$/Library/metadata/05/05d8adfdb8b633145ae996bfa9772e6f.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/13/139b4ca5040c1344ab08db369bff68ad" afterPath="$PROJECT_DIR$/Library/metadata/13/139b4ca5040c1344ab08db369bff68ad" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/28/28fd5e66dcf519d40aa9f8e28bf3245f" afterPath="$PROJECT_DIR$/Library/metadata/28/28fd5e66dcf519d40aa9f8e28bf3245f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/40/403962a719cc66a45abd6b880ca2f49f" afterPath="$PROJECT_DIR$/Library/metadata/40/403962a719cc66a45abd6b880ca2f49f" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/13/139b4ca5040c1344ab08db369bff68ad.info" afterPath="$PROJECT_DIR$/Library/metadata/13/139b4ca5040c1344ab08db369bff68ad.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb" afterPath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb.info" afterPath="$PROJECT_DIR$/Library/metadata/19/191effe1a18a34446bf99c3f7d65a9fb.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/27/2752e34e362c520418e5cab36f1d27e4" afterPath="$PROJECT_DIR$/Library/metadata/27/2752e34e362c520418e5cab36f1d27e4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988" afterPath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988.info" afterPath="$PROJECT_DIR$/Library/metadata/44/446f38e0346ab4e4baa9a9d2933de988.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/78/78ab1747cddfb654489f6ab729fb78ad" afterPath="$PROJECT_DIR$/Library/metadata/78/78ab1747cddfb654489f6ab729fb78ad" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/78/78ab1747cddfb654489f6ab729fb78ad.info" afterPath="$PROJECT_DIR$/Library/metadata/78/78ab1747cddfb654489f6ab729fb78ad.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/79/796d7fc5b79562d40982f80d93ad4b4c" afterPath="$PROJECT_DIR$/Library/metadata/79/796d7fc5b79562d40982f80d93ad4b4c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/79/796d7fc5b79562d40982f80d93ad4b4c.info" afterPath="$PROJECT_DIR$/Library/metadata/79/796d7fc5b79562d40982f80d93ad4b4c.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705" afterPath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705.info" afterPath="$PROJECT_DIR$/Library/metadata/87/87399285887f28a49b49a47183924705.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/9a/9a9e8a5d344a9324fa389bb84f7bdb58" afterPath="$PROJECT_DIR$/Library/metadata/9a/9a9e8a5d344a9324fa389bb84f7bdb58" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/9a/9a9e8a5d344a9324fa389bb84f7bdb58.info" afterPath="$PROJECT_DIR$/Library/metadata/9a/9a9e8a5d344a9324fa389bb84f7bdb58.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/a7/a76fc46754282244da9ca89f866a354c" afterPath="$PROJECT_DIR$/Library/metadata/a7/a76fc46754282244da9ca89f866a354c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36" afterPath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36.info" afterPath="$PROJECT_DIR$/Library/metadata/c6/c64f0bd314b40aa40bffe3addac34d36.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095" afterPath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095.info" afterPath="$PROJECT_DIR$/Library/metadata/e1/e1dd4ddcb9609d941b69add80ec85095.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveSlacklineSystem/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveSlacklineSystem/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/FinishExercise.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/FinishExercise.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/KinectView/Engagement.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/KinectView/Engagement.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/MaxMock.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/MaxMock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/christianMurlowski.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/christianMurlowski.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/testUser.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/testUser.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,19 +74,28 @@
     <splitter split-orientation="horizontal" split-proportion="0.41938883">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UserDataObject.cs" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs">
+          <file leaf-file-name="ExerciseData.cs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Data/ExerciseData.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+                <state relative-caret-position="120">
+                  <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
                   <folding>
-                    <marker date="1497269680943" expanded="true" signature="6:78" ph="..." />
-                    <marker date="1497269680943" expanded="true" signature="130:767" ph="{...}" />
-                    <marker date="1497269680943" expanded="true" signature="223:305" ph="{...}" />
-                    <marker date="1497269680943" expanded="true" signature="351:391" ph="{...}" />
-                    <marker date="1497269680943" expanded="true" signature="435:488" ph="{...}" />
-                    <marker date="1497269680943" expanded="true" signature="573:667" ph="{...}" />
-                    <marker date="1497269680943" expanded="true" signature="705:765" ph="{...}" />
+                    <marker date="1497351308971" expanded="false" signature="6:107" ph="..." />
+                    <marker date="1497351308971" expanded="true" signature="156:543" ph="{...}" />
+                    <marker date="1497351308971" expanded="true" signature="387:541" ph="/* [System.Serializable] ... */" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TipsData.cs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Data/TipsData.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+                  <folding>
+                    <marker date="1497351293739" expanded="false" signature="6:78" ph="..." />
+                    <marker date="1497351293739" expanded="true" signature="123:207" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -73,37 +105,30 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ExerciseData.cs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs">
+          <file leaf-file-name="ExerciseData.cs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Data/ExerciseData.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+                  <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
                   <folding>
-                    <marker date="1496695636157" expanded="true" signature="6:107" ph="..." />
-                    <marker date="1496695636157" expanded="true" signature="156:518" ph="{...}" />
-                    <marker date="1496695636157" expanded="true" signature="362:516" ph="/* [System.Serializable] ... */" />
+                    <marker date="1497351308971" expanded="false" signature="6:107" ph="..." />
+                    <marker date="1497351308971" expanded="true" signature="156:543" ph="{...}" />
+                    <marker date="1497351308971" expanded="true" signature="387:541" ph="/* [System.Serializable] ... */" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ExerciseLevelManager.cs" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs">
+          <file leaf-file-name="ExerciseInfoManager.cs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Info/ExerciseInfoManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+                <state relative-caret-position="210">
+                  <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding>
-                    <marker date="1497278361650" expanded="true" signature="6:167" ph="..." />
-                    <marker date="1497278361650" expanded="true" signature="218:2649" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="410:717" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="735:2070" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="780:2051" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="1005:1556" ph="/* Debug.Log(&quot;index of &quot; + exercise.exerciseName + &quot;: &quot; + Array.IndexOf(_allExercises, exercise)); ... */" />
-                    <marker date="1497278361650" expanded="true" signature="1802:1978" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="2157:2645" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="2207:2270" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="2277:2642" ph="{...}" />
-                    <marker date="1497278361650" expanded="true" signature="2455:2634" ph="{...}" />
+                    <marker date="1497347922785" expanded="false" signature="6:78" ph="..." />
+                    <marker date="1497347922785" expanded="true" signature="129:250" ph="{...}" />
+                    <marker date="1497347922785" expanded="true" signature="179:186" ph="{...}" />
+                    <marker date="1497347922785" expanded="true" signature="241:248" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -115,36 +140,14 @@
                 <state relative-caret-position="240">
                   <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="26" />
                   <folding>
-                    <marker date="1497278866257" expanded="true" signature="6:130" ph="..." />
-                    <marker date="1497278866257" expanded="true" signature="175:1420" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="318:502" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="523:606" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="633:656" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="674:1414" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="796:1321" ph="{...}" />
-                    <marker date="1497278866257" expanded="true" signature="1328:1411" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DataController.cs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/DataController.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-                  <folding>
-                    <marker date="1497278843761" expanded="true" signature="6:130" ph="..." />
-                    <marker date="1497278843761" expanded="true" signature="197:2944" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="424:538" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="568:2557" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="745:2494" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="1027:2029" ph="/* Debug.Log(&quot;----------DEFAULT EXERCISES----------&quot;); ... */" />
-                    <marker date="1497278843761" expanded="true" signature="2074:2257" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="2262:2490" ph="/* Debug.Log(&quot;----------CURRENT USER EXERCISES AFTER----------&quot;); ... */" />
-                    <marker date="1497278843761" expanded="true" signature="2501:2554" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="2612:2877" ph="{...}" />
-                    <marker date="1497278843761" expanded="true" signature="2933:2942" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="6:130" ph="..." />
+                    <marker date="1497345924729" expanded="true" signature="175:1420" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="318:502" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="523:606" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="633:656" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="674:1414" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="796:1321" ph="{...}" />
+                    <marker date="1497345924729" expanded="true" signature="1328:1411" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -222,19 +225,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ApplicationDataEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ExercisesDataEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserSelection/UserButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserSelection/UserSelectionButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/UserData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserSelection/UserSelectionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/DataController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/FinishExercise.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/KinectView/Engagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/TipsData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/ExerciseData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs" />
       </list>
     </option>
   </component>
@@ -401,12 +406,12 @@
       <workItem from="1496825989225" duration="3522000" />
       <workItem from="1497079710339" duration="18547000" />
       <workItem from="1497196529514" duration="18962000" />
-      <workItem from="1497302544863" duration="821000" />
+      <workItem from="1497302544863" duration="4047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133958000" />
+    <option name="totallyTimeSpent" value="137184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,9 +487,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/KinectView/Scripts/UserViewManager.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/KinectView/Scripts/UserView.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/KinectUIModule/Scripts/KinectUI/KinectUICursor.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Examples/Gesture/GestureKinectManager.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -644,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Levels/Timer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/DontDestroyOnLoad.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -703,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="123" column="64" lean-forward="false" selection-start-line="123" selection-start-column="64" selection-end-line="123" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/ExceptionHelper.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -721,38 +709,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1497278843761" expanded="true" signature="6:130" ph="..." />
-            <marker date="1497278843761" expanded="true" signature="197:2944" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="424:538" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="568:2557" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="745:2494" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="1027:2029" ph="/* Debug.Log(&quot;----------DEFAULT EXERCISES----------&quot;); ... */" />
-            <marker date="1497278843761" expanded="true" signature="2074:2257" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="2262:2490" ph="/* Debug.Log(&quot;----------CURRENT USER EXERCISES AFTER----------&quot;); ... */" />
-            <marker date="1497278843761" expanded="true" signature="2501:2554" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="2612:2877" ph="{...}" />
-            <marker date="1497278843761" expanded="true" signature="2933:2942" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <marker date="1496695636157" expanded="true" signature="6:107" ph="..." />
-            <marker date="1496695636157" expanded="true" signature="156:518" ph="{...}" />
-            <marker date="1496695636157" expanded="true" signature="362:516" ph="/* [System.Serializable] ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -763,35 +720,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <marker date="1497269680943" expanded="true" signature="6:78" ph="..." />
-            <marker date="1497269680943" expanded="true" signature="130:767" ph="{...}" />
-            <marker date="1497269680943" expanded="true" signature="223:305" ph="{...}" />
-            <marker date="1497269680943" expanded="true" signature="351:391" ph="{...}" />
-            <marker date="1497269680943" expanded="true" signature="435:488" ph="{...}" />
-            <marker date="1497269680943" expanded="true" signature="573:667" ph="{...}" />
-            <marker date="1497269680943" expanded="true" signature="705:765" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/FinishExercise.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <marker date="1497278866257" expanded="true" signature="6:130" ph="..." />
-            <marker date="1497278866257" expanded="true" signature="175:1420" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="318:502" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="523:606" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="633:656" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="674:1414" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="796:1321" ph="{...}" />
-            <marker date="1497278866257" expanded="true" signature="1328:1411" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="6:130" ph="..." />
+            <marker date="1497345924729" expanded="true" signature="175:1420" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="318:502" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="523:606" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="633:656" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="674:1414" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="796:1321" ph="{...}" />
+            <marker date="1497345924729" expanded="true" signature="1328:1411" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -803,22 +744,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/UserDataObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Levels/Timer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <marker date="1496133818518" expanded="false" signature="6:135" ph="..." />
+            <marker date="1496133818518" expanded="true" signature="171:1218" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="310:476" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="497:580" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="642:806" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="686:803" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="748:799" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="888:1214" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="983:1126" ph="{...}" />
+            <marker date="1496133818518" expanded="true" signature="1133:1211" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Info/ExerciseInfoManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1497347922785" expanded="false" signature="6:78" ph="..." />
+            <marker date="1497347922785" expanded="true" signature="129:250" ph="{...}" />
+            <marker date="1497347922785" expanded="true" signature="179:186" ph="{...}" />
+            <marker date="1497347922785" expanded="true" signature="241:248" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/ExerciseLevelManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+        <state relative-caret-position="705">
+          <caret line="59" column="52" lean-forward="false" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Data/TipsData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
-            <marker date="1497278361650" expanded="true" signature="6:167" ph="..." />
-            <marker date="1497278361650" expanded="true" signature="218:2649" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="410:717" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="735:2070" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="780:2051" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="1005:1556" ph="/* Debug.Log(&quot;index of &quot; + exercise.exerciseName + &quot;: &quot; + Array.IndexOf(_allExercises, exercise)); ... */" />
-            <marker date="1497278361650" expanded="true" signature="1802:1978" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="2157:2645" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="2207:2270" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="2277:2642" ph="{...}" />
-            <marker date="1497278361650" expanded="true" signature="2455:2634" ph="{...}" />
+            <marker date="1497351293739" expanded="false" signature="6:78" ph="..." />
+            <marker date="1497351293739" expanded="true" signature="123:207" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/UserDataEditor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="75" column="34" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+          <folding>
+            <marker date="1497352436890" expanded="false" signature="6:136" ph="..." />
+            <marker date="1497352436890" expanded="true" signature="180:4697" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="569:709" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="727:2458" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="985:1898" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="1333:1511" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="1398:1481" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="1577:1650" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="1712:1783" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="2272:2329" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="2507:2802" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="2543:2796" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="2862:3485" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="2957:3479" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3016:3469" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3093:3454" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3542:3900" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3647:3819" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3832:3894" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="3957:4188" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="4234:4481" ph="{...}" />
+            <marker date="1497352436890" expanded="true" signature="4539:4693" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ExerciseDataEditor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <marker date="1497352376330" expanded="false" signature="6:132" ph="..." />
+            <marker date="1497352376330" expanded="true" signature="180:2081" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="439:582" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="600:1368" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="748:1188" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1114:1178" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1241:1293" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1409:1810" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1537:1716" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1729:1804" ph="{...}" />
+            <marker date="1497352376330" expanded="true" signature="1847:2079" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Data/ExerciseData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <marker date="1497351308971" expanded="false" signature="6:107" ph="..." />
+            <marker date="1497351308971" expanded="true" signature="156:543" ph="{...}" />
+            <marker date="1497351308971" expanded="true" signature="387:541" ph="/* [System.Serializable] ... */" />
           </folding>
         </state>
       </provider>
