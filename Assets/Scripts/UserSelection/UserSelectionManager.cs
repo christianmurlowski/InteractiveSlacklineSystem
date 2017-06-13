@@ -57,6 +57,34 @@ public class UserSelectionManager : MonoBehaviour
         
         SceneManager.LoadScene("MainMenu");
     }
+
+    // TODO Just for test purposes -> Delete in production
+    public static void TestSetCurrentUser()
+    {        
+        
+        string allUsersFilePath = "/StreamingAssets/JSONData/Users/";
+
+        DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + allUsersFilePath);
+        FileInfo[] files = directoryInfo.GetFiles();
+        currentUserDataObject = new UserDataObject();
+
+        foreach (var file in files)
+        {
+            if (file.Extension.Contains("json"))
+            {
+                string filePath = Application.dataPath + allUsersFilePath + file.Name;
+                string alluserAsJson = File.ReadAllText(filePath);
+    
+                UserData tempUserData = JsonUtility.FromJson<UserData>(alluserAsJson);
+
+                if (tempUserData.isCurrentUser == true)
+                {
+                    Debug.Log("TEST CURRENT USER: " + tempUserData.name);
+                    currentUserDataObject.SetCurrentUser(tempUserData);
+                }
+            }
+        }
+    }
     
 }
 

@@ -10,8 +10,6 @@ public class ExerciseLevelManager : MonoBehaviour
 {
 	public GameObject exerciseLevelButton;
 	public Transform spacer;
-
-	private UserData _currentUser;
 	
 	private ExerciseData[] _allExercises;
 	

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelButton
   - ExerciseButton
+  - TipPanel
   layers:
   - Default
   - TransparentFX
