@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ExerciseInfoManager : MonoBehaviour
 {
 
 	public GameObject exerciseTipPanel;
+	public Button startButton;
+	
 	public Transform spacer;
 
 	public Text exerciseName;
@@ -15,13 +18,18 @@ public class ExerciseInfoManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		UserSelectionManager.TestSetCurrentUser();
+		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+
 		_currentExercise = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
-		// TODO Just for test purposes -> Delete in production
-		_currentExercise = UserDataObject.currentUser.exerciseData[0];
+		_currentExercise = UserDataObject.currentUser.exerciseData[0];// TODO Just for test purposes -> Delete in production
 
 		exerciseName.text = _currentExercise.exerciseName.ToUpper();
+
+		startButton.onClick.AddListener(() =>
+		{
+			SceneManager.LoadScene("ExerciseExecution");
+		});
 		
 		FillTipList();
 	}
@@ -48,6 +56,7 @@ public class ExerciseInfoManager : MonoBehaviour
 /*
 	TODO
 	- next button to go into exercise
+	- DELETE ALL EVENTSYSTEMS IN OTHER SCENES
 	- create default images
 	- load preview videofile into content
 */
