@@ -50,8 +50,7 @@ public class BodyView : MonoBehaviour
 	public Color tracked, inferred;
 
 	public float linewidth;
-
-
+	
 	private void Awake()
 	{
 //        DontDestroyOnLoad(gameObject);
@@ -60,8 +59,6 @@ public class BodyView : MonoBehaviour
 		// Colors
 		tracked = new Color32(0, 240, 0, 255);
 		inferred = new Color32(255, 80, 0, 255);
-		
-
 	}
 
 	// check if BodyManager has data
@@ -81,6 +78,7 @@ public class BodyView : MonoBehaviour
 		}
 
 		Kinect.Body[] data = _BodyManager.GetBodies();	// Get bodies of bodymanager
+		
 		if (data == null)
 		{
 			return;

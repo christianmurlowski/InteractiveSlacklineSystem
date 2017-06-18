@@ -19,11 +19,10 @@ public class ExerciseInfoManager : MonoBehaviour
 	void Start ()
 	{
 		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 
 		_currentExercise = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
-		_currentExercise = UserDataObject.currentUser.exerciseData[0];// TODO Just for test purposes -> Delete in production
-
 		exerciseName.text = _currentExercise.exerciseName.ToUpper();
 
 		startButton.onClick.AddListener(() =>

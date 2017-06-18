@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Windows.Kinect;
 using Microsoft.Kinect.VisualGestureBuilder;
 using UnityEngine;
@@ -18,12 +19,24 @@ public class GestureEventArgs : EventArgs
     public bool IsGestureDetected { get; private set; }
 
     public float DetectionConfidence { get; private set; }
+    
+    public float Progress { get; private set; }
+    
+    public GestureType GestureType { get; private set; }
 
-    public GestureEventArgs(bool isBodyTrackingIdValid, bool isGestureDetected, float detectionConfidence)
+    public GestureEventArgs(bool isBodyTrackingIdValid, bool isGestureDetected, float detectionConfidence, GestureType gestureType)
     {
         this.IsBodyTrackingIdValid = isBodyTrackingIdValid;
         this.IsGestureDetected = isGestureDetected;
         this.DetectionConfidence = detectionConfidence;
+        this.GestureType = gestureType;
+    }    
+    
+    public GestureEventArgs(bool isBodyTrackingIdValid, float progress, GestureType gestureType)
+    {
+        this.IsBodyTrackingIdValid = isBodyTrackingIdValid;
+        this.Progress = progress;
+        this.GestureType = gestureType;
     }
 }
 
@@ -34,10 +47,10 @@ public class GestureEventArgs : EventArgs
 public class GestureDetector : IDisposable
 {
     /// <summary> Path to the gesture database that was trained with VGB </summary>
-    private readonly string gestureDatabase = "GestureDB\\Seated.gbd";
+    private readonly string gestureDatabase = "GestureDB\\TestDatabase.gbd";
 
     /// <summary> Name of the discrete gesture in the database that we want to track </summary>
-    private readonly string seatedGestureName = "Seated";
+    private readonly string gestureName = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
 
     /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
     private VisualGestureBuilderFrameSource vgbFrameSource = null;
@@ -76,12 +89,16 @@ public class GestureDetector : IDisposable
         {
             // we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.AvailableGestures), 
             // but for this program, we only want to track one discrete gesture from the database, so we'll load it by name
+            Debug.Log("Loadwed gestureName: " + gestureName);
             foreach (Gesture gesture in database.AvailableGestures)
             {
-                if (gesture.Name.Equals(this.seatedGestureName))
-                {
-                    this.vgbFrameSource.AddGesture(gesture);
-                }
+                this.vgbFrameSource.AddGesture(gesture);
+//                
+                Debug.Log("foreach gesture name: " + gesture.Name);
+//                if (gesture.Name.Equals(this.gestureName))
+//                {
+//                    this.vgbFrameSource.AddGesture(gesture);
+//                }
             }
         }
     }
@@ -178,17 +195,39 @@ public class GestureDetector : IDisposable
                 {
                     // we only have one gesture in this source object, but you can get multiple gestures
                     foreach (Gesture gesture in this.vgbFrameSource.Gestures)
-                    {
-                        if (gesture.Name.Equals(this.seatedGestureName) && gesture.GestureType == GestureType.Discrete)
+                    {                        
+                        if (gesture.Name.Equals(this.gestureName) && gesture.GestureType == GestureType.Discrete)
                         {
                             DiscreteGestureResult result = null;
                             discreteResults.TryGetValue(gesture, out result);
+                            
+                            if (result != null)
+                            {
+                                if (this.OnGestureDetected != null)
+                                {
+                                    this.OnGestureDetected (this, new GestureEventArgs(true, result.Detected, result.Confidence, gesture.GestureType));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                var continuousResults = frame.ContinuousGestureResults;
+
+                if (continuousResults != null)
+                {
+                    foreach (Gesture gesture in this.vgbFrameSource.Gestures)
+                    {
+                        if (gesture.Name.Equals(this.gestureName) && gesture.GestureType == GestureType.Continuous)
+                        {
+                            ContinuousGestureResult result = null;
+                            continuousResults.TryGetValue(gesture, out result);
 
                             if (result != null)
                             {
                                 if (this.OnGestureDetected != null)
                                 {
-                                    this.OnGestureDetected(this, new GestureEventArgs(true, result.Detected, result.Confidence));
+                                    this.OnGestureDetected(this, new GestureEventArgs(true, result.Progress, gesture.GestureType));
                                 }
                             }
                         }
@@ -207,7 +246,8 @@ public class GestureDetector : IDisposable
     {
         if (this.OnGestureDetected != null)
         {
-            this.OnGestureDetected(this, new GestureEventArgs(false, false, 0.0f));
+            this.OnGestureDetected(this, new GestureEventArgs(false, false, 0.0f, GestureType.None));
+            this.OnGestureDetected(this, new GestureEventArgs(false, 0.0f, GestureType.None));
         }
     }
 }
