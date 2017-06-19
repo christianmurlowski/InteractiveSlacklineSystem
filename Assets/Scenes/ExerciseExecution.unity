@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleText: {fileID: 2052749361}
   bodyManager: {fileID: 1729214217}
-  durationManager: {fileID: 536700647}
+  durationManager: {fileID: 536700645}
   testText: {fileID: 712080024}
 --- !u!4 &2084021402
 Transform:

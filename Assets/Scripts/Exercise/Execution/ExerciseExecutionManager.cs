@@ -17,7 +17,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private KinectSensor _kinectSensor;
 	private Body[] _bodies = null;
 
-	public DurationManager durationManager;
+	public GameObject durationManager;
+	private DurationManager _durationManager;
 
 	private string _gestureName;
 
@@ -29,7 +30,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	void Start ()
 	{
 		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 3);// TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
@@ -38,7 +39,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		titleText.text = _currentExerciseData.exerciseName.ToUpper();
 		
 		
-		durationManager = GetComponent<DurationManager>();
+		_durationManager = durationManager.GetComponent<DurationManager>();
 
 
 		_bodyManager = bodyManager.GetComponent<BodyManager>();
@@ -93,13 +94,33 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void OnGestureDetected(object sender, GestureEventArgs e, int bodyIndex)
 	{
 		var isDetected = e.IsBodyTrackingIdValid && e.IsGestureDetected;
+
 		if (e.GestureType == GestureType.Discrete)
 		{
-			testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;		
+			if (e.DetectionConfidence > 0.4f)
+			{
+				// todo start timer
+				_durationManager.StartTimer();
+				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
+			}
+			else
+			{
+				_durationManager.StopTimer();
+				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
+			}
+//				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
 		else if (e.GestureType == GestureType.Continuous)
 		{
+			if (e.Progress > 0.4f)
+			{
+				// todo fill progressbar until 0.8 is reached and start time
+			}
 			testText.text = "CONTINUOUS: " + e.Progress;
+		}
+		else
+		{
+			_durationManager.StopTimer();
 		}
 	}	
 }

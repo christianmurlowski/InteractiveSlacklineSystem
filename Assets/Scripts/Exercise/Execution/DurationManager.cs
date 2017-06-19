@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
 public class DurationManager : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class DurationManager : MonoBehaviour
 	private float tempTimer;
 
 	private Color32 red, darkOrange, lightOrange, green;
+
+	private Stopwatch _attemptExecutionTime;
+	private Stopwatch _attemptOverallTime;
 
 	// TODO fillring
 	// Use this for initialization
@@ -30,11 +36,21 @@ public class DurationManager : MonoBehaviour
 		darkOrange = new Color32(227, 126, 34, 255);
 		lightOrange = new Color32(231, 201, 80, 255);
 		green = new Color32(91, 175, 76, 255);
+		
+		_attemptExecutionTime = new Stopwatch();
+		
 	}
 
 	public void StartTimer()
 	{
-		durationImage.fillAmount += Time.deltaTime / 5;
+		if (!_attemptExecutionTime.IsRunning)
+		{
+			_attemptExecutionTime.Start();		
+		}
+		var _attemptExecutionTimeInt = Mathf.FloorToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
+		counterText.text = _attemptExecutionTimeInt.ToString();
+
+		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f /5;
 
 		if (durationImage.fillAmount >= 1.0)
 		{
@@ -49,19 +65,28 @@ public class DurationManager : MonoBehaviour
 			changeColor(darkOrange);
 		}
 		
-		StartCounter();
 	}
 
+	public void StopTimer()
+	{
+		_attemptExecutionTime.Reset();
+		counterText.text = "0";
+		durationImage.fillAmount = 0.0f;
+	}
+	
 	private void StartCounter()
 	{
-		tempTimer += Time.deltaTime;
-		counterText.text = Mathf.Round(tempTimer).ToString();
+//		tempTimer += Time.deltaTime;
+//		counterText.text = Mathf.Round(tempTimer).ToString();
+//		counterText.text = _stopWatch.Elapsed;
 	}
 	public void changeColor(Color32 color)
 	{
 		durationImage.color = color;
 		counterText.color = color;
 	}
+	
+	
 
 
 // Update is called once per frame

@@ -224,7 +224,7 @@ public class GestureDetector : IDisposable
                             continuousResults.TryGetValue(gesture, out result);
 
                             if (result != null)
-                            {
+                            {    
                                 if (this.OnGestureDetected != null)
                                 {
                                     this.OnGestureDetected(this, new GestureEventArgs(true, result.Progress, gesture.GestureType));
