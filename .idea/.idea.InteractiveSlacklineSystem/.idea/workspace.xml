@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff780a82-55da-48ae-9d40-a1895a828ec0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Library/assetDatabase3" />
@@ -14,6 +15,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/ExerciseExecution.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/ExerciseExecution.unity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/christianMurlowski.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/Users/christianMurlowski.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/JSONData/exerciseData.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,76 +30,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.45100105">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ExerciseLevelManager.cs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/ExerciseLevelManager.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="54" />
-                  <folding>
-                    <marker date="1497357064338" expanded="false" signature="6:167" ph="..." />
-                    <marker date="1497357064338" expanded="true" signature="218:2579" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="377:684" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="702:2000" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="747:1981" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="972:1523" ph="/* Debug.Log(&quot;index of &quot; + exercise.exerciseName + &quot;: &quot; + Array.IndexOf(_allExercises, exercise)); ... */" />
-                    <marker date="1497357064338" expanded="true" signature="1769:1908" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="2087:2575" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="2137:2200" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="2207:2572" ph="{...}" />
-                    <marker date="1497357064338" expanded="true" signature="2385:2564" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ExerciseExecutionManager.cs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="579">
-                  <caret line="107" column="45" lean-forward="false" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
-                  <folding>
-                    <marker date="1497867780495" expanded="true" signature="6:181" ph="..." />
-                    <marker date="1497867780495" expanded="true" signature="236:3318" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="688:1667" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1316:1336" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1590:1663" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1723:2210" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1792:2207" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1852:2203" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="1962:2198" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="2290:2385" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="2469:3315" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="2585:3055" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="2626:2796" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="2804:2951" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="3107:3264" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="3137:3212" ph="{...}" />
-                    <marker date="1497867780495" expanded="true" signature="3271:3312" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="DurationManager.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="64" column="36" lean-forward="true" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+                <state relative-caret-position="-225">
+                  <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
                   <folding>
-                    <marker date="1497869853957" expanded="true" signature="6:195" ph="..." />
-                    <marker date="1497869853957" expanded="true" signature="241:2091" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="468:516" ph="/* TODO fillring ... */" />
-                    <marker date="1497869853957" expanded="true" signature="531:1006" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1033:1604" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1076:1120" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1406:1437" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1481:1518" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1562:1598" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1630:1730" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1761:1901" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="1765:1898" ph="/* tempTimer += Time.deltaTime; ... */" />
-                    <marker date="1497869853957" expanded="true" signature="1941:2007" ph="{...}" />
-                    <marker date="1497869853957" expanded="true" signature="2065:2089" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="6:214" ph="..." />
+                    <marker date="1497993214380" expanded="true" signature="260:2555" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="614:662" ph="/* TODO fillring ... */" />
+                    <marker date="1497993214380" expanded="true" signature="677:1456" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="1483:2104" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="1526:1570" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="1909:1940" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="1984:2021" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="2065:2101" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="2130:2287" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="2329:2395" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="2434:2476" ph="{...}" />
+                    <marker date="1497993214380" expanded="true" signature="2529:2553" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -106,11 +58,107 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="CanvasExerciseManager.cs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ExerciseExecutionManager.cs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="302">
+                  <caret line="126" column="23" lean-forward="false" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
+                  <folding>
+                    <marker date="1497993388758" expanded="false" signature="6:181" ph="..." />
+                    <marker date="1497993388758" expanded="true" signature="236:4599" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="791:2322" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="1455:1881" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="1711:1812" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="1971:1991" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2245:2318" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2378:2865" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2447:2862" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2507:2858" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2617:2853" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="2945:3040" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3124:4171" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3240:3911" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3281:3427" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3435:3807" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3556:3694" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3963:4120" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="3993:4068" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="4127:4168" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="4213:4556" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="4219:4322" ph="/* TODO toggle current repetition ... */" />
+                    <marker date="1497993388758" expanded="true" signature="4334:4468" ph="{...}" />
+                    <marker date="1497993388758" expanded="true" signature="4342:4443" ph="/* TODO Exercise completed ... */" />
+                    <marker date="1497993388758" expanded="true" signature="4588:4597" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GestureDetector.cs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Assets/Examples/Gesture/GestureDetector.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="293">
+                  <caret line="96" column="23" lean-forward="false" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="23" />
+                  <folding>
+                    <marker date="1497992032515" expanded="true" signature="0:304" ph="/* ------------------------------------------------------------------------------ ... */" />
+                    <marker date="1497992032515" expanded="false" signature="312:475" ph="..." />
+                    <marker date="1497992032515" expanded="true" signature="518:1419" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="945:1165" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="1271:1417" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="1421:1622" ph="/// Gesture Detector class which listens for VisualGestureBuilderFrame events from the service ... " />
+                    <marker date="1497992032515" expanded="true" signature="1665:9968" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="2468:2730" ph="/// Initializes a new instance of the GestureDetector class along with the gesture frame source and reader ... " />
+                    <marker date="1497992032515" expanded="true" signature="2784:4522" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="2824:2905" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="3346:3496" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="3762:4516" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="3785:4100" ph="/* we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.Availa ... */" />
+                    <marker date="1497992032515" expanded="true" signature="4168:4506" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="4240:4492" ph="/* Debug.Log(&quot;foreach gesture name: &quot; + gesture.Name); ... */" />
+                    <marker date="1497992032515" expanded="true" signature="4528:4712" ph="/// Gets or sets the body tracking ID associated with the current detector ... " />
+                    <marker date="1497992032515" expanded="true" signature="4740:5009" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="4758:4829" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="4842:5003" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="4909:4993" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5015:5245" ph="/// Gets or sets a value indicating whether or not the detector is currently paused ... " />
+                    <marker date="1497992032515" expanded="true" signature="5270:5533" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5288:5357" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5370:5527" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5435:5517" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5539:5626" ph="/// Disposes all unmanaged resources for the class ... " />
+                    <marker date="1497992032515" expanded="true" signature="5652:5727" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="5733:5977" ph="/// Disposes the VisualGestureBuilderFrameSource and VisualGestureBuilderFrameReader objects ... " />
+                    <marker date="1497992032515" expanded="true" signature="6028:6579" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="6057:6573" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="6112:6316" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="6362:6563" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="6585:6830" ph="/// Handles gesture detection results arriving from the sensor for the associated body tracking Id ... " />
+                    <marker date="1497992032515" expanded="true" signature="6934:9381" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7098:9375" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7139:9365" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7355:8376" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7556:8358" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7716:8336" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="7962:8310" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="8060:8280" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="8497:9351" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="8593:9333" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="8731:9311" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="8953:9285" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="9055:9255" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="9387:9612" ph="/// Handles the TrackingIdLost event for the VisualGestureBuilderSource object ... " />
+                    <marker date="1497992032515" expanded="true" signature="9693:9966" ph="{...}" />
+                    <marker date="1497992032515" expanded="true" signature="9743:9960" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CanvasExerciseManager.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../KinectInteractiveSlackline/Assets/KinectUIModule/Scripts/CanvasExerciseManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+                <state relative-caret-position="578">
+                  <caret line="127" column="13" lean-forward="false" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -119,69 +167,9 @@
           <file leaf-file-name="GestureManager.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../KinectInteractiveSlackline/Assets/Gesture/GestureManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1710">
-                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+                <state relative-caret-position="653">
+                  <caret line="98" column="50" lean-forward="false" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GestureDetector.cs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Examples/Gesture/GestureDetector.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1496">
-                  <caret line="226" column="33" lean-forward="false" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-                  <folding>
-                    <marker date="1497864117643" expanded="true" signature="0:304" ph="/* ------------------------------------------------------------------------------ ... */" />
-                    <marker date="1497864117643" expanded="false" signature="312:475" ph="..." />
-                    <marker date="1497864117643" expanded="true" signature="518:1419" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="945:1165" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="1271:1417" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="1421:1622" ph="/// Gesture Detector class which listens for VisualGestureBuilderFrame events from the service ... " />
-                    <marker date="1497864117643" expanded="true" signature="1665:9964" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="2468:2730" ph="/// Initializes a new instance of the GestureDetector class along with the gesture frame source and reader ... " />
-                    <marker date="1497864117643" expanded="true" signature="2784:4518" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="2824:2905" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="3346:3496" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="3762:4512" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="3785:4036" ph="/* we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.Availa ... */" />
-                    <marker date="1497864117643" expanded="true" signature="4166:4502" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="4325:4488" ph="/* if (gesture.Name.Equals(this.gestureName)) ... */" />
-                    <marker date="1497864117643" expanded="true" signature="4524:4708" ph="/// Gets or sets the body tracking ID associated with the current detector ... " />
-                    <marker date="1497864117643" expanded="true" signature="4736:5005" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="4754:4825" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="4838:4999" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="4905:4989" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5011:5241" ph="/// Gets or sets a value indicating whether or not the detector is currently paused ... " />
-                    <marker date="1497864117643" expanded="true" signature="5266:5529" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5284:5353" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5366:5523" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5431:5513" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5535:5622" ph="/// Disposes all unmanaged resources for the class ... " />
-                    <marker date="1497864117643" expanded="true" signature="5648:5723" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="5729:5973" ph="/// Disposes the VisualGestureBuilderFrameSource and VisualGestureBuilderFrameReader objects ... " />
-                    <marker date="1497864117643" expanded="true" signature="6024:6575" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="6053:6569" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="6108:6312" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="6358:6559" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="6581:6826" ph="/// Handles gesture detection results arriving from the sensor for the associated body tracking Id ... " />
-                    <marker date="1497864117643" expanded="true" signature="6930:9377" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7094:9371" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7135:9361" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7351:8372" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7552:8354" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7712:8332" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="7958:8306" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="8056:8276" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="8493:9347" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="8589:9329" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="8727:9307" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="8949:9281" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="9051:9251" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="9383:9608" ph="/// Handles the TrackingIdLost event for the VisualGestureBuilderSource object ... " />
-                    <marker date="1497864117643" expanded="true" signature="9689:9962" ph="{...}" />
-                    <marker date="1497864117643" expanded="true" signature="9739:9956" ph="{...}" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -192,8 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userE</find>
-      <find>userExerciseData</find>
       <find>r</find>
       <find>ExerciseDataEditor</find>
       <find>userDataFileName</find>
@@ -222,6 +208,8 @@
       <find>OnGestureDetected</find>
       <find>Source_TrackingIdLost</find>
       <find>stopwa</find>
+      <find>_gestureName</find>
+      <find>debug</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -279,8 +267,8 @@
         <option value="$PROJECT_DIR$/../KinectTestScenario/Assets/Gesture/GestureManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Exercise/Info/ExerciseInfoManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Examples/Gesture/GestureDetector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs" />
       </list>
     </option>
   </component>
@@ -444,12 +432,12 @@
       <workItem from="1497302544863" duration="9793000" />
       <workItem from="1497426221339" duration="9775000" />
       <workItem from="1497567657437" duration="12416000" />
-      <workItem from="1497697762910" duration="24117000" />
+      <workItem from="1497697762910" duration="30946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189238000" />
+    <option name="totallyTimeSpent" value="196067000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,15 +510,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs</url>
-          <line>45</line>
-          <properties startOffset="1117" endOffset="1120" documentPath="$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1773,92 +1753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/ExerciseLevelManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="54" />
-          <folding>
-            <marker date="1497357064338" expanded="false" signature="6:167" ph="..." />
-            <marker date="1497357064338" expanded="true" signature="218:2579" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="377:684" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="702:2000" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="747:1981" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="972:1523" ph="/* Debug.Log(&quot;index of &quot; + exercise.exerciseName + &quot;: &quot; + Array.IndexOf(_allExercises, exercise)); ... */" />
-            <marker date="1497357064338" expanded="true" signature="1769:1908" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="2087:2575" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="2137:2200" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="2207:2572" ph="{...}" />
-            <marker date="1497357064338" expanded="true" signature="2385:2564" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Examples/Gesture/GestureDetector.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="226" column="33" lean-forward="false" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-          <folding>
-            <marker date="1497864117643" expanded="true" signature="0:304" ph="/* ------------------------------------------------------------------------------ ... */" />
-            <marker date="1497864117643" expanded="false" signature="312:475" ph="..." />
-            <marker date="1497864117643" expanded="true" signature="518:1419" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="945:1165" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="1271:1417" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="1421:1622" ph="/// Gesture Detector class which listens for VisualGestureBuilderFrame events from the service ... " />
-            <marker date="1497864117643" expanded="true" signature="1665:9964" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="2468:2730" ph="/// Initializes a new instance of the GestureDetector class along with the gesture frame source and reader ... " />
-            <marker date="1497864117643" expanded="true" signature="2784:4518" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="2824:2905" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="3346:3496" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="3762:4512" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="3785:4036" ph="/* we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.Availa ... */" />
-            <marker date="1497864117643" expanded="true" signature="4166:4502" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="4325:4488" ph="/* if (gesture.Name.Equals(this.gestureName)) ... */" />
-            <marker date="1497864117643" expanded="true" signature="4524:4708" ph="/// Gets or sets the body tracking ID associated with the current detector ... " />
-            <marker date="1497864117643" expanded="true" signature="4736:5005" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="4754:4825" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="4838:4999" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="4905:4989" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5011:5241" ph="/// Gets or sets a value indicating whether or not the detector is currently paused ... " />
-            <marker date="1497864117643" expanded="true" signature="5266:5529" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5284:5353" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5366:5523" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5431:5513" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5535:5622" ph="/// Disposes all unmanaged resources for the class ... " />
-            <marker date="1497864117643" expanded="true" signature="5648:5723" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="5729:5973" ph="/// Disposes the VisualGestureBuilderFrameSource and VisualGestureBuilderFrameReader objects ... " />
-            <marker date="1497864117643" expanded="true" signature="6024:6575" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="6053:6569" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="6108:6312" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="6358:6559" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="6581:6826" ph="/// Handles gesture detection results arriving from the sensor for the associated body tracking Id ... " />
-            <marker date="1497864117643" expanded="true" signature="6930:9377" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7094:9371" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7135:9361" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7351:8372" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7552:8354" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7712:8332" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="7958:8306" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="8056:8276" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="8493:9347" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="8589:9329" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="8727:9307" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="8949:9281" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="9051:9251" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="9383:9608" ph="/// Handles the TrackingIdLost event for the VisualGestureBuilderSource object ... " />
-            <marker date="1497864117643" expanded="true" signature="9689:9962" ph="{...}" />
-            <marker date="1497864117643" expanded="true" signature="9739:9956" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../KinectInteractiveSlackline/Assets/Gesture/GestureManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1710">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/BodyManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-786">
@@ -1889,59 +1783,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/ExerciseLevelManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="107" column="45" lean-forward="false" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+        <state relative-caret-position="15">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
-            <marker date="1497867780495" expanded="true" signature="6:181" ph="..." />
-            <marker date="1497867780495" expanded="true" signature="236:3318" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="688:1667" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1316:1336" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1590:1663" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1723:2210" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1792:2207" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1852:2203" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="1962:2198" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="2290:2385" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="2469:3315" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="2585:3055" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="2626:2796" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="2804:2951" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="3107:3264" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="3137:3212" ph="{...}" />
-            <marker date="1497867780495" expanded="true" signature="3271:3312" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="6:167" ph="..." />
+            <marker date="1497357064338" expanded="true" signature="218:2579" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="377:684" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="702:2000" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="747:1981" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="972:1523" ph="/* Debug.Log(&quot;index of &quot; + exercise.exerciseName + &quot;: &quot; + Array.IndexOf(_allExercises, exercise)); ... */" />
+            <marker date="1497357064338" expanded="true" signature="1769:1908" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="2087:2575" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="2137:2200" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="2207:2572" ph="{...}" />
+            <marker date="1497357064338" expanded="true" signature="2385:2564" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../KinectInteractiveSlackline/Assets/Gesture/GestureManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="98" column="50" lean-forward="false" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../KinectInteractiveSlackline/Assets/KinectUIModule/Scripts/CanvasExerciseManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+        <state relative-caret-position="578">
+          <caret line="127" column="13" lean-forward="false" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Examples/Gesture/GestureDetector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="96" column="23" lean-forward="false" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="23" />
+          <folding>
+            <marker date="1497992032515" expanded="true" signature="0:304" ph="/* ------------------------------------------------------------------------------ ... */" />
+            <marker date="1497992032515" expanded="false" signature="312:475" ph="..." />
+            <marker date="1497992032515" expanded="true" signature="518:1419" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="945:1165" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="1271:1417" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="1421:1622" ph="/// Gesture Detector class which listens for VisualGestureBuilderFrame events from the service ... " />
+            <marker date="1497992032515" expanded="true" signature="1665:9968" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="2468:2730" ph="/// Initializes a new instance of the GestureDetector class along with the gesture frame source and reader ... " />
+            <marker date="1497992032515" expanded="true" signature="2784:4522" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="2824:2905" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="3346:3496" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="3762:4516" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="3785:4100" ph="/* we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.Availa ... */" />
+            <marker date="1497992032515" expanded="true" signature="4168:4506" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="4240:4492" ph="/* Debug.Log(&quot;foreach gesture name: &quot; + gesture.Name); ... */" />
+            <marker date="1497992032515" expanded="true" signature="4528:4712" ph="/// Gets or sets the body tracking ID associated with the current detector ... " />
+            <marker date="1497992032515" expanded="true" signature="4740:5009" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="4758:4829" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="4842:5003" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="4909:4993" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5015:5245" ph="/// Gets or sets a value indicating whether or not the detector is currently paused ... " />
+            <marker date="1497992032515" expanded="true" signature="5270:5533" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5288:5357" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5370:5527" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5435:5517" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5539:5626" ph="/// Disposes all unmanaged resources for the class ... " />
+            <marker date="1497992032515" expanded="true" signature="5652:5727" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="5733:5977" ph="/// Disposes the VisualGestureBuilderFrameSource and VisualGestureBuilderFrameReader objects ... " />
+            <marker date="1497992032515" expanded="true" signature="6028:6579" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="6057:6573" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="6112:6316" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="6362:6563" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="6585:6830" ph="/// Handles gesture detection results arriving from the sensor for the associated body tracking Id ... " />
+            <marker date="1497992032515" expanded="true" signature="6934:9381" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7098:9375" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7139:9365" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7355:8376" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7556:8358" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7716:8336" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="7962:8310" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="8060:8280" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="8497:9351" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="8593:9333" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="8731:9311" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="8953:9285" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="9055:9255" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="9387:9612" ph="/// Handles the TrackingIdLost event for the VisualGestureBuilderSource object ... " />
+            <marker date="1497992032515" expanded="true" signature="9693:9966" ph="{...}" />
+            <marker date="1497992032515" expanded="true" signature="9743:9960" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/DurationManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="64" column="36" lean-forward="true" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+        <state relative-caret-position="-225">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
-            <marker date="1497869853957" expanded="true" signature="6:195" ph="..." />
-            <marker date="1497869853957" expanded="true" signature="241:2091" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="468:516" ph="/* TODO fillring ... */" />
-            <marker date="1497869853957" expanded="true" signature="531:1006" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1033:1604" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1076:1120" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1406:1437" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1481:1518" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1562:1598" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1630:1730" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1761:1901" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="1765:1898" ph="/* tempTimer += Time.deltaTime; ... */" />
-            <marker date="1497869853957" expanded="true" signature="1941:2007" ph="{...}" />
-            <marker date="1497869853957" expanded="true" signature="2065:2089" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="6:214" ph="..." />
+            <marker date="1497993214380" expanded="true" signature="260:2555" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="614:662" ph="/* TODO fillring ... */" />
+            <marker date="1497993214380" expanded="true" signature="677:1456" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="1483:2104" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="1526:1570" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="1909:1940" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="1984:2021" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="2065:2101" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="2130:2287" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="2329:2395" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="2434:2476" ph="{...}" />
+            <marker date="1497993214380" expanded="true" signature="2529:2553" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Exercise/Execution/ExerciseExecutionManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="126" column="23" lean-forward="false" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
+          <folding>
+            <marker date="1497993388758" expanded="false" signature="6:181" ph="..." />
+            <marker date="1497993388758" expanded="true" signature="236:4599" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="791:2322" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="1455:1881" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="1711:1812" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="1971:1991" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2245:2318" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2378:2865" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2447:2862" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2507:2858" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2617:2853" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="2945:3040" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3124:4171" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3240:3911" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3281:3427" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3435:3807" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3556:3694" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3963:4120" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="3993:4068" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="4127:4168" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="4213:4556" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="4219:4322" ph="/* TODO toggle current repetition ... */" />
+            <marker date="1497993388758" expanded="true" signature="4334:4468" ph="{...}" />
+            <marker date="1497993388758" expanded="true" signature="4342:4443" ph="/* TODO Exercise completed ... */" />
+            <marker date="1497993388758" expanded="true" signature="4588:4597" ph="{...}" />
           </folding>
         </state>
       </provider>

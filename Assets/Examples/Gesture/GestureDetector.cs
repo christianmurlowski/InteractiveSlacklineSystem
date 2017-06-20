@@ -89,12 +89,12 @@ public class GestureDetector : IDisposable
         {
             // we could load all available gestures in the database with a call to vgbFrameSource.AddGestures(database.AvailableGestures), 
             // but for this program, we only want to track one discrete gesture from the database, so we'll load it by name
-            Debug.Log("Loadwed gestureName: " + gestureName);
+//            Debug.Log("Loadwed gestureName: " + gestureName);
             foreach (Gesture gesture in database.AvailableGestures)
             {
                 this.vgbFrameSource.AddGesture(gesture);
 //                
-                Debug.Log("foreach gesture name: " + gesture.Name);
+//                Debug.Log("foreach gesture name: " + gesture.Name);
 //                if (gesture.Name.Equals(this.gestureName))
 //                {
 //                    this.vgbFrameSource.AddGesture(gesture);

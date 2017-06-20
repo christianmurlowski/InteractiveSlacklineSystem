@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
@@ -17,12 +18,21 @@ public class DurationManager : MonoBehaviour
 	private Color32 red, darkOrange, lightOrange, green;
 
 	private Stopwatch _attemptExecutionTime;
+	private int _lastAttemptExecutionTime = 0;
 	private Stopwatch _attemptOverallTime;
+	private int _attemptExecutionTimeInt;
+	
+	private ExerciseData _userExerciseData;
+
 
 	// TODO fillring
 	// Use this for initialization
 	void Start ()
 	{
+		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentExerciseId", 1);// TODO Just for test purposes -> Delete in production
+		_userExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+		
 		durationImage.GetComponent<Image>();
 		counterText.GetComponent<Text>();
 		
@@ -38,7 +48,6 @@ public class DurationManager : MonoBehaviour
 		green = new Color32(91, 175, 76, 255);
 		
 		_attemptExecutionTime = new Stopwatch();
-		
 	}
 
 	public void StartTimer()
@@ -47,7 +56,9 @@ public class DurationManager : MonoBehaviour
 		{
 			_attemptExecutionTime.Start();		
 		}
-		var _attemptExecutionTimeInt = Mathf.FloorToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
+		_attemptExecutionTimeInt = Mathf.RoundToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
+		_lastAttemptExecutionTime = _attemptExecutionTimeInt;
+
 		counterText.text = _attemptExecutionTimeInt.ToString();
 
 		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f /5;
@@ -64,30 +75,29 @@ public class DurationManager : MonoBehaviour
 		{
 			changeColor(darkOrange);
 		}
-		
 	}
 
 	public void StopTimer()
 	{
+//		_userExerciseData.repetitions
+		
 		_attemptExecutionTime.Reset();
 		counterText.text = "0";
 		durationImage.fillAmount = 0.0f;
+		changeColor(red);
 	}
 	
-	private void StartCounter()
-	{
-//		tempTimer += Time.deltaTime;
-//		counterText.text = Mathf.Round(tempTimer).ToString();
-//		counterText.text = _stopWatch.Elapsed;
-	}
 	public void changeColor(Color32 color)
 	{
 		durationImage.color = color;
 		counterText.color = color;
 	}
-	
-	
 
+
+	public int GetlatestTimeInSeconds()
+	{
+		return _lastAttemptExecutionTime;
+	}
 
 // Update is called once per frame
 	void Update () {

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class ExerciseExecutionManager : MonoBehaviour
 {
 	private ExerciseData _currentExerciseData;
+	private RepetitionData _currentRepetition;
 
 	public Text titleText;
 
@@ -20,10 +21,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public GameObject durationManager;
 	private DurationManager _durationManager;
 
-	private string _gestureName;
-
 	private List<GestureDetector> _gestureDetectorList = null;
 
+	public GameObject toggle;
+	public Transform toggleGroup;
+	private Toggle[] _toggleArray;
 
 	public Text testText;
 	// Use this for initialization
@@ -34,16 +36,31 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
-		Debug.Log(_currentExerciseData.exerciseName);
-
 		titleText.text = _currentExerciseData.exerciseName.ToUpper();
-		
-		
+				
 		_durationManager = durationManager.GetComponent<DurationManager>();
+		
+		_toggleArray = new Toggle[_currentExerciseData.repetitions.Length];
+		
+		// Create and check toggles for each repetition of current exercise
+		foreach (var repetition in _currentExerciseData.repetitions)
+		{
+			GameObject gameObjectToggle = Instantiate(toggle);
+			Toggle currentToggle = gameObjectToggle.GetComponent<Toggle>();
 
+			_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, repetition)] = currentToggle;
+			
+			if (repetition.accomplished)
+			{
+				currentToggle.GetComponent<Toggle>().isOn = true;
+				_currentRepetition = repetition;
+			}
+			
+			gameObjectToggle.transform.SetParent(toggleGroup, false);
+		}
+		
 
 		_bodyManager = bodyManager.GetComponent<BodyManager>();
-//		_bodyManager = BodyManager.BM;
 		if (_bodyManager == null)
 		{
 			 return;
@@ -99,13 +116,19 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			if (e.DetectionConfidence > 0.4f)
 			{
-				// todo start timer
 				_durationManager.StartTimer();
 				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 			}
 			else
 			{
 				_durationManager.StopTimer();
+				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
+				{
+					// TODO Make a curoutine to check and toggle
+					Debug.Log("ACCOMPLISHED REPETITION");
+					ToggleAndCheckRepetition();
+				}
+				
 				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 			}
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
@@ -122,5 +145,28 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			_durationManager.StopTimer();
 		}
-	}	
+	}
+
+	private void ToggleAndCheckRepetition()
+	{
+		// TODO toggle current repetition
+		
+		// TODO Save to json file
+		
+		//TODO check if last repeptition.
+		if (true)
+		{
+			// TODO Exercise completed
+			
+			// TODO save to user json file --> currentexercisedata is completed
+			FinishExercise();
+		}
+		// TODO If not then next repetition is current repetition and return to execution
+
+	}
+
+	private void FinishExercise()
+	{
+		
+	}
 }
