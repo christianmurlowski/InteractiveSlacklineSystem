@@ -161,12 +161,16 @@ public class ExerciseExecutionManager : MonoBehaviour
 			// TODO save to user json file --> currentexercisedata is completed
 			FinishExercise();
 		}
-		// TODO If not then next repetition is current repetition and return to execution
+		else
+		{
+			// TODO If not then next repetition is current repetition and return to execution
+			
+		}
 
 	}
 
 	private void FinishExercise()
 	{
-		
+		// TODO Load summary scene and show stats and then load main menu
 	}
 }
