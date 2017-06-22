@@ -1,4 +1,6 @@
-﻿Shader "Custom/RadialGradientSurfaceShader" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/RadialGradientSurfaceShader" {
    Properties
        {
            _Color1 ("Top Color", Color) = (1, 1, 1, 0)
@@ -41,7 +43,7 @@
            float cosX = cos ( _Angle );
            float sinY = sin ( _Angle );
            float2x2 rotationMatrix = float2x2( cosX, -sinX, sinY, cosX);
-           o.position = mul (UNITY_MATRIX_MVP, v.position);
+           o.position = UnityObjectToClipPos (v.position);
            o.texcoord.xz = mul(v.texcoord.xz, rotationMatrix);
            o.texcoord.y = v.texcoord.y;
            return o;

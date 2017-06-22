@@ -55,6 +55,8 @@ public class ExerciseLevelManager : MonoBehaviour
 			button.GetComponent<Button>().onClick.AddListener(() =>
 			{
 				PlayerPrefs.SetInt("CurrentExerciseId", Array.IndexOf(_allExercises, exercise));
+				Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+
 				SceneManager.LoadScene("ExerciseInfo");
 			});
 		

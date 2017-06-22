@@ -31,9 +31,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		
+		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
 		titleText.text = _currentExerciseData.exerciseName.ToUpper();
@@ -72,7 +73,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		Debug.Log(_bodyManager + " | " + _bodies);
 		
 		_gestureDetectorList = new List<GestureDetector>();
-
+		
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
 		{
 			_gestureDetectorList.Add(new GestureDetector(_kinectSensor));
@@ -122,10 +123,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 			else
 			{
 				_durationManager.StopTimer();
+				// if tracked time is higher than given time o the repetition
 				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
 				{
 					// TODO Make a curoutine to check and toggle
-					Debug.Log("ACCOMPLISHED REPETITION");
 					ToggleAndCheckRepetition();
 				}
 				
@@ -149,12 +150,20 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	private void ToggleAndCheckRepetition()
 	{
+		
+		Debug.Log("ACCOMPLISHED REPETITION");
+		
+		// Stop the current tracking
+		StopTracking();
+
 		// TODO toggle current repetition
+		_currentRepetition.accomplished = true;
+		
 		
 		// TODO Save to json file
 		
 		//TODO check if last repeptition.
-		if (true)
+		if (false)
 		{
 			// TODO Exercise completed
 			
@@ -163,12 +172,27 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 		else
 		{
+			StopTracking();
 			// TODO If not then next repetition is current repetition and return to execution
-			
 		}
 
 	}
 
+	public void StopTracking()
+	{
+		foreach (var gesture in _gestureDetectorList)
+		{
+			gesture.IsPaused = true;
+		}
+	}    
+    
+	public void StartTracking()
+	{
+		foreach (var gesture in _gestureDetectorList)
+		{
+			gesture.IsPaused = false;
+		}
+	}
 	private void FinishExercise()
 	{
 		// TODO Load summary scene and show stats and then load main menu
