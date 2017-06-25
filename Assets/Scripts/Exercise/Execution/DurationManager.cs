@@ -25,9 +25,8 @@ public class DurationManager : MonoBehaviour
 	private ExerciseData _currentExerciseData;
 
 
-//	private ExerciseExecutionManager exMan;
-	// TODO fillring
-	// Use this for initialization
+	public float testTime;
+	
 	void Start ()
 	{
 		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
@@ -49,22 +48,27 @@ public class DurationManager : MonoBehaviour
 		green = new Color32(91, 175, 76, 255);
 		
 		_attemptExecutionTime = new Stopwatch();
-//		exMan = new GameObject().AddComponent<ExerciseExecutionManager>();
-//		Debug.Log(" exMan._currentRepetition.minTime: " + exMan._currentRepetition.minTime);
 	}
 
 	public void StartTimer()
 	{
+		// Check if timer is running
 		if (!_attemptExecutionTime.IsRunning)
 		{
 			_attemptExecutionTime.Start();		
 		}
-		_attemptExecutionTimeInt = Mathf.RoundToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
+		
+		_attemptExecutionTimeInt = Mathf.FloorToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
 		_lastAttemptExecutionTime = _attemptExecutionTimeInt;
 
+		// Update timer within progress circle
 		counterText.text = _attemptExecutionTimeInt.ToString();
 
-		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / _currentExerciseData.repetitions[PlayerPrefs.GetInt("CurrentRepetition")].minTime;
+		// TODO TESTING
+		testTime = _attemptExecutionTime.ElapsedMilliseconds * 0.001f;
+		// Update progress circle
+		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / 
+		                           (_currentExerciseData.repetitions[PlayerPrefs.GetInt("CurrentRepetitionId")].minTime);
 
 		if (durationImage.fillAmount >= 1.0)
 		{

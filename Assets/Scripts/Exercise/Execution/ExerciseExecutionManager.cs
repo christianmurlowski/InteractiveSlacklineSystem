@@ -6,12 +6,13 @@ using System.Linq;
 using Windows.Kinect;
 using Microsoft.Kinect.VisualGestureBuilder;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ExerciseExecutionManager : MonoBehaviour
 {
 	private ExerciseData _currentExerciseData;
-	public RepetitionData _currentRepetition;
+	private RepetitionData _currentRepetition;
 
 	public Text titleText;
 
@@ -30,6 +31,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private Toggle[] _toggleArray;
 
 	public CanvasGroup successPanel;
+	public Animation successAnimation;
+	private float progress = 0.0f;
 	
 	public Text testText;
 	// Use this for initialization
@@ -46,10 +49,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_durationManager = durationManager.GetComponent<DurationManager>();
 
 		successPanel = successPanel.GetComponent<CanvasGroup>();
+		successAnimation = successPanel.GetComponent<Animation>();
+		
 		
 		_toggleArray = new Toggle[_currentExerciseData.repetitions.Length];
-
-		bool lastAccomplished = false;
+		
 		// Create and check toggles for each repetition of current exercise
 		foreach (var repetition in _currentExerciseData.repetitions)
 		{
@@ -57,23 +61,22 @@ public class ExerciseExecutionManager : MonoBehaviour
 			Toggle currentToggle = gameObjectToggle.GetComponent<Toggle>();
 
 			_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, repetition)] = currentToggle;
-
-			if (repetition == _currentExerciseData.repetitions[0] && !repetition.accomplished || lastAccomplished == true)
-			{
-				_currentRepetition = repetition;
-				lastAccomplished = false;
-			}
-			else if (repetition.accomplished)
-			{
-				lastAccomplished = true;
-				currentToggle.GetComponent<Toggle>().isOn = true;
-			}
 			
+			if (repetition.accomplished)
+			{
+				currentToggle.GetComponent<Toggle>().isOn = true;
+				Debug.Log("IF");
+			}
+			else if (_currentRepetition == null)
+			{
+				Debug.Log("ELSE");
+				_currentRepetition = repetition;
+			}
+			if (_currentRepetition != null) Debug.Log("MINTIME: " + _currentRepetition.minTime); // TODO Just for test purposes -> Delete in production
 			gameObjectToggle.transform.SetParent(toggleGroup, false);
-			Debug.Log(_currentRepetition.minTime);
 		}
 		
-		PlayerPrefs.SetInt("CurrentRepetition", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));// TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));// TODO Just for test purposes -> Delete in production
 
 		_bodyManager = bodyManager.GetComponent<BodyManager>();
 		if (_bodyManager == null)
@@ -134,7 +137,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("CONFIDENCE: " + e.DetectionConfidence);
+//				Debug.Log("CONFIDENCE: " + e.DetectionConfidence);
 				_durationManager.StopTimer();
 				
 				// if tracked time is higher than given time o the repetition
@@ -142,7 +145,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 				
 				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
 				{
-					// TODO Make a curoutine to check and toggle
 					ToggleAndCheckRepetition();
 				}
 				
@@ -150,7 +152,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
-		else if (e.GestureType == GestureType.Continuous)
+		else if (e.GestureType == GestureType.Continuous) // TODO implement continous gestures
 		{
 			if (e.Progress > 0.4f)
 			{
@@ -169,103 +171,108 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_durationManager.ResetlatestTimeInSeconds();
 		
 		Debug.Log("ACCOMPLISHED REPETITION");
-		
-		// Stop the current tracking
-		StopTracking();
-		Debug.Log("_currentExerciseData.repetitions[0].accomplished: " + _currentExerciseData.repetitions[0].accomplished);
 
-		// TODO toggle current repetition
+		// toggle current repetition
 		_currentRepetition.accomplished = true;
-		Debug.Log("_currentExerciseData.repetitions[0].accomplished: " + _currentExerciseData.repetitions[0].accomplished);
 		_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition)].isOn = true;
 		
-		StartCoroutine("SuccessFadeIn");
-
-		// TODO Save to json file
-		SaveCurrentExerciseData();
-	}
-
-	IEnumerator SuccessFadeIn()
-	{	
-		Debug.Log("SuccessFadeIn");
-		for (float f = 1f;  f >= 0 ; f -= 0.1f)
-		{
-			successPanel.alpha += 0.1f;
-			yield return new WaitForSeconds(0.05f);
-		}
-
+		// Check if last repetition
 		if (_currentRepetition == _currentExerciseData.repetitions.Last())
 		{
-			// TODO Exercise completed
+			// Exercise completed and accomplished
+			_currentExerciseData.accomplished = true;
 			
-			// TODO save to user json file --> currentexercisedata is completed
-			FinishExercise();
+			// Unlock next exercise
+			UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].isInteractable = true;
+			UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
+			
+			// Load the summary scene
+			LoadSummaryScene();
 		}
 		else
 		{
-			StartCoroutine("SuccessFadeOut");
-			StartTracking();
-			// TODO If not then next repetition is current repetition and return to execution
+			//  If not last rep --> next rep is currentrepetition
 			_currentRepetition =
 				_currentExerciseData.repetitions[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition) + 1];
-			PlayerPrefs.SetInt("CurrentRepetition", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
+			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
 		}
-		
-		
-		yield return null;
+
+		// Save data to user json file
+		SaveCurrentExerciseData();
+	}
+
+//	
+//	IEnumerator SuccessFadeIn()
+//	{
+//		float time = 4f;
+//
+//		while (successPanel.alpha < 1)
+//		{
+//			successPanel.alpha += Time.deltaTime / time;
+////			Debug.Log("while> " + successPanel.alpha);
+//			yield return new WaitForSeconds(0.01f);
+//
+//		}
+//		
+//		Debug.Log("SuccessFadeIn");
+////		for (float f = 1f;  f >= 0 ; f -= 0.1f)
+////		{
+////			successPanel.alpha += 0.1f;
+////			yield return new WaitForSeconds(0.05f);
+////		}
+//		yield return null;
+//	}
+//
+//	private void StartSuccessAnimation()
+//	{
+//		successAnimation.Play();
+//
+//		if (!successAnimation.isPlaying)
+//		{
+//			
+//		}
+//	}
+//	
+//	IEnumerator SuccessFadeOut()
+//	{
+//		Debug.Log("SuccessFadeOut");
+//		for (float f = 5f;  f >= 0 ; f -= 0.1f)
+//		{
+//			successPanel.alpha -= 0.1f;
+//			yield return new WaitForSeconds(0.05f);
+//		}
+//		yield return null;
+//	}
+//	
+//	public void StopTracking()
+//	{
+//		foreach (var gesture in _gestureDetectorList)
+//		{
+////			gesture.IsPaused = true;
+//		}
+//	}    
+//    
+//	public void StartTracking()
+//	{
+//		foreach (var gesture in _gestureDetectorList)
+//		{
+////			gesture.IsPaused = false;
+//		}
+//	}
+//	
+	private void LoadSummaryScene()
+	{	
+		SceneManager.LoadScene("ExerciseSummary");
 	}
 	
-	IEnumerator SuccessFadeOut()
-	{
-		Debug.Log("SuccessFadeOut");
-		for (float f = 5f;  f >= 0 ; f -= 0.1f)
-		{
-			successPanel.alpha -= 0.1f;
-			yield return new WaitForSeconds(0.05f);
-		}
-		yield return null;
-	}
-	
-	public void StopTracking()
-	{
-		foreach (var gesture in _gestureDetectorList)
-		{
-//			gesture.IsPaused = true;
-		}
-	}    
-    
-	public void StartTracking()
-	{
-		foreach (var gesture in _gestureDetectorList)
-		{
-//			gesture.IsPaused = false;
-		}
-	}
-	private void FinishExercise()
-	{
-		// TODO Load summary scene and show stats and then load main menu
-	}
-	
-	// TODO Just for test purposes -> Delete in production
+	// TODO CHECK Adjust it, call it from an extra json saving class
 	public void SaveCurrentExerciseData()
 	{        
-        
 		string currentUsersFilePath = PlayerPrefs.GetString("CurrentUserFilePath");
-		Debug.Log(currentUsersFilePath);
 		
-		Debug.Log(UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")].exerciseName);
-		Debug.Log(_currentExerciseData.exerciseName);
-		
-		
-		Debug.Log("SaveCurrentExerciseData: " + UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")].repetitions[0].accomplished);
 		UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")] = _currentExerciseData;
-		Debug.Log("SaveCurrentExerciseData: " + UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")].repetitions[0].accomplished);
-
 		
 		string currentExerciseDataAsJson = JsonUtility.ToJson(UserDataObject.currentUser);
 		File.WriteAllText(currentUsersFilePath, currentExerciseDataAsJson);
-		
-
-		
 	}
 }
