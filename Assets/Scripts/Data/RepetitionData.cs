@@ -7,5 +7,7 @@ public class RepetitionData
 {
     public float minTime;
     public bool accomplished;
+    public float userTime;
+    public float confidence;
 
 }

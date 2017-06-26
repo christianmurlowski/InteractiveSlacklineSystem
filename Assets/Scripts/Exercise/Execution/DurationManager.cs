@@ -18,7 +18,7 @@ public class DurationManager : MonoBehaviour
 	private Color32 red, darkOrange, lightOrange, green;
 
 	private Stopwatch _attemptExecutionTime;
-	private int _lastAttemptExecutionTime = 0;
+	private float _lastAttemptExecutionTime = 0f;
 	private Stopwatch _attemptOverallTime;
 	private int _attemptExecutionTimeInt;
 	
@@ -59,7 +59,7 @@ public class DurationManager : MonoBehaviour
 		}
 		
 		_attemptExecutionTimeInt = Mathf.FloorToInt(_attemptExecutionTime.ElapsedMilliseconds * 0.001f);
-		_lastAttemptExecutionTime = _attemptExecutionTimeInt;
+		_lastAttemptExecutionTime = _attemptExecutionTime.ElapsedMilliseconds * 0.001f;
 
 		// Update timer within progress circle
 		counterText.text = _attemptExecutionTimeInt.ToString();
@@ -100,13 +100,13 @@ public class DurationManager : MonoBehaviour
 		counterText.color = color;
 	}
 
-	public int GetlatestTimeInSeconds()
+	public float GetlatestTimeInSeconds()
 	{
 		return _lastAttemptExecutionTime;
 	}
 	public void ResetlatestTimeInSeconds()
 	{
-		_lastAttemptExecutionTime = 0;
+		_lastAttemptExecutionTime = 0f;
 	}
 
 // Update is called once per frame

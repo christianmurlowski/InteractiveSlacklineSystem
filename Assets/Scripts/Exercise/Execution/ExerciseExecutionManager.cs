@@ -33,8 +33,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public CanvasGroup successPanel;
 	public Animation successAnimation;
 	private float progress = 0.0f;
+	private float _currentRepetitionConfidence = 0.0f;
 	
-	public Text testText;
+	public Text testText; // TODO Just for test purposes -> Delete in production
+
+	private int confidenceIterator;
 	// Use this for initialization
 	void Start ()
 	{
@@ -72,11 +75,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 				Debug.Log("ELSE");
 				_currentRepetition = repetition;
 			}
-			if (_currentRepetition != null) Debug.Log("MINTIME: " + _currentRepetition.minTime); // TODO Just for test purposes -> Delete in production
 			gameObjectToggle.transform.SetParent(toggleGroup, false);
 		}
 		
-		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));// TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
 
 		_bodyManager = bodyManager.GetComponent<BodyManager>();
 		if (_bodyManager == null)
@@ -128,21 +130,23 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{
 		var isDetected = e.IsBodyTrackingIdValid && e.IsGestureDetected;
 
+		// Discrete Gesture tracking
 		if (e.GestureType == GestureType.Discrete)
 		{
+
 			if (e.DetectionConfidence > 0.4f)
 			{
 				_durationManager.StartTimer();
 				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
+				
+				confidenceIterator++;
+				_currentRepetitionConfidence += e.DetectionConfidence * 100;
 			}
 			else
 			{
-//				Debug.Log("CONFIDENCE: " + e.DetectionConfidence);
 				_durationManager.StopTimer();
 				
-				// if tracked time is higher than given time o the repetition
-				
-				
+				// if tracked time is greater than given time of the repetition
 				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
 				{
 					ToggleAndCheckRepetition();
@@ -168,10 +172,14 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	private void ToggleAndCheckRepetition()
 	{
-		_durationManager.ResetlatestTimeInSeconds();
-		
 		Debug.Log("ACCOMPLISHED REPETITION");
-
+		
+		// Save the time and confidence for the current repetition
+		_currentRepetition.userTime = _durationManager.GetlatestTimeInSeconds();
+		_currentRepetition.confidence = _currentRepetitionConfidence / confidenceIterator;
+		
+		Debug.Log("time: " + _currentRepetition.userTime + " || confidence: " +  _currentRepetition.confidence);
+		
 		// toggle current repetition
 		_currentRepetition.accomplished = true;
 		_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition)].isOn = true;
@@ -199,6 +207,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 		// Save data to user json file
 		SaveCurrentExerciseData();
+		
+		_currentRepetitionConfidence = 0;				
+		confidenceIterator = 0;
+		_durationManager.ResetlatestTimeInSeconds();
 	}
 
 //	
