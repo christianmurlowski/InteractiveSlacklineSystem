@@ -8,7 +8,7 @@ using UnityEngine;
 public class ExerciseDataEditor : EditorWindow
 {
     public ExerciseObject exerciseDataObject;
-    private string exerciseDataProjectFilePath = "/StreamingAssets/JSONData/exerciseData.json";
+    private string exerciseDataProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
 
     private Vector2 scrollPos;
     

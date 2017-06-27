@@ -41,6 +41,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
 		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
 		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		
