@@ -12,10 +12,12 @@ public class DataController : MonoBehaviour
 
 	public UserData currentUser;
 
-	private string exerciseDataFileName = "JSONData/exerciseData.json";
+	private string exerciseDataFileName = "JSONData/exerciseDataProduction.json";
 	
 	void Start ()
 	{
+//		UserSelectionManager.TestSetCurrentUser();    // TODO Just for test purposes -> Delete in production
+
 		currentUser = UserDataObject.currentUser;
 
 		Debug.Log("START " + currentUser.name);
@@ -62,6 +64,7 @@ public class DataController : MonoBehaviour
 			// Initial fill current users exercises with exercise data
 			if (currentUser.exerciseData.Length == 0)
 			{
+				Debug.Log("CURRENT USER HAS NO EXERCISES");
 				currentUser.exerciseData = allDefaultExercisesDataArray;
 				Debug.Log("in if currentuser exercise: " + currentUser.exerciseData.Length);
 				SaveUserData(currentUser);

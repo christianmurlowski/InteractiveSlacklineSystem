@@ -18,18 +18,38 @@ public class ExerciseSummaryManager : MonoBehaviour {
 
 	public Button mainMenuButton;
 	
+	public GameObject kinectManager;
+	
 	// Use this for initialization
 	void Start () {
-	
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+		
+		// Enable handcursor in execution mode
+		kinectManager = GameObject.Find("KinectManager");
+		kinectManager.GetComponent<InteractionManager>().showHandCursor = true;
+		Debug.Log("Enable handcursor");
+		
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 
 		Debug.Log(_currentExerciseData.exerciseName);
 		
+		// Set the title of current exercise
 		exerciseNameText.text = "Exercise " + _currentExerciseData.exerciseName.ToUpper() + " completed!";
+		
+		// Output summary data from exercise
+		OutputData();
+		
+		mainMenuButton.onClick.AddListener(() =>
+		{
+			SceneManager.LoadScene("MainMenu");
+		});
+	}
 
+
+	private void OutputData()
+	{
 		foreach (var repetition in _currentExerciseData.repetitions)
 		{
 			GameObject timeGameObject = Instantiate(timePanel);
@@ -46,10 +66,5 @@ public class ExerciseSummaryManager : MonoBehaviour {
 			timeGameObject.transform.SetParent(timeSpacer, false);
 			confidenceGameObject.transform.SetParent(confidenceSpacer, false);
 		}
-		
-		mainMenuButton.onClick.AddListener(() =>
-		{
-			SceneManager.LoadScene("MainMenu");
-		});
 	}
 }

@@ -15,11 +15,12 @@ public class ExerciseInfoManager : MonoBehaviour
 	public Text exerciseName;
 	
 	private ExerciseData _currentExercise;
+	
 	// Use this for initialization
 	void Start ()
 	{
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		_currentExercise = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -49,16 +50,9 @@ public class ExerciseInfoManager : MonoBehaviour
 			gameObjectTipPanel.transform.SetParent(spacer, false);
 		}
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
-/*
-	TODO
-	- next button to go into exercise
-	- DELETE ALL EVENTSYSTEMS IN OTHER SCENES
-	- create default images
-	- load preview videofile into content
-*/
-
+	
+//	// Update is called once per frame
+//	void Update () {
+//		
+//	}
 }

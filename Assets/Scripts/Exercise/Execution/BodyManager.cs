@@ -24,21 +24,21 @@ public class BodyManager : MonoBehaviour
 		return _Sensor;
 	}
 
-	private void Awake()
-	{
-		if (BM == null)
-		{
-			DontDestroyOnLoad(gameObject);
-			BM = this;
-		}
-		else
-		{
-			if (BM != null)
-			{
-				Destroy(gameObject);
-			}
-		}
-	}
+//	private void Awake()
+//	{
+//		if (BM == null)
+//		{
+//			DontDestroyOnLoad(gameObject);
+//			BM = this;
+//		}
+//		else
+//		{
+//			if (BM != null)
+//			{
+//				Destroy(gameObject);
+//			}
+//		}
+//	}
 
 	void Start () 
 	{

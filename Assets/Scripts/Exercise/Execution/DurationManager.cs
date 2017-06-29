@@ -24,13 +24,10 @@ public class DurationManager : MonoBehaviour
 	
 	private ExerciseData _currentExerciseData;
 
-
-	public float testTime;
-	
 	void Start ()
 	{
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
 		durationImage.GetComponent<Image>();
@@ -64,8 +61,6 @@ public class DurationManager : MonoBehaviour
 		// Update timer within progress circle
 		counterText.text = _attemptExecutionTimeInt.ToString();
 
-		// TODO TESTING
-		testTime = _attemptExecutionTime.ElapsedMilliseconds * 0.001f;
 		// Update progress circle
 		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / 
 		                           (_currentExerciseData.repetitions[PlayerPrefs.GetInt("CurrentRepetitionId")].minTime);

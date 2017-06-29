@@ -10,6 +10,10 @@ public class UserDataEditor : EditorWindow
     public UserData currentUser;
     private string allUserDataProjectFilePath = "/StreamingAssets/JSONData/Users/";
     private string currentUserDataFilePath = "/StreamingAssets/JSONData/Users/";
+    
+    
+    private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
+    private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
 
     private string userName;
 
@@ -47,9 +51,14 @@ public class UserDataEditor : EditorWindow
                 }                
             }
 
-            if (GUILayout.Button("Load Default Exercises Data"))
+            if (GUILayout.Button("Load Production Exercises Data"))
             {
-                LoadExercisesIntoUserData();
+                LoadExercisesIntoUserData(_exerciseDataProductionProjectFilePath);
+            }            
+            
+            if (GUILayout.Button("Load Test Exercises Data"))
+            {
+                LoadExercisesIntoUserData(_exerciseDataTestProjectFilePath);
             }
             
             if (GUILayout.Button("Delete User"))
@@ -134,10 +143,10 @@ public class UserDataEditor : EditorWindow
         File.WriteAllText(filePath, currentUserDataAsJson);
     }
 
-    private void LoadExercisesIntoUserData()
+    private void LoadExercisesIntoUserData(string filePath)
     {
         _exerciseDataEditor = ScriptableObject.CreateInstance<ExerciseDataEditor>();
-        _exerciseDataEditor.LoadExerciseData();
+        _exerciseDataEditor.LoadExerciseData(filePath);
         
         currentUser.exerciseData = _exerciseDataEditor.exerciseDataObject.exerciseDataArray;
     }

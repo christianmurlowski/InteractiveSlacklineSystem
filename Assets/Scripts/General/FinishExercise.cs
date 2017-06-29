@@ -45,7 +45,6 @@ public class FinishExercise : MonoBehaviour
 			UserDataObject.currentUser.exerciseData[nextExerciseId].isInteractable = true;
 			UserDataObject.currentUser.exerciseData[nextExerciseId].unlocked = 1;
 			
-			// TODO: save it to json file
 
 			string currentExerciseAsJson = JsonUtility.ToJson(UserDataObject.currentUser);
 			File.WriteAllText(PlayerPrefs.GetString("CurrentUserFilePath"), currentExerciseAsJson);

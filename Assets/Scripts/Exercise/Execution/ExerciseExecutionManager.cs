@@ -38,12 +38,24 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public Text testText; // TODO Just for test purposes -> Delete in production
 
 	private int confidenceIterator;
+	
+	
+	public GameObject kinectManager;
+
 	// Use this for initialization
 	void Start ()
 	{
 		
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+		// Disable handcursor in execution mode
+		kinectManager = GameObject.Find("KinectManager");
+		if (kinectManager.GetComponent<InteractionManager>())
+		{
+			kinectManager.GetComponent<InteractionManager>().showHandCursor = false;
+			Debug.Log("Disable handcursor");			
+		}
+		
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 		
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -192,6 +204,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentExerciseData.accomplished = true;
 			
 			// Unlock next exercise
+			// TODO check if last exercise --> then do not unlock next exercise because it doesn't exist
 			UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].isInteractable = true;
 			UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
 			

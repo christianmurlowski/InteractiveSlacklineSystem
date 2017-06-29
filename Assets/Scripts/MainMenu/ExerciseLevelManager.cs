@@ -18,7 +18,7 @@ public class ExerciseLevelManager : MonoBehaviour
 
 		_allExercises = UserDataObject.currentUser.exerciseData;
 			
-		Debug.Log("EXERCISEAMONT: " + UserDataObject.currentUser.exerciseData.Length);
+		Debug.Log("EXERCISEAMOUNT: " + UserDataObject.currentUser.exerciseData.Length);
 		PlayerPrefs.SetInt("ExercisesAmount", UserDataObject.currentUser.exerciseData.Length);
 
 		FillMenu();
@@ -32,7 +32,7 @@ public class ExerciseLevelManager : MonoBehaviour
 			GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
 			ExerciseLevelButton button = gameObjectButton.GetComponent<ExerciseLevelButton>();
 
-			button.buttonText.text = exercise.levelName;
+			button.buttonText.text = exercise.exerciseName;
 			
 //			Debug.Log("index of " + exercise.exerciseName + ": " + Array.IndexOf(_allExercises, exercise));
 //
@@ -48,8 +48,8 @@ public class ExerciseLevelManager : MonoBehaviour
 //				exercise.unlocked = 1;
 //			}
 			
-			Debug.Log(exercise.exerciseName);
-			Debug.Log(exercise.unlocked);
+			Debug.Log("exercise.exerciseName: " + exercise.exerciseName);
+			Debug.Log("exercise.unlocked: " + exercise.unlocked);
 			button.unlocked = exercise.unlocked;
 			button.GetComponent<Button>().interactable = exercise.isInteractable;
 			button.GetComponent<Button>().onClick.AddListener(() =>
