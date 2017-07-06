@@ -8,7 +8,6 @@ public class ExerciseInfoManager : MonoBehaviour
 {
 
 	public GameObject exerciseTipPanel;
-	public Button startButton;
 	
 	public Transform spacer;
 
@@ -26,16 +25,19 @@ public class ExerciseInfoManager : MonoBehaviour
 		_currentExercise = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		
 		exerciseName.text = _currentExercise.exerciseName.ToUpper();
-
-		startButton.onClick.AddListener(() =>
-		{
-			SceneManager.LoadScene("ExerciseExecution");
-		});
 		
 		FillTipList();
 	}
 
-
+	public void LoadNextScene()
+	{
+		SceneManager.LoadSceneAsync("ExerciseExecution");
+	}
+	public void LoadPreviousScene()
+	{
+		SceneManager.LoadSceneAsync("MainMenu");
+	}
+	
 	void FillTipList()
 	{
 		foreach (var tip in _currentExercise.tips)
@@ -45,14 +47,8 @@ public class ExerciseInfoManager : MonoBehaviour
 
 			tipPanel.tipName.text = tip.name;
 			tipPanel.tipDescription.text = tip.description;
-//			tipPanel.tipImage = tip.image; TODO add image reference
 			
 			gameObjectTipPanel.transform.SetParent(spacer, false);
 		}
 	}
-	
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
 }

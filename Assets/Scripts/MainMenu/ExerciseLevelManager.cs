@@ -20,9 +20,15 @@ public class ExerciseLevelManager : MonoBehaviour
 			
 		Debug.Log("EXERCISEAMOUNT: " + UserDataObject.currentUser.exerciseData.Length);
 		PlayerPrefs.SetInt("ExercisesAmount", UserDataObject.currentUser.exerciseData.Length);
-
+		
 		FillMenu();
 //	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
+	}
+
+	public void LoadPreviousScene()
+	{
+		SceneManager.LoadSceneAsync("UserSelection");
+		
 	}
 
 	void FillMenu()
