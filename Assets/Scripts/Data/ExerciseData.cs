@@ -9,6 +9,7 @@ public class ExerciseData
 	public string levelName;
 	public string exerciseName;
 	public string description;
+	public bool isProgressGesture;
 	
 	public RepetitionData[] repetitions;
 	public TipsData[] tips;

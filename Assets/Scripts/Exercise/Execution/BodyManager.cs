@@ -18,6 +18,16 @@ public class BodyManager : MonoBehaviour
 	{
 		return _Data;
 	}
+	
+	public ulong GetBodiesarray()
+	{
+		foreach (var body in _Data)
+		{
+			return body.TrackingId;
+		}
+		return 0;
+	}
+	
 
 	public KinectSensor GetSensor()
 	{

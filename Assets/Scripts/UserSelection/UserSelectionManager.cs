@@ -81,6 +81,8 @@ public class UserSelectionManager : MonoBehaviour
                 {
                     Debug.Log("TEST CURRENT USER: " + tempUserData.name);
                     currentUserDataObject.SetCurrentUser(tempUserData);
+                    PlayerPrefs.SetString("CurrentUser", tempUserData.name);
+                    PlayerPrefs.SetString("CurrentUserFilePath",  filePath);
                 }
             }
         }
