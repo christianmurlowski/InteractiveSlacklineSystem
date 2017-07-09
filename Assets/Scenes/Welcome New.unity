@@ -134,7 +134,7 @@ MonoBehaviour:
   minUserDistance: 0.5
   maxUserDistance: 0
   maxLeftRightDistance: 0
-  maxTrackedUsers: 6
+  maxTrackedUsers: 1
   showTrackedUsersOnly: 1
   userDetectionOrder: 0
   ignoreInferredJoints: 0

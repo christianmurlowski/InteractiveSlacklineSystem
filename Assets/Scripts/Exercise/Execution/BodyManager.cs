@@ -53,7 +53,9 @@ public class BodyManager : MonoBehaviour
 				Debug.Log("_bodies: " + GetData());
 
 				_Data = new Body[_Sensor.BodyFrameSource.BodyCount]; // evtl hier in "new Body[1]" einsetzen
+//				_Data = new Body[1]; // evtl hier in "new Body[1]" einsetzen
 				Debug.Log("_bodies new: " + GetData());
+				Debug.Log("_bodies new lengt: " + GetData().Length);
 			}
 			
 			if (!_Sensor.IsOpen)
@@ -75,7 +77,9 @@ public class BodyManager : MonoBehaviour
 					Debug.Log("_bodies: " + GetData());
 
 					_Data = new Body[_Sensor.BodyFrameSource.BodyCount]; // evtl hier in "new Body[1]" einsetzen
+//					_Data = new Body[1]; // evtl hier in "new Body[1]" einsetzen
 					Debug.Log("_bodies new: " + GetData());
+					Debug.Log("_bodies new length: " + GetData().Length);
 				}
 				//Debug.Log("BM: " + _Sensor.BodyFrameSource.BodyCount);
 

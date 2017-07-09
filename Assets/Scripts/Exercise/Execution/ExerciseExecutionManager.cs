@@ -38,7 +38,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public Text testText; // TODO Just for test purposes -> Delete in production
 
 	private int confidenceIterator;
+
+	private bool _firstCheckpoint,
+				_secondCheckpoint;
 	
+	private List<float> pufferList = new List<float>();
 	
 	public GameObject kinectManager;
 
@@ -90,7 +94,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 			gameObjectToggle.transform.SetParent(toggleGroup, false);
 		}
-		
+		// Set ID of current repetition
 		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
 
 		_bodyManager = bodyManager.GetComponent<BodyManager>();
@@ -118,7 +122,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
 		{
 			var body = _bodies[bodyIndex];
-
 			if (body != null)
 			{
 				var trackingId = body.TrackingId;
@@ -142,12 +145,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void OnGestureDetected(object sender, GestureEventArgs e, int bodyIndex)
 	{
 		var isDetected = e.IsBodyTrackingIdValid && e.IsGestureDetected;
-
+		Debug.Log("isgesturedetected: " + e.IsGestureDetected);
 		// Discrete Gesture tracking
 		if (e.GestureType == GestureType.Discrete)
 		{
 
-			if (e.DetectionConfidence > 0.4f)
+			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f))
 			{
 				_durationManager.StartTimer();
 				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
@@ -170,21 +173,59 @@ public class ExerciseExecutionManager : MonoBehaviour
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
 		else if (e.GestureType == GestureType.Continuous) // TODO implement continous gestures
-		{
-			if (e.Progress > 0.4f)
+		{			
+			//TODO switch case better?
+			if (_secondCheckpoint && GestureDetected(e.Progress, 0.7f, 1f))
 			{
-				// todo fill progressbar until 0.8 is reached and start time
+				ToggleAndCheckRepetition();
 			}
-			testText.text = "CONTINUOUS: " + e.Progress;
+			else if (_firstCheckpoint && GestureDetected(e.Progress, 0.5f, 0.7f))
+			{
+				_secondCheckpoint = true;
+
+			}
+			else if (GestureDetected(e.Progress, 0.2f, 0.5f))
+			{
+				_firstCheckpoint = true;
+			}
+
+			
+			testText.text = "if CONTINUOUS: " + e.Progress;
 		}
 		else
 		{
+			testText.text = "else CONTINUOUS: " + e.Progress;
+
 			_durationManager.StopTimer();
 		}
 	}
 
+	private bool GestureDetected(float progress, float minGoal, float maxGoal)
+	{
+		
+		pufferList.Add(progress);
+		var success = false;
+
+		if (pufferList.Count > 5)
+		{
+			pufferList.RemoveAt(0);
+			foreach (var pufferValue in pufferList)
+			{
+				if (pufferValue >= minGoal &&  pufferValue <= maxGoal)
+				{
+					success = true;
+					// todo fill progressbar until 0.8 is reached and start time
+
+				}
+			}
+		}
+		
+		return success;
+	}
+	
 	private void ToggleAndCheckRepetition()
 	{
+		StopTracking();
 		Debug.Log("ACCOMPLISHED REPETITION");
 		
 		// Save the time and confidence for the current repetition
@@ -213,7 +254,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 		else
 		{
-			//  If not last rep --> next rep is currentrepetition
+			// TODO If not last rep --> next rep is currentrepetition
 			_currentRepetition =
 				_currentExerciseData.repetitions[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition) + 1];
 			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
@@ -222,10 +263,19 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Save data to user json file
 		SaveCurrentExerciseData();
 		
+		// Reset all variables needed for next repetition
 		_currentRepetitionConfidence = 0;				
 		confidenceIterator = 0;
 		_durationManager.ResetlatestTimeInSeconds();
+		_firstCheckpoint = false;
+		_secondCheckpoint = false;
+		pufferList.Clear();
+		
+		
+		StartCoroutine("StartTracking");
 	}
+
+
 
 //	
 //	IEnumerator SuccessFadeIn()
@@ -270,22 +320,27 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		yield return null;
 //	}
 //	
-//	public void StopTracking()
-//	{
-//		foreach (var gesture in _gestureDetectorList)
-//		{
-////			gesture.IsPaused = true;
-//		}
-//	}    
-//    
-//	public void StartTracking()
-//	{
-//		foreach (var gesture in _gestureDetectorList)
-//		{
-////			gesture.IsPaused = false;
-//		}
-//	}
-//	
+	public void StopTracking()
+	{
+		foreach (var gesture in _gestureDetectorList)
+		{
+			gesture.IsPaused = true;
+		}
+		Debug.Log("STOP TRACKING");
+
+	}    
+    
+	IEnumerator StartTracking()
+	{
+		yield return new WaitForSeconds(3f);
+
+		foreach (var gesture in _gestureDetectorList)
+		{
+			gesture.IsPaused = false;
+		}
+		Debug.Log("START TRACKING");
+	}
+	
 	private void LoadSummaryScene()
 	{	
 		SceneManager.LoadScene("ExerciseSummary");
