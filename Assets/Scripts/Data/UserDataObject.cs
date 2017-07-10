@@ -18,18 +18,39 @@ public class UserDataObject {
         return currentUser;
     }
 
-    public ExerciseData[] GeAllExercises()
+//    public ExerciseData[] GeAllExercises()
+//    {
+//        return currentUser.exerciseData;
+//    }
+
+    public static List<TierData> GetAllTiers()
     {
-        return currentUser.exerciseData;
+        return currentUser.tierData;
+    }
+    public static TierData GetCurrentTier()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")];
     }
 
-    public ExerciseData GetCurrentExercise()
+    public static int GetCurrentTierErcisesLength()
     {
-        return currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Count;
     }
 
-    public int GetAllErcisesLength()
+    public static ExerciseData GetCurrentExercise()
     {
-        return currentUser.exerciseData.Length;
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")];
     }
+    
+    public static string GetCurrentExerciseName()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
+    }
+    
+    
+    public static ExerciseData GetNextExercise()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
+    }
+
 }

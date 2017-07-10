@@ -12,6 +12,7 @@ public class DurationManager : MonoBehaviour
 	public Image durationImage;
 	public Text counterText;
 	public Slider slider;
+	public GameObject progressGroup;
 	
 	
 	private ExerciseData _currentExerciseData;
@@ -30,11 +31,16 @@ public class DurationManager : MonoBehaviour
 		// -----------------------------------------
 		// ------------ INITIALIZATIONS ------------
 		// -----------------------------------------
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 2);// TODO Just for test purposes -> Delete in production
+//		// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
-		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+//		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+		_currentExerciseData = UserDataObject.GetCurrentExercise();
 		
 		// Todo no functionality yet --> track overall time for exercise or overall time needed for rep
 		tempTimer = 0f;		
@@ -63,8 +69,13 @@ public class DurationManager : MonoBehaviour
 		
 		
 		// Slider for progress
-		slider.GetComponent<Slider>();
-		slider.value = 0.5f;
+		slider = slider.GetComponent<Slider>();		
+		Debug.Log("isProgressGesture: " + _currentExerciseData.isProgressGesture);
+		if (!_currentExerciseData.isProgressGesture)
+		{
+			progressGroup.SetActive(false);
+		}
+			
 	}
 
 	public void StartTimer()

@@ -5,7 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class ExerciseObject
 {
-
-    public ExerciseData[] exerciseDataArray;
-    
+    public List<ExerciseData> exerciseDataArray;   
 }

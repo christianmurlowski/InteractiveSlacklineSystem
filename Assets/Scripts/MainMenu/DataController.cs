@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class DataController : MonoBehaviour
 {
-	public ExerciseData[] allDefaultExercisesDataArray;
+	public List<TierData> defaultDataArray;
+	public TierDataObject defaultDataObject;
+	
+	
+	public List<ExerciseData> allDefaultExercisesDataArray;
 	public ExerciseObject allDefaultExercisesDataObject;
 
 	public UserData currentUser;
@@ -33,9 +37,12 @@ public class DataController : MonoBehaviour
 		{
 			string defaultExercisesDataAsJson = File.ReadAllText(defaultExercisesFilePath );
 			
-			allDefaultExercisesDataObject = JsonUtility.FromJson<ExerciseObject>(defaultExercisesDataAsJson);
-
-			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
+			defaultDataObject = JsonUtility.FromJson<TierDataObject>(defaultExercisesDataAsJson);
+			
+			defaultDataArray = defaultDataObject.tierDataList;
+			
+//			allDefaultExercisesDataObject = JsonUtility.FromJson<ExerciseObject>(defaultExercisesDataAsJson);
+//			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
 			
 //			
 //			Debug.Log("----------DEFAULT EXERCISES----------");
@@ -62,12 +69,18 @@ public class DataController : MonoBehaviour
 //			}
 //			
 			// Initial fill current users exercises with exercise data
-			if (currentUser.exerciseData.Length == 0)
+			if (currentUser.tierData.Count == 0)
 			{
+				currentUser.tierData = defaultDataArray;
 				Debug.Log("CURRENT USER HAS NO EXERCISES");
-				currentUser.exerciseData = allDefaultExercisesDataArray;
-				Debug.Log("in if currentuser exercise: " + currentUser.exerciseData.Length);
+				Debug.Log("Currentuser tier length: " + currentUser.tierData.Count);
+				foreach (var tier in currentUser.tierData)
+				{			
+					Debug.Log("Tier level name" + tier.levelName);
+					Debug.Log("Tier name" + tier.tierName);
+				}
 				SaveUserData(currentUser);
+
 			}
 			
 //			Debug.Log("----------CURRENT USER EXERCISES AFTER----------");

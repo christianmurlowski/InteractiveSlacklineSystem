@@ -50,7 +50,7 @@ public class GestureDetector : IDisposable
     private readonly string gestureDatabase = "GestureDB\\TestDatabase.gbd";
 
     /// <summary> Name of the discrete gesture in the database that we want to track </summary>
-    private readonly string gestureName = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
+    private readonly string gestureName = UserDataObject.GetCurrentExerciseName();
 
     /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
     private VisualGestureBuilderFrameSource vgbFrameSource = null;
@@ -70,6 +70,8 @@ public class GestureDetector : IDisposable
         {
             throw new ArgumentNullException("kinectSensor");
         }
+        
+        Debug.Log("current gestureName: " + gestureName);
 
         // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
         this.vgbFrameSource = VisualGestureBuilderFrameSource.Create(kinectSensor, 0);

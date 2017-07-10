@@ -38,8 +38,9 @@ public class UserDataEditor : EditorWindow
         if (currentUser != null)
         {
             SerializedObject serializedObject = new SerializedObject(this);
+            // FindProperty --> name of currentUser variable
             SerializedProperty serializedProperty = serializedObject.FindProperty("currentUser");
-
+            
             EditorGUILayout.PropertyField(serializedProperty, true);
             serializedObject.ApplyModifiedProperties();
 
@@ -148,7 +149,7 @@ public class UserDataEditor : EditorWindow
         _exerciseDataEditor = ScriptableObject.CreateInstance<ExerciseDataEditor>();
         _exerciseDataEditor.LoadExerciseData(filePath);
         
-        currentUser.exerciseData = _exerciseDataEditor.exerciseDataObject.exerciseDataArray;
+        currentUser.tierData = _exerciseDataEditor.tierDataObject.tierDataList;
     }
 
     private void DeleteUser(DirectoryInfo directoryInfo)

@@ -61,14 +61,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		}
 //		
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentExerciseId", 2);
-		
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 2);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
-		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
-
+//		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+		_currentExerciseData = UserDataObject.GetCurrentExercise();
+		
 		// Duration manager
 		_durationManager = durationManager.GetComponent<DurationManager>();
 
@@ -284,7 +285,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		Debug.Log("time: " + _currentRepetition.userTime + " || confidence: " +  _currentRepetition.confidence);
 		
-		// toggle current repetition
+		// Toggle current repetition
 		_currentRepetition.accomplished = true;
 		_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition)].isOn = true;
 		
@@ -295,14 +296,19 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentExerciseData.accomplished = true;
 			
 			// Check if last exercise and unlock next exercise
-			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.currentUser.exerciseData.Length - 1)
+			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 			{
 				// todo All exercises accomplished congratulations or so	
 			}
 			else
-			{	
-				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].isInteractable = true;
-				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
+			{
+				ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
+
+				nextExerciseData.isInteractable = true;
+				nextExerciseData.unlocked = 1;
+
+//				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].isInteractable = true;
+//				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
 			}
 			
 			// Load the summary scene
@@ -371,7 +377,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{        
 		string currentUsersFilePath = PlayerPrefs.GetString("CurrentUserFilePath");
 		
-		UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")] = _currentExerciseData;
+// TODO	check if needed	because of reference
+//		UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")] = _currentExerciseData;
 		
 		string currentExerciseDataAsJson = JsonUtility.ToJson(UserDataObject.currentUser);
 		File.WriteAllText(currentUsersFilePath, currentExerciseDataAsJson);

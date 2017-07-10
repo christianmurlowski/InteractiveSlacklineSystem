@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ExerciseDataEditor : EditorWindow
 {
-    public ExerciseObject exerciseDataObject;
+    public TierDataObject tierDataObject;
     private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
     private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
     private string _currentExerciseDataFilePath;
@@ -26,13 +26,13 @@ public class ExerciseDataEditor : EditorWindow
         GUILayout.BeginVertical();
         scrollPos = GUILayout.BeginScrollView(scrollPos);
         
-        if (exerciseDataObject != null)
+        if (tierDataObject != null)
         {
             SerializedObject serializedObject = new SerializedObject(this);
-            SerializedProperty serializedProperty = serializedObject.FindProperty("exerciseDataObject");
-
+            // property --> name of tierDataObject variable
+            SerializedProperty serializedProperty = serializedObject.FindProperty("tierDataObject");
+            
             EditorGUILayout.PropertyField(serializedProperty, true);
-
             serializedObject.ApplyModifiedProperties();
 
             if (GUILayout.Button("Save Data"))
@@ -64,17 +64,17 @@ public class ExerciseDataEditor : EditorWindow
         if (File.Exists(filePath))
         {
             string exerciseDataAsJson = File.ReadAllText(filePath);
-            exerciseDataObject = JsonUtility.FromJson<ExerciseObject>(exerciseDataAsJson);
+            tierDataObject = JsonUtility.FromJson<TierDataObject>(exerciseDataAsJson);
         }
         else
         {
-            exerciseDataObject = new ExerciseObject();
+            tierDataObject = new TierDataObject();
         }
     }
 
     private void SaveExerciseData(string filepath)
     {
-        string exerciseDataAsJson = JsonUtility.ToJson(exerciseDataObject);
+        string exerciseDataAsJson = JsonUtility.ToJson(tierDataObject);
         string filePath = Application.dataPath + filepath;
         
         File.WriteAllText(filePath, exerciseDataAsJson);

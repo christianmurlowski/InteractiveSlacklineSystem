@@ -30,8 +30,8 @@ public class ExerciseSummaryManager : MonoBehaviour {
 		
 //		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
 //		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
-		
-		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
+
+		_currentExerciseData = UserDataObject.GetCurrentExercise();
 
 		Debug.Log(_currentExerciseData.exerciseName);
 		

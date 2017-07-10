@@ -1,0 +1,190 @@
+{
+  "tier": [
+    {
+      "levelname": "Tier 1",
+      "tierName": "Preliminary Exercises",
+      "goals": [
+        {
+          "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
+        },
+        {
+          "description": "Balance to maintain and regaining equilibrium."
+        }
+      ],
+      "exerciseDataArray": [
+        {
+          "accomplished": false,
+          "description": "Raise your right hand up over your head",
+          "exerciseName": "Right hand up",
+          "isInteractable": true,
+          "isProgressGesture": false,
+          "levelName": "HandUp_Right",
+          "repetitions": [
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 2.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 2.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            }
+          ],
+          "tips": [
+            {
+              "description": "Tip 1 description",
+              "name": "Tip 1"
+            },
+            {
+              "description": "Tip 2 description",
+              "name": "Tip 2"
+            },
+            {
+              "description": "Tip 3 description",
+              "name": "Tip 3"
+            }
+          ],
+          "unlocked": 1
+        },
+        {
+          "accomplished": false,
+          "description": "Raise your left hand up over your head",
+          "exerciseName": "Left hand up",
+          "isInteractable": false,
+          "isProgressGesture": false,
+          "levelName": "HandUp_Left",
+          "repetitions": [
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            }
+          ],
+          "tips": [
+            {
+              "description": "Tip 1 description",
+              "name": "Tip 1"
+            },
+            {
+              "description": "Tip 2 description",
+              "name": "Tip 2"
+            },
+            {
+              "description": "Tip 3 description",
+              "name": "Tip 3"
+            }
+          ],
+          "unlocked": 0
+        },
+        {
+          "accomplished": false,
+          "description": "Move your right hand to the right",
+          "exerciseName": "Right hand right",
+          "isInteractable": false,
+          "isProgressGesture": true,
+          "levelName": "SwipeProgress_Right",
+          "repetitions": [
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            }
+          ],
+          "tips": [
+            {
+              "description": "description tip1",
+              "name": "Tip1"
+            },
+            {
+              "description": "description tip 2",
+              "name": "Tip2"
+            },
+            {
+              "description": "desc tip3",
+              "name": "tip 3"
+            }
+          ],
+          "unlocked": 0
+        },
+        {
+          "accomplished": false,
+          "description": "Move your left hand to the left",
+          "exerciseName": "Left hand left",
+          "isInteractable": false,
+          "isProgressGesture": true,
+          "levelName": "SwipeProgress_Left",
+          "repetitions": [
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            },
+            {
+              "accomplished": false,
+              "confidence": 0.0,
+              "minTime": 5.0,
+              "userTime": 0.0
+            }
+          ],
+          "tips": [
+            {
+              "description": "Tip 1 description",
+              "name": "Tip 1"
+            },
+            {
+              "description": "Tip 2 description",
+              "name": "Tip 2"
+            },
+            {
+              "description": "Tip 3 description",
+              "name": "Tip 3"
+            }
+          ],
+          "unlocked": 0
+        }
+      ]
+    }
+  ]
+}

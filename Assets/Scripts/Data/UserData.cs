@@ -10,6 +10,6 @@ public class UserData
     public bool isCurrentUser;
     
 //    public ExerciseData[] exercises;
-    public ExerciseData[] exerciseData;
+    public List<TierData> tierData;
 
 }

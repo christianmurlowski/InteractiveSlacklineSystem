@@ -209,6 +209,7 @@ MonoBehaviour:
   durationImage: {fileID: 554405519}
   counterText: {fileID: 1256693709}
   slider: {fileID: 1197255728}
+  progressGroup: {fileID: 1716637442}
 --- !u!1 &554405517
 GameObject:
   m_ObjectHideFlags: 0
