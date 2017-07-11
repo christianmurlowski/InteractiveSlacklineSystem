@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 07719c4a49fcfa94a9e1e6b7857908de
+timeCreated: 1499808891
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Motiva Sans
+  fontNames:
+  - Motiva Sans
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
