@@ -11,13 +11,15 @@ EditorBuildSettings:
     path: Assets/Scenes/UserSelection.unity
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/TierInfo.unity
   - enabled: 0
     path: Assets/Scenes/Level0.unity
   - enabled: 0
     path: Assets/Scenes/Level1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Exercise0.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Exercise1.unity
   - enabled: 1
     path: Assets/Scenes/ExerciseExecution.unity
@@ -25,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ExerciseInfo.unity
   - enabled: 1
     path: Assets/Scenes/ExerciseSummary.unity
+  - enabled: 1
+    path: Assets/Scenes/TierSummary.unity

@@ -137,7 +137,7 @@ public class DurationManager : MonoBehaviour
 
 	public void SetProgress(float progress)
 	{
-		slider.value = progress * 1.5f;
+		slider.value = Mathf.Lerp(0, 1, progress);
 	}
 
 	public void ResetProgress()

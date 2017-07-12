@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -27,9 +28,21 @@ public class UserDataObject {
     {
         return currentUser.tierData;
     }
+    
     public static TierData GetCurrentTier()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")];
+    }    
+   
+    public static TierData GetNextTier()
+    {
+        TierData nextTier = GetCurrentTier();
+        
+        if (PlayerPrefs.GetInt("CurrentTierId") != GetAllTiers().Count - 1)
+        {
+            nextTier = currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId") + 1];
+        }
+        return nextTier;
     }
 
     public static int GetCurrentTierErcisesLength()
@@ -51,6 +64,11 @@ public class UserDataObject {
     public static ExerciseData GetNextExercise()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
-    }
+    }    
+    
+//    public static ExerciseData GetCurrentTierLastExercise()
+//    {
+//        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Last();
+//    }
 
 }

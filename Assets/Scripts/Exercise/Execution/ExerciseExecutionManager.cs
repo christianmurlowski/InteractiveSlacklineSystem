@@ -61,9 +61,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		}
 //		
 		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 2);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+		UserSelectionManager.TestSetCurrentUser();
+		PlayerPrefs.SetInt("CurrentTierId", 0);
+		PlayerPrefs.SetInt("CurrentExerciseId", 2);
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
@@ -295,12 +295,24 @@ public class ExerciseExecutionManager : MonoBehaviour
 			// Exercise completed and accomplished
 			_currentExerciseData.accomplished = true;
 			
-			// Check if last exercise and unlock next exercise
+			// If last exercise --> unlock next tier
 			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 			{
-				// todo All exercises accomplished congratulations or so	
+				// todo All exercises accomplished congratulations or so
+				// If last tier reached --> do nothing
+				if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
+				{
+					
+				}
+				else // If not last tier --> unlock next tier
+				{
+					TierData nextTier = UserDataObject.GetNextTier();
+					nextTier.accomplished = true;
+				}
+				
+				
 			}
-			else
+			else // If not last exercise --> unlock next exercise
 			{
 				ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
 

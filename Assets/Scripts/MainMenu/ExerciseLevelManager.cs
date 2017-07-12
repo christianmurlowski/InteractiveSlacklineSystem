@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class ExerciseLevelManager : MonoBehaviour
 {
 	public GameObject exerciseLevelButton;
 	public Transform spacer;
+	public Transform tierSpacer;
 	
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
@@ -31,15 +33,27 @@ public class ExerciseLevelManager : MonoBehaviour
 
 	void FillMenu()
 	{
+		// For each tier create tier basics, exercises and tier summary button
 		foreach (var tier in _allTierData)
 		{
-			GameObject tierGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
-			ExerciseLevelButton tierButton = tierGameObjectButton.GetComponent<ExerciseLevelButton>();
+			Transform newSpacer = Instantiate(tierSpacer);
+			
+			GameObject tierBasicGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
+			ExerciseLevelButton tierBasicButton = tierBasicGameObjectButton.GetComponent<ExerciseLevelButton>();
 	
-			tierButton.buttonText.text = "Basic information";
-			tierButton.unlocked = 1;
-			tierButton.GetComponent<Button>().interactable = true;
-			tierButton.GetComponent<Button>().onClick.AddListener(() =>
+			tierBasicButton.buttonText.text = "Basic information";
+			if (tier.accomplished)
+			{			
+				tierBasicButton.unlocked = 1;
+				tierBasicButton.GetComponent<Button>().interactable = true;
+			}
+			else
+			{
+				tierBasicButton.unlocked = 0;
+				tierBasicButton.GetComponent<Button>().interactable = false;
+			}
+			
+			tierBasicButton.GetComponent<Button>().onClick.AddListener(() =>
 			{
 				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
 					
@@ -48,7 +62,7 @@ public class ExerciseLevelManager : MonoBehaviour
 				SceneManager.LoadScene("TierInfo");
 			});
 			
-			tierGameObjectButton.transform.SetParent(spacer, false);
+			tierBasicGameObjectButton.transform.SetParent(newSpacer, false);
 			
 			foreach (var exercise in tier.exercises)
 			{
@@ -86,8 +100,37 @@ public class ExerciseLevelManager : MonoBehaviour
 					SceneManager.LoadScene("ExerciseInfo");
 				});
 			
-				gameObjectButton.transform.SetParent(spacer, false);
+				gameObjectButton.transform.SetParent(newSpacer, false);
 			}
+			
+			GameObject tierSumGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
+			ExerciseLevelButton tierSumButton = tierSumGameObjectButton.GetComponent<ExerciseLevelButton>();
+			
+			tierSumButton.buttonText.text = "Tier summary";
+			
+			if (tier.exercises.Last().accomplished)
+			{			
+				tierSumButton.unlocked = 1;
+				tierSumButton.GetComponent<Button>().interactable = true;
+			}
+			else
+			{
+				tierSumButton.unlocked = 0;
+				tierSumButton.GetComponent<Button>().interactable = false;
+			}
+			
+			tierSumButton.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
+					
+				Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+	
+				SceneManager.LoadScene("TierSummary");
+			});
+			
+			tierSumGameObjectButton.transform.SetParent(newSpacer, false);
+			
+			newSpacer.transform.SetParent(spacer, false);
 		}
 //		SaveData();
 	}

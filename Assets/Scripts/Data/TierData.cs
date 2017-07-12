@@ -7,6 +7,7 @@ public class TierData
 {
     public string tierName;
     public string levelName;
+    public bool accomplished;
     public List<GoalData> goals;
     public List<ExerciseData> exercises;
 }

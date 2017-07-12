@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\GoalPanel.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\TierInfoManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\TierSummaryManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\TipPanel.cs" />
     <Compile Include="Assets\Scripts\Exercise\Summary\ExerciseSummaryManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionConfidencePanel.cs" />
