@@ -50,7 +50,7 @@ public class GestureDetector : IDisposable
     private readonly string gestureDatabase = "GestureDB\\TestDatabase.gbd";
 
     /// <summary> Name of the discrete gesture in the database that we want to track </summary>
-    private readonly string gestureName = UserDataObject.GetCurrentExerciseName();
+    private readonly string gestureName = UserDataObject.GetCurrentExerciseName() + "_" + UserDataObject.GetCurrentSide().direction;
 
     /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
     private VisualGestureBuilderFrameSource vgbFrameSource = null;
@@ -98,11 +98,11 @@ public class GestureDetector : IDisposable
             {
                 this.vgbFrameSource.AddGesture(gesture);
 //                
-//                Debug.Log("foreach gesture name: " + gesture.Name);
-//                if (gesture.Name.Equals(this.gestureName))
-//                {
-//                    this.vgbFrameSource.AddGesture(gesture);
-//                }
+                Debug.Log("foreach gesture name: " + gesture.Name);
+                if (gesture.Name.Equals(this.gestureName))
+                {
+                    this.vgbFrameSource.AddGesture(gesture);
+                }
             }
         }
     }

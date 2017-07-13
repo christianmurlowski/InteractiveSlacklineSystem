@@ -57,15 +57,26 @@ public class UserDataObject {
     
     public static string GetCurrentExerciseName()
     {
-        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
+        string exerciseName = currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")]
+            .exercises[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
+        
+        if (GetCurrentExercise().isProgressGesture)
+        {
+            exerciseName += "Progress";
+        }
+        
+        return exerciseName;
     }
-    
     
     public static ExerciseData GetNextExercise()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
     }    
     
+    public static SideData GetCurrentSide()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")];
+    }
     public static RepetitionData[] GetCurrentRepetitionsArray()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].repetitions;

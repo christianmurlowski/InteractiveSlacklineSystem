@@ -20,7 +20,7 @@ public class DataController : MonoBehaviour
 	
 	void Start ()
 	{
-		UserSelectionManager.TestSetCurrentUser();    // TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser();    // TODO Just for test purposes -> Delete in production
 
 		currentUser = UserDataObject.currentUser;
 
@@ -35,11 +35,14 @@ public class DataController : MonoBehaviour
 
 		if (File.Exists(defaultExercisesFilePath) && currentUser != null)
 		{
-			string defaultExercisesDataAsJson = File.ReadAllText(defaultExercisesFilePath );
 			
-			defaultDataObject = JsonUtility.FromJson<TierDataObject>(defaultExercisesDataAsJson);
-			
-			defaultDataArray = defaultDataObject.tierDataList;
+			if (currentUser.tierData.Count == 0)
+			{
+				string defaultExercisesDataAsJson = File.ReadAllText(defaultExercisesFilePath );
+				
+				defaultDataObject = JsonUtility.FromJson<TierDataObject>(defaultExercisesDataAsJson);
+				
+				defaultDataArray = defaultDataObject.tierDataList;
 			
 //			allDefaultExercisesDataObject = JsonUtility.FromJson<ExerciseObject>(defaultExercisesDataAsJson);
 //			allDefaultExercisesDataArray = allDefaultExercisesDataObject.exerciseDataArray;
@@ -69,8 +72,7 @@ public class DataController : MonoBehaviour
 //			}
 //			
 			// Initial fill current users exercises with exercise data
-			if (currentUser.tierData.Count == 0)
-			{
+
 				currentUser.tierData = defaultDataArray;
 				Debug.Log("CURRENT USER HAS NO EXERCISES");
 				Debug.Log("Currentuser tier length: " + currentUser.tierData.Count);

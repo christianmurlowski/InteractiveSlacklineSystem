@@ -19,9 +19,9 @@ public class TierSummaryManager : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 3);
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 3);
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 

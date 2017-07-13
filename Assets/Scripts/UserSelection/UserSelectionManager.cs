@@ -61,7 +61,6 @@ public class UserSelectionManager : MonoBehaviour
     // TODO Just for test purposes -> Delete in production
     public static void TestSetCurrentUser()
     {        
-        
         string allUsersFilePath = "/StreamingAssets/JSONData/Users/";
 
         DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + allUsersFilePath);

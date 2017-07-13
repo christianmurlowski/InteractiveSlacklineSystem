@@ -61,9 +61,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		}
 //		
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		PlayerPrefs.SetInt("CurrentSideId", 0);
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
@@ -79,7 +80,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// -----------------------------------------
 		
 		// Exercise name
-		titleText.text = _currentExerciseData.exerciseName.ToUpper();
+		titleText.text = UserDataObject.GetCurrentExerciseName().ToUpper();
 		successPanel = successPanel.GetComponent<CanvasGroup>(); // TODO implement success animation for rep
 		
 		// Array of Toggles
@@ -294,7 +295,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			// Exercise completed and accomplished
 			_currentExerciseData.accomplished = true;
-			
+			UserDataObject.GetCurrentSide().accomplished = true;
+
 			// If last exercise --> unlock next tier
 			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 			{
@@ -309,8 +311,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 					TierData nextTier = UserDataObject.GetNextTier();
 					nextTier.accomplished = true;
 				}
-				
-				
 			}
 			else // If not last exercise --> unlock next exercise
 			{
@@ -325,7 +325,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			
 			// Load the summary scene
 			LoadSummaryScene();
-		}
+		} // If not last repetition --> current repetition is next repetition
 		else
 		{
 			_currentRepetition =

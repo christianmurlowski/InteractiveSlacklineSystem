@@ -18,9 +18,9 @@ public class TierInfoManager : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
@@ -33,21 +33,25 @@ public class TierInfoManager : MonoBehaviour
 
 	public void LoadNextScene()
 	{
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
 		if (!UserDataObject.GetCurrentExercise().isInteractable)
 		{
+			Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 			UserDataObject.GetCurrentExercise().isInteractable = true;
 			UserDataObject.GetCurrentExercise().unlocked = 1;	
 		}
 		
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
 		
 		SceneManager.LoadSceneAsync("MainMenu");
 	}
 	
 	void FillGoalList()
 	{
-		Debug.Log(_currentTierData.levelName);
-		Debug.Log(_currentTierData.goals);
-		Debug.Log(_currentTierData.goals[1]);
 		foreach (var goal in _currentTierData.goals)
 		{
 			GameObject gameObjectTierPanel = Instantiate(tierGoalPanel) as GameObject;

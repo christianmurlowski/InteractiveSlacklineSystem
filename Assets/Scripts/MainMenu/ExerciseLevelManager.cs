@@ -33,6 +33,9 @@ public class ExerciseLevelManager : MonoBehaviour
 
 	void FillMenu()
 	{
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
 		// For each tier create tier basics, exercises and tier summary button
 		foreach (var tier in _allTierData)
 		{

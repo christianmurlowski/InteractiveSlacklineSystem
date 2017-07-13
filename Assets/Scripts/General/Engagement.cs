@@ -15,9 +15,12 @@ public class Engagement : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		PlayerPrefs.DeleteAll();
 		_jointHandRight = KinectInterop.JointType.HandRight;
 		_jointHead = KinectInterop.JointType.Head;
-		
+		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+		Debug.Log("CurrentSide: " + PlayerPrefs.GetString("CurrentSide"));
 	} // Start
 	
 	// Update is called once per frame

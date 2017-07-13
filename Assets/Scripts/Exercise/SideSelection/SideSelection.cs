@@ -14,14 +14,15 @@ public class SideSelection : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		
 		exerciseLeftButton.onClick.AddListener(() =>
 		{	
+			PlayerPrefs.SetInt("CurrentSideId", 1);
 			LoadNextScene("Left");
 		});
 		
 		exerciseRightButton.onClick.AddListener(() =>
 		{	
+			PlayerPrefs.SetInt("CurrentSideId", 0);
 			LoadNextScene("Right");
 		});
 
