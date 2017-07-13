@@ -97,7 +97,7 @@ public class ExerciseLevelManager : MonoBehaviour
 					Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 					Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 	
-					SceneManager.LoadScene("ExerciseInfo");
+					SceneManager.LoadScene("ExerciseSideSelection");
 				});
 			
 				gameObjectButton.transform.SetParent(newSpacer, false);

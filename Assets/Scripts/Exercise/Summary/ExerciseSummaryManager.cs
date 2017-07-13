@@ -50,7 +50,7 @@ public class ExerciseSummaryManager : MonoBehaviour {
 
 	private void OutputData()
 	{
-		foreach (var repetition in _currentExerciseData.repetitions)
+		foreach (var repetition in UserDataObject.GetCurrentRepetitionsArray())
 		{
 			GameObject timeGameObject = Instantiate(timePanel);
 			RepetitionTimePanel currentTimePanel = timeGameObject.GetComponent<RepetitionTimePanel>();
@@ -58,7 +58,7 @@ public class ExerciseSummaryManager : MonoBehaviour {
 			GameObject confidenceGameObject = Instantiate(confidencePanel);
 			RepetitionConfidencePanel currentConfidencePanel = confidenceGameObject.GetComponent<RepetitionConfidencePanel>();
 			
-			int repetitionId = Array.IndexOf(_currentExerciseData.repetitions, repetition);
+			int repetitionId = Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), repetition);
 			
 			currentTimePanel.timeText.text = "Rep " + repetitionId  + ": " + repetition.userTime.ToString() + " sec";
 			currentConfidencePanel.confidenceText.text = "Rep " + repetitionId  + ": " + repetition.confidence.ToString() + " %";

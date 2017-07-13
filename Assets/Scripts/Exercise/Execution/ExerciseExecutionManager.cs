@@ -83,15 +83,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 		successPanel = successPanel.GetComponent<CanvasGroup>(); // TODO implement success animation for rep
 		
 		// Array of Toggles
-		_toggleArray = new Toggle[_currentExerciseData.repetitions.Length];
+		_toggleArray = new Toggle[UserDataObject.GetCurrentRepetitionsArray().Length];
 		
 		// Create and check toggles for each rep of current exercise
-		foreach (var repetition in _currentExerciseData.repetitions)
+		foreach (var repetition in UserDataObject.GetCurrentRepetitionsArray())
 		{
 			GameObject gameObjectToggle = Instantiate(toggle);
 			Toggle currentToggle = gameObjectToggle.GetComponent<Toggle>();
 
-			_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, repetition)] = currentToggle;
+			_toggleArray[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), repetition)] = currentToggle;
 			
 			// Check if exercise not already accomplished
 			if (!_currentExerciseData.accomplished)
@@ -119,7 +119,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 		
 		// Set ID of current repetition
-		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
+		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
 		
 		
 		// -----------------------------------------
@@ -287,10 +287,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		// Toggle current repetition
 		_currentRepetition.accomplished = true;
-		_toggleArray[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition)].isOn = true;
+		_toggleArray[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition)].isOn = true;
 		
 		// Check if last repetition
-		if (_currentRepetition == _currentExerciseData.repetitions.Last())
+		if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
 		{
 			// Exercise completed and accomplished
 			_currentExerciseData.accomplished = true;
@@ -329,8 +329,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		else
 		{
 			_currentRepetition =
-				_currentExerciseData.repetitions[Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition) + 1];
-			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(_currentExerciseData.repetitions, _currentRepetition));
+				UserDataObject.GetCurrentRepetitionsArray()[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition) + 1];
+			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
 		}
 //		 Save data to user json file
 		SaveCurrentExerciseData();

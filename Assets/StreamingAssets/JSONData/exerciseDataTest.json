@@ -14,173 +14,195 @@
       ],
       "exercises": [
         {
-          "levelName": "HandUp_Right",
-          "exerciseName": "Right hand up",
-          "description": "Raise your right hand up over your head",
+          "levelName": "HandUp",
+          "exerciseName": "Hand up",
+          "description": "Raise your hand up over your head",
           "isProgressGesture": false,
-          "repetitions": [
+          "sides": [
             {
-              "minTime": 2.0,
-              "accomplished": false,
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
             },
             {
-              "minTime": 2.0,
-              "accomplished": false,
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
+              "confidence": 0.0,
               "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
+              "unlocked": 0,
+              "isInteractable": false
             }
           ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
-          "accomplished": false,
-          "unlocked": 1,
-          "isInteractable": true
-        },
-        {
-          "levelName": "HandUp_Left",
-          "exerciseName": "Left hand up",
-          "description": "Raise your left hand up over your head",
-          "isProgressGesture": false,
-          "repetitions": [
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            }
-          ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
           "accomplished": false,
           "unlocked": 0,
           "isInteractable": false
         },
         {
-          "levelName": "SwipeProgress_Right",
-          "exerciseName": "Right hand right",
+          "levelName": "Swipe",
+          "exerciseName": "Swipe",
           "description": "Move your right hand to the right",
           "isProgressGesture": true,
-          "repetitions": [
+          "sides": [
             {
-              "minTime": 5.0,
-              "accomplished": false,
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
             },
             {
-              "minTime": 5.0,
-              "accomplished": false,
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
+              "confidence": 0.0,
               "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
+              "unlocked": 0,
+              "isInteractable": false
             }
           ],
-          "tips": [
-            {
-              "name": "Tip1",
-              "description": "description tip1"
-            },
-            {
-              "name": "Tip2",
-              "description": "description tip 2"
-            },
-            {
-              "name": "tip 3",
-              "description": "desc tip3"
-            }
-          ],
-          "accomplished": false,
-          "unlocked": 0,
-          "isInteractable": false
-        },
-        {
-          "levelName": "SwipeProgress_Left",
-          "exerciseName": "Left hand left",
-          "description": "Move your left hand to the left",
-          "isProgressGesture": true,
-          "repetitions": [
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            }
-          ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
           "accomplished": false,
           "unlocked": 0,
           "isInteractable": false
@@ -190,7 +212,7 @@
 		{
       "tierName": "First contact",
       "levelName": "Tier 2",
-			"accomplished": false,
+      "accomplished": false,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -201,173 +223,195 @@
       ],
       "exercises": [
         {
-          "levelName": "HandUp_Right",
-          "exerciseName": "Right hand up",
-          "description": "Raise your right hand up over your head",
+          "levelName": "HandUp",
+          "exerciseName": "Hand up",
+          "description": "Raise your hand up over your head",
           "isProgressGesture": false,
-          "repetitions": [
+          "sides": [
             {
-              "minTime": 2.0,
-              "accomplished": false,
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
             },
             {
-              "minTime": 2.0,
-              "accomplished": false,
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
+              "confidence": 0.0,
               "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
+              "unlocked": 0,
+              "isInteractable": false
             }
           ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
           "accomplished": false,
           "unlocked": 0,
           "isInteractable": false
         },
         {
-          "levelName": "HandUp_Left",
-          "exerciseName": "Left hand up",
-          "description": "Raise your left hand up over your head",
-          "isProgressGesture": false,
-          "repetitions": [
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            }
-          ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
-          "accomplished": false,
-          "unlocked": 0,
-          "isInteractable": false
-        },
-        {
-          "levelName": "SwipeProgress_Right",
-          "exerciseName": "Right hand right",
-          "description": "Move your right hand to the right",
+          "levelName": "Swipe",
+          "exerciseName": "Swipe",
+          "description": "Move your hand to the",
           "isProgressGesture": true,
-          "repetitions": [
+          "sides": [
             {
-              "minTime": 5.0,
-              "accomplished": false,
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
             },
             {
-              "minTime": 5.0,
-              "accomplished": false,
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
               "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
+              "confidence": 0.0,
               "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
+              "unlocked": 0,
+              "isInteractable": false
             }
           ],
-          "tips": [
-            {
-              "name": "Tip1",
-              "description": "description tip1"
-            },
-            {
-              "name": "Tip2",
-              "description": "description tip 2"
-            },
-            {
-              "name": "tip 3",
-              "description": "desc tip3"
-            }
-          ],
-          "accomplished": false,
-          "unlocked": 0,
-          "isInteractable": false
-        },
-        {
-          "levelName": "SwipeProgress_Left",
-          "exerciseName": "Left hand left",
-          "description": "Move your left hand to the left",
-          "isProgressGesture": true,
-          "repetitions": [
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            },
-            {
-              "minTime": 5.0,
-              "accomplished": false,
-              "userTime": 0.0,
-              "confidence": 0.0
-            }
-          ],
-          "tips": [
-            {
-              "name": "Tip 1",
-              "description": "Tip 1 description"
-            },
-            {
-              "name": "Tip 2",
-              "description": "Tip 2 description"
-            },
-            {
-              "name": "Tip 3",
-              "description": "Tip 3 description"
-            }
-          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
           "accomplished": false,
           "unlocked": 0,
           "isInteractable": false

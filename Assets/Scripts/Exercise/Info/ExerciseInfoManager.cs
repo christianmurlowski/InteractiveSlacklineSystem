@@ -43,7 +43,7 @@ public class ExerciseInfoManager : MonoBehaviour
 	
 	void FillTipList()
 	{
-		foreach (var tip in _currentExercise.tips)
+		foreach (var tip in UserDataObject.GetCurrentTipsArray())
 		{
 			GameObject gameObjectTipPanel = Instantiate(exerciseTipPanel) as GameObject;
 			TipPanel tipPanel = gameObjectTipPanel.GetComponent<TipPanel>();

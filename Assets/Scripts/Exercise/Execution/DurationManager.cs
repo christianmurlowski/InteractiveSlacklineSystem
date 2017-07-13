@@ -94,7 +94,7 @@ public class DurationManager : MonoBehaviour
 
 		// Update progress circle
 		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / 
-		                           (_currentExerciseData.repetitions[PlayerPrefs.GetInt("CurrentRepetitionId")].minTime);
+		                           (UserDataObject.GetCurrentRepetition().minTime);
 
 		if (durationImage.fillAmount >= 1.0)
 		{

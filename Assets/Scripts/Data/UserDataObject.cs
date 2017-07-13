@@ -66,6 +66,21 @@ public class UserDataObject {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
     }    
     
+    public static RepetitionData[] GetCurrentRepetitionsArray()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].repetitions;
+    }
+            
+    public static RepetitionData GetCurrentRepetition()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].repetitions[PlayerPrefs.GetInt("CurrentRepetitionId")];
+    }
+        
+    public static TipsData[] GetCurrentTipsArray()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].tips;
+    }
+    
 //    public static ExerciseData GetCurrentTierLastExercise()
 //    {
 //        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Last();

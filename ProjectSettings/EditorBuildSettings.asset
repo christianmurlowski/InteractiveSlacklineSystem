@@ -22,9 +22,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Exercise1.unity
   - enabled: 1
-    path: Assets/Scenes/ExerciseExecution.unity
+    path: Assets/Scenes/ExerciseSideSelection.unity
   - enabled: 1
     path: Assets/Scenes/ExerciseInfo.unity
+  - enabled: 1
+    path: Assets/Scenes/ExerciseExecution.unity
   - enabled: 1
     path: Assets/Scenes/ExerciseSummary.unity
   - enabled: 1

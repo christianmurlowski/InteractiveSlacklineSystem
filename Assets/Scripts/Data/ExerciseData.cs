@@ -10,9 +10,11 @@ public class ExerciseData
 	public string exerciseName;
 	public string description;
 	public bool isProgressGesture;
-	
-	public RepetitionData[] repetitions;
-	public TipsData[] tips;
+
+	public SideData[] sides;
+
+	public float userTime;
+	public float confidence;
 	public bool accomplished;
 	public int unlocked;
 	public bool isInteractable;
