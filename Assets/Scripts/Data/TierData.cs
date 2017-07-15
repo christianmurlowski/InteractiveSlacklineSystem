@@ -5,9 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class TierData
 {
-    public string tierName;
-    public string levelName;
     public bool accomplished;
+    public string fileName;
+    public string tierName;
+    public bool isInteractable;
+
     public List<GoalData> goals;
     public List<ExerciseData> exercises;
 }

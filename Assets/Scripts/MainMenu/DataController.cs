@@ -78,7 +78,7 @@ public class DataController : MonoBehaviour
 				Debug.Log("Currentuser tier length: " + currentUser.tierData.Count);
 				foreach (var tier in currentUser.tierData)
 				{			
-					Debug.Log("Tier level name" + tier.levelName);
+					Debug.Log("Tier file name" + tier.fileName);
 					Debug.Log("Tier name" + tier.tierName);
 				}
 				SaveUserData(currentUser);

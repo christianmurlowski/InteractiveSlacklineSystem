@@ -45,7 +45,7 @@ public class ExerciseLevelManager : MonoBehaviour
 			ExerciseLevelButton tierBasicButton = tierBasicGameObjectButton.GetComponent<ExerciseLevelButton>();
 	
 			tierBasicButton.buttonText.text = "Basic information";
-			if (tier.accomplished)
+			if (tier.isInteractable)
 			{			
 				tierBasicButton.unlocked = 1;
 				tierBasicButton.GetComponent<Button>().interactable = true;
@@ -58,8 +58,7 @@ public class ExerciseLevelManager : MonoBehaviour
 			
 			tierBasicButton.GetComponent<Button>().onClick.AddListener(() =>
 			{
-				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
-					
+				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));					
 				Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 	
 				SceneManager.LoadScene("TierInfo");
@@ -67,6 +66,7 @@ public class ExerciseLevelManager : MonoBehaviour
 			
 			tierBasicGameObjectButton.transform.SetParent(newSpacer, false);
 			
+			// Manage exercise data
 			foreach (var exercise in tier.exercises)
 			{
 				GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
@@ -96,10 +96,10 @@ public class ExerciseLevelManager : MonoBehaviour
 				{
 					PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
 					PlayerPrefs.SetInt("CurrentExerciseId", tier.exercises.IndexOf(exercise));
+					PlayerPrefs.SetString("CurrentTierFileName", tier.fileName);
 					
 					Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-					Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
-	
+					Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));	
 					SceneManager.LoadScene("ExerciseSideSelection");
 				});
 			

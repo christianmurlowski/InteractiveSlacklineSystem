@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class ExerciseData
 {
-	public string levelName;
+	public string fileName;
 	public string exerciseName;
 	public string description;
 	public bool isProgressGesture;

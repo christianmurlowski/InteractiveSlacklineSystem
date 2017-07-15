@@ -47,7 +47,7 @@ public class GestureEventArgs : EventArgs
 public class GestureDetector : IDisposable
 {
     /// <summary> Path to the gesture database that was trained with VGB </summary>
-    private readonly string gestureDatabase = "GestureDB\\TestDatabase.gbd";
+    private readonly string gestureDatabase = "GestureDB\\" + UserDataObject.GetCurrentTierFileName() + ".gbd";
 
     /// <summary> Name of the discrete gesture in the database that we want to track </summary>
     private readonly string gestureName = UserDataObject.GetCurrentExerciseName() + "_" + UserDataObject.GetCurrentSide().direction;

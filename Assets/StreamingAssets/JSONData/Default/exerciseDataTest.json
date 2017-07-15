@@ -1,218 +1,205 @@
 {
   "tierDataList": [
     {
+      "accomplished": true,
+      "levelName": "1_Preliminary",
       "tierName": "Preliminary Exercises",
-      "levelName": "Tier 1",
-			"accomplished": true,
-      "goals": [
-        {
-          "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
-        },
-        {
-          "description": "Balance to maintain and regaining equilibrium."
-        }
-      ],
       "exercises": [
         {
-          "levelName": "HandUp",
-          "exerciseName": "Hand up",
+          "accomplished": false,
+          "confidence": 0.0,
           "description": "Raise your hand up over your head",
+          "exerciseName": "Hand up",
+          "isInteractable": false,
           "isProgressGesture": false,
+          "levelName": "HandUp",
           "sides": [
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Right",
+              "isInteractable": true,
               "repetitions": [
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 5.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 1,
-              "isInteractable": true
+              "userTime": 0.0
             },
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Left",
+              "isInteractable": false,
               "repetitions": [
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 2.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 4.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 4.0,
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 0,
-              "isInteractable": false
+              "userTime": 0.0
             }
           ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "accomplished": false,
           "unlocked": 0,
-          "isInteractable": false
+          "userTime": 0.0
         },
         {
-          "levelName": "Swipe",
-          "exerciseName": "Swipe",
+          "accomplished": false,
+          "confidence": 0.0,
           "description": "Move your right hand to the right",
+          "exerciseName": "Swipe",
+          "isInteractable": false,
           "isProgressGesture": true,
+          "levelName": "Swipe",
           "sides": [
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Right",
+              "isInteractable": true,
               "repetitions": [
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 5.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 1,
-              "isInteractable": true
+              "userTime": 0.0
             },
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Left",
+              "isInteractable": false,
               "repetitions": [
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 2.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 4.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 4.0,
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 0,
-              "isInteractable": false
+              "userTime": 0.0
             }
           ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "accomplished": false,
           "unlocked": 0,
-          "isInteractable": false
+          "userTime": 0.0
         }
-      ]
-    },
-		{
-      "tierName": "First contact",
-      "levelName": "Tier 2",
-      "accomplished": false,
+      ],
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -221,200 +208,213 @@
           "description": "Balance to maintain and regaining equilibrium."
         }
       ],
+    },
+    {
+      "accomplished": false,
+      "levelName": "Tier 2",
+      "tierName": "First contact",
       "exercises": [
         {
-          "levelName": "HandUp",
-          "exerciseName": "Hand up",
+          "accomplished": false,
+          "confidence": 0.0,
           "description": "Raise your hand up over your head",
+          "exerciseName": "Hand up",
+          "isInteractable": false,
           "isProgressGesture": false,
+          "levelName": "HandUp",
           "sides": [
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Right",
+              "isInteractable": true,
               "repetitions": [
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 5.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 1,
-              "isInteractable": true
+              "userTime": 0.0
             },
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Left",
+              "isInteractable": false,
               "repetitions": [
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 2.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 4.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 4.0,
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 0,
-              "isInteractable": false
+              "userTime": 0.0
             }
           ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "accomplished": false,
           "unlocked": 0,
-          "isInteractable": false
+          "userTime": 0.0
         },
         {
-          "levelName": "Swipe",
-          "exerciseName": "Swipe",
+          "accomplished": false,
+          "confidence": 0.0,
           "description": "Move your hand to the",
+          "exerciseName": "Swipe",
+          "isInteractable": false,
           "isProgressGesture": true,
+          "levelName": "Swipe",
           "sides": [
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Right",
+              "isInteractable": true,
               "repetitions": [
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 2.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 2.0,
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 5.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 1,
-              "isInteractable": true
+              "userTime": 0.0
             },
             {
+              "accomplished": false,
+              "confidence": 0.0,
               "direction": "Left",
+              "isInteractable": false,
               "repetitions": [
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 2.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
+                  "accomplished": false,
+                  "confidence": 0.0,
                   "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "userTime": 0.0
                 },
                 {
-                  "minTime": 4.0,
                   "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
+                  "confidence": 0.0,
+                  "minTime": 4.0,
+                  "userTime": 0.0
                 }
               ],
               "tips": [
                 {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
+                  "description": "Tip 1 description",
+                  "name": "Tip 1"
                 },
                 {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
+                  "description": "Tip 2 description",
+                  "name": "Tip 2"
                 },
                 {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
+                  "description": "Tip 3 description",
+                  "name": "Tip 3"
                 }
               ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
               "unlocked": 0,
-              "isInteractable": false
+              "userTime": 0.0
             }
           ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "accomplished": false,
           "unlocked": 0,
-          "isInteractable": false
+          "userTime": 0.0
+        }
+      ],
+      "goals": [
+        {
+          "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
+        },
+        {
+          "description": "Balance to maintain and regaining equilibrium."
         }
       ]
     }

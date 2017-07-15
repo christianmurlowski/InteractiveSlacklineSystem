@@ -24,6 +24,9 @@ public class UserDataObject {
 //        return currentUser.exerciseData;
 //    }
 
+    // -----------------------------------------
+    // ----------------- TIER ------------------
+    // -----------------------------------------
     public static List<TierData> GetAllTiers()
     {
         return currentUser.tierData;
@@ -33,6 +36,16 @@ public class UserDataObject {
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")];
     }    
+
+    public static int GetCurrentTierErcisesLength()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Count;
+    }
+   
+    public static string GetCurrentTierFileName()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].fileName;
+    }
    
     public static TierData GetNextTier()
     {
@@ -44,12 +57,10 @@ public class UserDataObject {
         }
         return nextTier;
     }
-
-    public static int GetCurrentTierErcisesLength()
-    {
-        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Count;
-    }
-
+    
+    // -----------------------------------------
+    // --------------- EXERCISE ----------------
+    // -----------------------------------------
     public static ExerciseData GetCurrentExercise()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -58,7 +69,7 @@ public class UserDataObject {
     public static string GetCurrentExerciseName()
     {
         string exerciseName = currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")]
-            .exercises[PlayerPrefs.GetInt("CurrentExerciseId")].levelName;
+            .exercises[PlayerPrefs.GetInt("CurrentExerciseId")].fileName;
         
         if (GetCurrentExercise().isProgressGesture)
         {
@@ -73,10 +84,17 @@ public class UserDataObject {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
     }    
     
+    // -----------------------------------------
+    // ----------------- SIDE ------------------
+    // -----------------------------------------
     public static SideData GetCurrentSide()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")];
     }
+    
+    // -----------------------------------------
+    // -------------- REPETITION ---------------
+    // -----------------------------------------
     public static RepetitionData[] GetCurrentRepetitionsArray()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].repetitions;
@@ -86,7 +104,10 @@ public class UserDataObject {
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].repetitions[PlayerPrefs.GetInt("CurrentRepetitionId")];
     }
-        
+    
+    // -----------------------------------------
+    // ----------------- TIPS ------------------
+    // -----------------------------------------
     public static TipsData[] GetCurrentTipsArray()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].tips;

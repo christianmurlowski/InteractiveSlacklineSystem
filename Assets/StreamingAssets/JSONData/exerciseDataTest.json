@@ -1,203 +1,10 @@
 {
   "tierDataList": [
     {
-      "accomplished": true,
-      "exercises": [
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Raise your hand up over your head",
-          "exerciseName": "Hand up",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "levelName": "HandUp",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Move your right hand to the right",
-          "exerciseName": "Swipe",
-          "isInteractable": false,
-          "isProgressGesture": true,
-          "levelName": "Swipe",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        }
-      ],
+      "accomplished": false,
+      "fileName": "1_Test",
+      "tierName": "Preliminary Exercises",
+      "isInteractable": true,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -206,207 +13,208 @@
           "description": "Balance to maintain and regaining equilibrium."
         }
       ],
-      "levelName": "1_Preliminary",
-      "tierName": "Preliminary Exercises"
+      "exercises": [
+        {
+          "fileName": "HandUp",
+          "exerciseName": "Hand up",
+          "description": "Raise your hand up over your head",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "Swipe",
+          "exerciseName": "Swipe",
+          "description": "Move your right hand to the right",
+          "isProgressGesture": true,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        }
+      ]
     },
     {
       "accomplished": false,
-      "exercises": [
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Raise your hand up over your head",
-          "exerciseName": "Hand up",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "levelName": "HandUp",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Move your hand to the",
-          "exerciseName": "Swipe",
-          "isInteractable": false,
-          "isProgressGesture": true,
-          "levelName": "Swipe",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        }
-      ],
+      "fileName": "2_Test",
+      "tierName": "First contact",
+      "isInteractable": false,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -415,8 +223,202 @@
           "description": "Balance to maintain and regaining equilibrium."
         }
       ],
-      "levelName": "Tier 2",
-      "tierName": "First contact"
+      "exercises": [
+        {
+          "fileName": "HandUp",
+          "exerciseName": "Hand up",
+          "description": "Raise your hand up over your head",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "Swipe",
+          "exerciseName": "Swipe",
+          "description": "Move your hand to the",
+          "isProgressGesture": true,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 5.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 4.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        }
+      ]
     }
   ]
 }

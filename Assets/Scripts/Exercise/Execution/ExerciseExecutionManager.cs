@@ -43,6 +43,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				_thirdCheckpoint;
 	
 	private List<float> pufferList = new List<float>();
+
+	public int sideAccomplishedCounter;
 	
 	private GameObject _kinectManager;
 
@@ -284,7 +286,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_currentRepetition.userTime = _durationManager.GetlatestTimeInSeconds();
 		_currentRepetition.confidence = _currentRepetitionConfidence / confidenceIterator;
 		
-		Debug.Log("time: " + _currentRepetition.userTime + " || confidence: " +  _currentRepetition.confidence);
+		Debug.Log("Repetition time: " + _currentRepetition.userTime + " || confidence: " +  _currentRepetition.confidence);
 		
 		// Toggle current repetition
 		_currentRepetition.accomplished = true;
@@ -297,10 +299,47 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentExerciseData.accomplished = true;
 			UserDataObject.GetCurrentSide().accomplished = true;
 
-			// If last exercise --> unlock next tier
+			
+			// set side average confidence and time regarding repetitions
+			UserDataObject.GetCurrentSide().userTime = 0.0f;
+			UserDataObject.GetCurrentSide().confidence = 0.0f;
+			foreach (var repetition in UserDataObject.GetCurrentRepetitionsArray())
+			{
+				UserDataObject.GetCurrentSide().userTime += repetition.userTime;
+				UserDataObject.GetCurrentSide().confidence += repetition.confidence;
+			}
+
+			UserDataObject.GetCurrentSide().userTime /= UserDataObject.GetCurrentRepetitionsArray().Length;
+			UserDataObject.GetCurrentSide().confidence /= UserDataObject.GetCurrentRepetitionsArray().Length;
+			
+			
+			// set exercise average confidence and time regarding sides
+			sideAccomplishedCounter = 0;
+			_currentExerciseData.confidence = 0.0f;
+			_currentExerciseData.userTime = 0.0f;
+			foreach (var side in UserDataObject.GetCurrentExercise().sides)
+			{
+				if (side.accomplished)
+				{
+					sideAccomplishedCounter++;
+					_currentExerciseData.confidence += side.confidence;
+					_currentExerciseData.userTime += side.userTime;
+				}
+			}
+			Debug.Log("SIDECOUNTER: " + sideAccomplishedCounter);
+			Debug.Log("Exercise confidece: " + _currentExerciseData.confidence);
+			Debug.Log("Exercise usertime: " +  _currentExerciseData.userTime);
+			_currentExerciseData.confidence /= sideAccomplishedCounter;
+			_currentExerciseData.userTime /= sideAccomplishedCounter;
+			Debug.Log("SIDECOUNTER: " + sideAccomplishedCounter);
+			Debug.Log("Exercise confidece: " + _currentExerciseData.confidence);
+			Debug.Log("Exercise usertime: " +  _currentExerciseData.userTime);
+			// If last exercise --> accomplish current tier
 			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 			{
 				// todo All exercises accomplished congratulations or so
+				UserDataObject.GetCurrentTier().accomplished = true;
+				
 				// If last tier reached --> do nothing
 				if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
 				{
@@ -309,7 +348,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				else // If not last tier --> unlock next tier
 				{
 					TierData nextTier = UserDataObject.GetNextTier();
-					nextTier.accomplished = true;
+					nextTier.isInteractable = true;
 				}
 			}
 			else // If not last exercise --> unlock next exercise
@@ -367,7 +406,7 @@ public class ExerciseExecutionManager : MonoBehaviour
     
 	IEnumerator StartTracking()
 	{
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1f);
 
 		foreach (var gesture in _gestureDetectorList)
 		{

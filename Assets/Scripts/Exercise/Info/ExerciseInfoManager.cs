@@ -38,7 +38,7 @@ public class ExerciseInfoManager : MonoBehaviour
 	}
 	public void LoadPreviousScene()
 	{
-		SceneManager.LoadSceneAsync("MainMenu");
+		SceneManager.LoadSceneAsync("ExerciseSideSelection");
 	}
 	
 	void FillTipList()

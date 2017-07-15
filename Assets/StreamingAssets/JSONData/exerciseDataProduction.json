@@ -1,6 +1,10 @@
 {
   "tierDataList": [
     {
+      "accomplished": true,
+      "fileName": "1_Tier",
+      "tierName": "Preliminary Exercises",
+      "isInteractable": true,
       "exercises": [
         {
           "accomplished": false,
@@ -9,7 +13,7 @@
           "exerciseName": "Ground balance Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_1_Ground_Right",
+          "fileName": "Ground",
           "sides": [
             {
               "accomplished": false,
@@ -106,7 +110,7 @@
           "exerciseName": "Arms Out Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_2_ArmsOut_Right",
+          "fileName": "ArmsOut",
           "sides": [
             {
               "accomplished": false,
@@ -203,7 +207,7 @@
           "exerciseName": "Arms Crossed Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_3_ArmsCrossed_Right",
+          "fileName": "ArmsCrossed",
           "sides": [
             {
               "accomplished": false,
@@ -300,7 +304,7 @@
           "exerciseName": "Fixate Leg Front Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_4_FixateFront_Right",
+          "fileName": "FixateFront",
           "sides": [
             {
               "accomplished": false,
@@ -397,7 +401,7 @@
           "exerciseName": "Fixate Leg Side Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_5_FixateSide_Right",
+          "fileName": "FixateSide",
           "sides": [
             {
               "accomplished": false,
@@ -494,7 +498,7 @@
           "exerciseName": "Circle Leg Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_6_Circle_Right",
+          "fileName": "Circle",
           "sides": [
             {
               "accomplished": false,
@@ -591,7 +595,7 @@
           "exerciseName": "Tree Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_7_Knee_Right",
+          "fileName": "Knee",
           "sides": [
             {
               "accomplished": false,
@@ -688,7 +692,7 @@
           "exerciseName": "Squats Behind Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_8_SquatsBehind_Right",
+          "fileName": "SquatsBehind",
           "sides": [
             {
               "accomplished": false,
@@ -785,7 +789,7 @@
           "exerciseName": "Squats Front Right",
           "isInteractable": false,
           "isProgressGesture": false,
-          "levelName": "1_9_SquatsFront_Right",
+          "fileName": "SquatsFront",
           "sides": [
             {
               "accomplished": false,
@@ -883,9 +887,7 @@
         {
           "description": "Balance to maintain and regaining equilibrium."
         }
-      ],
-      "levelName": "Tier 1",
-      "tierName": "Preliminary Exercises"
+      ]
     }
   ]
 }

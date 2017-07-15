@@ -11,7 +11,6 @@ public class UserDataEditor : EditorWindow
     private string allUserDataProjectFilePath = "/StreamingAssets/JSONData/Users/";
     private string currentUserDataFilePath = "/StreamingAssets/JSONData/Users/";
     
-    
     private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
     private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
 
