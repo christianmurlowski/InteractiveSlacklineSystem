@@ -53,6 +53,9 @@ public class BodyView : MonoBehaviour
 	
 	private void Awake()
 	{
+		
+		BodyManager = GameObject.Find("BodyManager");
+
 //        DontDestroyOnLoad(gameObject);
 		//DontDestroyOnLoad();
 		
@@ -72,6 +75,7 @@ public class BodyView : MonoBehaviour
 		}
 
 		_BodyManager = BodyManager.GetComponent<BodyManager> ();	// Store gameobject for usage
+//		_BodyManager = BodyManager.GetComponent<BodyManager> ();	// Store gameobject for usage
 		if (_BodyManager == null)
 		{
 			return;

@@ -2021,6 +2021,7 @@ public class KinectManager : MonoBehaviour
 	{
 		try
 		{
+			
 			// try to initialize the default Kinect2 sensor
 			KinectInterop.FrameSource dwFlags = KinectInterop.FrameSource.TypeBody;
 

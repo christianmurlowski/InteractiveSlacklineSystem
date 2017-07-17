@@ -56,6 +56,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// -----------------------------------------
 		
 		// Disable handcursor in execution mode TODO all disable in testmode, enable in production
+		bodyManager = GameObject.Find("BodyManager");
+		
 //		_kinectManager = GameObject.Find("KinectManager");
 //		if (_kinectManager.GetComponent<InteractionManager>())
 //		{
@@ -437,6 +439,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			gesture.Dispose();
 		}
+		_gestureDetectorList = null;
 	}
 
 	private void DisposeBodyManager()
@@ -450,7 +453,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void LoadSummaryScene()
 	{
 		DisposeGestures();
-		DisposeBodyManager();
+//		DisposeBodyManager();
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	
