@@ -1,891 +1,891 @@
 {
   "tierDataList": [
     {
-      "accomplished": true,
+      "accomplished": false,
       "fileName": "1_Tier",
       "tierName": "Preliminary Exercises",
       "isInteractable": true,
-      "exercises": [
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot and balance with the left one",
-          "exerciseName": "Ground balance Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "Ground",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot, other in the air and arms stretched out",
-          "exerciseName": "Arms Out Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "ArmsOut",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot, other in the air and cross your arms",
-          "exerciseName": "Arms Crossed Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "ArmsCrossed",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot and raise your other leg to the front. Lean forward with your upper body and fixate the left leg with both arms",
-          "exerciseName": "Fixate Leg Front Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "FixateFront",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot and raise your other leg to the side. Lean sideward with your upper body and fixate the left leg with both arms",
-          "exerciseName": "Fixate Leg Side Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "FixateSide",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot and raise your other leg to the side. Stretch your arms out and circle your leg clockwise in the air",
-          "exerciseName": "Circle Leg Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "Circle",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot. Bent your other leg and stabilize it sideways with the sole into your knee. Stretch your arms out.",
-          "exerciseName": "Tree Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "Knee",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot. Other foot up and stretch it behind your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
-          "exerciseName": "Squats Behind Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "SquatsBehind",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        },
-        {
-          "accomplished": false,
-          "confidence": 0.0,
-          "description": "Stay on your right foot. Other foot up and stretch it in front of your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
-          "exerciseName": "Squats Front Right",
-          "isInteractable": false,
-          "isProgressGesture": false,
-          "fileName": "SquatsFront",
-          "sides": [
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Right",
-              "isInteractable": true,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 5.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 1,
-              "userTime": 0.0
-            },
-            {
-              "accomplished": false,
-              "confidence": 0.0,
-              "direction": "Left",
-              "isInteractable": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 2.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 3.0,
-                  "userTime": 0.0
-                },
-                {
-                  "accomplished": false,
-                  "confidence": 0.0,
-                  "minTime": 4.0,
-                  "userTime": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Tip 1 description",
-                  "name": "Tip 1"
-                },
-                {
-                  "description": "Tip 2 description",
-                  "name": "Tip 2"
-                },
-                {
-                  "description": "Tip 3 description",
-                  "name": "Tip 3"
-                }
-              ],
-              "unlocked": 0,
-              "userTime": 0.0
-            }
-          ],
-          "unlocked": 0,
-          "userTime": 0.0
-        }
-      ],
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
         },
         {
           "description": "Balance to maintain and regaining equilibrium."
+        }
+      ],
+      "exercises": [
+        {
+          "fileName": "Ground",
+          "exerciseName": "Ground balance",
+          "description": "Stay on your right foot and balance with the left one",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "ArmsOut",
+          "exerciseName": "Arms Out",
+          "description": "Stay on your right foot, other in the air and arms stretched out",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "ArmsCrossed",
+          "exerciseName": "Arms Crossed",
+          "description": "Stay on your right foot, other in the air and cross your arms",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "FixateFront",
+          "exerciseName": "Fixate Leg Front",
+          "description": "Stay on your right foot and raise your other leg to the front. Lean forward with your upper body and fixate the left leg with both arms",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "FixateSide",
+          "exerciseName": "Fixate Leg Side",
+          "description": "Stay on your right foot and raise your other leg to the side. Lean sideward with your upper body and fixate the left leg with both arms",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "Circle",
+          "exerciseName": "Circle Leg",
+          "description": "Stay on your right foot and raise your other leg to the side. Stretch your arms out and circle your leg clockwise in the air",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "Knee",
+          "exerciseName": "Tree",
+          "description": "Stay on your right foot. Bent your other leg and stabilize it sideways with the sole into your knee. Stretch your arms out.",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "SquatsBehind",
+          "exerciseName": "Squats Behind",
+          "description": "Stay on your right foot. Other foot up and stretch it behind your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
+          "isProgressGesture": true,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "SquatsFront",
+          "exerciseName": "Squats Front",
+          "description": "Stay on your right foot. Other foot up and stretch it in front of your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
+          "isProgressGesture": true,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 2.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
         }
       ]
     }

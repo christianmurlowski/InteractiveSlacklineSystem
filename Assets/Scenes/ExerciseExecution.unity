@@ -1609,6 +1609,7 @@ MonoBehaviour:
   toggleGroup: {fileID: 1913673927}
   successPanel: {fileID: 1865838830}
   testText: {fileID: 712080024}
+  sideAccomplishedCounter: 0
 --- !u!4 &2084021402
 Transform:
   m_ObjectHideFlags: 0

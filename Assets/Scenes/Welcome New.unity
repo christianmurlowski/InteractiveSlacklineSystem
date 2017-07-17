@@ -120,6 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b531f336dfee5f438f94ed501caefc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkeletonScale: 10
+  BoneMaterial: {fileID: 2100000, guid: d5209869fead1b746bf3b03bab11ca6f, type: 2}
+  linewidth: 0.5
+  tracked: {r: 0, g: 0, b: 0, a: 0}
+  inferred: {r: 0, g: 0, b: 0, a: 0}
   sensorHeight: 1
   sensorAngle: 0
   autoHeightAngle: 0
@@ -128,7 +133,7 @@ MonoBehaviour:
   computeInfraredMap: 0
   displayUserMap: 1
   displayColorMap: 0
-  displaySkeletonLines: 0
+  displaySkeletonLines: 1
   DisplayMapsWidthPercent: 150
   useMultiSourceReader: 0
   minUserDistance: 0.5

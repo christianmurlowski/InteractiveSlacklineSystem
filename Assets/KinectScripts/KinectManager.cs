@@ -194,6 +194,11 @@ public class KinectManager : MonoBehaviour
 	protected bool kinectReaderRunning = false;
 
 
+	public KinectInterop.BodyData[] GetBodies()
+	{
+		return bodyFrame.bodyData;
+	}
+
 	/// <summary>
 	/// Gets the single KinectManager instance.
 	/// </summary>
@@ -1962,7 +1967,7 @@ public class KinectManager : MonoBehaviour
 	{
 		// set the singleton instance
 		instance = this;
-
+	
 		try
 		{
 			bool bOnceRestarted = false;
@@ -3617,14 +3622,14 @@ public class KinectManager : MonoBehaviour
 				if(posParent != Vector2.zero && posJoint != Vector2.zero)
 				{
 					//Color lineColor = playerJointsTracked[i] && playerJointsTracked[parent] ? Color.red : Color.yellow;
-					KinectInterop.DrawLine(aTexture, (int)posParent.x, (int)posParent.y, (int)posJoint.x, (int)posJoint.y, Color.yellow);
+					KinectInterop.DrawLine(aTexture, (int)posParent.x, (int)posParent.y, (int)posJoint.x, (int)posJoint.y, Color.green);
 				}
 			}
 		}
 		
 		//aTexture.Apply();
 	}
-
+	
 	// calculates orientations of the body joints
 	private void CalculateJointOrients(ref KinectInterop.BodyData bodyData)
 	{

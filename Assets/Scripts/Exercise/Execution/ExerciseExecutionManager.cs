@@ -150,7 +150,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
-
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
 		{
 			var body = _bodies[bodyIndex];
@@ -161,7 +160,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				if (trackingId != _gestureDetectorList[bodyIndex].TrackingId)
 				{
 					_gestureDetectorList[bodyIndex].TrackingId = trackingId;
-
+					// Pause the gestures that have no id
 					_gestureDetectorList[bodyIndex].IsPaused = (trackingId == 0);
 					_gestureDetectorList[bodyIndex].OnGestureDetected += CreateOnGestureDetected(bodyIndex);
 				}
@@ -326,14 +325,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 					_currentExerciseData.userTime += side.userTime;
 				}
 			}
-			Debug.Log("SIDECOUNTER: " + sideAccomplishedCounter);
-			Debug.Log("Exercise confidece: " + _currentExerciseData.confidence);
-			Debug.Log("Exercise usertime: " +  _currentExerciseData.userTime);
+			// Average confidence and time of entire exercise (both sides)
 			_currentExerciseData.confidence /= sideAccomplishedCounter;
 			_currentExerciseData.userTime /= sideAccomplishedCounter;
-			Debug.Log("SIDECOUNTER: " + sideAccomplishedCounter);
-			Debug.Log("Exercise confidece: " + _currentExerciseData.confidence);
-			Debug.Log("Exercise usertime: " +  _currentExerciseData.userTime);
+
 			// If last exercise --> accomplish current tier
 			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 			{
@@ -362,6 +357,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 //				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
 			}
 			
+			//		 Save data to user json file
+			SaveCurrentExerciseData();
+			
 			// Load the summary scene
 			LoadSummaryScene();
 		} // If not last repetition --> current repetition is next repetition
@@ -370,10 +368,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentRepetition =
 				UserDataObject.GetCurrentRepetitionsArray()[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition) + 1];
 			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
+			
+			//		 Save data to user json file
+			SaveCurrentExerciseData();
 		}
-//		 Save data to user json file
-		SaveCurrentExerciseData();
 		
+		Debug.Log("-----------------------");
+		Debug.Log("TOGGLEANDSAVE");
+		Debug.Log("-----------------------");
+
 		// Reset all variables needed for next repetition
 		_currentRepetitionConfidence = 0;				
 		confidenceIterator = 0;
@@ -392,8 +395,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	public void StopTracking()
 	{
+		Debug.Log("STOP UPDATE");
+		enabled = false;
 		foreach (var gesture in _gestureDetectorList)
 		{
+			// Pause the current gesture with an id
 			if (gesture.TrackingId != 0)
 			{		
 				gesture.IsPaused = true;
@@ -408,8 +414,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
+		Debug.Log("START UPDATE");
+		enabled = true;
+		
 		foreach (var gesture in _gestureDetectorList)
 		{
+			// Start the current gesture with an id --> not all because the should be paused like in update function
 			if (gesture.TrackingId != 0)
 			{		
 				gesture.IsPaused = false;
@@ -417,9 +427,30 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 		Debug.Log("START TRACKING");
 	}
-	
+
+	private void DisposeGestures()
+	{
+		
+		// Dispose gesture
+		Debug.Log("Dispose gesturedetector");
+		foreach (var gesture in _gestureDetectorList)
+		{
+			gesture.Dispose();
+		}
+	}
+
+	private void DisposeBodyManager()
+	{
+		
+		// Dispose gesture
+		Debug.Log("Dispose gesturedetector");
+		_bodyManager.DisposeBodyManager();
+	}
+
 	private void LoadSummaryScene()
-	{	
+	{
+		DisposeGestures();
+		DisposeBodyManager();
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	

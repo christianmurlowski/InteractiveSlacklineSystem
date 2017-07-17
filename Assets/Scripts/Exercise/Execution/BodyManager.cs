@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Windows.Kinect;
 
 public class BodyManager : MonoBehaviour 
 {
 	public static BodyManager BM;
-
+	
+//	private KinectInterop.SensorData _Sensor;
 	private KinectSensor _Sensor;
 	private BodyFrameReader _Reader;
 	private Body[] _Data = null;
@@ -27,7 +29,17 @@ public class BodyManager : MonoBehaviour
 		}
 		return 0;
 	}
-	
+
+	public void DisposeBodyManager()
+	{
+		if (_Reader != null)
+		{
+			_Reader.Dispose();
+			_Reader = null;
+			_Sensor = null;
+			GC.SuppressFinalize(this);
+		}
+	}
 
 	public KinectSensor GetSensor()
 	{
@@ -49,8 +61,8 @@ public class BodyManager : MonoBehaviour
 //			}
 //		}
 //	}
-
-	void Start () 
+	KinectInterop.SensorData sensorData;
+	void Start ()
 	{
 		_Sensor = KinectSensor.GetDefault();
 
