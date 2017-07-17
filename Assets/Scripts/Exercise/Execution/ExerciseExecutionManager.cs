@@ -439,7 +439,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			gesture.Dispose();
 		}
-		_gestureDetectorList = null;
+//		_gestureDetectorList = null;
 	}
 
 	private void DisposeBodyManager()
