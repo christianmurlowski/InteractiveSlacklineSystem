@@ -39,6 +39,38 @@ public class BodyManager : MonoBehaviour
 			_Sensor = null;
 			GC.SuppressFinalize(this);
 		}
+		        
+		if (_Sensor != null)
+		{
+			if (_Sensor.IsOpen)
+			{
+				_Sensor.Close();
+			}
+            
+			_Sensor = null;
+		}
+		
+		_Sensor = KinectSensor.GetDefault();
+
+		if (_Sensor != null)
+		{
+			_Reader = _Sensor.BodyFrameSource.OpenReader();
+			
+			if (_Data == null)
+			{
+				Debug.Log("_bodies: " + GetData());
+
+				_Data = new Body[_Sensor.BodyFrameSource.BodyCount]; // evtl hier in "new Body[1]" einsetzen
+//				_Data = new Body[1]; // evtl hier in "new Body[1]" einsetzen
+				Debug.Log("_bodies new: " + GetData());
+				Debug.Log("_bodies new lengt: " + GetData().Length);
+			}
+			
+			if (!_Sensor.IsOpen)
+			{
+				_Sensor.Open();
+			}
+		}   
 	}
 
 	public KinectSensor GetSensor()

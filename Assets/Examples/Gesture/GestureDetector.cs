@@ -47,10 +47,10 @@ public class GestureEventArgs : EventArgs
 public class GestureDetector : IDisposable
 {
     /// <summary> Path to the gesture database that was trained with VGB </summary>
-    private readonly string gestureDatabase = "GestureDB\\" + UserDataObject.GetCurrentTierFileName() + ".gbd";
+    private readonly string gestureDatabase = "GestureDB\\" + UserDataObject.GetCurrentTierFileName() + "\\" + UserDataObject.GetCurrentExerciseFileName() + ".gbd";
 
     /// <summary> Name of the discrete gesture in the database that we want to track </summary>
-    private readonly string gestureName = UserDataObject.GetCurrentExerciseName() + "_" + UserDataObject.GetCurrentSide().direction;
+    private readonly string gestureName = UserDataObject.GetCurrentExerciseDatabaseName() + "_" + UserDataObject.GetCurrentSide().direction;
 
     /// <summary> Gesture frame source which should be tied to a body tracking ID </summary>
     private VisualGestureBuilderFrameSource vgbFrameSource = null;
@@ -71,7 +71,7 @@ public class GestureDetector : IDisposable
             throw new ArgumentNullException("kinectSensor");
         }
         
-        Debug.Log("current gestureName: " + gestureName);
+        Debug.Log("database name: " + gestureDatabase + "current gestureName: " + gestureName);
 
         // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
         this.vgbFrameSource = VisualGestureBuilderFrameSource.Create(kinectSensor, 0);
@@ -96,9 +96,9 @@ public class GestureDetector : IDisposable
 
             foreach (Gesture gesture in database.AvailableGestures)
             {
-                this.vgbFrameSource.AddGesture(gesture);
+//                this.vgbFrameSource.AddGesture(gesture);
 //                
-//                Debug.Log("foreach gesture name: " + gesture.Name);
+                Debug.Log("foreach gesture name: " + gesture.Name);
                 if (gesture.Name.Equals(this.gestureName))
                 {
                     this.vgbFrameSource.AddGesture(gesture);

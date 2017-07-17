@@ -48,6 +48,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	
 	private GameObject _kinectManager;
 
+	private bool strartTrackingAgain;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -84,7 +86,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// -----------------------------------------
 		
 		// Exercise name
-		titleText.text = UserDataObject.GetCurrentExerciseName().ToUpper();
+		titleText.text = UserDataObject.GetCurrentExerciseAndSideName().ToUpper();
 		successPanel = successPanel.GetComponent<CanvasGroup>(); // TODO implement success animation for rep
 		
 		// Array of Toggles
@@ -370,7 +372,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentRepetition =
 				UserDataObject.GetCurrentRepetitionsArray()[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition) + 1];
 			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
-			
+			strartTrackingAgain = true;
+			Debug.Log("STARTTRAKCINGAGAIN" + strartTrackingAgain);
 			//		 Save data to user json file
 			SaveCurrentExerciseData();
 		}
@@ -390,15 +393,16 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_secondCheckpoint = false;
 		
 		pufferList.Clear();
-		
-		
-		StartCoroutine("StartTracking");
+
+		if (strartTrackingAgain)
+		{
+			StartCoroutine("StartTracking");
+		}
 	}
 
 	public void StopTracking()
 	{
-		Debug.Log("STOP UPDATE");
-		enabled = false;
+		strartTrackingAgain = false;
 		foreach (var gesture in _gestureDetectorList)
 		{
 			// Pause the current gesture with an id
@@ -407,6 +411,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				gesture.IsPaused = true;
 			}
 		}
+		Debug.Log("STOP UPDATE");
+		enabled = false;
 
 		Debug.Log("STOP TRACKING");
 
@@ -416,9 +422,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
-		Debug.Log("START UPDATE");
-		enabled = true;
-		
 		foreach (var gesture in _gestureDetectorList)
 		{
 			// Start the current gesture with an id --> not all because the should be paused like in update function
@@ -427,6 +430,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				gesture.IsPaused = false;
 			}
 		}
+		Debug.Log("START UPDATE");
+		enabled = true;
 		Debug.Log("START TRACKING");
 	}
 
@@ -440,14 +445,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 			gesture.Dispose();
 		}
 //		_gestureDetectorList = null;
-	}
-
-	private void DisposeBodyManager()
-	{
-		
-		// Dispose gesture
-		Debug.Log("Dispose gesturedetector");
-		_bodyManager.DisposeBodyManager();
 	}
 
 	private void LoadSummaryScene()

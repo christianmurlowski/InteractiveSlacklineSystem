@@ -65,19 +65,36 @@ public class UserDataObject {
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")];
     }
-    
+        
     public static string GetCurrentExerciseName()
     {
-        string exerciseName = currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")]
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].exerciseName;
+    }
+            
+    public static string GetCurrentExerciseAndSideName()
+    {
+        return GetCurrentExerciseName() +  " " + GetCurrentSide().direction;
+    }
+    
+    public static string GetCurrentExerciseFileName()
+    {
+        string fileName = currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")]
             .exercises[PlayerPrefs.GetInt("CurrentExerciseId")].fileName;
+        
+        return fileName;
+    }     
+    
+    public static string GetCurrentExerciseDatabaseName()
+    {
+        string fileName = GetCurrentExerciseFileName();
         
         if (GetCurrentExercise().isProgressGesture)
         {
-            exerciseName += "Progress";
+            fileName += "Progress";
         }
         
-        return exerciseName;
-    }
+        return fileName;
+    } 
     
     public static ExerciseData GetNextExercise()
     {
