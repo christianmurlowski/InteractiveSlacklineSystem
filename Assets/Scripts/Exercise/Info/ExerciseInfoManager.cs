@@ -13,8 +13,6 @@ public class ExerciseInfoManager : MonoBehaviour
 
 	public Text exerciseName;
 	
-	private ExerciseData _currentExercise;
-	
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,9 +23,7 @@ public class ExerciseInfoManager : MonoBehaviour
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
-		_currentExercise = UserDataObject.GetCurrentExercise();
-		
-		exerciseName.text = _currentExercise.exerciseName.ToUpper();
+		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName().ToUpper();
 		
 		FillTipList();
 	}

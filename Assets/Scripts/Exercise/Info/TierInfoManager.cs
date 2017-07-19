@@ -33,19 +33,21 @@ public class TierInfoManager : MonoBehaviour
 
 	public void LoadNextScene()
 	{
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
-		if (!UserDataObject.GetCurrentExercise().isInteractable)
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
+		
+		
+		if (!UserDataObject.GetFirstTierExercise().isInteractable)
 		{
 			Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-			UserDataObject.GetCurrentExercise().isInteractable = true;
-			UserDataObject.GetCurrentExercise().unlocked = 1;	
+			UserDataObject.GetFirstTierExercise().isInteractable = true;
+			UserDataObject.GetFirstTierExercise().unlocked = 1;	
 		}
 		
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
 		
 		SceneManager.LoadSceneAsync("MainMenu");
 	}

@@ -446,7 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 709780413}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 5
+  m_DragThreshold: 50
 --- !u!4 &709780416
 Transform:
   m_ObjectHideFlags: 0

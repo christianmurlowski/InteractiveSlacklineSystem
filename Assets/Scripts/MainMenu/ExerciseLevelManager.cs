@@ -20,9 +20,9 @@ public class ExerciseLevelManager : MonoBehaviour
 	void Start ()
 	{
 		_allTierData = UserDataObject.GetAllTiers();
-			
+		// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser();
 		FillMenu();
-//	  	PlayerPrefs.DeleteAll(); // Deletes playerprefs
 	}
 
 	public void LoadPreviousScene()
@@ -33,9 +33,9 @@ public class ExerciseLevelManager : MonoBehaviour
 
 	void FillMenu()
 	{
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise());
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().isInteractable);
-		Debug.Log("TIERINFO: " + UserDataObject.GetCurrentExercise().unlocked);
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise());
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
+		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
 		// For each tier create tier basics, exercises and tier summary button
 		foreach (var tier in _allTierData)
 		{

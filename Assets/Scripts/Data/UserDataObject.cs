@@ -61,8 +61,14 @@ public class UserDataObject {
     // -----------------------------------------
     // --------------- EXERCISE ----------------
     // -----------------------------------------
+    public static ExerciseData GetFirstTierExercise()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[0];
+    }
+    
     public static ExerciseData GetCurrentExercise()
     {
+        // todo maybe check if current exercise exists in this tier or is in ragne of the tier
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")];
     }
         
