@@ -893,7 +893,7 @@
       "accomplished": false,
       "fileName": "2_Tier",
       "tierName": "First Contact",
-      "isInteractable": true,
+      "isInteractable": false,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -1295,7 +1295,7 @@
           "fileName": "NearStart",
           "exerciseName": "Start",
           "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1388,11 +1388,11 @@
           "unlocked": 0,
           "isInteractable": false
         },
-       	{
+        {
           "fileName": "CrossStart",
           "exerciseName": "Cross Start",
           "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1488,10 +1488,10 @@
       ]
     },
     {
-	  "accomplished": false,
+      "accomplished": false,
       "fileName": "3_Tier",
       "tierName": "Static Exercises",
-      "isInteractable": true,
+      "isInteractable": false,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -1501,11 +1501,11 @@
         }
       ],
       "exercises": [
-       	{
+        {
           "fileName": "NearStayOne",
           "exerciseName": "Stay One Normal",
           "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1598,11 +1598,11 @@
           "unlocked": 0,
           "isInteractable": false
         },
-       	{
+        {
           "fileName": "CrossStayOne",
           "exerciseName": "Stay One Cross",
           "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1695,108 +1695,11 @@
           "unlocked": 0,
           "isInteractable": false
         },
-       	{
+        {
           "fileName": "NearStayBoth",
           "exerciseName": "Stay Both Normal",
           "description": "example description",
-          "isProgressGesture": false,
-          "sides": [
-            {
-              "direction": "Right",
-              "repetitions": [
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                },
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                },
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
-                },
-                {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
-                },
-                {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
-              "unlocked": 1,
-              "isInteractable": true
-            },
-            {
-              "direction": "Left",
-              "repetitions": [
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                },
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                },
-                {
-                  "minTime": 3.0,
-                  "accomplished": false,
-                  "userTime": 0.0,
-                  "confidence": 0.0
-                }
-              ],
-              "tips": [
-                {
-                  "name": "Tip 1",
-                  "description": "Tip 1 description"
-                },
-                {
-                  "name": "Tip 2",
-                  "description": "Tip 2 description"
-                },
-                {
-                  "name": "Tip 3",
-                  "description": "Tip 3 description"
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "accomplished": false,
-              "unlocked": 0,
-              "isInteractable": false
-            }
-          ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "accomplished": false,
-          "unlocked": 0,
-          "isInteractable": false
-        }
-       	{
-          "fileName": "CrossStayBoth",
-          "exerciseName": "Stay Both Cross",
-          "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1889,11 +1792,108 @@
           "unlocked": 0,
           "isInteractable": false
         },
-       	{
+        {
+          "fileName": "CrossStayBoth",
+          "exerciseName": "Stay Both Cross",
+          "description": "example description",
+          "isProgressGesture": true,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
           "fileName": "BobOne",
           "exerciseName": "Bob One",
           "description": "example description",
-          "isProgressGesture": false,
+          "isProgressGesture": true,
           "sides": [
             {
               "direction": "Right",
@@ -1992,7 +1992,7 @@
       "accomplished": false,
       "fileName": "4_Tier",
       "tierName": "Dynamic",
-      "isInteractable": true,
+      "isInteractable": false,
       "goals": [
         {
           "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
@@ -2002,9 +2002,203 @@
         }
       ],
       "exercises": [
-       	{
+        {
           "fileName": "NearSwitchFront",
-          "exerciseName": "Switch Standing Leg",
+          "exerciseName": "Switch Standing Leg I",
+          "description": "example description",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "CrossSwitchFront",
+          "exerciseName": "Switch Standing Leg II",
+          "description": "example description",
+          "isProgressGesture": false,
+          "sides": [
+            {
+              "direction": "Right",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "repetitions": [
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                },
+                {
+                  "minTime": 3.0,
+                  "accomplished": false,
+                  "userTime": 0.0,
+                  "confidence": 0.0
+                }
+              ],
+              "tips": [
+                {
+                  "name": "Tip 1",
+                  "description": "Tip 1 description"
+                },
+                {
+                  "name": "Tip 2",
+                  "description": "Tip 2 description"
+                },
+                {
+                  "name": "Tip 3",
+                  "description": "Tip 3 description"
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "accomplished": false,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "accomplished": false,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "WalkForward",
+          "exerciseName": "Walk Forward",
           "description": "example description",
           "isProgressGesture": false,
           "sides": [
