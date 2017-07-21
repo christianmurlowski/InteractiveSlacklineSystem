@@ -20,7 +20,7 @@ public class DataController : MonoBehaviour
 	
 	void Start ()
 	{
-//		UserSelectionManager.TestSetCurrentUser();    // TODO Just for test purposes -> Delete in production
+		UserSelectionManager.TestSetCurrentUser();    // TODO Just for test purposes -> Delete in production
 
 		currentUser = UserDataObject.currentUser;
 

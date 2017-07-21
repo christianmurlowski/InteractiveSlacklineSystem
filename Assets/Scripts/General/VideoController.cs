@@ -11,25 +11,26 @@ public class VideoController : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-		PlayerPrefs.SetInt("CurrentSideId", 0);
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+//		PlayerPrefs.SetInt("CurrentSideId", 0);
 
 		
-		RawImage rim = GetComponent<RawImage>();
-		movieTexture = (MovieTexture)rim.mainTexture;
-		movieTexture.Play();
-//		movieTexture = Resources.Load("Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
-//		                              + UserDataObject.GetCurrentExerciseFileName() + "_"
-//		                              + UserDataObject.GetCurrentSide().direction) as MovieTexture;
-//		Debug.Log("stin: " + "Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
-//		          + UserDataObject.GetCurrentExerciseFileName() + "_"
-//		          + UserDataObject.GetCurrentSide().direction);
-//		Debug.Log("moviePath: " + movieTexture.name);
-//		GetComponent<Renderer>().material.mainTexture = movieTexture;
+//		RawImage rim = GetComponent<RawImage>();
+////		movieTexture = (MovieTexture)rim.mainTexture;
+		movieTexture = Resources.Load("Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
+		                              + UserDataObject.GetCurrentExerciseFileName() + "_"
+		                              + UserDataObject.GetCurrentSide().direction) as MovieTexture;
 //		movieTexture.Play();
-//		movieTexture.loop = true;
+
+		Debug.Log("stin: " + "Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
+		          + UserDataObject.GetCurrentExerciseFileName() + "_"
+		          + UserDataObject.GetCurrentSide().direction);
+		Debug.Log("moviePath: " + movieTexture.name);
+		GetComponent<Renderer>().material.mainTexture = movieTexture;
+		movieTexture.Play();
+		movieTexture.loop = true;
 
 	}
 	

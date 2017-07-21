@@ -20,8 +20,11 @@ public class ExerciseLevelManager : MonoBehaviour
 	void Start ()
 	{
 		_allTierData = UserDataObject.GetAllTiers();
+		
 		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
+		UserSelectionManager.TestSetCurrentUser();
+		
+		
 		FillMenu();
 	}
 
@@ -92,6 +95,14 @@ public class ExerciseLevelManager : MonoBehaviour
 				Debug.Log("exercise.unlocked: " + exercise.unlocked);
 				button.unlocked = exercise.unlocked;
 				button.GetComponent<Button>().interactable = exercise.isInteractable;
+				
+				Debug.Log("Images/" + tier.fileName + "/"+ exercise.fileName);
+		
+				button.image.sprite = Resources.Load<Sprite>("Images/" + tier.fileName + "/"
+					                                       + exercise.fileName);
+//				 button.image.GetComponent<Image>().sprite = Resources.Load("Images/" + tier.fileName + "/" + exercise.fileName) as Sprite;
+				
+				
 				button.GetComponent<Button>().onClick.AddListener(() =>
 				{
 					PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
