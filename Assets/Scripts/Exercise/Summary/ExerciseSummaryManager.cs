@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class ExerciseSummaryManager : MonoBehaviour {
 
 	public Text exerciseNameText;
-	private ExerciseData _currentExerciseData;
 
 	public Transform timeSpacer;
 	public Transform confidenceSpacer;
@@ -31,12 +30,9 @@ public class ExerciseSummaryManager : MonoBehaviour {
 //		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
 //		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
 
-		_currentExerciseData = UserDataObject.GetCurrentExercise();
-
-		Debug.Log(_currentExerciseData.exerciseName);
 		
 		// Set the title of current exercise
-		exerciseNameText.text = "Exercise " + _currentExerciseData.exerciseName.ToUpper() + " completed!";
+		exerciseNameText.text = "Exercise " + UserDataObject.GetCurrentExerciseAndSideName().ToUpper() + " completed!";
 		
 		// Output summary data from exercise
 		OutputData();

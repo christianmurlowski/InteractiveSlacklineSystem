@@ -27,7 +27,7 @@ public class TierSummaryManager : MonoBehaviour
 
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
-		tierNameText.text = _currentTierData.tierName.ToUpper();
+		tierNameText.text = "Average data summary";
 		
 		FillGoalList();
 	}
