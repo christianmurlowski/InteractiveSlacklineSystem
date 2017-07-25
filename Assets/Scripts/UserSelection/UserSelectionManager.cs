@@ -51,6 +51,8 @@ public class UserSelectionManager : MonoBehaviour
     {
         PlayerPrefs.SetString("CurrentUser", user.name);
         PlayerPrefs.SetString("CurrentUserFilePath", filePath);
+        PlayerPrefs.SetInt("CurrentTierId", 0);
+
         currentUserDataObject.SetCurrentUser(user);
         Debug.Log(currentUserDataObject.GetCurrentUser());        
         Debug.Log(currentUserDataObject.GetCurrentUser().name);        
@@ -82,6 +84,8 @@ public class UserSelectionManager : MonoBehaviour
                     currentUserDataObject.SetCurrentUser(tempUserData);
                     PlayerPrefs.SetString("CurrentUser", tempUserData.name);
                     PlayerPrefs.SetString("CurrentUserFilePath",  filePath);
+                    PlayerPrefs.SetInt("CurrentTierId", 0);					
+
                 }
             }
         }

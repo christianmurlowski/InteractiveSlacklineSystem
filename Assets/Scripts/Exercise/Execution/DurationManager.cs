@@ -119,6 +119,11 @@ public class DurationManager : MonoBehaviour
 		durationImage.fillAmount = 0.0f;
 		changeColor(red);
 	}
+
+	public bool IsTimerRunning()
+	{
+		return _attemptExecutionTime.IsRunning;
+	}
 	
 	public void changeColor(Color32 color)
 	{

@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class RepetitionTimePanel : MonoBehaviour
 {
     public Text timeText;
+    public Text repetitionText;
 }

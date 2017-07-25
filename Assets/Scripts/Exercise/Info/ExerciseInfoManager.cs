@@ -31,11 +31,11 @@ public class ExerciseInfoManager : MonoBehaviour
 
 	public void LoadNextScene()
 	{
-		SceneManager.LoadSceneAsync("ExerciseExecution");
+		SceneManager.LoadScene("ExerciseExecution");
 	}
 	public void LoadPreviousScene()
 	{
-		SceneManager.LoadSceneAsync("ExerciseSideSelection");
+		SceneManager.LoadScene("ExerciseSideSelection");
 	}
 	
 	void FillTipList()

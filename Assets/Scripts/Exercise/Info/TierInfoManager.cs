@@ -49,7 +49,7 @@ public class TierInfoManager : MonoBehaviour
 		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
 		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
 		
-		SceneManager.LoadSceneAsync("MainMenu");
+		SceneManager.LoadScene("MainMenu");
 	}
 	
 	void FillGoalList()

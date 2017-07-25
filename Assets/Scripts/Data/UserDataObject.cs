@@ -61,6 +61,39 @@ public class UserDataObject {
     // -----------------------------------------
     // --------------- EXERCISE ----------------
     // -----------------------------------------
+
+    public static List<ExerciseData> GetCurrentTierAllExercises()
+    {
+        return GetCurrentTier().exercises;
+    }
+    
+    public static float GetCurrentTierAllExercisesHighestTime()
+    {
+        float highestTime = 0.0f;
+        foreach (var exercise in GetCurrentTierAllExercises())
+        {
+            if (highestTime < exercise.userTime)
+            {
+                highestTime = exercise.userTime;
+            }
+        }
+
+        return highestTime;
+    }    
+    public static float GetCurrentTierAllExercisesHighestAttempt()
+    {
+        int highestAttempt = 0;
+        foreach (var exercise in GetCurrentTierAllExercises())
+        {
+            if (highestAttempt < exercise.attempts)
+            {
+                highestAttempt = exercise.attempts;
+            }
+        }
+
+        return highestAttempt;
+    }
+        
     public static ExerciseData GetFirstTierExercise()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[0];
@@ -105,7 +138,72 @@ public class UserDataObject {
     public static ExerciseData GetNextExercise()
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId") + 1];
-    }    
+    }
+
+    public static float GetCurrentExerciseLongestRepetitionTime()
+    {
+        float longestRep = 0f;
+
+        foreach (var repetition in GetCurrentRepetitionsArray())
+        {
+            if (longestRep < repetition.userTime)
+            {
+                longestRep = repetition.userTime;
+            }
+        }
+        return longestRep;
+    }
+        
+    public static int GetCurrentExerciseSideHighestAttempt()
+    {
+        int highestAttempt = 0;
+
+        foreach (var repetition in GetCurrentRepetitionsArray())
+        {
+            if (repetition.attempts > highestAttempt)
+            {            
+                highestAttempt = repetition.attempts;
+            }
+        }
+        return highestAttempt;
+    }
+    
+    public static float GetCurrentExerciseAverageRepetitionAttempts()
+    {
+        float avgAttempt = 0;
+
+        foreach (var repetition in GetCurrentRepetitionsArray())
+        {
+            avgAttempt += repetition.attempts;
+        }
+        return avgAttempt / GetCurrentRepetitionsArray().Length;
+    }
+        
+    public static float GetCurrentExerciseAverageRepetitionTime()
+    {
+        float avgTime = 0f;
+
+        foreach (var repetition in GetCurrentRepetitionsArray())
+        {
+            avgTime += repetition.userTime;
+        }
+        return avgTime / GetCurrentRepetitionsArray().Length;
+    }
+    
+        
+    public static float GetCurrentExerciseAverageRepetitionConfidence()
+    {
+        float avgConfidence = 0f;
+
+        foreach (var repetition in GetCurrentRepetitionsArray())
+        {
+            avgConfidence += repetition.confidence;
+        }
+        return avgConfidence / GetCurrentRepetitionsArray().Length;
+    } 
+
+    
+    
     
     // -----------------------------------------
     // ----------------- SIDE ------------------

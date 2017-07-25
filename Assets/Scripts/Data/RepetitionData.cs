@@ -5,9 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class RepetitionData
 {
-    public float minTime;
     public bool accomplished;
+    public float minTime;
     public float userTime;
     public float confidence;
+    public int attempts;
 
 }

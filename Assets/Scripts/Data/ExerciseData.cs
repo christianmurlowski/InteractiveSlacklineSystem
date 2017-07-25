@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class ExerciseData
 {
+	public bool accomplished;
 	public string fileName;
 	public string exerciseName;
 	public string description;
@@ -15,7 +16,7 @@ public class ExerciseData
 
 	public float userTime;
 	public float confidence;
-	public bool accomplished;
+	public int attempts;
 	public int unlocked;
 	public bool isInteractable;
 

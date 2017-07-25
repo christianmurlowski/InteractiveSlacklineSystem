@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class SideData
 {
+    public bool accomplished;
     public string direction;
     
     public RepetitionData[] repetitions;
@@ -13,7 +14,7 @@ public class SideData
     
     public float userTime;
     public float confidence;
-    public bool accomplished;
+    public int attempts;
     public int unlocked;
     public bool isInteractable;
     

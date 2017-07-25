@@ -36,7 +36,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	
 	public Text testText; // TODO Just for test purposes -> Delete in production
 
-	private int confidenceIterator; // for calculating average confidence
+	private int confidenceIterator, attemptsIterator; // for calculating average confidence
 
 	private bool _firstCheckpoint,
 				_secondCheckpoint,
@@ -60,7 +60,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Disable handcursor in execution mode TODO all disable in testmode, enable in production
 		bodyManager = GameObject.Find("BodyManager");
 		
-//		_kinectManager = GameObject.Find("KinectManager");
+		_kinectManager = GameObject.Find("KinectManager");
 //		if (_kinectManager.GetComponent<InteractionManager>())
 //		{
 //			_kinectManager.GetComponent<InteractionManager>().showHandCursor = false;
@@ -69,9 +69,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// TODO Just for test purposes -> Delete in production
 //		UserSelectionManager.TestSetCurrentUser();
 //		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
 //		PlayerPrefs.SetInt("CurrentSideId", 0);
-		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -118,6 +118,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 				// Set first rep as current rep
 				if (_currentRepetition == null)
 				{
+					repetition.attempts = 0;
+					repetition.confidence = 0.0f;
+					repetition.userTime = 0.0f;
+					
 					_currentRepetition = repetition;
 				}
 			}
@@ -191,13 +195,18 @@ public class ExerciseExecutionManager : MonoBehaviour
 			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f))
 			{
 				_durationManager.StartTimer();
-				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 				
 				confidenceIterator++;
 				_currentRepetitionConfidence += e.DetectionConfidence * 100;
+				
+				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 			}
 			else
 			{
+				if (_durationManager.IsTimerRunning())
+				{
+					attemptsIterator++;
+				}
 				_durationManager.StopTimer();
 				
 				// if tracked time is greater than given time of the repetition
@@ -214,45 +223,70 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			_durationManager.SetProgress(e.Progress);
 
-			if (_thirdCheckpoint)
-			{
-				_durationManager.StartTimer();
+//			if (_thirdCheckpoint)
+//			{
+//				_durationManager.StartTimer();
+//
+//				confidenceIterator++;
+//				_currentRepetitionConfidence += e.Progress * 100;
+//				
+//				if (e.Progress <= 0.4f)
+//				{
+//					Debug.Log(e.Progress);
+//					if (_durationManager.IsTimerRunning())
+//					{
+//						_currentRepetition.attempts++;
+//						Debug.Log("CURRENT REPETITION ATTEMPT: " + _currentRepetition.attempts);
+//
+//					}
+//					
+//					_durationManager.StopTimer();
+//					
+//					_thirdCheckpoint = false;
+//					
+//					// if tracked time is greater than given time of the repetition
+//					if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
+//					{
+//						ToggleAndCheckRepetition();
+//					}
+//				}
+//			}
+//			else
+//			{
+//				if (_secondCheckpoint && GestureDetected(e.Progress, 0.7f, 1f))
+//				{
+//					_thirdCheckpoint = true;
+//				}
+//				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
+				if (GestureDetected(e.Progress, 0.4f, 1.5f))
+				{					
+					
+					_durationManager.StartTimer();
 
-				if (e.Progress <= 0.4f)
+					confidenceIterator++;
+					_currentRepetitionConfidence += e.Progress * 100;
+
+					testText.text = "if CONTINUOUS: " + e.Progress;
+
+				}
+				else
 				{
-					_durationManager.StopTimer();
-					
-					_thirdCheckpoint = false;
-					
+					if (_durationManager.IsTimerRunning())
+					{
+						attemptsIterator++;
+						Debug.Log("CURRENT REPETITION ATTEMPT: " + attemptsIterator);
+						_durationManager.StopTimer();
+					}		
+
 					// if tracked time is greater than given time of the repetition
 					if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
 					{
 						ToggleAndCheckRepetition();
 					}
+				
+					testText.text = "else CONTINUOUS: " + e.Progress;
 				}
-			}
-			else
-			{
-				if (_secondCheckpoint && GestureDetected(e.Progress, 0.7f, 1f))
-				{
-					_thirdCheckpoint = true;
-				}
-				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.5f, 0.7f))
-				{
-					_secondCheckpoint = true;
-				}
-				else if (GestureDetected(e.Progress, 0.2f, 0.5f))
-				{
-					_firstCheckpoint = true;
-				}
-			}
-			testText.text = "if CONTINUOUS: " + e.Progress;
-		}
-		else
-		{
-			testText.text = "else CONTINUOUS: " + e.Progress;
-
-			_durationManager.StopTimer();
+//			}
 		}
 	}
 	
@@ -288,6 +322,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Save the time and confidence for the current repetition
 		_currentRepetition.userTime = _durationManager.GetlatestTimeInSeconds();
 		_currentRepetition.confidence = _currentRepetitionConfidence / confidenceIterator;
+		_currentRepetition.attempts = attemptsIterator;
 		
 		Debug.Log("Repetition time: " + _currentRepetition.userTime + " || confidence: " +  _currentRepetition.confidence);
 		
@@ -298,28 +333,29 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Check if last repetition
 		if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
 		{
-			// Exercise completed and accomplished
+			// Exercise and side accomplished
 			_currentExerciseData.accomplished = true;
 			UserDataObject.GetCurrentSide().accomplished = true;
-
 			
-			// set side average confidence and time regarding repetitions
+			// Set values for side attempts, confidence, and time regarding repetitions
 			UserDataObject.GetCurrentSide().userTime = 0.0f;
 			UserDataObject.GetCurrentSide().confidence = 0.0f;
+			UserDataObject.GetCurrentSide().attempts = 0;
 			foreach (var repetition in UserDataObject.GetCurrentRepetitionsArray())
 			{
 				UserDataObject.GetCurrentSide().userTime += repetition.userTime;
 				UserDataObject.GetCurrentSide().confidence += repetition.confidence;
+				UserDataObject.GetCurrentSide().attempts += repetition.attempts;
 			}
-
+			// Set the avg usertime and confidence for the current side
 			UserDataObject.GetCurrentSide().userTime /= UserDataObject.GetCurrentRepetitionsArray().Length;
 			UserDataObject.GetCurrentSide().confidence /= UserDataObject.GetCurrentRepetitionsArray().Length;
 			
-			
-			// set exercise average confidence and time regarding sides
+			// Set values for exercise attempts, confidence, and time regarding sides
 			sideAccomplishedCounter = 0;
 			_currentExerciseData.confidence = 0.0f;
 			_currentExerciseData.userTime = 0.0f;
+			_currentExerciseData.attempts = 0;
 			foreach (var side in UserDataObject.GetCurrentExercise().sides)
 			{
 				if (side.accomplished)
@@ -327,40 +363,56 @@ public class ExerciseExecutionManager : MonoBehaviour
 					sideAccomplishedCounter++;
 					_currentExerciseData.confidence += side.confidence;
 					_currentExerciseData.userTime += side.userTime;
+					_currentExerciseData.attempts += side.attempts;
 				}
 			}
-			// Average confidence and time of entire exercise (both sides)
-			_currentExerciseData.confidence /= sideAccomplishedCounter;
+			// Set the avg usertime and confidence for the current exercise
 			_currentExerciseData.userTime /= sideAccomplishedCounter;
+			_currentExerciseData.confidence /= sideAccomplishedCounter;
 
-			// If last exercise --> accomplish current tier
-			if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
+
+			// If all sides accomplished
+			bool allSidesAccomplished = true;
+			SideData nextSide;
+			foreach (var side in _currentExerciseData.sides)
 			{
-				// todo All exercises accomplished congratulations or so
-				UserDataObject.GetCurrentTier().accomplished = true;
-				
-				// If last tier reached --> do nothing
-				if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
+				if (side.accomplished == false)
 				{
-					
-				}
-				else // If not last tier --> unlock next tier
-				{
-					TierData nextTier = UserDataObject.GetNextTier();
-					nextTier.isInteractable = true;
+					allSidesAccomplished = false;
 				}
 			}
-			else // If not last exercise --> unlock next exercise
-			{
-				ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
 
-				nextExerciseData.isInteractable = true;
-				nextExerciseData.unlocked = 1;
+			if (allSidesAccomplished)
+			{
+				// If last exercise --> accomplish current tier
+				if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
+				{
+					// todo All exercises accomplished congratulations or so
+					UserDataObject.GetCurrentTier().accomplished = true;
+
+					// If last tier reached --> do nothing
+					if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
+					{
+
+					}
+					else // If not last tier --> unlock next tier
+					{
+						TierData nextTier = UserDataObject.GetNextTier();
+						nextTier.isInteractable = true;
+					}
+				}
+				else // If not last exercise --> unlock next exercise
+				{
+					ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
+
+					nextExerciseData.isInteractable = true;
+					nextExerciseData.unlocked = 1;
 
 //				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].isInteractable = true;
 //				UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId") + 1].unlocked = 1;
+				}
 			}
-			
+
 			//		 Save data to user json file
 			SaveCurrentExerciseData();
 			
@@ -385,6 +437,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Reset all variables needed for next repetition
 		_currentRepetitionConfidence = 0;				
 		confidenceIterator = 0;
+		attemptsIterator = 0;
 		
 		_durationManager.ResetlatestTimeInSeconds();
 		_durationManager.ResetProgress();

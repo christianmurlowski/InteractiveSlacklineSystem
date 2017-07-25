@@ -33,7 +33,6 @@ public class Engagement : MonoBehaviour
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 
-		
 //		_kinectManager = KinectManager.Instance;
 		
 		if (_kinectManager && _kinectManager.IsInitialized())

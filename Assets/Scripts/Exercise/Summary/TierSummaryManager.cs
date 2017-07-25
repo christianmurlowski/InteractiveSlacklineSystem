@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,8 +9,9 @@ public class TierSummaryManager : MonoBehaviour
 {
 
 	[Tooltip("Prefab of goal panel")]
-	public GameObject exercisePanelGameObject;
-	public Transform spacer;
+	public Transform timeSpacer, attemptsSpacer, confidenceSpacer;
+
+	public GameObject exerciseTimeImage, exerciseAttemptsImage, exerciseConfidenceImage;
 
 	public Text tierNameText;
 	
@@ -19,17 +21,19 @@ public class TierSummaryManager : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 3);
+
+		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentTierId", 0);// TODO Just for test purposes -> Delete in production
+		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+		
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
-		tierNameText.text = "Average data summary";
+		tierNameText.text = UserDataObject.GetCurrentTier().tierName + " average data";
 		
-		FillGoalList();
+		FillSummaryList();
 	}
 
 	public void LoadNextScene()
@@ -39,24 +43,41 @@ public class TierSummaryManager : MonoBehaviour
 			UserDataObject.GetCurrentExercise().isInteractable = true;
 			UserDataObject.GetCurrentExercise().unlocked = 1;	
 		}
-		SceneManager.LoadSceneAsync("MainMenu");
+		SceneManager.LoadScene("MainMenu");
 	}
 	
-	void FillGoalList()
+	void FillSummaryList()
 	{
 		Debug.Log(_currentTierData.fileName);
 		Debug.Log(_currentTierData.goals);
 		Debug.Log(_currentTierData.goals[1]);
+		
 		foreach (var exercise in _currentTierData.exercises)
 		{
-			GameObject gameObjectTierExercisePanel = Instantiate(exercisePanelGameObject) as GameObject;
-			TierSummaryExercisePanel summaryExercisePanel = gameObjectTierExercisePanel.GetComponent<TierSummaryExercisePanel>();
+			GameObject gameObjectTierExerciseTime = Instantiate(exerciseTimeImage) as GameObject;
+			GameObject gameObjectTierExerciseConfidence = Instantiate(exerciseConfidenceImage) as GameObject;
+			GameObject gameObjectTierExerciseAttempts = Instantiate(exerciseAttemptsImage) as GameObject;
 
-			summaryExercisePanel.tierSummaryExerciseName.text = exercise.exerciseName;
-			summaryExercisePanel.averageConfidence.text = "Avg Confidence: " + exercise.confidence.ToString();
-			summaryExercisePanel.averageTime.text = "Avg Time: " + exercise.userTime.ToString();
+			TierSummaryExerciseTimeImage summaryTimeImage =
+				gameObjectTierExerciseTime.GetComponent<TierSummaryExerciseTimeImage>();
+			TierSummaryExerciseConfidenceImage summaryConfidenceImage =
+				gameObjectTierExerciseConfidence.GetComponent<TierSummaryExerciseConfidenceImage>();
+			TierSummaryExerciseAttemptImage summaryAttemptImage =
+				gameObjectTierExerciseAttempts.GetComponent<TierSummaryExerciseAttemptImage>();
 			
-			gameObjectTierExercisePanel.transform.SetParent(spacer, false);
+			
+			summaryTimeImage.avgTimeText.text = exercise.userTime.ToString("F1");
+			summaryTimeImage.GetComponent<Image>().fillAmount = exercise.userTime / UserDataObject.GetCurrentTierAllExercisesHighestTime();
+			
+			summaryConfidenceImage.avgConfidence.text = exercise.confidence.ToString("F1");
+			summaryConfidenceImage.GetComponent<Image>().fillAmount = exercise.confidence/100;
+			
+			summaryAttemptImage.avgAttempt.text = exercise.attempts.ToString();
+			summaryAttemptImage.GetComponent<Image>().fillAmount = exercise.attempts / UserDataObject.GetCurrentTierAllExercisesHighestAttempt();
+			
+			gameObjectTierExerciseTime.transform.SetParent(timeSpacer, false);
+			gameObjectTierExerciseConfidence.transform.SetParent(confidenceSpacer, false);
+			gameObjectTierExerciseAttempts.transform.SetParent(attemptsSpacer, false);
 		}
 	}
 }

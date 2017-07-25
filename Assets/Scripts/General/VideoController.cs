@@ -27,7 +27,6 @@ public class VideoController : MonoBehaviour
 		Debug.Log("stin: " + "Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
 		          + UserDataObject.GetCurrentExerciseFileName() + "_"
 		          + UserDataObject.GetCurrentSide().direction);
-		Debug.Log("moviePath: " + movieTexture.name);
 		GetComponent<Renderer>().material.mainTexture = movieTexture;
 		movieTexture.Play();
 		movieTexture.loop = true;

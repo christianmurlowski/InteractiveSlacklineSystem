@@ -9,11 +9,36 @@ public class SideSelection : MonoBehaviour
 {
 
 	public Button exerciseLeftButton, exerciseRightButton;
+	public Text leftButtonText, rightButtonText;
 	public Text exerciseName;
 	
 	// Use this for initialization
 	void Start () 
 	{
+		// TODO Just for test purposes -> Delete in production
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+
+		Color32 green = new Color32(32, 147, 92, 255);
+		
+		foreach (var side in UserDataObject.GetCurrentExercise().sides)
+		{
+			if (side.accomplished)
+			{
+				if(side.direction == "Left")
+				{
+					leftButtonText.text = side.direction + " side\n(accomplished)";
+					leftButtonText.color = green;
+				}
+				else if(side.direction == "Right")
+				{
+					rightButtonText.text = side.direction + " side\n(accomplished)";
+					rightButtonText.color = green;
+				}
+			}
+		}
+		
 		exerciseLeftButton.onClick.AddListener(() =>
 		{	
 			PlayerPrefs.SetInt("CurrentSideId", 1);
@@ -31,13 +56,13 @@ public class SideSelection : MonoBehaviour
 
 	public void LoadPreviousScene()
 	{
-		SceneManager.LoadSceneAsync("MainMenu");
+		SceneManager.LoadScene("MainMenu");
 	}
 	
 	private void LoadNextScene(string side)
 	{
 		PlayerPrefs.SetString("CurrentSide", side);
-		SceneManager.LoadSceneAsync("ExerciseInfo");		
+		SceneManager.LoadScene("ExerciseInfo");		
 	}
 	
 }
