@@ -6,9 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class ExerciseData
 {
-	public bool accomplished;
 	public string fileName;
 	public string exerciseName;
+	public bool accomplished;
 	public string description;
 	public bool isProgressGesture;
 

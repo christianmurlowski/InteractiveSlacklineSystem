@@ -8,5 +8,6 @@ public class TipPanel : MonoBehaviour
 
 	public Text tipName;
 	public Text tipDescription;
+	public Text tipNumber;
 
 }

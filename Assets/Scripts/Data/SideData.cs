@@ -6,8 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class SideData
 {
-    public bool accomplished;
     public string direction;
+    public bool accomplished;
     
     public RepetitionData[] repetitions;
     public TipsData[] tips;

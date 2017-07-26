@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class ExerciseInfoManager : MonoBehaviour
 {
 
 	public GameObject exerciseTipPanel;
+	public Transform buttonExerciseStart;
 	
 	public Transform spacer;
 
@@ -17,10 +19,10 @@ public class ExerciseInfoManager : MonoBehaviour
 	void Start ()
 	{
 //		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		PlayerPrefs.SetInt("CurrentSideId", 0);
+		UserSelectionManager.TestSetCurrentUser(); 
+		PlayerPrefs.SetInt("CurrentTierId", 1);
+		PlayerPrefs.SetInt("CurrentExerciseId", 3);
+		PlayerPrefs.SetInt("CurrentSideId", 0);
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
@@ -45,10 +47,11 @@ public class ExerciseInfoManager : MonoBehaviour
 			GameObject gameObjectTipPanel = Instantiate(exerciseTipPanel) as GameObject;
 			TipPanel tipPanel = gameObjectTipPanel.GetComponent<TipPanel>();
 
-			tipPanel.tipName.text = tip.name;
 			tipPanel.tipDescription.text = tip.description;
+			tipPanel.tipNumber.text = (Array.IndexOf(UserDataObject.GetCurrentTipsArray(), tip)+1).ToString();
 			
 			gameObjectTipPanel.transform.SetParent(spacer, false);
 		}
+		buttonExerciseStart.transform.SetParent(spacer, false);
 	}
 }

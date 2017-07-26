@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ArmsCrossed_Right 2
+  m_Name: ArmsCrossed_Right 4
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -43,14 +43,14 @@ Material:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.28, y: 0.6}
-        m_Offset: {x: 0.23, y: 0.2}
+        m_Scale: {x: 0.71, y: 0.72}
+        m_Offset: {x: 0.015, y: 0.17}
     - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 15200000, guid: 821fe3240dcbb964f8afd89fe3e10d04, type: 3}
-        m_Scale: {x: 0.28, y: 0.6}
-        m_Offset: {x: 0.23, y: 0.2}
+        m_Scale: {x: 0.71, y: 0.72}
+        m_Offset: {x: 0.015, y: 0.17}
     - first:
         name: _MetallicGlossMap
       second:
@@ -87,7 +87,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0.207
     - first:
         name: _GlossyReflections
       second: 1
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 0}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
