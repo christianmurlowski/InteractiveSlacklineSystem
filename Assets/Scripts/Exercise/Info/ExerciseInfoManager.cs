@@ -14,6 +14,7 @@ public class ExerciseInfoManager : MonoBehaviour
 	public Transform spacer;
 
 	public Text exerciseName;
+	public Bounds spacerheight;
 	
 	// Use this for initialization
 	void Start ()
@@ -26,7 +27,7 @@ public class ExerciseInfoManager : MonoBehaviour
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
-		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName().ToUpper();
+		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName();
 		
 		FillTipList();
 	}
@@ -52,6 +53,9 @@ public class ExerciseInfoManager : MonoBehaviour
 			
 			gameObjectTipPanel.transform.SetParent(spacer, false);
 		}
-		buttonExerciseStart.transform.SetParent(spacer, false);
+		if (UserDataObject.GetCurrentTipsArray().Length > 7 )
+		{
+		}
+			buttonExerciseStart.transform.SetParent(spacer, false);
 	}
 }
