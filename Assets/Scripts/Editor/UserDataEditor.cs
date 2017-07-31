@@ -11,8 +11,11 @@ public class UserDataEditor : EditorWindow
     private string allUserDataProjectFilePath = "/StreamingAssets/JSONData/Users/";
     private string currentUserDataFilePath = "/StreamingAssets/JSONData/Users/";
     
-    private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
-    private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
+    private string _allExerciseDataProjectFilePath = "/StreamingAssets/JSONData/Exercises/";
+    private string _currentExerciseDataFilePath = "/StreamingAssets/JSONData/Exercises/";
+    
+//    private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
+//    private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
 
     private string userName;
 
@@ -32,7 +35,8 @@ public class UserDataEditor : EditorWindow
         GUILayout.BeginVertical();
         scrollPos = GUILayout.BeginScrollView(scrollPos);
         
-        DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + allUserDataProjectFilePath);
+        DirectoryInfo directoryInfoUser = new DirectoryInfo(Application.dataPath + allUserDataProjectFilePath);
+        DirectoryInfo directoryInfoExercise = new DirectoryInfo(Application.dataPath + _allExerciseDataProjectFilePath);
 
         if (currentUser != null)
         {
@@ -50,27 +54,32 @@ public class UserDataEditor : EditorWindow
                     SaveUserData(currentUser);
                 }                
             }
-
-            if (GUILayout.Button("Load Production Exercises Data"))
-            {
-                LoadExercisesIntoUserData(_exerciseDataProductionProjectFilePath);
-            }            
             
-            if (GUILayout.Button("Load Test Exercises Data"))
-            {
-                LoadExercisesIntoUserData(_exerciseDataTestProjectFilePath);
-            }
+            EditorGUILayout.Space();
+            EditorGUILayout.TextArea("",GUI.skin.horizontalSlider);
+            EditorGUILayout.LabelField("ALL AVAILABLE EXERCISES");
+            LoadAllExercises(directoryInfoExercise);
+
+//            if (GUILayout.Button("Load Production Exercises Data"))
+//            {
+//                LoadExercisesIntoUserData(_exerciseDataProductionProjectFilePath);
+//            }            
+//            
+//            if (GUILayout.Button("Load Test Exercises Data"))
+//            {
+//                LoadExercisesIntoUserData(_exerciseDataTestProjectFilePath);
+//            }
             
             if (GUILayout.Button("Delete User"))
             {
-                DeleteUser(directoryInfo);
+                DeleteUser(directoryInfoUser);
             }
             EditorGUILayout.Space();
             EditorGUILayout.TextArea("",GUI.skin.horizontalSlider);
         }
         
         EditorGUILayout.LabelField("ALL AVAILABLE USERS");
-        LoadAllUsers(directoryInfo);
+        LoadAllUsers(directoryInfoUser);
 
         EditorGUILayout.Space();
         EditorGUILayout.TextArea("",GUI.skin.horizontalSlider);
@@ -96,7 +105,8 @@ public class UserDataEditor : EditorWindow
             currentUserDataFilePath += currentUser.name.Replace(" ", "") + ".json";
         }
     }
-
+    
+    // Load all available user json file and create a button for each
     private void LoadAllUsers(DirectoryInfo directoryInfo)
     {
         FileInfo[] files = directoryInfo.GetFiles();
@@ -119,7 +129,7 @@ public class UserDataEditor : EditorWindow
         }
     }
 
-    
+    // Load clicked user 
     private void LoadUserData(string dataFilePath)
     {
         string filePath = Application.dataPath + dataFilePath;
@@ -132,6 +142,26 @@ public class UserDataEditor : EditorWindow
         else
         {
             currentUser = new UserData();
+        }
+    }
+    
+    // Load all available exercise json files and create a button for each
+    public void LoadAllExercises(DirectoryInfo directoryInfo)
+    {
+        FileInfo[] files = directoryInfo.GetFiles();
+        foreach (var file in files)
+        {
+            if (file.Extension.Contains(".json"))
+            {
+                if (GUILayout.Button("Load " + file.Name))
+                {
+                    _currentExerciseDataFilePath = _allExerciseDataProjectFilePath;
+                    Debug.Log(_currentExerciseDataFilePath);
+                    _currentExerciseDataFilePath += file.Name;
+                    Debug.Log(_currentExerciseDataFilePath);
+                    LoadExercisesIntoUserData(_currentExerciseDataFilePath);
+                }
+            }
         }
     }
 
@@ -148,7 +178,7 @@ public class UserDataEditor : EditorWindow
         _exerciseDataEditor = ScriptableObject.CreateInstance<ExerciseDataEditor>();
         _exerciseDataEditor.LoadExerciseData(filePath);
         
-        currentUser.tierData = _exerciseDataEditor.tierDataObject.tierDataList;
+        currentUser.tierData = _exerciseDataEditor.currentTier.tierDataList;
     }
 
     private void DeleteUser(DirectoryInfo directoryInfo)

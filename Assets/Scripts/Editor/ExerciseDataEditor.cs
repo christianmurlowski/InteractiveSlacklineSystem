@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class ExerciseDataEditor : EditorWindow
 {
-    public TierDataObject tierDataObject;
+    public TierDataObject currentTier;
+    private string _allExerciseDataProjectFilePath = "/StreamingAssets/JSONData/Exercises/";
+    private string _currentExerciseDataFilePath  = "/StreamingAssets/JSONData/Exercises/";
+    
     private string _exerciseDataProductionProjectFilePath = "/StreamingAssets/JSONData/exerciseDataProduction.json";
     private string _exerciseDataTestProjectFilePath = "/StreamingAssets/JSONData/exerciseDataTest.json";
-    private string _currentExerciseDataFilePath;
     
     private Vector2 scrollPos;
     
@@ -26,56 +28,81 @@ public class ExerciseDataEditor : EditorWindow
         GUILayout.BeginVertical();
         scrollPos = GUILayout.BeginScrollView(scrollPos);
         
-        if (tierDataObject != null)
+        DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + _allExerciseDataProjectFilePath);
+        
+        if (currentTier != null)
         {
             SerializedObject serializedObject = new SerializedObject(this);
             // property --> name of tierDataObject variable
-            SerializedProperty serializedProperty = serializedObject.FindProperty("tierDataObject");
+            SerializedProperty serializedProperty = serializedObject.FindProperty("currentTier");
             
             EditorGUILayout.PropertyField(serializedProperty, true);
             serializedObject.ApplyModifiedProperties();
 
             if (GUILayout.Button("Save Data"))
             {
-                SaveExerciseData(_currentExerciseDataFilePath);
+                SaveExerciseData(currentTier);
             }
         }
 
-        
-        if (GUILayout.Button("Load Production Data"))
-        {
-            LoadExerciseData(_exerciseDataProductionProjectFilePath);
-        }
-        if (GUILayout.Button("Load Test Data"))
-        {
-            LoadExerciseData(_exerciseDataTestProjectFilePath);
-        }
+        EditorGUILayout.LabelField("ALL AVAILABLE EXERCISES");
+        LoadAllExercises(directoryInfo);
+
+//        if (GUILayout.Button("Load Production Data"))
+//        {
+//            LoadExerciseData(_exerciseDataProductionProjectFilePath);
+//        }
+//        if (GUILayout.Button("Load Test Data"))
+//        {
+//            LoadExerciseData(_exerciseDataTestProjectFilePath);
+//        }
 
         GUILayout.EndScrollView();
         GUILayout.EndVertical();
     }
-    
-     public void LoadExerciseData(string filepath)
+
+    // Load all available exercise json files and create a button for each
+    public void LoadAllExercises(DirectoryInfo directoryInfo)
     {
-        _currentExerciseDataFilePath = filepath;
+        FileInfo[] files = directoryInfo.GetFiles();
+        foreach (var file in files)
+        {
+            if (file.Extension.Contains(".json"))
+            {
+                if (GUILayout.Button("Load " + file.Name))
+                {
+                    _currentExerciseDataFilePath = _allExerciseDataProjectFilePath;
+                    Debug.Log(_currentExerciseDataFilePath);
+                    _currentExerciseDataFilePath += file.Name;
+                    Debug.Log(_currentExerciseDataFilePath);
+                    
+                    LoadExerciseData(_currentExerciseDataFilePath);
+                }
+            }
+        }
+    }
+    
+    // Load clicked exercise
+    public void LoadExerciseData(string filepath)
+    {
 
         string filePath = Application.dataPath + filepath;
         
         if (File.Exists(filePath))
         {
             string exerciseDataAsJson = File.ReadAllText(filePath);
-            tierDataObject = JsonUtility.FromJson<TierDataObject>(exerciseDataAsJson);
+            currentTier = JsonUtility.FromJson<TierDataObject>(exerciseDataAsJson);
         }
         else
         {
-            tierDataObject = new TierDataObject();
+            currentTier= new TierDataObject();
         }
     }
 
-    private void SaveExerciseData(string filepath)
+    private void SaveExerciseData(TierDataObject tierDataObject)
     {
         string exerciseDataAsJson = JsonUtility.ToJson(tierDataObject);
-        string filePath = Application.dataPath + filepath;
+        string filePath = Application.dataPath + _currentExerciseDataFilePath;
         
         File.WriteAllText(filePath, exerciseDataAsJson);
     }
