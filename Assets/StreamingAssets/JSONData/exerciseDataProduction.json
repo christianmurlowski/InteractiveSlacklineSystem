@@ -7,22 +7,36 @@
       "isInteractable": true,
       "goals": [
         {
-          "description": "Preliminary exercises as preparation for exercises on the slackline"
+          "description": "This preliminary exercises serve as preparation for the exercises on the slackline."
         },
         {
-          "description": "Best experience is to train barefoot or with socks"
+          "description": "It should strengthen your body balancing system and give you first insights about how your body behaves to unexpected movements."
         },
         {
-          "description": "For each exercise bend your knees slightly"
+          "description": "Feel the coherence of perception and motoric movements due to more and more difficult exercises."
         },
         {
-          "description": "Relax but straigthen your upper body"
+          "description": "On the right side you will find general tips that are helpful for the entire tier level and adaptable to slacklining itself."
+        }
+      ],
+      "tips": [
+        {
+          "description": "Best experience is to train barefoot or with socks, but this is up to you"
         },
         {
-          "description": "Feel the imbalance of your body, stay calm and counteract"
+          "description": "For each exercise bend your knees slightly. This will bring you to a better initial position for movement compensation"
         },
         {
-          "description": "Slow but controlled execution"
+          "description": "Set a focus point in front of you. In each execution screen you fill find a dot to help you with this"
+        },
+        {
+          "description": "In almost each exercise your hand should be over your shoulder and bent in about 135 degree"
+        },
+        {
+          "description": "Slow but controlled execution, feel the imbalance and and counteract"
+        },
+        {
+          "description": "Relax yourself to react faster to imbalancings. But have a straight upper body to hold you in the right position"
         }
       ],
       "exercises": [
@@ -60,6 +74,10 @@
                 }
               ],
               "tips": [
+                {
+                  "name": "",
+                  "description": "Here you will find tips for the specific exercises. We start with a relatively simple one."
+                },
                 {
                   "name": "",
                   "description": "One foot as standing leg on the ground"
@@ -1139,27 +1157,41 @@
       "fileName": "2_Tier",
       "tierName": "First Contact",
       "isInteractable": false,
-      "goals": [
+      "goals" : [
         {
-          "description": "You will now have your first contact with the line and learn the how to get up on it"
+          "description": "Congratulations and welcome to tier 2! Here you will have your first contact with the slackline"
         },
         {
-          "description": "Your arms should be always over your shoulder and stretched out"
+          "description": "You will learn how your body behaves on how to handle these unpredictable movement"
         },
         {
-          "description": "There is one standing leg and the other one serves as a balancing leg"
+          "description": "Get a feeling for the slackline, become familiar with it, feel the imbalance of your body, stay calm, and counteract right"
         },
         {
-          "description": "If you are unsure, try it with external help first!"
+          "description": "At the end you should be able to get up and hold yourself on the line for a short time"
         },
         {
-          "description": "Get a feeling for the slackline and get used to it"
+          "description": "If you are unsure about any execution, please ask me and/or try it with external help. Safety first!"
+        }
+      ],
+      "tips": [
+        {
+          "description": "Start at the sweet-spot, which is in about 1/4 of the line. This is generally a good area with pleasant vibration characteristic"
         },
         {
-          "description": "Feel the vibration and how your body wants to behave"
+          "description": "Your foot should be always in alignment with the slackline"
         },
         {
-          "description": "Learn the interplay with your arms, upper and lower body to balance"
+          "description": "Don't forget to have your arms over the shoulder and bent in about 135 degree position"
+        },
+        {
+          "description": "If you have troubles with the arms, turn your palms to the top, which will automatically raise your arms"
+        },
+        {
+          "description": "Your head is up and focus set to a specific point in front of you"
+        },
+        {
+          "description": "Learn the interplay with your arms, upper and lower body for counterbalancing"
         }
       ],
       "exercises": [
@@ -1674,24 +1706,38 @@
       "fileName": "3_Tier",
       "tierName": "Static Exercises",
       "isInteractable": false,
-      "goals": [
+      "goals" : [
         {
-          "description": "Feel the coherence of perception and movement/motoric due to more and more difficult exercises."
+          "description": "Now it gets more difficult for you. All former learned techniques should now be applied"
         },
         {
-          "description": "In this tier you will learn to stay on the slackline"
+          "description": "You will fulfill static exercises and first approaches for walking on the line"
         },
         {
-          "description": "Apply the former learned techniques and core skills on the slackline"
+          "description": "With this you learn the basics for staying and the preparation for making some steps"
         },
         {
-          "description": "Learn to use your non-standing foot to balance out"
+          "description": "At the end you should have learned the basics for slacklining, be able to stay a couple of seconds on the line and feel more confident on it"
+        }
+      ],
+      "tips": [
+        {
+          "description": "At first you might not be able to stay on the slackline because of the unexpected body movements. But this is okay! Just focus and try it again"
         },
         {
-          "description": "Perform slowly and controlled"
+          "description": "Keep in mind: focus point, sweet-spot, foot in line, knees slightly bent, arms up, relaxed muscles but straight upper body"
         },
         {
-          "description": "Start a bit further on the line, appr. 1/4 of line"
+          "description": "Perform slowly and controlled, no need to hurry"
+        },
+        {
+          "description": "Your non-standing foot serves also as balance support"
+        },
+        {
+          "description": "It might help, when going up, to keep your non standing leg vertical in line with your other standing leg and then raise it to the side"
+        },
+        {
+          "description": "The pressure is mostly around the ball of your foot"
         }
       ],
       "exercises": [
@@ -2376,23 +2422,34 @@
     {
       "accomplished": false,
       "fileName": "4_Tier",
-      "tierName": "Dynamic",
+      "tierName": "Dynamic Exercises",
       "isInteractable": false,
-      "goals": [
+      "goals" : [
         {
-          "description": "Congratulation, you can now stay on the slackline!"
+          "description": "Congratulations! You achieved to stay on the slackline!"
         },
         {
-          "description": "In this tier you learn to make your first steps"
+          "description": "For this last tier, you will learn how to make your first steps as continuation to the last two exercise from the former tier"
         },
         {
-          "description": "Apply the learned techniques from the previous exercises"
+          "description": "You should then be able to walk step by step without getting out of balance"
+        }
+      ],
+      "tips": [
+        {
+          "description": "When making a step you can guide your non standing foot to the side of the line and shift it forward. With this you won't miss the line"
         },
         {
-          "description": "Learn to use your whole body to balance"
+          "description": "Also let your knees together when walking forward, so your legs can support each other"
         },
         {
-          "description": "Remember to stay calm and execute the exercise slowly and controleld"
+          "description": "Make small steps, your bodie's center of gravity doesn't have to be shiftet that much forward, which results in less balancing problems"
+        },
+        {
+          "description": "Use your whole body to counterbalance"
+        },
+        {
+          "description": "Remember to stay calm and execute the exercise slowly and controlled, especially for this tier"
         }
       ],
       "exercises": [

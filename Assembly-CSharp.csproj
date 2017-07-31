@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Exercise\Execution\SkeletonOverlayer.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\GoalPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\InformationPanel.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\TierInfoManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Info\TipPanel.cs" />
     <Compile Include="Assets\Scripts\Exercise\SideSelection\SideSelection.cs" />

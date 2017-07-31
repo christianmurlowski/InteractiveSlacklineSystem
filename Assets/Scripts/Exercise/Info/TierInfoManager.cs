@@ -7,8 +7,13 @@ using UnityEngine.UI;
 public class TierInfoManager : MonoBehaviour
 {
 
-	public GameObject tierGoalPanel;
-	public Transform spacer;
+	public GameObject tierGoalPanel,
+					  tierInfoPanel;
+	
+	public Transform goalSpacer,
+					 infoSpacer,
+					 buttonMainMenu,
+					 goalsPanel;
 
 	public Text tierNameText;
 	
@@ -18,11 +23,11 @@ public class TierInfoManager : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 2);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
@@ -56,12 +61,28 @@ public class TierInfoManager : MonoBehaviour
 	{
 		foreach (var goal in _currentTierData.goals)
 		{
-			GameObject gameObjectTierPanel = Instantiate(tierGoalPanel) as GameObject;
-			GoalPanel goalPanel = gameObjectTierPanel.GetComponent<GoalPanel>();
+			// adjust or add foreach to tip for general tips panel and goals for tier goals
+			GameObject gameObjectTierGoalPanel = Instantiate(tierGoalPanel) as GameObject;
+			GoalPanel goalPanel = gameObjectTierGoalPanel.GetComponent<GoalPanel>();	
 
 			goalPanel.goalDescription.text = goal.description;
-			
-			gameObjectTierPanel.transform.SetParent(spacer, false);
+
+			gameObjectTierGoalPanel.transform.SetParent(goalSpacer, false);
 		}
+		buttonMainMenu.transform.SetParent(goalSpacer.transform, false);
+		
+		
+		foreach (var tip in _currentTierData.tips)
+		{
+			GameObject gameObjectTierInfoPanel = Instantiate(tierInfoPanel) as GameObject;
+			InformationPanel InfoPanel = gameObjectTierInfoPanel.GetComponent<InformationPanel>();
+
+			
+			InfoPanel.infoDescription.text = tip.description;
+			InfoPanel.infoNumber.text = (_currentTierData.tips.IndexOf(tip)+1).ToString();
+			
+			gameObjectTierInfoPanel.transform.SetParent(infoSpacer, false);
+		}
+		
 	}
 }

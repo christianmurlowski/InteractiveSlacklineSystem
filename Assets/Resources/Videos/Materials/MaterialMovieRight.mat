@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ArmsCrossed_Right 2
+  m_Name: MaterialMovieRight
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -43,14 +43,14 @@ Material:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.28, y: 0.6}
-        m_Offset: {x: 0.23, y: 0.2}
+        m_Scale: {x: 0.3, y: 0.6}
+        m_Offset: {x: 0.21, y: 0.2}
     - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 15200000, guid: 821fe3240dcbb964f8afd89fe3e10d04, type: 3}
-        m_Scale: {x: 0.28, y: 0.6}
-        m_Offset: {x: 0.23, y: 0.2}
+        m_Scale: {x: 0.3, y: 0.6}
+        m_Offset: {x: 0.21, y: 0.2}
     - first:
         name: _MetallicGlossMap
       second:

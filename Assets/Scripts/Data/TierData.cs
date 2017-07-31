@@ -11,5 +11,6 @@ public class TierData
     public bool isInteractable;
 
     public List<GoalData> goals;
+    public List<TipsData> tips;
     public List<ExerciseData> exercises;
 }

@@ -9,9 +9,13 @@ public class TierSummaryManager : MonoBehaviour
 {
 
 	[Tooltip("Prefab of goal panel")]
-	public Transform timeSpacer, attemptsSpacer, confidenceSpacer;
+	public Transform timeSpacer, 
+					 attemptsSpacer, 
+					 confidenceSpacer;
 
-	public GameObject exerciseTimeImage, exerciseAttemptsImage, exerciseConfidenceImage;
+	public GameObject exerciseTimeImage, 
+					  exerciseAttemptsImage, 
+					  exerciseConfidenceImage;
 
 	public Text tierNameText;
 	
@@ -22,10 +26,10 @@ public class TierSummaryManager : MonoBehaviour
 	{
 		// TODO Just for test purposes -> Delete in production
 
-		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentTierId", 0);// TODO Just for test purposes -> Delete in production
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
-		
+//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentTierId", 0);// TODO Just for test purposes -> Delete in production
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+//		
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
@@ -49,8 +53,8 @@ public class TierSummaryManager : MonoBehaviour
 	void FillSummaryList()
 	{
 		Debug.Log(_currentTierData.fileName);
-		Debug.Log(_currentTierData.goals);
-		Debug.Log(_currentTierData.goals[1]);
+		Debug.Log(_currentTierData.tips);
+		Debug.Log(_currentTierData.tips[1]);
 		
 		foreach (var exercise in _currentTierData.exercises)
 		{

@@ -8,21 +8,22 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-public class ExerciseSummaryManager : MonoBehaviour {
+public class ExerciseSummaryManager : MonoBehaviour
+{
 
 	public Text exerciseNameText;
 
-	public Transform timeSpacer;
-	public Transform confidenceSpacer;
-	public Transform attemptsSpacer;
+	public Transform timeSpacer,
+					 confidenceSpacer,
+					 attemptsSpacer;
 	
-	public GameObject timePanel;
-	public GameObject confidencePanel;
-	public GameObject attemptsPanel;
+	public GameObject timePanel,
+					  confidencePanel,
+					  attemptsPanel;
 	
-	public GameObject avgTimePanel;
-	public GameObject avgConfidencePanel;
-	public GameObject avgAttemptsPanel;
+	public GameObject avgTimePanel,
+					  avgConfidencePanel,
+					  avgAttemptsPanel;
 
 	private bool startAnim, startConfidenceAnim, startTimeAnim, startAttemptsAnim;
 	private List<Image> imageTimeList, imageConfidenceList, imageAttemptsList;
