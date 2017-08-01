@@ -71,7 +71,7 @@ public class GestureDetector : IDisposable
             throw new ArgumentNullException("kinectSensor");
         }
         
-        Debug.Log("database name: " + gestureDatabase + "current gestureName: " + gestureName);
+        Debug.Log("database name: " + gestureDatabase + " ||  current gestureName: " + gestureName);
 
         // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
         this.vgbFrameSource = VisualGestureBuilderFrameSource.Create(kinectSensor, 0);

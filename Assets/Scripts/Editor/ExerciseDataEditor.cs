@@ -39,6 +39,7 @@ public class ExerciseDataEditor : EditorWindow
             EditorGUILayout.PropertyField(serializedProperty, true);
             serializedObject.ApplyModifiedProperties();
 
+
             if (GUILayout.Button("Save Data"))
             {
                 SaveExerciseData(currentTier);
@@ -92,6 +93,8 @@ public class ExerciseDataEditor : EditorWindow
         {
             string exerciseDataAsJson = File.ReadAllText(filePath);
             currentTier = JsonUtility.FromJson<TierDataObject>(exerciseDataAsJson);
+            // write into textfile Todo can be deleted for production
+//            WriteIntoText();
         }
         else
         {
@@ -105,5 +108,82 @@ public class ExerciseDataEditor : EditorWindow
         string filePath = Application.dataPath + _currentExerciseDataFilePath;
         
         File.WriteAllText(filePath, exerciseDataAsJson);
+    }
+
+    // Write into textfile Todo can be deleted for production
+    private void WriteIntoText()
+    {
+        StreamWriter writer = new StreamWriter(Application.dataPath + _allExerciseDataProjectFilePath + "/test.txt", true);
+        
+        foreach (var tier in currentTier.tierDataList)
+        {
+            Debug.Log("");
+            Debug.Log("");
+            Debug.Log("-----");
+            Debug.Log("-----");
+            Debug.Log("TIER");
+            Debug.Log(tier.tierName + " || " +tier.fileName);
+            writer.WriteLine(" ");
+            writer.WriteLine(" ");
+            writer.WriteLine("-----");
+            writer.WriteLine(tier.tierName + " || " +tier.fileName);
+            
+            Debug.Log("----------");
+            Debug.Log("Goals: ");
+            writer.WriteLine("----------");
+            writer.WriteLine("Goals");
+            foreach (var goal in tier.goals)
+            {
+                Debug.Log(goal.description);
+                writer.WriteLine(goal.description);
+            }
+            
+            Debug.Log("");
+            Debug.Log("----------");
+            Debug.Log("Tips:");
+            writer.WriteLine("");
+            writer.WriteLine("----------");
+            writer.WriteLine("Tips");
+            foreach (var tip in tier.tips)
+            {
+                writer.WriteLine(tip.description);
+                Debug.Log(tip.description);
+            }
+            
+            Debug.Log("");
+            Debug.Log("--------------------");
+            Debug.Log("Exercises:");
+            writer.WriteLine("");
+            writer.WriteLine("--------------------");
+            writer.WriteLine("Exercises");
+            foreach (var exercise in tier.exercises)
+            {
+                Debug.Log("");
+                Debug.Log("----------------------------------------");
+                Debug.Log(exercise.fileName + " || " + exercise.exerciseName);                    
+                writer.WriteLine("");
+                writer.WriteLine("----------------------------------------");
+                writer.WriteLine(exercise.fileName + " || " + exercise.exerciseName);
+               
+                foreach (var side in exercise.sides)
+                {                
+                    Debug.Log("--------------------------------------------------------------------------------");
+                    Debug.Log(exercise.fileName + " || " + exercise.exerciseName);
+                    Debug.Log("Side Tip: ");
+                    Debug.Log(side.direction);             
+                    writer.WriteLine("--------------------------------------------------------------------------------");
+                    writer.WriteLine(exercise.fileName + " || " + exercise.exerciseName);
+                    writer.WriteLine("Side Tip: ");
+                    writer.WriteLine(side.direction);
+                    foreach (var tip in side.tips)
+                    {
+                        writer.WriteLine(tip.description);
+                        Debug.Log(tip.description);
+                    }
+                }
+            }
+        }
+        
+        writer.Close();
     }
 }

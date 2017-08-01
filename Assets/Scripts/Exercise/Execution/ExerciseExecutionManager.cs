@@ -385,6 +385,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 			if (allSidesAccomplished)
 			{
 				// If last exercise --> accomplish current tier
+				Debug.Log("PlayerPrefs.GetInt(CurrentExerciseId)" + PlayerPrefs.GetInt("CurrentExerciseId"));
+				Debug.Log("UserDataObject.GetCurrentTierErcisesLength()" + UserDataObject.GetCurrentTierErcisesLength());
 				if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 				{
 					// todo All exercises accomplished congratulations or so
