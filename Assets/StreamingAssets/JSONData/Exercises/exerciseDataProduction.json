@@ -1143,16 +1143,22 @@
               ],
               "tips": [
                 {
-                  "description": "Sit down along with the line, slightly more in the direction you choosed"
+                  "description": "Sit down along with the line, slightly more to the direction you choosed"
                 },
                 {
-                  "description": "One foot is on the ground bent"
+                  "description": "The chosen foot is bent and on the ground, like in regular sitting"
                 },
                 {
-                  "description": "Stretch your other foot forward and raise it up"
+                  "description": "Stretch your other foot forward along with the line and raise it up"
                 },
                 {
-                  "description": "Be sure your arms are over your shoulder and stretched out"
+                  "description": "Be sure your arms are bent and over your shoulder"
+                },
+                {
+                  "description": "You can lean a little bit backwards"
+                },
+                {
+                  "description": "And your upper body doesn’t have to be strictly straight"
                 }
               ],
               "userTime": 0.0,
@@ -1189,16 +1195,22 @@
               ],
               "tips": [
                 {
-                  "description": "Sit down along with the line, slightly more in the direction you choosed"
+                  "description": "Sit down along with the line, slightly more to the direction you choosed"
                 },
                 {
-                  "description": "Your chosen sides foot is on the ground and bent"
+                  "description": "The chosen foot is bent and on the ground, like in regular sitting"
                 },
                 {
-                  "description": "Stretch your other foot forward and raise it up"
+                  "description": "Stretch your other foot forward along with the line and raise it up"
                 },
                 {
-                  "description": "Be sure your arms are over your shoulder and stretched out"
+                  "description": "Be sure your arms are bent and over your shoulder"
+                },
+                {
+                  "description": "You can lean a little bit backwards"
+                },
+                {
+                  "description": "And your upper body doesn’t have to be strictly straight"
                 }
               ],
               "userTime": 0.0,
@@ -1249,16 +1261,22 @@
               ],
               "tips": [
                 {
-                  "description": "Sit down on the line, slightly more to the side you choosed"
+                  "description": "Sit down along with the line, slightly more to the direction you choosed"
                 },
                 {
-                  "description": "Your chosen sides foot is on the ground and bent"
+                  "description": "The chosen foot is on the ground and stretch out forward"
                 },
                 {
-                  "description": "Stretch your other leg forward and raise it up"
+                  "description": "Stretch your other foot forward along with the line and raise it up"
                 },
                 {
-                  "description": "Be sure your arms are over your shoulder and stretched out"
+                  "description": "Be sure your arms are bent and over your shoulder"
+                },
+                {
+                  "description": "You can lean a little bit backwards"
+                },
+                {
+                  "description": "Your upper body doesn’t have to be strictly straight"
                 }
               ],
               "userTime": 0.0,
@@ -1295,16 +1313,22 @@
               ],
               "tips": [
                 {
-                  "description": "Sit down on the line, slightly more to the side you choosed"
+                  "description": "Sit down along with the line, slightly more to the direction you choosed"
                 },
                 {
-                  "description": "Your chosen sides foot is on the ground and bent"
+                  "description": "The chosen foot is on the ground and stretch out forward"
                 },
                 {
-                  "description": "Stretch your other leg forward and raise it up"
+                  "description": "Stretch your other foot forward along with the line and raise it up"
                 },
                 {
-                  "description": "Be sure your arms are over your shoulder and stretched out"
+                  "description": "Be sure your arms are bent and over your shoulder"
+                },
+                {
+                  "description": "You can lean a little bit backwards"
+                },
+                {
+                  "description": "Your upper body doesn’t have to be strictly straight"
                 }
               ],
               "userTime": 0.0,
@@ -1355,25 +1379,25 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot next to the slackline on the line"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Foot on the line is parallel with it"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and stay on the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Your other foot serves to balance your body"
+                  "description": "At the same time raise your arms up"
+                },
+                {
+                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
-                },
-                {
-                  "description": "Be sure your arms are stretched out and over your shoulder"
                 }
               ],
               "userTime": 0.0,
@@ -1410,25 +1434,25 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot next to the slackline on the line"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Foot on the line is parallel with it"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and stay on the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Your other foot serves to balance your body"
+                  "description": "At the same time raise your arms up"
+                },
+                {
+                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
-                },
-                {
-                  "description": "Be sure your arms are stretched out and over your shoulder"
                 }
               ],
               "userTime": 0.0,
@@ -1479,25 +1503,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot across to the slackline on the line, such that your standing leg crosses your balancing leg"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Foot on the line is parallel with it"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and stay on the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Your other foot serves to balance your body"
+                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
-                },
-                {
-                  "description": "Be sure your arms are stretched out and over your shoulder"
                 }
               ],
               "userTime": 0.0,
@@ -1534,25 +1555,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot across to the slackline on the line, such that your standing leg crosses your balancing leg"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Foot on the line is parallel with it"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and stay on the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Your other foot serves to balance your body"
+                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
-                },
-                {
-                  "description": "Be sure your arms are stretched out and over your shoulder"
                 }
               ],
               "userTime": 0.0,
@@ -1577,13 +1595,13 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Now it gets more difficult for you. All former learned techniques should now be applied"
+          "description": "You've reached Tier 3! Now it gets more difficult for you. All former learned techniques play an important role"
         },
         {
           "description": "You will fulfill static exercises and first approaches for walking on the line"
         },
         {
-          "description": "With this you learn the basics for staying and the preparation for making some steps"
+          "description": "With this you learn the basics for staying and the preparation to walk"
         },
         {
           "description": "At the end you should have learned the basics for slacklining, be able to stay a couple of seconds on the line and feel more confident on it"
@@ -1600,10 +1618,10 @@
           "description": "Perform slowly and controlled, no need to hurry"
         },
         {
-          "description": "Your non-standing foot serves also as balance support"
+          "description": "Your non standing foot serves also as balance support"
         },
         {
-          "description": "It might help, when going up, to keep your non standing leg vertical in line with your other standing leg and then raise it to the side"
+          "description": "It might help, when going up, to keep your non standing leg vertical in line with your other standing leg and after that raise it to the side"
         },
         {
           "description": "The pressure is mostly around the ball of your foot"
@@ -1645,16 +1663,16 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Put your foot next to the line on it"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the other leg"
@@ -1694,16 +1712,16 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Put your foot next to the line on it"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the other leg"
@@ -1757,19 +1775,16 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot on the line by crossing the near foot"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
-                },
-                {
-                  "description": "Your other leg should now go to the other side of the slackline"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the other leg"
@@ -1809,19 +1824,16 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot on the line by crossing the near foot"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
-                },
-                {
-                  "description": "Your other leg should now go to the other side of the slackline"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the other leg"
@@ -1875,22 +1887,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot next to the line on it"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Place your other foot in front of your standing foot"
+                  "description": "Place your balancing foot carefully in front of your standing foot"
                 },
                 {
-                  "description": "Hold this position and balance out with your arms, upper body and hips"
+                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
               "userTime": 0.0,
@@ -1927,22 +1939,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your foot next to the line on it"
+                  "description": "Now put your foot next to the slackline up on the line"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Place your other foot in front of your standing foot"
+                  "description": "Place your balancing foot carefully in front of your standing foot"
                 },
                 {
-                  "description": "Hold this position and balance out with your arms, upper body and hips"
+                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
               "userTime": 0.0,
@@ -1993,22 +2005,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot further away from the line on it"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Place your other foot in front of your standing foot"
+                  "description": "Place your balancing foot carefully in front of your standing foot"
                 },
                 {
-                  "description": "Hold this position and balance out with your arms, upper body and hips"
+                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
               "userTime": 0.0,
@@ -2045,22 +2057,22 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot further away from the line on it"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "This foot should be parallel with the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "With a little momentum get up and try to stay"
                 },
                 {
-                  "description": "Place your other foot in front of your standing foot"
+                  "description": "Place your balancing foot carefully in front of your standing foot"
                 },
                 {
-                  "description": "Hold this position and balance out with your arms, upper body and hips"
+                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
               "userTime": 0.0,
@@ -2132,19 +2144,19 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot next to the line on it"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "Get up and stay on the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "Bend your standing legs knee and go down on the slackline"
                 },
                 {
-                  "description": "Hold this position and get up and down"
+                  "description": "Now try to do a squat like in the exercises before and hold the lower position a while"
                 }
               ],
               "userTime": 0.0,
@@ -2202,19 +2214,19 @@
               ],
               "tips": [
                 {
-                  "description": "Stay sideways near to the line"
+                  "description": "Stay next to the line on the opposite side you’ve selected"
                 },
                 {
-                  "description": "Now put your other foot next to the line on it"
+                  "description": "Now put your foot that is further away from the line on it such that your legs will cross"
                 },
                 {
-                  "description": "Arms over shoulder and stretched out"
+                  "description": "Get up and stay on the line"
                 },
                 {
-                  "description": "Now with a little momentum get up the line"
+                  "description": "Bend your standing legs knee and go down on the slackline"
                 },
                 {
-                  "description": "Hold this position and get up and down"
+                  "description": "Now try to do a squat like in the exercises before and hold the lower position a while"
                 }
               ],
               "userTime": 0.0,
@@ -2239,13 +2251,16 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Congratulations! You achieved to stay on the slackline!"
+          "description": "Congratulations! Now you can stay on the slackline by yourself"
         },
         {
-          "description": "For this last tier, you will learn how to make your first steps as continuation to the last two exercise from the former tier"
+          "description": "For this last tier you will learn how to make your first steps, which will give you the ability for walking on the line"
         },
         {
-          "description": "You should then be able to walk step by step without getting out of balance"
+          "description": "Remind yourself of the former learned tips"
+        },
+        {
+          "description": "After all exercises area accomplished we will have a small talk about your experience during the interaction with the system"
         }
       ],
       "tips": [
@@ -2256,7 +2271,7 @@
           "description": "Also let your knees together when walking forward, so your legs can support each other"
         },
         {
-          "description": "Make small steps, your bodie's center of gravity doesn't have to be shiftet that much forward, which results in less balancing problems"
+          "description": "Make small steps because the center of gravity of your body doesn't have to be shifted that much forward, which will results in less balancing problems"
         },
         {
           "description": "Use your whole body to counterbalance"
@@ -2301,7 +2316,7 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your foot next to the line"
+                  "description": "Get on the line with your selected foot next to the line"
                 },
                 {
                   "description": "Now put your balancing foot in front of your standing foot"
@@ -2310,10 +2325,10 @@
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Hold the gesture as long as you can"
+                  "description": "Hold the position as long as you can"
                 }
               ],
               "userTime": 0.0,
@@ -2350,7 +2365,7 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your foot next to the line"
+                  "description": "Get on the line with your selected foot next to the line"
                 },
                 {
                   "description": "Now put your balancing foot in front of your standing foot"
@@ -2359,10 +2374,10 @@
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Hold the gesture as long as you can"
+                  "description": "Hold the position as long as you can"
                 }
               ],
               "userTime": 0.0,
@@ -2413,19 +2428,19 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your other foot further away to the line"
+                  "description": "Get on the line with your selected foot further away to the line"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing one"
+                  "description": "Now put your balancing foot in front of your standing foot"
                 },
                 {
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Hold the gesture as long as you can"
+                  "description": "Hold the position as long as you can"
                 }
               ],
               "userTime": 0.0,
@@ -2462,19 +2477,19 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your other foot further away to the line"
+                  "description": "Get on the line with your selected foot further away to the line"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing one"
+                  "description": "Now put your balancing foot in front of your standing foot"
                 },
                 {
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Hold the gesture as long as you can"
+                  "description": "Hold the position as long as you can"
                 }
               ],
               "userTime": 0.0,
@@ -2525,19 +2540,19 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your foot next to the line"
+                  "description": "Get on the line with your selected foot further away to the line"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing one"
+                  "description": "Now put your balancing foot in front of your standing foot"
                 },
                 {
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Repeat steps 1 to 4 to walk until the end"
+                  "description": "Repeat step 1 to 4 until you reach the end of the line"
                 }
               ],
               "userTime": 0.0,
@@ -2574,19 +2589,19 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your foot next to the line"
+                  "description": "Get on the line with your selected foot further away to the line"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing one"
+                  "description": "Now put your balancing foot in front of your standing foot"
                 },
                 {
                   "description": "Shift your body slightly to the front and put your weight on the front foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe, remove the rear standing leg"
+                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
                 },
                 {
-                  "description": "Repeat steps 1 to 4 to walk until the end"
+                  "description": "Repeat step 1 to 4 until you reach the end of the line"
                 }
               ],
               "userTime": 0.0,
