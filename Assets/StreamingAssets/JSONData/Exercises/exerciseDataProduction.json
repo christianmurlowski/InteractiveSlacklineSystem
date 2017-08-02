@@ -1072,7 +1072,7 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Congratulations and welcome to the new unlocked tier! Here you will have your first contact with the slackline"
+          "description": "Congratulations you accomplished the first exercises! Here you will have your first contact with the slackline"
         },
         {
           "description": "Get a feeling for the slackline, become familiar with it, feel the imbalance of your body and stay calm"
@@ -1110,10 +1110,10 @@
       "exercises": [
         {
           "fileName": "SitGroundBent",
-          "exerciseName": "Sit Foot Ground Bent",
+          "exerciseName": "Sit Foot Bent Ground",
           "accomplished": false,
           "description": "example description",
-          "isProgressGesture": true,
+          "isProgressGesture": false,
           "sides": [
             {
               "direction": "Right",
@@ -1228,7 +1228,7 @@
         },
         {
           "fileName": "SitGroundStretched",
-          "exerciseName": "Sit Foot Ground Stretched",
+          "exerciseName": "Sit Foot Stretched Ground",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": false,
@@ -1346,7 +1346,7 @@
         },
         {
           "fileName": "NearStart",
-          "exerciseName": "Start",
+          "exerciseName": "Start I",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -1470,7 +1470,7 @@
         },
         {
           "fileName": "CrossStart",
-          "exerciseName": "Cross Start",
+          "exerciseName": "Start II",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -1595,7 +1595,7 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "You've reached Tier 3! Now it gets more difficult for you. All former learned techniques play an important role"
+          "description": "You've reached tier 3! Now it gets more difficult for you. All former learned techniques play an important role"
         },
         {
           "description": "You will fulfill static exercises and first approaches for walking on the line"
@@ -1604,7 +1604,7 @@
           "description": "With this you learn the basics for staying and the preparation to walk"
         },
         {
-          "description": "At the end you should have learned the basics for slacklining, be able to stay a couple of seconds on the line and feel more confident on it"
+          "description": "At the end you should be able to stay a couple of seconds on the line and feel more confident on it"
         }
       ],
       "tips": [
@@ -1630,7 +1630,7 @@
       "exercises": [
         {
           "fileName": "NearStayOne",
-          "exerciseName": "Stay One Normal",
+          "exerciseName": "Stay One Foot I",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -1742,7 +1742,7 @@
         },
         {
           "fileName": "CrossStayOne",
-          "exerciseName": "Stay One Cross",
+          "exerciseName": "Stay One Foot II",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -1854,7 +1854,7 @@
         },
         {
           "fileName": "NearStayBoth",
-          "exerciseName": "Stay Both Normal",
+          "exerciseName": "Stay Both Feet I",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -1972,7 +1972,7 @@
         },
         {
           "fileName": "CrossStayBoth",
-          "exerciseName": "Stay Both Cross",
+          "exerciseName": "Stay Both Feet II",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -2090,7 +2090,7 @@
         },
         {
           "fileName": "BobOne",
-          "exerciseName": "Bob One",
+          "exerciseName": "Squat Line",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
@@ -2251,7 +2251,7 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Congratulations! Now you can stay on the slackline by yourself"
+          "description": "Congratulations and welcome to the last couple of exercises!"
         },
         {
           "description": "For this last tier you will learn how to make your first steps, which will give you the ability for walking on the line"
@@ -2260,7 +2260,7 @@
           "description": "Remind yourself of the former learned tips"
         },
         {
-          "description": "After all exercises area accomplished we will have a small talk about your experience during the interaction with the system"
+          "description": "After you've all exercises accomplished we will have a small talk about your experience during the interaction with the system"
         }
       ],
       "tips": [
