@@ -11,45 +11,69 @@ using UnityEngine.UI;
 
 public class ExerciseExecutionManager : MonoBehaviour
 {
-	private ExerciseData _currentExerciseData;
-	private RepetitionData _currentRepetition;
 
-	public Text titleText;
 
+	public GameObject KinectManager;
 	public GameObject bodyManager;
+	public GameObject durationManager;
+	public GameObject toggle;
+	
+	public Transform toggleGroup;
+
+	public Text titleText,
+				testText, // TODO Just for test purposes -> Delete in production
+				rightFootHeightText,
+				leftFootHeightText,
+				rightFootDepthText,
+				leftFootDepthText,
+				initialRightFootText,
+				initialLeftFootText,
+				bothFeetUpText;
+	
+	// Kinect stuff
+	private KinectManager _kinectManager;
+
+	private KinectInterop.JointType _jointFootRight,
+									_jointFootLeft;
 	private BodyManager _bodyManager;
 	private KinectSensor _kinectSensor;
 	private Body[] _bodies = null;
+	private List<GestureDetector> _gestureDetectorList = null;
+	
+	private ExerciseData _currentExerciseData;
+	private RepetitionData _currentRepetition;
 
-	public GameObject durationManager;
 	private DurationManager _durationManager;
 
-	private List<GestureDetector> _gestureDetectorList = null;
-
-	public GameObject toggle;
-	public Transform toggleGroup;
 	private Toggle[] _toggleArray;
 
 	public CanvasGroup successPanel;
-	private float progress = 0.0f;
-	private float _currentRepetitionConfidence = 0.0f;
-	
-	public Text testText; // TODO Just for test purposes -> Delete in production
 
-	private int confidenceIterator, attemptsIterator; // for calculating average confidence
+	private List<float> pufferList = new List<float>();
+	
+	private float progress = 0.0f,
+				  _currentRepetitionConfidence = 0.0f,
+				  _initialStartingHeightLeft = 0.0f,
+				  _initialStartingHeightRight = 0.0f,
+				  _startingHeightDifference = 0.0f,
+				  _footDepthTolerance = 0.25f;
+	
+	private int confidenceIterator, 
+				attemptsIterator,
+				sideAccomplishedCounter, // for calculating average confidence
+				heightTestIterator; 
 
 	private bool _firstCheckpoint,
 				_secondCheckpoint,
-				_thirdCheckpoint;
+				_thirdCheckpoint,
+				startTrackingAgain,
+				_bothFeetUp,
+				_inStartingPosition;
+
 	
-	private List<float> pufferList = new List<float>();
-
-	public int sideAccomplishedCounter;
+	private float time = 0.0f;
+	private float interpolationPeriod = 0.5f;
 	
-	private GameObject _kinectManager;
-
-	private bool strartTrackingAgain;
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -60,18 +84,26 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Disable handcursor in execution mode TODO all disable in testmode, enable in production
 		bodyManager = GameObject.Find("BodyManager");
 		
-		_kinectManager = GameObject.Find("KinectManager");
-//		if (_kinectManager.GetComponent<InteractionManager>())
+		KinectManager = GameObject.Find("KinectManager");
+		if (KinectManager == null)
+		{
+			return;
+		}
+
+		_kinectManager = KinectManager.GetComponent<KinectManager>();
+
+//		if (_kinectManager)
 //		{
-//			_kinectManager.GetComponent<InteractionManager>().showHandCursor = false;
+//			_kinectManager.showHandCursor = false;
 //		}
-//		
+		
+		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		PlayerPrefs.SetInt("CurrentSideId", 0);
-//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+		UserSelectionManager.TestSetCurrentUser();
+		PlayerPrefs.SetInt("CurrentTierId", 1);
+		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+		PlayerPrefs.SetInt("CurrentSideId", 0);
+		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -79,7 +111,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		// Duration manager
 		_durationManager = durationManager.GetComponent<DurationManager>();
-
 		
 		// -----------------------------------------
 		// ------------- UI COMPONENTS -------------
@@ -154,6 +185,30 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			_gestureDetectorList.Add(new GestureDetector(_kinectSensor));
 		}
+		
+		// Foot joints for getting positions
+		_jointFootRight = KinectInterop.JointType.FootRight;
+		_jointFootLeft = KinectInterop.JointType.FootLeft;
+		_startingHeightDifference = UserDataObject.GetCurrentExerciseStartingHeightDifference();
+		heightTestIterator = 0;
+		
+		// Initial foot position
+		if (_kinectManager.IsUserDetected())
+		{
+			long userId = _kinectManager.GetPrimaryUserID();
+
+			if (_kinectManager.IsJointTracked(userId, (int) _jointFootRight) && 
+			    _kinectManager.IsJointTracked(userId, (int) _jointFootLeft))
+			{	
+				_initialStartingHeightLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).y;
+				_initialStartingHeightRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).y;
+
+				initialLeftFootText.text += _initialStartingHeightLeft.ToString();
+				initialRightFootText.text += _initialStartingHeightRight.ToString();
+			}
+		}
+		_bothFeetUp = false;
+		_inStartingPosition = false;
 	}
 
 	// Update is called once per frame
@@ -174,8 +229,35 @@ public class ExerciseExecutionManager : MonoBehaviour
 				}
 			}
 		}
-	}
+		
+/*		time += Time.deltaTime;
+		if (time >= interpolationPeriod) {
+			time = time - interpolationPeriod;
+			if (_kinectManager && _kinectManager.IsInitialized() && _kinectManager.IsUserDetected())
+			{
+				long userId = _kinectManager.GetPrimaryUserID();
 	
+				if (_kinectManager.IsJointTracked(userId, (int) _jointFooRight) && 
+					_kinectManager.IsJointTracked(userId, (int) _jointFootLeft))
+				{
+					Debug.Log("------ Second ----- " + heightTestIterator);
+					heightTestIterator++;
+				
+					float jointPosFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFooRight).y;
+					float jointPosFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).y;
+					
+					rightFootText.text = jointPosFootRight.ToString();
+					leftFootText.text = jointPosFootLeft.ToString();						
+	
+					Debug.Log("Left: " + jointPosFootLeft + " || Right: " + jointPosFootRight );
+					Debug.Log("Left: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).normalized + 
+							  " || Right: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointFooRight).normalized);
+	
+				}
+
+			}
+		}*/
+	}
 	
 	// -----------------------------------------
 	// ----------- GESTURE DETECTION ----------- 
@@ -188,11 +270,59 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void OnGestureDetected(object sender, GestureEventArgs e, int bodyIndex)
 	{
 		var isDetected = e.IsBodyTrackingIdValid && e.IsGestureDetected;
-		// Discrete Gesture tracking
-		if (e.GestureType == GestureType.Discrete)
+		
+		// If feets are in correct height
+		if (_kinectManager && _kinectManager.IsInitialized() && _kinectManager.IsUserDetected())
 		{
+			long userId = _kinectManager.GetPrimaryUserID();
+	
+			if (_kinectManager.IsJointTracked(userId, (int) _jointFootRight) && 
+			    _kinectManager.IsJointTracked(userId, (int) _jointFootLeft))
+			{
+			
+				float jointPosFootLeftHeight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).y;
+				float jointPosFootRightHeight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).y;
+				float jointPosFootLeftDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).z;
+				float jointPosFootRightDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).z;
 
-			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f))
+				if ((jointPosFootLeftDepth > jointPosFootRightDepth - _footDepthTolerance) && (jointPosFootLeftDepth < jointPosFootRightDepth + _footDepthTolerance) &&
+				     (jointPosFootRightDepth > jointPosFootLeftDepth - _footDepthTolerance) && (jointPosFootRightDepth < jointPosFootLeftDepth + _footDepthTolerance))
+				{
+					_inStartingPosition = true;
+				}
+				else if (!_bothFeetUp)
+				{
+					_inStartingPosition = false;
+				}
+				
+				rightFootHeightText.text = "R Height: " + jointPosFootRightHeight.ToString();
+				leftFootHeightText.text = "L Height: " + jointPosFootLeftHeight.ToString();				
+				rightFootDepthText.text = "R Depth: " + jointPosFootRightDepth.ToString();
+				leftFootDepthText.text = "L Depth: " + jointPosFootLeftDepth.ToString();
+					
+				// Check if in starting position and foot currentFootHeight is between initialFootHeight + difference tolerance
+				if (_inStartingPosition && 
+				    (jointPosFootLeftHeight > _initialStartingHeightLeft + _startingHeightDifference) &&
+				    (jointPosFootRightHeight > _initialStartingHeightRight + _startingHeightDifference))
+				{
+					_bothFeetUp = true;
+				}
+				else
+				{
+					_bothFeetUp = false;
+				}
+			}
+
+		}
+		
+		bothFeetUpText.text = "DIFF: " + _startingHeightDifference + " |UP: " +  _bothFeetUp + "| INPOS: " + _inStartingPosition;
+
+		// Discrete Gesture tracking
+		if ((e.GestureType == GestureType.Discrete))
+		{
+			_durationManager.SetProgress(e.DetectionConfidence);
+
+			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f) && _bothFeetUp)
 			{
 				_durationManager.StartTimer();
 				
@@ -219,7 +349,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
-		else if (e.GestureType == GestureType.Continuous)
+		else if ((e.GestureType == GestureType.Continuous))
 		{
 			_durationManager.SetProgress(e.Progress);
 
@@ -258,7 +388,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 //					_thirdCheckpoint = true;
 //				}
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
-				if (GestureDetected(e.Progress, 0.4f, 1.5f))
+				if (GestureDetected(e.Progress, 0.4f, 1.5f) && _bothFeetUp)
 				{					
 					
 					_durationManager.StartTimer();
@@ -317,6 +447,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
+		_bothFeetUp = false;
+		_inStartingPosition = false;
 		Debug.Log("ACCOMPLISHED REPETITION");
 		
 		// Save the time and confidence for the current repetition
@@ -426,8 +558,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 			_currentRepetition =
 				UserDataObject.GetCurrentRepetitionsArray()[Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition) + 1];
 			PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
-			strartTrackingAgain = true;
-			Debug.Log("STARTTRAKCINGAGAIN" + strartTrackingAgain);
+			startTrackingAgain = true;
+			Debug.Log("STARTTRAKCINGAGAIN" + startTrackingAgain);
 			//		 Save data to user json file
 			SaveCurrentExerciseData();
 		}
@@ -449,7 +581,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		pufferList.Clear();
 
-		if (strartTrackingAgain)
+		if (startTrackingAgain)
 		{
 			StartCoroutine("StartTracking");
 		}
@@ -457,7 +589,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	public void StopTracking()
 	{
-		strartTrackingAgain = false;
+		startTrackingAgain = false;
 		foreach (var gesture in _gestureDetectorList)
 		{
 			// Pause the current gesture with an id

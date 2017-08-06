@@ -11,6 +11,7 @@ public class ExerciseData
 	public bool accomplished;
 	public string description;
 	public bool isProgressGesture;
+	public float startingHeightDifference;
 
 	public SideData[] sides;
 

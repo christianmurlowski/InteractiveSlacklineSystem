@@ -10,29 +10,37 @@ using Debug = UnityEngine.Debug;
 
 public class ExerciseSummaryManager : MonoBehaviour
 {
+	public GameObject kinectManager,
+					  timePanel,
+					  confidencePanel,
+					  attemptsPanel,
+					  avgTimePanel,
+					  avgConfidencePanel,
+					  avgAttemptsPanel;
 
-	public Text exerciseNameText;
+	public Button mainMenuButton;
 
 	public Transform timeSpacer,
 					 confidenceSpacer,
 					 attemptsSpacer;
 	
-	public GameObject timePanel,
-					  confidencePanel,
-					  attemptsPanel;
-	
-	public GameObject avgTimePanel,
-					  avgConfidencePanel,
-					  avgAttemptsPanel;
+	public Text exerciseNameText;
 
-	private bool startAnim, startConfidenceAnim, startTimeAnim, startAttemptsAnim;
-	private List<Image> imageTimeList, imageConfidenceList, imageAttemptsList;
-	private List<float> imageTimeValue, imageConfidenceValue;
-	private List<float> imageAttemptsValue;
+	private List<Image> imageTimeList, 
+						imageConfidenceList, 
+						imageAttemptsList;
 	
-	public Button mainMenuButton;
+	private List<float> imageTimeValue, 
+						imageConfidenceValue, 
+						imageAttemptsValue;
 	
-	public GameObject kinectManager;
+	private bool startAnim, 
+				 startConfidenceAnim, 
+				 startTimeAnim, 
+				 startAttemptsAnim;
+	
+	
+
 	Stopwatch tempTime = new Stopwatch();
 
 	// Use this for initialization

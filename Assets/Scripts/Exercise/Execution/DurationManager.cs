@@ -9,21 +9,21 @@ using Debug = UnityEngine.Debug;
 
 public class DurationManager : MonoBehaviour
 {
+	public GameObject progressGroup;
 	public Image durationImage;
 	public Text counterText;
 	public Slider slider;
-	public GameObject progressGroup;
 	
+	private Color32 red, darkOrange, lightOrange, green;
+	
+	private Stopwatch _attemptExecutionTime,
+					  _attemptOverallTime;
 	
 	private ExerciseData _currentExerciseData;
 
-	private Color32 red, darkOrange, lightOrange, green;
-	
-	private float tempTimer;
+	private float tempTimer,
+				  _lastAttemptExecutionTime = 0f;
 
-	private Stopwatch _attemptExecutionTime;
-	private float _lastAttemptExecutionTime = 0f;
-	private Stopwatch _attemptOverallTime;
 	private int _attemptExecutionTimeInt;
 	
 	void Start ()
@@ -71,10 +71,10 @@ public class DurationManager : MonoBehaviour
 		// Slider for progress
 		slider = slider.GetComponent<Slider>();		
 		Debug.Log("isProgressGesture: " + _currentExerciseData.isProgressGesture);
-		if (!_currentExerciseData.isProgressGesture)
-		{
-			progressGroup.SetActive(false);
-		}
+//		if (!_currentExerciseData.isProgressGesture)
+//		{
+//			progressGroup.SetActive(false);
+//		}
 			
 	}
 
@@ -98,15 +98,15 @@ public class DurationManager : MonoBehaviour
 
 		if (durationImage.fillAmount >= 1.0)
 		{
-			changeColor(green);
+			ChangeColor(green);
 		}
 		else if (durationImage.fillAmount > 0.66)
 		{
-			changeColor(lightOrange);
+			ChangeColor(lightOrange);
 		}
 		else if (durationImage.fillAmount > 0.33)
 		{
-			changeColor(darkOrange);
+			ChangeColor(darkOrange);
 		}
 	}
 	
@@ -117,7 +117,7 @@ public class DurationManager : MonoBehaviour
 		_attemptExecutionTime.Reset();
 		counterText.text = "0";
 		durationImage.fillAmount = 0.0f;
-		changeColor(red);
+		ChangeColor(red);
 	}
 
 	public bool IsTimerRunning()
@@ -125,7 +125,7 @@ public class DurationManager : MonoBehaviour
 		return _attemptExecutionTime.IsRunning;
 	}
 	
-	public void changeColor(Color32 color)
+	public void ChangeColor(Color32 color)
 	{
 		durationImage.color = color;
 		counterText.color = color;

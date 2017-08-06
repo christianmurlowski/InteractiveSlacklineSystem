@@ -49,6 +49,7 @@
           "accomplished": false,
           "description": "Stay on your right foot and raise your other leg to the front. Lean forward with your upper body and fixate the left leg with both arms",
           "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
           "sides": [
             {
               "direction": "Right",
@@ -133,6 +134,7 @@
           "accomplished": false,
           "description": "Stay on your right foot. Other foot up and stretch it behind your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
           "isProgressGesture": true,
+          "startingHeightDifference": -0.2,
           "sides": [
             {
               "direction": "Right",
@@ -262,6 +264,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
           "sides": [
             {
               "direction": "Right",
@@ -352,6 +355,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
+          "startingHeightDifference": 0.2,
           "sides": [
             {
               "direction": "Right",
@@ -490,6 +494,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
+          "startingHeightDifference": 0.2,
           "sides": [
             {
               "direction": "Right",
@@ -574,6 +579,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
+          "startingHeightDifference": 0.2,
           "sides": [
             {
               "direction": "Right",
@@ -703,6 +709,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
+          "startingHeightDifference": 0.2,
           "sides": [
             {
               "direction": "Right",

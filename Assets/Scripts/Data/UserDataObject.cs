@@ -114,6 +114,11 @@ public class UserDataObject {
     {
         return GetCurrentExerciseName() +  " " + GetCurrentSide().direction;
     }
+        
+    public static float GetCurrentExerciseStartingHeightDifference()
+    {
+        return GetCurrentExercise().startingHeightDifference;
+    }
     
     public static string GetCurrentExerciseFileName()
     {

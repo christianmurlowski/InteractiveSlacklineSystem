@@ -408,7 +408,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.03746755, g: 0.36078447, b: 0.72794116, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.05
+    m_FadeDuration: 0.01
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1061,7 +1061,6 @@ MonoBehaviour:
     type: 2}
   tierInfoPanel: {fileID: 1750714680090900, guid: b9f9d1ba87645b8439193fc0f8909df6,
     type: 2}
-  canvas: {fileID: 351500822}
   goalSpacer: {fileID: 530943373}
   infoSpacer: {fileID: 38937685}
   buttonMainMenu: {fileID: 300542579}
