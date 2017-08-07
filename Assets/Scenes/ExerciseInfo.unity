@@ -1491,7 +1491,7 @@ MonoBehaviour:
   gripHandTexture: {fileID: 2800000, guid: 60d355b8e695bcb43a3d5294e7de5a68, type: 3}
   releaseHandTexture: {fileID: 2800000, guid: 295064e475e425b4baf933d046a1fe16, type: 3}
   normalHandTexture: {fileID: 2800000, guid: 295064e475e425b4baf933d046a1fe16, type: 3}
-  smoothFactor: 10
+  smoothFactor: 3
   allowHandClicks: 1
   controlMouseCursor: 0
   controlMouseDrag: 0
