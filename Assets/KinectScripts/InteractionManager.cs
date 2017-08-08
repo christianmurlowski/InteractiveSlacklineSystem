@@ -896,8 +896,11 @@ public class InteractionManager : MonoBehaviour
           }
           else 
           {
+//            Debug.Log((cursorScreenPos.x - texture.width/100) + " | " + Screen.width + " \n " +
+//                      (cursorScreenPos.y + texture.height/100) + " | " + Screen.height);
+//            
             rectTexture = new Rect(cursorScreenPos.x * Screen.width - texture.width / 2, (1f - cursorScreenPos.y) * Screen.height - texture.height / 2, 
-                                   texture.width, texture.height);
+              texture.width, texture.height);
           }
 
           GUI.DrawTexture(rectTexture, texture);

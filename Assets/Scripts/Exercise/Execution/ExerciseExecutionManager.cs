@@ -99,11 +99,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentTierId", 1);
-		PlayerPrefs.SetInt("CurrentExerciseId", 2);
-		PlayerPrefs.SetInt("CurrentSideId", 0);
-		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 1);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		PlayerPrefs.SetInt("CurrentSideId", 0);
+//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -285,15 +285,16 @@ public class ExerciseExecutionManager : MonoBehaviour
 				float jointPosFootLeftDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).z;
 				float jointPosFootRightDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).z;
 
-				if ((jointPosFootLeftDepth > jointPosFootRightDepth - _footDepthTolerance) && (jointPosFootLeftDepth < jointPosFootRightDepth + _footDepthTolerance) &&
-				     (jointPosFootRightDepth > jointPosFootLeftDepth - _footDepthTolerance) && (jointPosFootRightDepth < jointPosFootLeftDepth + _footDepthTolerance))
-				{
-					_inStartingPosition = true;
-				}
-				else if (!_bothFeetUp)
-				{
-					_inStartingPosition = false;
-				}
+//				if ((jointPosFootLeftDepth > jointPosFootRightDepth - _footDepthTolerance) && (jointPosFootLeftDepth < jointPosFootRightDepth + _footDepthTolerance) &&
+//				     (jointPosFootRightDepth > jointPosFootLeftDepth - _footDepthTolerance) && (jointPosFootRightDepth < jointPosFootLeftDepth + _footDepthTolerance))
+//				{
+//					_inStartingPosition = true;
+//				}
+//				else if (!_bothFeetUp)
+//				{
+//					_inStartingPosition = false;
+//				}
+				_inStartingPosition = true;
 				
 				rightFootHeightText.text = "R Height: " + jointPosFootRightHeight.ToString();
 				leftFootHeightText.text = "L Height: " + jointPosFootLeftHeight.ToString();				

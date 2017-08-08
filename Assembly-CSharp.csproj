@@ -43,10 +43,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>E:/Programme/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>E:/Programme/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -170,28 +170,28 @@
     <None Include="Assets\Resources\Videos\1_Tier\Materials\NewUnlitShader.shader" />
     <None Include="Assets\Resources\BlurShader4.shader" />
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PlaymodeTestsRunner">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
-      <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
