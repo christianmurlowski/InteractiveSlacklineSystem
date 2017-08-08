@@ -7,7 +7,8 @@ public class ExerciseLevelButton : MonoBehaviour
 {
 
 	public Text buttonText;
+	public Image bgImage;
+	public Image progressImage;
 	public int unlocked;
-	public Image image;
 
 }

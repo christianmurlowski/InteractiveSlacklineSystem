@@ -11,9 +11,11 @@ public class ExerciseLevelManager : MonoBehaviour
 {
 	public GameObject exerciseLevelButton;
 	
-	public Transform tierSpacer;
-	public Transform exerciseSpacer;
-	public Transform verticalSpacer;
+	public Transform tierSpacer,
+	                 exerciseSpacer,
+	                 verticalSpacer;
+	
+	public Image progressImage;
 
 	public ScrollRect scrollView;
 
@@ -60,8 +62,8 @@ public class ExerciseLevelManager : MonoBehaviour
 			// Set image for basic information button
 			tierBasicGameObjectButton.GetComponent<Image>().sprite =
 				Resources.Load<Sprite>("Images/Information/" + tier.fileName);
-			tierBasicButton.image.sprite = Resources.Load<Sprite>("Images/Information/Information");
-			tierBasicButton.image.color = new Color32(255, 255, 255, 20);
+			tierBasicButton.bgImage.sprite = Resources.Load<Sprite>("Images/Information/Information");
+			tierBasicButton.bgImage.color = new Color32(255, 255, 255, 20);
 
 
 			// If tier unlocked --> unlock the basic information for this tier
@@ -120,13 +122,21 @@ public class ExerciseLevelManager : MonoBehaviour
 
 				// Set image for exercise button
 //				Debug.Log("Images/" + tier.fileName + "/" + exercise.fileName);
-				button.image.sprite = Resources.Load<Sprite>("Images/" + tier.fileName + "/" + exercise.fileName);
+				button.bgImage.sprite = Resources.Load<Sprite>("Images/" + tier.fileName + "/" + exercise.fileName);
 				// If exercise locked
 				if (!exercise.isInteractable)
 				{
-					button.image.color = new Color32(255, 255, 255, 15);
+					button.bgImage.color = new Color32(255, 255, 255, 15);
 					gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Lock");
 					gameObjectButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
+				}
+				
+				// Fill progress in button
+				foreach(var side in exercise.sides){
+				    if(side.accomplished)
+				    {
+					    button.progressImage.fillAmount += 0.5f;
+				    }
 				}
 
 				// Add listener for the button to set the PP and load the appropriate scene
@@ -153,8 +163,8 @@ public class ExerciseLevelManager : MonoBehaviour
 
 			// Set image for summary button
 			tierSumGameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Summary/Summary");
-			tierSumButton.image.sprite = Resources.Load<Sprite>("Images/Summary/SummaryBackground");
-			tierSumButton.image.color = new Color32(255, 255, 255, 15);
+			tierSumButton.bgImage.sprite = Resources.Load<Sprite>("Images/Summary/SummaryBackground");
+			tierSumButton.bgImage.color = new Color32(255, 255, 255, 15);
 			
 			// If last exercise accomplished --> unlock the sum information for this tier
 			if (tier.exercises.Last().accomplished)

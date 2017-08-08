@@ -125,6 +125,7 @@ MonoBehaviour:
   exerciseSpacer: {fileID: 224070519038106514, guid: 4574b137997daa848b3f76a3d37e599f,
     type: 2}
   verticalSpacer: {fileID: 1897815613}
+  progressImage: {fileID: 0}
   scrollView: {fileID: 166758566}
 --- !u!4 &25192160
 Transform:
