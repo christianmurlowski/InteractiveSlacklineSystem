@@ -81,8 +81,8 @@ public class ExerciseInfoManager : MonoBehaviour
 		}
 		if (UserDataObject.GetCurrentTipsArray().Length > 7 )
 		{
-		}
 			buttonExerciseStart.transform.SetParent(spacer, false);
+		}
 	}
 
 	private void Update()
