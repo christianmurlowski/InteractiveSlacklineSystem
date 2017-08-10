@@ -28,7 +28,6 @@ public class SkeletonOverlayer : MonoBehaviour
 
 	private Quaternion initialRotation = Quaternion.identity;
 
-
 	void Start()
 	{
 		KinectManager manager = KinectManager.Instance;

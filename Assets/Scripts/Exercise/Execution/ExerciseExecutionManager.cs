@@ -100,10 +100,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		// TODO Just for test purposes -> Delete in production
 //		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 1);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
 //		PlayerPrefs.SetInt("CurrentSideId", 0);
-//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -111,6 +111,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		// Duration manager
 		_durationManager = durationManager.GetComponent<DurationManager>();
+		
 		
 		// -----------------------------------------
 		// ------------- UI COMPONENTS -------------
@@ -162,7 +163,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		// Set ID of current repetition
 		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
-		
 		
 		// -----------------------------------------
 		// ---------------- KINECT -----------------
@@ -258,6 +258,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 		}*/
 	}
+	
 	
 	// -----------------------------------------
 	// ----------- GESTURE DETECTION ----------- 
@@ -630,7 +631,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 		Debug.Log("Dispose gesturedetector");
 		foreach (var gesture in _gestureDetectorList)
 		{
+			Debug.Log("before Gesture: " + gesture);
+			Debug.Log(_gestureDetectorList.IndexOf(gesture));
 			gesture.Dispose();
+			Debug.Log(_gestureDetectorList.IndexOf(gesture));
+//			_gestureDetectorList.RemoveAt(_gestureDetectorList.IndexOf(gesture));
+			Debug.Log("after dispoe: " + gesture);
 		}
 //		_gestureDetectorList = null;
 	}

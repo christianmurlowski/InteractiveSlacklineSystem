@@ -123,12 +123,13 @@ public class ExerciseLevelManager : MonoBehaviour
 				// Set image for exercise button
 //				Debug.Log("Images/" + tier.fileName + "/" + exercise.fileName);
 				button.bgImage.sprite = Resources.Load<Sprite>("Images/" + tier.fileName + "/" + exercise.fileName);
+				
 				// If exercise locked
 				if (!exercise.isInteractable)
 				{
-					button.bgImage.color = new Color32(255, 255, 255, 15);
+					button.bgImage.color = new Color32(255, 255, 255, 0);
 					gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Lock");
-					gameObjectButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
+					gameObjectButton.GetComponent<Image>().color = new Color32(255,255,255, 255);
 				}
 				
 				// Fill progress in button
@@ -148,6 +149,13 @@ public class ExerciseLevelManager : MonoBehaviour
 
 					SceneManager.LoadScene("ExerciseSideSelection");
 				});
+
+				if (PlayerPrefs.GetInt("CurrentTierId") == _allTierData.IndexOf(tier) && 
+				    PlayerPrefs.GetInt("CurrentExerciseId") == tier.exercises.IndexOf(exercise))
+				{
+					Debug.Log("Current exervcise to highlight: " + exercise.exerciseName);
+				}
+					
 
 				// Append the exercise button to the exercise spacer
 				gameObjectButton.transform.SetParent(_exerciseSpacer, false);

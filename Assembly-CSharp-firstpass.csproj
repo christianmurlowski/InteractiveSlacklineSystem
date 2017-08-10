@@ -179,22 +179,23 @@
     <Compile Include="Assets\Standard Assets\Windows\Kinect\TrackingConfidence.cs" />
     <Compile Include="Assets\Standard Assets\Windows\Kinect\TrackingState.cs" />
     <Compile Include="Assets\Standard Assets\Windows\Kinect\Vector4.cs" />
-    <None Include="Assets\Resources\BlurShader.shader" />
-    <None Include="Assets\Resources\DepthShader.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader.shader" />
+    <None Include="Assets\Resources\Materials\DepthShader.shader" />
     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
-    <None Include="Assets\Resources\BlurShader3.shader" />
-    <None Include="Assets\Resources\Color2DepthShader.shader" />
-    <None Include="Assets\Resources\BlurShader2.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader3.shader" />
+    <None Include="Assets\Resources\Materials\Color2DepthShader.shader" />
+    <None Include="Assets\Prefabs\Environment\Materials\_MaterialIndex.txt" />
+    <None Include="Assets\Resources\Materials\BlurShader2.shader" />
     <None Include="Assets\StreamingAssets\JSONData\Exercises\test.txt" />
-    <None Include="Assets\Resources\Depth2ColorShader.shader" />
-    <None Include="Assets\My Resources\RadialGradientSurfaceShader.shader" />
-    <None Include="Assets\Resources\Erode.shader" />
-    <None Include="Assets\Resources\BodyShader.shader" />
-    <None Include="Assets\Resources\Dilate.shader" />
-    <None Include="Assets\Resources\BlurShader5.shader" />
-    <None Include="Assets\Resources\Color2BodyShader.shader" />
+    <None Include="Assets\Resources\Materials\Depth2ColorShader.shader" />
+    <None Include="Assets\Resources\Materials\RadialGradientSurfaceShader.shader" />
+    <None Include="Assets\Resources\Materials\Erode.shader" />
+    <None Include="Assets\Resources\Materials\BodyShader.shader" />
+    <None Include="Assets\Resources\Materials\Dilate.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader5.shader" />
+    <None Include="Assets\Resources\Materials\Color2BodyShader.shader" />
     <None Include="Assets\Resources\Videos\1_Tier\Materials\NewUnlitShader.shader" />
-    <None Include="Assets\Resources\BlurShader4.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader4.shader" />
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>

@@ -35,8 +35,8 @@ public class ExerciseInfoManager : MonoBehaviour
 //		PlayerPrefs.SetInt("CurrentTierId", 0);
 //		PlayerPrefs.SetInt("CurrentExerciseId", 0);
 //		PlayerPrefs.SetInt("CurrentSideId", 0);
-//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName();
 		
@@ -47,7 +47,6 @@ public class ExerciseInfoManager : MonoBehaviour
 		}
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
-
 		
 		_jointFooRight = KinectInterop.JointType.FootRight;
 		_jointFootLeft = KinectInterop.JointType.FootLeft;
@@ -62,6 +61,7 @@ public class ExerciseInfoManager : MonoBehaviour
 	{
 		SceneManager.LoadScene("ExerciseExecution");
 	}
+	
 	public void LoadPreviousScene()
 	{
 		SceneManager.LoadScene("ExerciseSideSelection");

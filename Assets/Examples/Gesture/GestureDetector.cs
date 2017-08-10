@@ -153,6 +153,7 @@ public class GestureDetector : IDisposable
     public void Dispose()
     {
         this.Dispose(true);
+//        GC.Collect();
         GC.SuppressFinalize(this);
     }
 
