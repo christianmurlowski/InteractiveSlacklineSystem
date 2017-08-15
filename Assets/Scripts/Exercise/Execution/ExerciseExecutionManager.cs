@@ -99,10 +99,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		PlayerPrefs.SetInt("CurrentSideId", 0);
+		UserSelectionManager.TestSetCurrentUser();
+		PlayerPrefs.SetInt("CurrentTierId", 0);
+		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+		PlayerPrefs.SetInt("CurrentSideId", 0);
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user

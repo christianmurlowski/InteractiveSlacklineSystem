@@ -18,8 +18,8 @@ public class ExerciseInfoManager : MonoBehaviour
 	
 	private KinectManager _kinectManager;
 	
-	private KinectInterop.JointType _jointFooRight,
-		_jointFootLeft;
+	private KinectInterop.JointType _jointFootRight,
+									_jointFootLeft;
 
 	private float tolerance = 0.1f;
 	// DEV TESTING
@@ -31,10 +31,10 @@ public class ExerciseInfoManager : MonoBehaviour
 	void Start ()
 	{
 //		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		PlayerPrefs.SetInt("CurrentSideId", 0);
+		UserSelectionManager.TestSetCurrentUser(); 
+		PlayerPrefs.SetInt("CurrentTierId", 0);
+		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+		PlayerPrefs.SetInt("CurrentSideId", 0);
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
@@ -48,7 +48,7 @@ public class ExerciseInfoManager : MonoBehaviour
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		
-		_jointFooRight = KinectInterop.JointType.FootRight;
+		_jointFootRight = KinectInterop.JointType.FootRight;
 		_jointFootLeft = KinectInterop.JointType.FootLeft;
 		
 		// Start button is false
@@ -91,14 +91,14 @@ public class ExerciseInfoManager : MonoBehaviour
 		{
 			long userId = _kinectManager.GetPrimaryUserID();
 	
-			if (_kinectManager.IsJointTracked(userId, (int) _jointFooRight) && 
+			if (_kinectManager.IsJointTracked(userId, (int) _jointFootRight) && 
 			    _kinectManager.IsJointTracked(userId, (int) _jointFootLeft))
 			{
 		
 				float jointPosFootLeftHeight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).y;
-				float jointPosFootRightHeight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFooRight).y;
+				float jointPosFootRightHeight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).y;
 				float jointPosFootLeftDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).z;
-				float jointPosFootRightDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFooRight).z;			
+				float jointPosFootRightDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).z;			
 				
 				footLeftText.text = jointPosFootLeftDepth.ToString();
 				footRightText.text = jointPosFootRightDepth.ToString();
@@ -109,7 +109,7 @@ public class ExerciseInfoManager : MonoBehaviour
 				     (jointPosFootRightHeight > jointPosFootLeftHeight - tolerance) && (jointPosFootRightHeight < jointPosFootLeftHeight + tolerance)))
 				{
 					buttonExerciseStart.GetComponent<Button>().interactable = true;
-					buttonExerciseStart.GetComponentInChildren<Text>().text = "Start exercise";
+					buttonExerciseStart.GetComponentInChildren<Text>().text = "Click to start exercise";
 					inRange.text = true.ToString();
 				}
 				else

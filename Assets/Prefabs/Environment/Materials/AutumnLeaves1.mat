@@ -16,6 +16,12 @@ Material:
     serializedVersion: 2
     m_TexEnvs:
     - first:
+        name: <noninit>
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _BumpMap
       second:
         m_Texture: {fileID: 0}
@@ -71,6 +77,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: <noninit>
+      second: 0
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -93,7 +102,7 @@ Material:
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 1
     - first:
         name: _Mode
       second: 0
@@ -120,8 +129,11 @@ Material:
       second: 1
     m_Colors:
     - first:
+        name: <noninit>
+      second: {r: 0, g: 8.907763e-35, b: 0, a: 8.9077263e-35}
+    - first:
         name: _Color
-      second: {r: 1, g: 0.46666667, b: 0, a: 1}
+      second: {r: 1, g: 0.5411765, b: 0, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

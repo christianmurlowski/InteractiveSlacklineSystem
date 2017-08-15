@@ -2267,13 +2267,15 @@ public class KinectManager : MonoBehaviour
 					float displayMapsWidthPercent = DisplayMapsWidthPercent / 100f;
 					float displayMapsHeightPercent = displayMapsWidthPercent * sensorData.depthImageHeight / sensorData.depthImageWidth;
 					
-					float displayWidth = (cameraRect.width * displayMapsWidthPercent) / 2;
-					float displayHeight = (cameraRect.width * displayMapsHeightPercent) / 2;
+					float displayWidth = (cameraRect.width * displayMapsWidthPercent);
+					float displayHeight = (cameraRect.width * displayMapsHeightPercent);
 					
 //					usersMapRect = new Rect(cameraRect.width - displayWidth, cameraRect.height, displayWidth, -displayHeight);
-					Debug.Log("MAP: " + cameraRect.width + " | " + cameraRect.height);
+					Debug.Log("camera: " + cameraRect.width + " | " + cameraRect.height);
 					Debug.Log("display: " + displayWidth + " | " + displayHeight);
-					usersMapRect = new Rect(cameraRect.width/2 - displayWidth/2, displayHeight, displayWidth, -displayHeight);
+//					usersMapRect = new Rect((cameraRect.width) / 2, (cameraRect.height+displayHeight) / 2, displayWidth, -displayHeight); // H: Right, V: Middle
+//					usersMapRect = new Rect((cameraRect.width - displayWidth) / 2, (cameraRect.height+displayHeight) / 2, displayWidth, -displayHeight); // H: Middle, V: Middle
+					usersMapRect = new Rect(cameraRect.width/2 - displayWidth/2, cameraRect.height, displayWidth, -displayHeight);
 				}
 
 	            GUI.DrawTexture(usersMapRect, usersLblTex);

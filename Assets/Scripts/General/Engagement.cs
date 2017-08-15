@@ -53,7 +53,7 @@ public class Engagement : MonoBehaviour
 
 					if ((jointPosHandRight.y > jointPosHead.y) || (jointPosHandLeft.y > jointPosHead.y))
 					{
-						SceneManager.LoadScene("UserSelection");
+						SceneManager.LoadScene("StartingPosition");
 					}					
 
 				}
