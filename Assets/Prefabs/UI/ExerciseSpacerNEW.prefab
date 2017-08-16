@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224070519038106514}
   - component: {fileID: 114089158950980918}
   m_Layer: 5
-  m_Name: ExerciseSpacer
+  m_Name: ExerciseSpacerNEW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 550, y: 450}
-  m_Spacing: {x: 70, y: 20}
+  m_CellSize: {x: 700, y: 600}
+  m_Spacing: {x: 250, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!224 &224070519038106514
