@@ -16,9 +16,9 @@ public class SideSelection : MonoBehaviour
 	void Start () 
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
 
 		Color32 green = new Color32(32, 147, 92, 255);
 		

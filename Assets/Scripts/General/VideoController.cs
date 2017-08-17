@@ -11,11 +11,11 @@ public class VideoController : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 1);
-		PlayerPrefs.SetInt("CurrentSideId", 0);
-		
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 0);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 1);
+//		PlayerPrefs.SetInt("CurrentSideId", 0);
+//		
 //		RawImage rim = GetComponent<RawImage>();
 ////		movieTexture = (MovieTexture)rim.mainTexture;
 		movieTexture = Resources.Load("Videos/" + UserDataObject.GetCurrentTierFileName() + "/"

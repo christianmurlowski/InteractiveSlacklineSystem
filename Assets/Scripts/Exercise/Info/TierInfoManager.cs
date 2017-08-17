@@ -23,10 +23,10 @@ public class TierInfoManager : MonoBehaviour
 	void Start ()
 	{
 		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser(); 
-		PlayerPrefs.SetInt("CurrentTierId", 2);
-		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
+//		UserSelectionManager.TestSetCurrentUser(); 
+//		PlayerPrefs.SetInt("CurrentTierId", 2);
+//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 //		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		_currentTierData = UserDataObject.GetCurrentTier();

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1945144556}
-  m_IndirectSpecularColor: {r: 0.11799594, g: 0.10220537, b: 0.09643764, a: 1}
+  m_IndirectSpecularColor: {r: 0.11800804, g: 0.10220397, b: 0.096433885, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2461,10 +2461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6e016a63f2237429ef6ef9fa7d7cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exerciseLeftButton: {fileID: 0}
-  exerciseRightButton: {fileID: 0}
-  leftButtonText: {fileID: 0}
-  rightButtonText: {fileID: 0}
+  exerciseLeftButton: {fileID: 1122444957}
+  exerciseRightButton: {fileID: 1160442587}
+  leftButtonText: {fileID: 2003638210}
+  rightButtonText: {fileID: 1621655101}
   exerciseName: {fileID: 1994901504}
 --- !u!4 &680823214
 Transform:
@@ -4540,7 +4540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1397673110
 Transform:
   m_ObjectHideFlags: 0

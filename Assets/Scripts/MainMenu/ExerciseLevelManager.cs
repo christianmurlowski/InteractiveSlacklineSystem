@@ -27,8 +27,8 @@ public class ExerciseLevelManager : MonoBehaviour
 	{
 		_allTierData = UserDataObject.GetAllTiers();
 //		// TODO Just for test purposes -> Delete in production
-		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentTierId", 0);					
+//		UserSelectionManager.TestSetCurrentUser();
+//		PlayerPrefs.SetInt("CurrentTierId", 0);					
 		
 		FillMenu();
 		ScrollToCurrentTier();
