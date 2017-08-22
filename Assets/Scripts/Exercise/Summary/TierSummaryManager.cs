@@ -11,11 +11,13 @@ public class TierSummaryManager : MonoBehaviour
 	[Tooltip("Prefab of goal panel")]
 	public Transform timeSpacer, 
 					 attemptsSpacer, 
-					 confidenceSpacer;
+					 confidenceSpacer,
+					 exerciseNumberSpacer;
 
 	public GameObject exerciseTimeImage, 
 					  exerciseAttemptsImage, 
-					  exerciseConfidenceImage;
+					  exerciseConfidenceImage,
+					  exerciseNumberText;
 
 	public Text tierNameText;
 	
@@ -24,14 +26,6 @@ public class TierSummaryManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		// TODO Just for test purposes -> Delete in production
-
-//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-//		PlayerPrefs.SetInt("CurrentTierId", 0);// TODO Just for test purposes -> Delete in production
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
-//		
-		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
@@ -61,7 +55,10 @@ public class TierSummaryManager : MonoBehaviour
 			GameObject gameObjectTierExerciseTime = Instantiate(exerciseTimeImage) as GameObject;
 			GameObject gameObjectTierExerciseConfidence = Instantiate(exerciseConfidenceImage) as GameObject;
 			GameObject gameObjectTierExerciseAttempts = Instantiate(exerciseAttemptsImage) as GameObject;
+			
+			GameObject gameObjectTierExercisNumber = Instantiate(exerciseNumberText) as GameObject;
 
+			
 			TierSummaryExerciseTimeImage summaryTimeImage =
 				gameObjectTierExerciseTime.GetComponent<TierSummaryExerciseTimeImage>();
 			TierSummaryExerciseConfidenceImage summaryConfidenceImage =
@@ -79,9 +76,13 @@ public class TierSummaryManager : MonoBehaviour
 			summaryAttemptImage.avgAttempt.text = exercise.attempts.ToString();
 			summaryAttemptImage.GetComponent<Image>().fillAmount = exercise.attempts / UserDataObject.GetCurrentTierAllExercisesHighestAttempt();
 			
+			
+			gameObjectTierExercisNumber.GetComponent<Text>().text += (_currentTierData.exercises.IndexOf(exercise)+1);
+			
 			gameObjectTierExerciseTime.transform.SetParent(timeSpacer, false);
 			gameObjectTierExerciseConfidence.transform.SetParent(confidenceSpacer, false);
 			gameObjectTierExerciseAttempts.transform.SetParent(attemptsSpacer, false);
+			gameObjectTierExercisNumber.transform.SetParent(exerciseNumberSpacer, false);
 		}
 	}
 }

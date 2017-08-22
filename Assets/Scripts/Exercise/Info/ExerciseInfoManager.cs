@@ -14,7 +14,9 @@ public class ExerciseInfoManager : MonoBehaviour
 					 spacer;
 
 	
-	public Text exerciseName;
+	public Text exerciseName,
+				exerciseRepetitions,
+				exerciseMinTime;
 	
 	private KinectManager _kinectManager;
 	
@@ -22,6 +24,7 @@ public class ExerciseInfoManager : MonoBehaviour
 									_jointFootLeft;
 
 	private float tolerance = 0.1f;
+	
 	// DEV TESTING
 	public Text footLeftText,
 				footRightText,
@@ -30,14 +33,6 @@ public class ExerciseInfoManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-//		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		PlayerPrefs.SetInt("CurrentSideId", 0);
-		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
-
 		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName();
 		
 		KinectManager = GameObject.Find("KinectManager");
@@ -79,10 +74,9 @@ public class ExerciseInfoManager : MonoBehaviour
 			
 			gameObjectTipPanel.transform.SetParent(spacer, false);
 		}
-		if (UserDataObject.GetCurrentTipsArray().Length > 7 )
-		{
-			buttonExerciseStart.transform.SetParent(spacer, false);
-		}
+		
+		exerciseRepetitions.text = UserDataObject.GetCurrentRepetitionsArrayLength().ToString();
+		exerciseMinTime.text = UserDataObject.GetCurrentRepetitionMinTime() + " sec";
 	}
 
 	private void Update()

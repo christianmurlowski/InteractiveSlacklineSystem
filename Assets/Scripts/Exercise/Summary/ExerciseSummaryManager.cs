@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 
 public class ExerciseSummaryManager : MonoBehaviour
 {
-	public GameObject kinectManager,
+	public GameObject KinectManager,
 					  timePanel,
 					  confidencePanel,
 					  attemptsPanel,
@@ -26,6 +26,9 @@ public class ExerciseSummaryManager : MonoBehaviour
 	
 	public Text exerciseNameText;
 
+	
+	private KinectManager _kinectManager;
+	
 	private List<Image> imageTimeList, 
 						imageConfidenceList, 
 						imageAttemptsList;
@@ -39,21 +42,19 @@ public class ExerciseSummaryManager : MonoBehaviour
 				 startTimeAnim, 
 				 startAttemptsAnim;
 	
-	
-
 	Stopwatch tempTime = new Stopwatch();
 
 	// Use this for initialization
 	void Start () {
 		
 		// Enable handcursor in execution mode
-//		kinectManager = GameObject.Find("KinectManager");
-//		kinectManager.GetComponent<InteractionManager>().showHandCursor = true;
-		Debug.Log("Enable handcursor");
+		KinectManager = GameObject.Find("KinectManager");
+//		KinectManager.GetComponent<InteractionManager>().showHandCursor = true;
+
+		_kinectManager = KinectManager.GetComponent<KinectManager>();
+		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
 		
-//		UserSelectionManager.TestSetCurrentUser(); // TODO Just for test purposes -> Delete in production
-//		PlayerPrefs.SetInt("CurrentTierId", 0);// TODO Just for test purposes -> Delete in production
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);// TODO Just for test purposes -> Delete in production
+		Debug.Log("Enable handcursor");
 
 		imageConfidenceList = new List<Image>();
 		imageTimeList = new List<Image>();

@@ -31,12 +31,6 @@ public class DurationManager : MonoBehaviour
 		// -----------------------------------------
 		// ------------ INITIALIZATIONS ------------
 		// -----------------------------------------
-//		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 2);
-//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];

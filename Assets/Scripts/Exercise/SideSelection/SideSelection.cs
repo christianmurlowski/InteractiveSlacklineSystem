@@ -7,19 +7,26 @@ using UnityEngine.UI;
 
 public class SideSelection : MonoBehaviour
 {
-
-	public Button exerciseLeftButton, exerciseRightButton;
-	public Text leftButtonText, rightButtonText;
-	public Text exerciseName;
+	public GameObject KinectManager;
 	
+	public Button exerciseLeftButton, 
+				  exerciseRightButton;
+	
+	public Text leftButtonText, 
+				rightButtonText,
+				exerciseName;
+
+
+	private KinectManager _kinectManager;
 	// Use this for initialization
 	void Start () 
 	{
-		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 0);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
+		KinectManager = GameObject.Find("KinectManager");
 
+		_kinectManager = KinectManager.GetComponent<KinectManager>();
+
+		if (_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = false;
+		
 		Color32 green = new Color32(32, 147, 92, 255);
 		
 		foreach (var side in UserDataObject.GetCurrentExercise().sides)

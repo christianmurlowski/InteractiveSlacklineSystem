@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 public class ExerciseLevelManager : MonoBehaviour
 {
-	public GameObject exerciseLevelButton;
+	public GameObject exerciseLevelButton,
+					  KinectManager;
 	
 	public Transform tierSpacer,
 	                 exerciseSpacer,
@@ -19,6 +20,8 @@ public class ExerciseLevelManager : MonoBehaviour
 
 	public ScrollRect scrollView;
 
+	private KinectManager _kinectManager;
+	
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
 	
@@ -26,9 +29,11 @@ public class ExerciseLevelManager : MonoBehaviour
 	void Start ()
 	{
 		_allTierData = UserDataObject.GetAllTiers();
-//		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser();
-//		PlayerPrefs.SetInt("CurrentTierId", 0);					
+		
+		KinectManager = GameObject.Find("KinectManager");
+		_kinectManager = KinectManager.GetComponent<KinectManager>();
+
+		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
 		
 		FillMenu();
 		ScrollToCurrentTier();

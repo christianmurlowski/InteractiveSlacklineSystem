@@ -35,6 +35,8 @@ public class KinectManager : MonoBehaviour
 	
 	[Tooltip("Whether to display the user map on the screen.")]
 	public bool displayUserMap = false;
+	public bool displayUserMapSmall = false;
+	private bool smallIsSet = false;
 	
 	[Tooltip("Whether to display the color camera image on the screen.")]
 	public bool displayColorMap = false;
@@ -2253,8 +2255,10 @@ public class KinectManager : MonoBehaviour
 			if(displayUserMap && !sensorData.color2DepthTexture &&
 			   (computeUserMap != UserMapType.None && computeUserMap != UserMapType.RawUserDepth))
 	        {
-				if(usersMapRect.width == 0 || usersMapRect.height == 0)
+		        
+				if((!displayUserMapSmall && smallIsSet) || usersMapRect.width == 0 || usersMapRect.height == 0)
 				{
+					smallIsSet = false;
 					// get the main camera rectangle
 					Rect cameraRect = Camera.main != null ? Camera.main.pixelRect : new Rect(0, 0, Screen.width, Screen.height);
 					
@@ -2277,7 +2281,29 @@ public class KinectManager : MonoBehaviour
 //					usersMapRect = new Rect((cameraRect.width - displayWidth) / 2, (cameraRect.height+displayHeight) / 2, displayWidth, -displayHeight); // H: Middle, V: Middle
 					usersMapRect = new Rect(cameraRect.width/2 - displayWidth/2, cameraRect.height, displayWidth, -displayHeight);
 				}
+		        if (displayUserMapSmall && !smallIsSet)
+		        {
+			        smallIsSet = true;
+			        // get the main camera rectangle
+			        Rect cameraRect = Camera.main != null ? Camera.main.pixelRect : new Rect(0, 0, Screen.width, Screen.height);
+					
+			        // calculate map width and height in percent, if needed
+			        if(DisplayMapsWidthPercent == 0f)
+			        {
+				        DisplayMapsWidthPercent = (sensorData.depthImageWidth / 2) * 100 / cameraRect.width;
+			        }
+					
+			        float displayMapsWidthPercent = DisplayMapsWidthPercent / 100f;
+			        float displayMapsHeightPercent = displayMapsWidthPercent * sensorData.depthImageHeight / sensorData.depthImageWidth;
+					
+			        float displayWidth = (cameraRect.width * displayMapsWidthPercent)/2;
+			        float displayHeight = (cameraRect.width * displayMapsHeightPercent)/2;
+					
+			        Debug.Log("camera: " + cameraRect.width + " | " + cameraRect.height);
+			        Debug.Log("display: " + displayWidth + " | " + displayHeight);
 
+			        usersMapRect = new Rect(cameraRect.width/2 - displayWidth/2, cameraRect.height, displayWidth, -displayHeight);
+		        }
 	            GUI.DrawTexture(usersMapRect, usersLblTex);
 	        }
 			else if(computeColorMap && displayColorMap)

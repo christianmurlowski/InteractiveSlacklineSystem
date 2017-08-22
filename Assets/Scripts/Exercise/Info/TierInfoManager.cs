@@ -12,7 +12,6 @@ public class TierInfoManager : MonoBehaviour
 	
 	public Transform goalSpacer,
 					 infoSpacer,
-					 buttonMainMenu,
 					 goalsPanel;
 
 	public Text tierNameText;
@@ -22,13 +21,6 @@ public class TierInfoManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		// TODO Just for test purposes -> Delete in production
-//		UserSelectionManager.TestSetCurrentUser(); 
-//		PlayerPrefs.SetInt("CurrentTierId", 2);
-//		PlayerPrefs.SetInt("CurrentExerciseId", 0);
-//		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-//		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
-
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
 		tierNameText.text = _currentTierData.tierName.ToUpper();
@@ -69,8 +61,6 @@ public class TierInfoManager : MonoBehaviour
 
 			gameObjectTierGoalPanel.transform.SetParent(goalSpacer, false);
 		}
-		buttonMainMenu.transform.SetParent(goalSpacer.transform, false);
-		
 		
 		foreach (var tip in _currentTierData.tips)
 		{

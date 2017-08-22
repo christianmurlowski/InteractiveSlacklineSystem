@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4237761526178208}
   - component: {fileID: 198908018922368696}
   - component: {fileID: 199442864238851016}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PSFirefliesUpwards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 465874663
+  randomSeed: 2051615766
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -506,7 +506,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     randomizeRotationDirection: 0
-    maxNumParticles: 500
+    maxNumParticles: 200
     size3D: 0
     rotation3D: 0
     gravityModifier:
