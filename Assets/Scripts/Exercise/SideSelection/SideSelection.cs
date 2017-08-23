@@ -26,8 +26,8 @@ public class SideSelection : MonoBehaviour
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 
 		if (_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = false;
-		
-		Color32 green = new Color32(32, 147, 92, 255);
+
+		Color32 green = MainColors.GreenLight();
 		
 		foreach (var side in UserDataObject.GetCurrentExercise().sides)
 		{

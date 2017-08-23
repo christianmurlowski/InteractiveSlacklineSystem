@@ -14,7 +14,7 @@ public class DurationManager : MonoBehaviour
 	public Text counterText;
 	public Slider slider;
 	
-	private Color32 red, darkOrange, lightOrange, green;
+	private Color32 red, darkOrange, yellow, green;
 	
 	private Stopwatch _attemptExecutionTime,
 					  _attemptOverallTime;
@@ -56,10 +56,10 @@ public class DurationManager : MonoBehaviour
 		durationImage.fillAmount = 0f;
 		
 		// Colors for duration donut
-		red = new Color32(227, 63, 34, 255);
-		darkOrange = new Color32(227, 126, 34, 255);
-		lightOrange = new Color32(231, 201, 80, 255);
-		green = new Color32(91, 175, 76, 255);
+		red = MainColors.Red();
+		darkOrange = MainColors.Orange();
+		yellow = MainColors.Yellow();
+		green = MainColors.GreenDark();
 		
 		
 		// Slider for progress
@@ -96,7 +96,7 @@ public class DurationManager : MonoBehaviour
 		}
 		else if (durationImage.fillAmount > 0.66)
 		{
-			ChangeColor(lightOrange);
+			ChangeColor(yellow);
 		}
 		else if (durationImage.fillAmount > 0.33)
 		{

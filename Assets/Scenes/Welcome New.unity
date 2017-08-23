@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.2
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
   m_HaloStrength: 0.5
@@ -963,9 +963,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   showHandCursor: 1
-  gripHandTexture: {fileID: 2800000, guid: 60d355b8e695bcb43a3d5294e7de5a68, type: 3}
-  releaseHandTexture: {fileID: 2800000, guid: 295064e475e425b4baf933d046a1fe16, type: 3}
-  normalHandTexture: {fileID: 2800000, guid: 295064e475e425b4baf933d046a1fe16, type: 3}
+  gripHandTexture: {fileID: 2800000, guid: dda897d0157a41246beb74786073abe4, type: 3}
+  releaseHandTexture: {fileID: 2800000, guid: 90ed318d0e411ad4b9678df57e02ae01, type: 3}
+  normalHandTexture: {fileID: 2800000, guid: 90ed318d0e411ad4b9678df57e02ae01, type: 3}
   smoothFactor: 5
   allowHandClicks: 0
   controlMouseCursor: 0
@@ -2671,39 +2671,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 198825810193646258, guid: ad5556fc2c12ff94a808ce6d967062c4,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 198825810193646258, guid: ad5556fc2c12ff94a808ce6d967062c4,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1490993312
-      objectReference: {fileID: 0}
-    - target: {fileID: 1416694854359176, guid: ad5556fc2c12ff94a808ce6d967062c4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198825810193646258, guid: ad5556fc2c12ff94a808ce6d967062c4,
-        type: 2}
-      propertyPath: ShapeModule.boxX
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 198825810193646258, guid: ad5556fc2c12ff94a808ce6d967062c4,
-        type: 2}
-      propertyPath: ShapeModule.boxY
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 198825810193646258, guid: ad5556fc2c12ff94a808ce6d967062c4,
-        type: 2}
-      propertyPath: ShapeModule.boxZ
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1416694854359176, guid: ad5556fc2c12ff94a808ce6d967062c4, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad5556fc2c12ff94a808ce6d967062c4, type: 2}
   m_IsPrefabParent: 0
@@ -4194,39 +4161,6 @@ Prefab:
     - target: {fileID: 4237761526178208, guid: 12da17215b9206b4d8382df962291211, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198908018922368696, guid: 12da17215b9206b4d8382df962291211,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 198908018922368696, guid: 12da17215b9206b4d8382df962291211,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1321569285
-      objectReference: {fileID: 0}
-    - target: {fileID: 1437301024082424, guid: 12da17215b9206b4d8382df962291211, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198908018922368696, guid: 12da17215b9206b4d8382df962291211,
-        type: 2}
-      propertyPath: ShapeModule.boxX
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 198908018922368696, guid: 12da17215b9206b4d8382df962291211,
-        type: 2}
-      propertyPath: ShapeModule.boxY
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 198908018922368696, guid: 12da17215b9206b4d8382df962291211,
-        type: 2}
-      propertyPath: ShapeModule.boxZ
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1437301024082424, guid: 12da17215b9206b4d8382df962291211, type: 2}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12da17215b9206b4d8382df962291211, type: 2}
@@ -6092,77 +6026,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_HDR
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1141562903647234, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114004592729104168, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1141562903647234, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
       propertyPath: m_Name
       value: Main Camera PPP
       objectReference: {fileID: 0}
-    - target: {fileID: 1141562903647234, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_Depth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114004592729104168, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: profile
-      value: 
-      objectReference: {fileID: 11400000, guid: 7abb776ac1e885445840415ac7184a7c,
-        type: 2}
-    - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
-        type: 2}
-      propertyPath: m_RenderingPath
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1141562903647234, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703511913157834, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703511913157834, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703511913157834, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 45493326333721228, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0281b07fc10fd7341a88cb0b7526b78d, type: 2}
   m_IsPrefabParent: 0
 --- !u!20 &2029425430 stripped

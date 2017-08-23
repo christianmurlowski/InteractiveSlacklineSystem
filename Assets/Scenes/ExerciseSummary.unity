@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.2
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
   m_HaloStrength: 0.5
@@ -42,7 +42,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -71,7 +71,8 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000001, guid: b9d81f9d28fa5f74bb7eb9afca96c6df,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -6356,7 +6357,7 @@ Prefab:
     - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
         type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 4294967039
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 20504159092978040, guid: 0281b07fc10fd7341a88cb0b7526b78d,
         type: 2}
@@ -7934,7 +7935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21dc96e751c287c42b2134264f9f51b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinectManager: {fileID: 0}
+  KinectManager: {fileID: 0}
   timePanel: {fileID: 1881383430645988, guid: 77e18ec8fc8bb0c48b6647263c21f5f5, type: 2}
   confidencePanel: {fileID: 1371970489249540, guid: 8c811bb60c57bdb4c960c3afb6c95b9e,
     type: 2}

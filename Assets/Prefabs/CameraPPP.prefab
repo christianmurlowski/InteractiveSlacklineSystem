@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 124509407609717702}
   - component: {fileID: 92015484583063770}
   - component: {fileID: 81800698534538130}
-  - component: {fileID: 45493326333721228}
   - component: {fileID: 114004592729104168}
   m_Layer: 0
   m_Name: CameraPPP
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141562903647234}
   m_LocalRotation: {x: 0.052335896, y: 0, z: 0, w: 0.9986295}
-  m_LocalPosition: {x: 0, y: 1.88, z: -10}
+  m_LocalPosition: {x: 3.34, y: 4.89, z: -4.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,7 +65,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -79,14 +78,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!45 &45493326333721228
-Skybox:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141562903647234}
-  m_Enabled: 0
-  m_CustomSkybox: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
 --- !u!81 &81800698534538130
 AudioListener:
   m_ObjectHideFlags: 1
@@ -112,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 9391600cac7316041b8cf4501e4f4d9b, type: 2}
+  profile: {fileID: 11400000, guid: 7abb776ac1e885445840415ac7184a7c, type: 2}
 --- !u!124 &124509407609717702
 Behaviour:
   m_ObjectHideFlags: 1

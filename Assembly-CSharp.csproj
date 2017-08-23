@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -196,6 +196,7 @@
     <Compile Include="Assets\Scripts\Levels\LevelButton.cs" />
     <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Levels\Timer.cs" />
+    <Compile Include="Assets\Scripts\MainColors.cs" />
     <Compile Include="Assets\Scripts\MainMenu\DataController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelButton.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelManager.cs" />
