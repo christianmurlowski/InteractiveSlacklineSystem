@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class MainColors : MonoBehaviour {
 
+	public static Color32 Transparent()
+	{
+		return new Color32(255, 255, 255, 0);
+	}
+	
+	public static Color32 White()
+	{
+		return new Color32(255, 255, 255, 255);
+	}
+	
+	public static Color32 WhiteTransparent(byte transparency)
+	{
+		return new Color32(255, 255, 255, transparency);
+	}
+	
+	public static Color32 Black()
+	{
+		return new Color32(0, 0, 0, 255);
+	}
+	
 	public static Color32 GreenLight()
 	{
 		return new Color32(100, 240, 0, 255);

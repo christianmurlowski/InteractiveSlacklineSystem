@@ -34,7 +34,7 @@ public class TierSummaryManager : MonoBehaviour
 		FillSummaryList();
 	}
 
-	public void LoadNextScene()
+	public void LoadMainMenuScene()
 	{
 		if (!UserDataObject.GetCurrentExercise().isInteractable)
 		{
@@ -42,6 +42,16 @@ public class TierSummaryManager : MonoBehaviour
 			UserDataObject.GetCurrentExercise().unlocked = 1;	
 		}
 		SceneManager.LoadScene("MainMenu");
+	}	
+	
+	public void LoadTierMenuScene()
+	{
+		if (!UserDataObject.GetCurrentExercise().isInteractable)
+		{
+			UserDataObject.GetCurrentExercise().isInteractable = true;
+			UserDataObject.GetCurrentExercise().unlocked = 1;	
+		}
+		SceneManager.LoadScene("TierMenu");
 	}
 	
 	void FillSummaryList()

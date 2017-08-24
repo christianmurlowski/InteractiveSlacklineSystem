@@ -16,9 +16,11 @@ public class ExerciseSummaryManager : MonoBehaviour
 					  attemptsPanel,
 					  avgTimePanel,
 					  avgConfidencePanel,
-					  avgAttemptsPanel;
+					  avgAttemptsPanel,
+					  nextExercisePlatform;
 
-	public Button mainMenuButton;
+	public Button buttonMainMenu,
+				  buttonNextExercise;
 
 	public Transform timeSpacer,
 					 confidenceSpacer,
@@ -28,6 +30,10 @@ public class ExerciseSummaryManager : MonoBehaviour
 
 	
 	private KinectManager _kinectManager;
+
+	private ExerciseData _currentExercise,
+						 _nextExercise,
+						 _lastExercise;
 	
 	private List<Image> imageTimeList, 
 						imageConfidenceList, 
@@ -36,11 +42,12 @@ public class ExerciseSummaryManager : MonoBehaviour
 	private List<float> imageTimeValue, 
 						imageConfidenceValue, 
 						imageAttemptsValue;
-	
-	private bool startAnim, 
-				 startConfidenceAnim, 
-				 startTimeAnim, 
-				 startAttemptsAnim;
+
+	private bool startAnim,
+		startConfidenceAnim,
+		startTimeAnim,
+		startAttemptsAnim,
+		sideNotAccomplished;
 	
 	Stopwatch tempTime = new Stopwatch();
 
@@ -68,11 +75,44 @@ public class ExerciseSummaryManager : MonoBehaviour
 		
 		// Output summary data from exercise
 		OutputData();
+
+		_currentExercise = UserDataObject.GetCurrentExercise();
+		_lastExercise = UserDataObject.GetLastTierExercise();
 		
-		mainMenuButton.onClick.AddListener(() =>
+		buttonMainMenu.onClick.AddListener(() =>
 		{
 			SceneManager.LoadScene("MainMenu");
 		});
+
+		Debug.Log(UserDataObject.GetCurrentExercise().fileName);
+		Debug.Log(UserDataObject.GetLastTierExercise().fileName);
+		Debug.Log(PlayerPrefs.GetInt("CurrentExerciseId"));
+		
+		// If a side is not accomplished --> go to next side
+		foreach (var side in _currentExercise.sides)
+		{
+			if (side.accomplished == false)
+			{
+				sideNotAccomplished = true;
+			}
+		}
+
+		// Not last exercise --> load following exercise
+		if (_currentExercise != _lastExercise)
+		{
+			PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId")+1);
+			if (sideNotAccomplished) buttonNextExercise.GetComponentInChildren<Text>().text = "Next Side";
+			
+			buttonNextExercise.onClick.AddListener(() =>
+			{
+				SceneManager.LoadScene("ExerciseSideSelection");
+			});
+		}
+		else
+		{
+			Destroy(buttonNextExercise.gameObject);
+			Destroy(nextExercisePlatform);
+		}
 	}
 
 

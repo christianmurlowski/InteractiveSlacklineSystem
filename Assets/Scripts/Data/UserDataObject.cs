@@ -98,6 +98,11 @@ public class UserDataObject {
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[0];
     }
+            
+    public static ExerciseData GetLastTierExercise()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises.Last();
+    }
     
     public static ExerciseData GetCurrentExercise()
     {

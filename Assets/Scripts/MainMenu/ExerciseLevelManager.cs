@@ -11,204 +11,165 @@ public class ExerciseLevelManager : MonoBehaviour
 {
 	public GameObject exerciseLevelButton,
 					  KinectManager;
-	
-	public Transform tierSpacer,
-	                 exerciseSpacer,
-	                 verticalSpacer;
+
+	public Transform spacerHorizontal;
 	
 	public Image progressImage;
 
 	public ScrollRect scrollView;
 
 	private KinectManager _kinectManager;
-	
+	private TierData _currTier;
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
 	
 	// Use this for initialization
 	void Start ()
 	{
-		_allTierData = UserDataObject.GetAllTiers();
 		
 		KinectManager = GameObject.Find("KinectManager");
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
-		
+
+		_currTier = UserDataObject.GetCurrentTier();
+			
 		FillMenu();
-		ScrollToCurrentTier();
+//		ScrollToCurrentTier();
 	}
 
 	public void LoadPreviousScene()
 	{
-		SceneManager.LoadScene("UserSelection");
+		SceneManager.LoadScene("TierMenu");
 	}
 
 	void FillMenu()
 	{
-		// For each tier create tier basics, exercises and tier summary button
-		foreach (var tier in _allTierData)
+		// For current tier create tier basics, exercises and summary button
+
+		//Text for the tier
+//		_tierText.text = tier.tierName;
+
+		// Instantiate a button gameobject from a prefab
+		GameObject tierBasicGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
+		// Get the script for the button to set its values
+		ExerciseLevelButton tierBasicButton = tierBasicGameObjectButton.GetComponent<ExerciseLevelButton>();
+
+		tierBasicButton.buttonText.text = "Introduction";
+		
+		// Set image for basic information button
+		tierBasicGameObjectButton.GetComponent<Image>().sprite =
+			Resources.Load<Sprite>("Images/Information/" + _currTier.fileName);
+		tierBasicButton.bgImage.sprite = Resources.Load<Sprite>("Images/Information/InformationIcon");
+		tierBasicButton.bgImage.color = new Color32(255, 255, 255, 20);
+
+
+		// If tier unlocked --> unlock the basic information for this tier
+		if (_currTier.isInteractable)
 		{
-			// Instantiate the tier and exercise spacer
-			Transform _tierSpacer = Instantiate(tierSpacer);
-			Transform _exerciseSpacer = Instantiate(exerciseSpacer);
-
-			//Text for the tier
-			Text _tierText = _tierSpacer.GetComponentInChildren<Text>();
-			_tierText.text = tier.tierName;
-
-			// Instantiate a button gameobject from a prefab
-			GameObject tierBasicGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
-			// Get the script for the button to set its values
-			ExerciseLevelButton tierBasicButton = tierBasicGameObjectButton.GetComponent<ExerciseLevelButton>();
-
-			tierBasicButton.buttonText.text = "Introduction";
-			
-			// Set image for basic information button
-			tierBasicGameObjectButton.GetComponent<Image>().sprite =
-				Resources.Load<Sprite>("Images/Information/" + tier.fileName);
-			tierBasicButton.bgImage.sprite = Resources.Load<Sprite>("Images/Information/Information");
-			tierBasicButton.bgImage.color = new Color32(255, 255, 255, 20);
-
-
-			// If tier unlocked --> unlock the basic information for this tier
-			if (tier.isInteractable)
-			{
-				tierBasicButton.unlocked = 1;
-				tierBasicButton.GetComponent<Button>().interactable = true;
-			}
-			else
-			{
-				tierBasicButton.unlocked = 0;
-				tierBasicButton.GetComponent<Button>().interactable = false;
-				tierBasicGameObjectButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
-			}
-
-			// Add listener for the button to set tier pp and load the appropriate scene
-			tierBasicButton.GetComponent<Button>().onClick.AddListener(() =>
-			{
-				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
-				Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-
-				SceneManager.LoadScene("TierInfo");
-			});
-
-
-			// Append the basic information button to the exercise spacer
-			tierBasicGameObjectButton.transform.SetParent(_exerciseSpacer, false);
-
-			// Manage exercise data in the current tier
-			foreach (var exercise in tier.exercises)
-			{
-				// Instantiate a button gameobject from a prefab
-				GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
-				// Get the script for the button to set its values
-				ExerciseLevelButton button = gameObjectButton.GetComponent<ExerciseLevelButton>();
-
-				// Set the values regarding the current exercise
-				button.buttonText.text = exercise.exerciseName;
-
-				//			Debug.Log("index of " + exercise.exerciseName + ": " + Array.IndexOf(_allExercises, exercise));
-				//
-				//			if (exercise.isInteractable)
-				//			{
-				//				button.unlocked = exercise.unlocked;
-				//				button.GetComponent<Button>().interactable = exercise.isInteractable;
-				//			}
-				// If PP key from current exercise is unlocked --> unlock and make current exercise interactive
-				//			if (PlayerPrefs.GetInt("Exercise" + Array.IndexOf(_allExercises, exercise) + "Unlocked")  == 1)
-				//			{
-				//				exercise.isInteractable = true;
-				//				exercise.unlocked = 1;
-				//			}
-
-				button.unlocked = exercise.unlocked;
-				button.GetComponent<Button>().interactable = exercise.isInteractable;
-
-				// Set image for exercise button
-//				Debug.Log("Images/" + tier.fileName + "/" + exercise.fileName);
-				button.bgImage.sprite = Resources.Load<Sprite>("Images/" + tier.fileName + "/" + exercise.fileName);
-				
-				// If exercise locked
-				if (!exercise.isInteractable)
-				{
-					button.bgImage.color = new Color32(255, 255, 255, 0);
-					gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Lock");
-					gameObjectButton.GetComponent<Image>().color = new Color32(255,255,255, 255);
-				}
-				
-				// Fill progress in button
-				foreach(var side in exercise.sides){
-				    if(side.accomplished)
-				    {
-					    button.progressImage.fillAmount += 0.5f;
-				    }
-				}
-
-				// Add listener for the button to set the PP and load the appropriate scene
-				button.GetComponent<Button>().onClick.AddListener(() =>
-				{
-					PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
-					PlayerPrefs.SetInt("CurrentExerciseId", tier.exercises.IndexOf(exercise));
-					PlayerPrefs.SetString("CurrentTierFileName", tier.fileName);
-
-					SceneManager.LoadScene("ExerciseSideSelection");
-				});
-
-				if (PlayerPrefs.GetInt("CurrentTierId") == _allTierData.IndexOf(tier) && 
-				    PlayerPrefs.GetInt("CurrentExerciseId") == tier.exercises.IndexOf(exercise))
-				{
-					Debug.Log("Current exervcise to highlight: " + exercise.exerciseName);
-				}
-					
-
-				// Append the exercise button to the exercise spacer
-				gameObjectButton.transform.SetParent(_exerciseSpacer, false);
-			}
-
-			// Instantiate a button gameobject from a prefab
-			GameObject tierSumGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
-			// Get the script for the button to set its values
-			ExerciseLevelButton tierSumButton = tierSumGameObjectButton.GetComponent<ExerciseLevelButton>();
-
-			// Set the values regarding the summary
-			tierSumButton.buttonText.text = "Summary";
-
-			// Set image for summary button
-			tierSumGameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Summary/Summary");
-			tierSumButton.bgImage.sprite = Resources.Load<Sprite>("Images/Summary/SummaryBackground");
-			tierSumButton.bgImage.color = new Color32(255, 255, 255, 15);
-			
-			// If last exercise accomplished --> unlock the sum information for this tier
-			if (tier.exercises.Last().accomplished)
-			{
-				tierSumButton.unlocked = 1;
-				tierSumButton.GetComponent<Button>().interactable = true;
-			}
-			else
-			{
-				tierSumButton.unlocked = 0;
-				tierSumButton.GetComponent<Button>().interactable = false;
-				tierSumButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
-			}
-
-			// Add listener for the button to set tier PP and load the appropriate scene
-			tierSumButton.GetComponent<Button>().onClick.AddListener(() =>
-			{
-				PlayerPrefs.SetInt("CurrentTierId", _allTierData.IndexOf(tier));
-
-				Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
-
-				SceneManager.LoadScene("TierSummary");
-			});
-
-			// Append the summary button to the exercise spacer
-			tierSumGameObjectButton.transform.SetParent(_exerciseSpacer, false);
-
-			// Append the exercise spacer to the tier spacer and tier spacer to the root spacer
-			_exerciseSpacer.transform.SetParent(_tierSpacer, false);
-			_tierSpacer.transform.SetParent(verticalSpacer, false);
+			tierBasicButton.unlocked = 1;
+			tierBasicButton.GetComponent<Button>().interactable = true;
 		}
+		else
+		{
+			tierBasicButton.unlocked = 0;
+			tierBasicButton.GetComponent<Button>().interactable = false;
+			tierBasicGameObjectButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
+		}
+
+		// Add listener for the button to load the appropriate scene
+		tierBasicButton.GetComponent<Button>().onClick.AddListener(() =>
+		{
+			SceneManager.LoadScene("TierInfo");
+		});
+
+		// Append the basic information button to the exercise spacer
+		tierBasicGameObjectButton.transform.SetParent(spacerHorizontal, false);
+
+		// Manage exercise data in the current tier
+		foreach (var exercise in _currTier.exercises)
+		{
+			// Instantiate a button gameobject from a prefab
+			GameObject gameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
+			// Get the script for the button to set its values
+			ExerciseLevelButton button = gameObjectButton.GetComponent<ExerciseLevelButton>();
+
+			// Set the values regarding the current exercise
+			button.buttonText.text = exercise.exerciseName;
+			button.unlocked = exercise.unlocked;
+			button.GetComponent<Button>().interactable = exercise.isInteractable;
+
+			// Set image for exercise button
+//				Debug.Log("Images/" + tier.fileName + "/" + exercise.fileName);
+			button.bgImage.sprite = Resources.Load<Sprite>("Images/" + _currTier.fileName + "/" + exercise.fileName);
+			
+			// If exercise locked
+			if (!exercise.isInteractable)
+			{
+				button.bgImage.color = MainColors.WhiteTransparent(5);
+				gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/LockExercise");
+				gameObjectButton.GetComponent<Image>().color = MainColors.White();
+			}
+			
+			// Fill progress in button
+			foreach(var side in exercise.sides){
+				if(side.accomplished)
+				{
+					button.progressImage.fillAmount += 0.5f;
+				}
+			}
+
+			// Add listener for the button to set the PP and load the appropriate scene
+			button.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				PlayerPrefs.SetInt("CurrentExerciseId", _currTier.exercises.IndexOf(exercise));
+				SceneManager.LoadScene("ExerciseSideSelection");
+			});
+
+			// Highlight current exercise
+			if (PlayerPrefs.GetInt("CurrentExerciseId") == _currTier.exercises.IndexOf(exercise))
+			{
+				Debug.Log("Current exercise to highlight: " + exercise.exerciseName);
+			}
+				
+			// Append the exercise button to the exercise spacer
+			gameObjectButton.transform.SetParent(spacerHorizontal, false);
+		}
+
+		// Instantiate a button gameobject from a prefab
+		GameObject tierSumGameObjectButton = Instantiate(exerciseLevelButton) as GameObject;
+		// Get the script for the button to set its values
+		ExerciseLevelButton tierSumButton = tierSumGameObjectButton.GetComponent<ExerciseLevelButton>();
+
+		// Set the values regarding the summary
+		tierSumButton.buttonText.text = "Summary";
+
+		// Set image for summary button
+		tierSumGameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Summary/SummaryIcon");
+		tierSumButton.bgImage.sprite = Resources.Load<Sprite>("Images/Summary/SummaryTierBG");
+		tierSumButton.bgImage.color = new Color32(255, 255, 255, 15);
+		
+		// If last exercise accomplished --> unlock the summary for this tier
+		if (_currTier.exercises.Last().accomplished)
+		{
+			tierSumButton.unlocked = 1;
+			tierSumButton.GetComponent<Button>().interactable = true;
+		}
+		else
+		{
+			tierSumButton.unlocked = 0;
+			tierSumButton.GetComponent<Button>().interactable = false;
+			tierSumButton.GetComponent<Image>().color = new Color32(150,150,150, 255);
+		}
+
+		// Add listener for the button to load the appropriate scene
+		tierSumButton.GetComponent<Button>().onClick.AddListener(() =>
+		{
+			SceneManager.LoadScene("TierSummary");
+		});
+
+		// Append the summary button to the exercise spacer
+		tierSumGameObjectButton.transform.SetParent(spacerHorizontal, false);
 		
 //		SaveData();
 	}

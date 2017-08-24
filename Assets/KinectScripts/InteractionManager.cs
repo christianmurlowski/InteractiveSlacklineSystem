@@ -776,7 +776,7 @@ public class InteractionManager : MonoBehaviour
       case KinectInterop.HandState.Open:
         return HandEventType.Release;
 
-      case KinectInterop.HandState.Closed:
+//      case KinectInterop.HandState.Closed:
       case KinectInterop.HandState.Lasso:
         return HandEventType.Grip;
       

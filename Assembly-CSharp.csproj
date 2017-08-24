@@ -185,7 +185,6 @@
     <Compile Include="Assets\Scripts\General\ScreenManager.cs" />
     <Compile Include="Assets\Scripts\General\StartingPositionManager.cs" />
     <Compile Include="Assets\Scripts\General\VideoController.cs" />
-    <Compile Include="Assets\Scripts\InteractionManagerNew.cs" />
     <Compile Include="Assets\Scripts\KinectUIModule\KinectInputModule.cs" />
     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\AbstractKinectUICursor.cs" />
     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUICursor.cs" />
@@ -201,6 +200,8 @@
     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelButton.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelManager.cs" />
     <Compile Include="Assets\Scripts\SetData.cs" />
+    <Compile Include="Assets\Scripts\TierMenu\TierMenuButton.cs" />
+    <Compile Include="Assets\Scripts\TierMenu\TierMenuManager.cs" />
     <Compile Include="Assets\Scripts\UserSelection\UserSelectionButton.cs" />
     <Compile Include="Assets\Scripts\UserSelection\UserSelectionManager.cs" />
     <Compile Include="Assets\TierSummaryExerciseNumber.cs" />

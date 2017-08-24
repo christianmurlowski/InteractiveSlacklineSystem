@@ -8,15 +8,22 @@ using UnityEngine.UI;
 public class UserSelectionManager : MonoBehaviour
 {
 
-    public GameObject userSelectionButton;
+    public GameObject userSelectionButton,
+                      KinectManager;
+    
     public Transform spacer;
     
     public static UserDataObject currentUserDataObject;
 
+    private KinectManager _kinectManager;
     private string allUsersFilePath = "/StreamingAssets/JSONData/Users/";
 
     void Start()
-    {        
+    {
+        KinectManager = GameObject.Find("KinectManager");
+        _kinectManager = KinectManager.GetComponent<KinectManager>();
+        if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
+            
         currentUserDataObject = new UserDataObject();
         LoadAllUsers();
     }
