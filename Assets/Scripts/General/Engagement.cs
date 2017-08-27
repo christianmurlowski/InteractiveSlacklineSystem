@@ -6,13 +6,15 @@ using Kinect = Windows.Kinect;
 
 public class Engagement : MonoBehaviour
 {
+	public AudioSource audioSuccess;
+	
 	public KinectManager KinectManager;
 	private KinectManager _kinectManager;
 
 	private KinectInterop.JointType _jointHandRight,
 									_jointHandLeft,
 									_jointHead;
-	
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -51,13 +53,19 @@ public class Engagement : MonoBehaviour
 					Vector3 jointPosHandLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointHandLeft);
 					Vector3 jointPosHead = _kinectManager.GetJointKinectPosition(userId, (int) _jointHead);			
 
-					if ((jointPosHandRight.y > jointPosHead.y) || (jointPosHandLeft.y > jointPosHead.y))
+					if (!audioSuccess.isPlaying && ((jointPosHandRight.y > jointPosHead.y) || (jointPosHandLeft.y > jointPosHead.y)))
 					{
-						SceneManager.LoadScene("StartingPosition");
-					}					
-
+						StartCoroutine(loadNextScene());					
+					}
 				}
 			}
 		}
 	} // Update
+
+	IEnumerator loadNextScene()
+	{
+		audioSuccess.Play();
+		yield return new WaitForSeconds(audioSuccess.clip.length);
+		SceneManager.LoadScene("StartingPosition");
+	}
 }

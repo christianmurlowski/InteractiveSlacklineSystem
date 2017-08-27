@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userSelectionButton: {fileID: 1691733569199582, guid: 816160eb0d15f4649a24fa2804e3258b,
     type: 2}
+  KinectManager: {fileID: 0}
   spacer: {fileID: 407615714}
 --- !u!4 &25192160
 Transform:
@@ -5153,7 +5154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1774337391
 Transform:
   m_ObjectHideFlags: 0

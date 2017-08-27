@@ -8,18 +8,18 @@ using Microsoft.Kinect.VisualGestureBuilder;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using AudioSource = UnityEngine.AudioSource;
 
 public class ExerciseExecutionManager : MonoBehaviour
 {
-
-
+	public AudioSource audioSuccess,
+					  audioFail;
+	public CanvasGroup successPanel;
 	public GameObject KinectManager;
 	public GameObject bodyManager;
 	public GameObject durationManager;
 	public GameObject toggle;
-	
 	public Transform toggleGroup;
-
 	public Text titleText,
 				testText, // TODO Just for test purposes -> Delete in production
 				rightFootHeightText,
@@ -31,46 +31,36 @@ public class ExerciseExecutionManager : MonoBehaviour
 				bothFeetUpText;
 	
 	// Kinect stuff
+	private Body[] _bodies = null;
+	private BodyManager _bodyManager;
+	private DurationManager _durationManager;
+	private ExerciseData _currentExerciseData;
 	private KinectManager _kinectManager;
-
 	private KinectInterop.JointType _jointFootRight,
 									_jointFootLeft;
-	private BodyManager _bodyManager;
 	private KinectSensor _kinectSensor;
-	private Body[] _bodies = null;
 	private List<GestureDetector> _gestureDetectorList = null;
-	
-	private ExerciseData _currentExerciseData;
 	private RepetitionData _currentRepetition;
 
-	private DurationManager _durationManager;
-
+	// Unity
 	private Toggle[] _toggleArray;
-
-	public CanvasGroup successPanel;
-
 	private List<float> pufferList = new List<float>();
-	
 	private float progress = 0.0f,
 				  _currentRepetitionConfidence = 0.0f,
 				  _initialStartingHeightLeft = 0.0f,
 				  _initialStartingHeightRight = 0.0f,
 				  _startingHeightDifference = 0.0f,
 				  _footDepthTolerance = 0.25f;
-	
 	private int confidenceIterator, 
 				attemptsIterator,
 				sideAccomplishedCounter, // for calculating average confidence
-				heightTestIterator; 
-
+				heightTestIterator;
 	private bool _firstCheckpoint,
 				_secondCheckpoint,
 				_thirdCheckpoint,
 				startTrackingAgain,
 				_bothFeetUp,
 				_inStartingPosition;
-
-	
 	private float time = 0.0f;
 	private float interpolationPeriod = 0.5f;
 	
@@ -266,7 +256,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{
 		var isDetected = e.IsBodyTrackingIdValid && e.IsGestureDetected;
 		
-		// If feets are in correct height
 		if (_kinectManager && _kinectManager.IsInitialized() && _kinectManager.IsUserDetected())
 		{
 			long userId = _kinectManager.GetPrimaryUserID();
@@ -329,6 +318,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 			else
 			{
+				if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
+				{
+					audioFail.Play();						
+				}
+				
 				if (_durationManager.IsTimerRunning())
 				{
 					attemptsIterator++;
@@ -339,7 +333,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
 				{
 					ToggleAndCheckRepetition();
-				}
+				}					
 				
 				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 			}
@@ -384,7 +378,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 //					_thirdCheckpoint = true;
 //				}
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
-				if (GestureDetected(e.Progress, 0.4f, 1.5f) && _bothFeetUp)
+				if (GestureDetected(e.Progress, 0.7f, 1f) && _bothFeetUp)
 				{					
 					
 					_durationManager.StartTimer();
@@ -397,6 +391,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 				}
 				else
 				{
+					if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
+					{
+						audioFail.Play();						
+					}
+					
 					if (_durationManager.IsTimerRunning())
 					{
 						attemptsIterator++;
@@ -422,6 +421,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	// -----------------------------------------
 	private bool GestureDetected(float progress, float minGoal, float maxGoal)
 	{
+		if (progress > 1.0f) progress = 1.0f;
+			
 		pufferList.Add(progress);
 		var success = false;
 
@@ -443,6 +444,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
+		audioSuccess.Play();
+		
 		_bothFeetUp = false;
 		_inStartingPosition = false;
 		Debug.Log("ACCOMPLISHED REPETITION");
@@ -547,7 +550,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 			SaveCurrentExerciseData();
 			
 			// Load the summary scene
-			LoadSummaryScene();
+//			LoadSummaryScene();
+			StartCoroutine(loadSummaryScene());					
+
 		} // If not last repetition --> current repetition is next repetition
 		else
 		{
@@ -639,6 +644,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{
 		DisposeGestures();
 //		DisposeBodyManager();
+		SceneManager.LoadScene("ExerciseSummary");
+	}
+	
+	IEnumerator loadSummaryScene()
+	{
+		yield return new WaitForSeconds(audioSuccess.clip.length);
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	

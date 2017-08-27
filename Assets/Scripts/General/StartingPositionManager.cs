@@ -8,14 +8,13 @@ public class StartingPositionManager : MonoBehaviour
 {
 
 	public GameObject KinectManager;
-
 	public Button buttonUserSelectionStart;
+	public AudioSource audioSuccess,
+					   audioFail;
 
 	private KinectManager _kinectManager;
-
 	private KinectInterop.JointType _jointFootLeft,
 									_jointFootRight;
-	
 	private float tolerance = 0.1f;
 	
 	void Start () {
@@ -56,13 +55,25 @@ public class StartingPositionManager : MonoBehaviour
 				if (((jointPosFootLeftDepth > jointPosFootRightDepth - tolerance) && (jointPosFootLeftDepth < jointPosFootRightDepth + tolerance) &&
 				     (jointPosFootRightDepth > jointPosFootLeftDepth - tolerance) && (jointPosFootRightDepth < jointPosFootLeftDepth + tolerance)))
 				{
-					buttonUserSelectionStart.GetComponent<Button>().interactable = true;
-					buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Click me!";
+					if (!buttonUserSelectionStart.GetComponent<Button>().interactable)
+					{
+						if (audioFail.isPlaying) audioFail.Stop();
+						audioSuccess.Play();
+						
+						buttonUserSelectionStart.GetComponent<Button>().interactable = true;
+						buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Click me!";						
+					}
 				}
 				else
 				{
-					buttonUserSelectionStart.GetComponent<Button>().interactable = false;
-					buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Please go into starting position";
+					if (buttonUserSelectionStart.GetComponent<Button>().interactable)
+					{
+						if (audioSuccess.isPlaying) audioSuccess.Stop();
+						audioFail.Play();
+						
+						buttonUserSelectionStart.GetComponent<Button>().interactable = false;
+						buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Please go into starting position";
+					}
 				}
 				
 			}

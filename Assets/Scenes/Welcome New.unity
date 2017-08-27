@@ -731,6 +731,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211911115}
+--- !u!1 &261670555 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1872948081330836, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1935123320}
+--- !u!114 &261670556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261670555}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9558b1768334d47b40aeb9cc0f834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &275986216
 Prefab:
   m_ObjectHideFlags: 0
@@ -2075,6 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403962a719cc66a45abd6b880ca2f49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSuccess: {fileID: 1935123321}
   KinectManager: {fileID: 339089113}
 --- !u!4 &743059189
 Transform:
@@ -4700,7 +4717,7 @@ Transform:
   m_Children:
   - {fileID: 1919311625}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1731080845
 Prefab:
@@ -5572,6 +5589,30 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 241a53cfe941ec04c9b8639a1e1e6452, type: 3}
   m_PrefabInternal: {fileID: 1934777631}
+--- !u!1001 &1935123320
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4613300949973838, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 82573597339365086, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc, type: 2}
+  m_IsPrefabParent: 0
+--- !u!82 &1935123321 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82573597339365086, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1935123320}
 --- !u!1 &1935600943
 GameObject:
   m_ObjectHideFlags: 0

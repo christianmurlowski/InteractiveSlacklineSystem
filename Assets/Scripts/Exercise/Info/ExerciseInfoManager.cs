@@ -12,17 +12,15 @@ public class ExerciseInfoManager : MonoBehaviour
 					  KinectManager;
 	public Transform buttonExerciseStart,
 					 spacer;
-
-	
 	public Text exerciseName,
 				exerciseRepetitions,
 				exerciseMinTime;
+	public AudioSource audioSuccess,
+					   audioFail;
 	
 	private KinectManager _kinectManager;
-	
 	private KinectInterop.JointType _jointFootRight,
 									_jointFootLeft;
-
 	private float tolerance = 0.1f;
 	
 	// DEV TESTING
@@ -102,15 +100,27 @@ public class ExerciseInfoManager : MonoBehaviour
 				    ((jointPosFootLeftHeight > jointPosFootRightHeight - tolerance) && (jointPosFootLeftHeight < jointPosFootRightHeight + tolerance) &&
 				     (jointPosFootRightHeight > jointPosFootLeftHeight - tolerance) && (jointPosFootRightHeight < jointPosFootLeftHeight + tolerance)))
 				{
-					buttonExerciseStart.GetComponent<Button>().interactable = true;
-					buttonExerciseStart.GetComponentInChildren<Text>().text = "Click to start exercise";
-					inRange.text = true.ToString();
+					if (!buttonExerciseStart.GetComponent<Button>().interactable)
+					{
+						if (audioFail.isPlaying) audioFail.Stop();
+						audioSuccess.Play();
+							
+						buttonExerciseStart.GetComponent<Button>().interactable = true;
+						buttonExerciseStart.GetComponentInChildren<Text>().text = "Click to start exercise";
+						inRange.text = true.ToString();						
+					}
 				}
 				else
 				{
-					inRange.text = false.ToString();
-					buttonExerciseStart.GetComponent<Button>().interactable = false;
-					buttonExerciseStart.GetComponentInChildren<Text>().text = "Please go into starting position";
+					if (buttonExerciseStart.GetComponent<Button>().interactable)
+					{
+						if (audioSuccess.isPlaying) audioSuccess.Stop();
+						audioFail.Play();
+
+						inRange.text = false.ToString();
+						buttonExerciseStart.GetComponent<Button>().interactable = false;
+						buttonExerciseStart.GetComponentInChildren<Text>().text = "Please go into starting position";
+					}
 				}
 					
 			}
