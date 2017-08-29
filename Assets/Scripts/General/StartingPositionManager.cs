@@ -75,7 +75,6 @@ public class StartingPositionManager : MonoBehaviour
 						buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Please go into starting position";
 					}
 				}
-				
 			}
 		}
 	}

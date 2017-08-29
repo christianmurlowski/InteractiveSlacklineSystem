@@ -917,7 +917,7 @@ MonoBehaviour:
   displayUserMap: 1
   displayUserMapSmall: 0
   displayColorMap: 0
-  displaySkeletonLines: 0
+  displaySkeletonLines: 1
   DisplayMapsWidthPercent: 65
   useMultiSourceReader: 0
   minUserDistance: 0.5

@@ -29,6 +29,7 @@ public class TierMenuManager : MonoBehaviour
 		
 		FillTierMenu();
 
+		
 	}
 
 	private void FillTierMenu()
@@ -40,17 +41,18 @@ public class TierMenuManager : MonoBehaviour
 			TierMenuButton tierButton = goTierMenuButton.GetComponent<TierMenuButton>();
 
 			tierButton.buttonText.text = tier.tierName;
-			tierButton.isInteractable = tier.isInteractable;
+			tierButton.buttonNumber.text = (_allTiers.IndexOf(tier) + 1).ToString();
+			tierButton.GetComponent<Button>().interactable = tier.isInteractable;
 			
 			// Set the image regarding interactability
 			goTierMenuButton.GetComponent<Image>().sprite = 
-				Resources.Load<Sprite>("Images/TierMenu/" + tier.fileName);
+				Resources.Load<Sprite>("Images/TierMenu/" + tier.fileName + "1");
 
-			if (!tierButton.isInteractable)
+			if (!tier.isInteractable)
 			{
-				tierButton.buttonBgImage.color = MainColors.WhiteTransparent(220);
+				tierButton.buttonBgImage.color = MainColors.WhiteTransparent(110);
 				tierButton.buttonBgImage.sprite = 
-					Resources.Load<Sprite>("Images/LockTier");
+					Resources.Load<Sprite>("Images/LockTier3");
 			}
 			
 			tierButton.GetComponent<Button>().onClick.AddListener(() =>

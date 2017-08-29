@@ -8,7 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Welcome New.unity
   - enabled: 1
-    path: Assets/Scenes/StartingPosition.unity
+    path: Assets/Scenes/TutStartingPosition.unity
+  - enabled: 1
+    path: Assets/Scenes/TutHandClick.unity
   - enabled: 1
     path: Assets/Scenes/UserSelection.unity
   - enabled: 1

@@ -182,6 +182,7 @@
     <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryManager.cs" />
     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\General\Engagement.cs" />
+    <Compile Include="Assets\Scripts\General\HandClickManager.cs" />
     <Compile Include="Assets\Scripts\General\ScreenManager.cs" />
     <Compile Include="Assets\Scripts\General\StartingPositionManager.cs" />
     <Compile Include="Assets\Scripts\General\VideoController.cs" />

@@ -66,6 +66,6 @@ public class Engagement : MonoBehaviour
 	{
 		audioSuccess.Play();
 		yield return new WaitForSeconds(audioSuccess.clip.length);
-		SceneManager.LoadScene("StartingPosition");
+		SceneManager.LoadScene("TutHandClick");
 	}
 }

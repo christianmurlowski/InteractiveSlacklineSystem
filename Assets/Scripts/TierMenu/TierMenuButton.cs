@@ -7,5 +7,5 @@ public class TierMenuButton : MonoBehaviour
 {
     public Text buttonText;
     public Image buttonBgImage;
-    public bool isInteractable;
+    public Text buttonNumber;
 }
