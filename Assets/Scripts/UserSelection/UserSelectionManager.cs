@@ -64,7 +64,7 @@ public class UserSelectionManager : MonoBehaviour
         Debug.Log(currentUserDataObject.GetCurrentUser());        
         Debug.Log(currentUserDataObject.GetCurrentUser().name);        
         
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("TierMenu");
     }
 
     // TODO Just for test purposes -> Delete in production

@@ -66,5 +66,9 @@ public class TierMenuManager : MonoBehaviour
 			goTierMenuButton.transform.SetParent(spacerHorizontal, false);
 		}
 	}
-
+	
+	public void LoadPreviousScene()
+	{
+		SceneManager.LoadScene("UserSelection");
+	}
 }
