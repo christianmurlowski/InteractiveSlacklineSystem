@@ -42,14 +42,14 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 15200000, guid: 44f5244ee0af33c459e450f245569d54, type: 3}
-        m_Scale: {x: 0.3, y: 0.6}
+        m_Texture: {fileID: 2800000, guid: be704b47e335c814dbd6faa66a34b057, type: 3}
+        m_Scale: {x: 0.28, y: 0.6}
         m_Offset: {x: 0.21, y: 0.2}
     - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 15200000, guid: 821fe3240dcbb964f8afd89fe3e10d04, type: 3}
-        m_Scale: {x: 0.3, y: 0.6}
+        m_Scale: {x: 0.28, y: 0.6}
         m_Offset: {x: 0.21, y: 0.2}
     - first:
         name: _MetallicGlossMap

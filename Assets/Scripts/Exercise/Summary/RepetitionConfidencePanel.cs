@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class RepetitionConfidencePanel : MonoBehaviour
 {
     public Text confidenceText;
+    public Text repetitionText;
 }

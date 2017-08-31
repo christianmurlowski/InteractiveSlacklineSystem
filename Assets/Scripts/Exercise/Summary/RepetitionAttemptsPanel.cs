@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class RepetitionAttemptsPanel : MonoBehaviour
 {
     public Text attemptsText;
+    public Text repetitionText;
 }

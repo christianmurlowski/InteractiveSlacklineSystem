@@ -84,8 +84,8 @@ public class ExerciseSummaryManager : MonoBehaviour
 			SceneManager.LoadScene("MainMenu");
 		});
 
-		Debug.Log(UserDataObject.GetCurrentExercise().fileName);
-		Debug.Log(UserDataObject.GetLastTierExercise().fileName);
+		Debug.Log("GetCurrentExercise: " + UserDataObject.GetCurrentExercise().fileName);
+		Debug.Log("GetLastTierExercise " + UserDataObject.GetLastTierExercise().fileName);
 		Debug.Log(PlayerPrefs.GetInt("CurrentExerciseId"));
 		
 		// If a side is not accomplished --> go to next side
@@ -98,10 +98,17 @@ public class ExerciseSummaryManager : MonoBehaviour
 		}
 
 		// Not last exercise --> load following exercise
-		if (_currentExercise != _lastExercise)
+		if (_currentExercise != _lastExercise || sideNotAccomplished)
 		{
-			PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId")+1);
-			if (sideNotAccomplished) buttonNextExercise.GetComponentInChildren<Text>().text = "Next Side";
+			Debug.Log("any sideNotAccomplished? : " + sideNotAccomplished);
+			if (sideNotAccomplished)
+			{
+				buttonNextExercise.GetComponentInChildren<Text>().text = "Next Side";
+			}
+			else
+			{
+				PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId") + 1);
+			}
 			
 			buttonNextExercise.onClick.AddListener(() =>
 			{
@@ -183,39 +190,38 @@ public class ExerciseSummaryManager : MonoBehaviour
 			GameObject attemptsGameObject = Instantiate(attemptsPanel);
 			RepetitionAttemptsPanel currentAttemptsPanel = attemptsGameObject.GetComponent<RepetitionAttemptsPanel>();
 			
-			int repetitionId = Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), repetition);
+			int repetitionId = Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), repetition) + 1;
 			
-			currentTimePanel.timeText.text = repetition.userTime.ToString("F1");
 
-			string reptitionText = "";
+			string reptitionText = repetitionId.ToString();
 			switch (repetitionId)
 			{
-				case 0:
-					reptitionText = "1st";
-					break;
 				case 1:
-					reptitionText = "2nd";
+					reptitionText += "st";
 					break;
 				case 2:
-					reptitionText = "3rd";
+					reptitionText += "nd";
 					break;
 				case 3:
-					reptitionText = "4th";
+					reptitionText += "rd";
 					break;
-				case 4:
-					reptitionText = "5th";
+				default:
+					reptitionText += "th";
 					break;
 			}
 			
 			currentTimePanel.repetitionText.text = reptitionText;
+			currentTimePanel.timeText.text = repetition.userTime.ToString("F1");
 //			currentTimePanel.GetComponent<Image>().fillAmount = repetition.userTime / UserDataObject.GetCurrentExerciseLongestRepetitionTime();
 			imageTimeList.Add(currentTimePanel.GetComponent<Image>());
 			imageTimeValue.Add(repetition.userTime / UserDataObject.GetCurrentExerciseLongestRepetitionTime());
 			
+			currentAttemptsPanel.repetitionText.text = reptitionText;
 			currentAttemptsPanel.attemptsText.text = repetition.attempts.ToString();
 			imageAttemptsList.Add(currentAttemptsPanel.GetComponent<Image>());
 			imageAttemptsValue.Add((float) repetition.attempts / UserDataObject.GetCurrentExerciseSideHighestAttempt());
 
+			currentConfidencePanel.repetitionText.text = reptitionText;
 			currentConfidencePanel.confidenceText.text = Mathf.Round(repetition.confidence).ToString();
 //			currentConfidencePanel.GetComponent<Image>().fillAmount = repetition.confidence/100;
 			imageConfidenceList.Add(currentConfidencePanel.GetComponent<Image>());

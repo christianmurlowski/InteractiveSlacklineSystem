@@ -103,7 +103,7 @@ public class DurationManager : MonoBehaviour
 			ChangeColor(darkOrange);
 		}
 	}
-	
+
 	public void StopTimer()
 	{
 //		_userExerciseData.repetitions

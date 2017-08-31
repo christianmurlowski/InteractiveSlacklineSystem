@@ -60,7 +60,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				_thirdCheckpoint,
 				startTrackingAgain,
 				_bothFeetUp,
-				_inStartingPosition;
+				_inStartingPosition,
+				_minTimeAlreadyReached;
 	private float time = 0.0f;
 	private float interpolationPeriod = 0.5f;
 	
@@ -96,6 +97,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Duration manager
 		_durationManager = durationManager.GetComponent<DurationManager>();
 		
+		_minTimeAlreadyReached = false;
 		
 		// -----------------------------------------
 		// ------------- UI COMPONENTS -------------
@@ -310,6 +312,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f) && _bothFeetUp)
 			{
 				_durationManager.StartTimer();
+									
+				if (MinTimeReached()) audioSuccess.Play();
 				
 				confidenceIterator++;
 				_currentRepetitionConfidence += e.DetectionConfidence * 100;
@@ -383,6 +387,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 					
 					_durationManager.StartTimer();
 
+					if (MinTimeReached()) audioSuccess.Play();
+
 					confidenceIterator++;
 					_currentRepetitionConfidence += e.Progress * 100;
 
@@ -440,11 +446,20 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		return success;
 	}
+
+	private bool MinTimeReached()
+	{
+		if (!_minTimeAlreadyReached &&_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
+		{
+			_minTimeAlreadyReached = true;
+			return true;
+		}
+		return false;
+	}
 	
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
-		audioSuccess.Play();
 		
 		_bothFeetUp = false;
 		_inStartingPosition = false;

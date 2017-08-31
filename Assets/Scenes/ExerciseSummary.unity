@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1805,7 +1805,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9d7e896c6d9c19a4f883108cc5f9005b, type: 3}
-    m_FontSize: 250
+    m_FontSize: 270
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1949,7 +1949,7 @@ Prefab:
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
@@ -2604,7 +2604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2613,7 +2613,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9d7e896c6d9c19a4f883108cc5f9005b, type: 3}
-    m_FontSize: 250
+    m_FontSize: 270
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3809,7 +3809,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853915270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a669d15f0035bbf4889c8092b5bcd201, type: 3}
   m_Name: 
@@ -5633,7 +5633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5642,7 +5642,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9d7e896c6d9c19a4f883108cc5f9005b, type: 3}
-    m_FontSize: 250
+    m_FontSize: 270
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7418,7 +7418,7 @@ Prefab:
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -330
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
