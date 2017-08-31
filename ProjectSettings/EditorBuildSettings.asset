@@ -26,6 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExerciseExecution.unity
   - enabled: 1
+    path: Assets/Scenes/ExerciseExecutionNew.unity
+  - enabled: 1
     path: Assets/Scenes/ExerciseSummary.unity
   - enabled: 1
     path: Assets/Scenes/TierSummary.unity

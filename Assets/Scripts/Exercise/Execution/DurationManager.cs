@@ -11,6 +11,7 @@ public class DurationManager : MonoBehaviour
 {
 	public GameObject progressGroup;
 	public Image durationImage;
+//	public Image imageRingConfidence;
 	public Text counterText;
 	public Slider slider;
 	
@@ -63,7 +64,7 @@ public class DurationManager : MonoBehaviour
 		
 		
 		// Slider for progress
-		slider = slider.GetComponent<Slider>();		
+//		slider = slider.GetComponent<Slider>();		
 		Debug.Log("isProgressGesture: " + _currentExerciseData.isProgressGesture);
 //		if (!_currentExerciseData.isProgressGesture)
 //		{
@@ -121,8 +122,8 @@ public class DurationManager : MonoBehaviour
 	
 	public void ChangeColor(Color32 color)
 	{
-		durationImage.color = color;
-		counterText.color = color;
+//		durationImage.color = color;
+//		counterText.color = color;
 	}
 
 	public float GetlatestTimeInSeconds()
@@ -137,10 +138,12 @@ public class DurationManager : MonoBehaviour
 	public void SetProgress(float progress)
 	{
 		slider.value = Mathf.Lerp(0, 1, progress);
+//		imageRingConfidence.fillAmount = Mathf.Lerp(0, 1, progress);
 	}
 
 	public void ResetProgress()
 	{
 		slider.value = 0;
+//		imageRingConfidence.fillAmount = 0;
 	}
 }

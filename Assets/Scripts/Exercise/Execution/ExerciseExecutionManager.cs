@@ -460,7 +460,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
-		
+		_minTimeAlreadyReached = false;
 		_bothFeetUp = false;
 		_inStartingPosition = false;
 		Debug.Log("ACCOMPLISHED REPETITION");

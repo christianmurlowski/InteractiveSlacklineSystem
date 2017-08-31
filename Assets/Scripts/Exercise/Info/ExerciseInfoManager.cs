@@ -52,7 +52,7 @@ public class ExerciseInfoManager : MonoBehaviour
 
 	public void LoadNextScene()
 	{
-		SceneManager.LoadScene("ExerciseExecution");
+		SceneManager.LoadScene("ExerciseExecutionNew");
 	}
 	
 	public void LoadPreviousScene()
