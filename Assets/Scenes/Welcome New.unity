@@ -929,7 +929,7 @@ MonoBehaviour:
   ignoreInferredJoints: 0
   ignoreZCoordinates: 0
   lateUpdateAvatars: 0
-  smoothing: 1
+  smoothing: 3
   useBoneOrientationConstraints: 0
   allowTurnArounds: 0
   allowedHandRotations: 1
