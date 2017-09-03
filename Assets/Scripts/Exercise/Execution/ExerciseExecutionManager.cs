@@ -50,7 +50,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				  _initialStartingHeightLeft = 0.0f,
 				  _initialStartingHeightRight = 0.0f,
 				  _startingHeightDifference = 0.0f,
-				  _footDepthTolerance = 0.25f;
+				  _footDepthTolerance = 0.25f,
+				  _gestureAccuracy;
 	private int confidenceIterator, 
 				attemptsIterator,
 				sideAccomplishedCounter, // for calculating average confidence
@@ -307,18 +308,20 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Discrete Gesture tracking
 		if ((e.GestureType == GestureType.Discrete))
 		{
-			_durationManager.SetProgress(e.DetectionConfidence);
+			_gestureAccuracy = e.DetectionConfidence;
+			if (_gestureAccuracy > 1.0f) _gestureAccuracy = 1.0f;
+			_durationManager.SetProgress(_gestureAccuracy);
 
-			if (GestureDetected(e.DetectionConfidence, 0.4f, 1f) && _bothFeetUp)
+			if (GestureDetected(_gestureAccuracy, 0.4f, 1f) && _bothFeetUp)
 			{
 				_durationManager.StartTimer();
 									
 				if (MinTimeReached()) audioSuccess.Play();
 				
 				confidenceIterator++;
-				_currentRepetitionConfidence += e.DetectionConfidence * 100;
+				_currentRepetitionConfidence += _gestureAccuracy * 100;
 				
-				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
+				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
 			}
 			else
 			{
@@ -339,13 +342,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 					ToggleAndCheckRepetition();
 				}					
 				
-				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
+				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
 			}
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
 		else if ((e.GestureType == GestureType.Continuous))
 		{
-			_durationManager.SetProgress(e.Progress);
+			_gestureAccuracy = e.Progress;			
+			if (_gestureAccuracy > 1.0f) _gestureAccuracy = 1.0f;
+			_durationManager.SetProgress(_gestureAccuracy);
 
 //			if (_thirdCheckpoint)
 //			{
@@ -382,7 +387,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 //					_thirdCheckpoint = true;
 //				}
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
-				if (GestureDetected(e.Progress, 0.7f, 1f) && _bothFeetUp)
+				
+			Debug.Log(_bothFeetUp +  " | " + _gestureAccuracy + " | " + e.Progress + " | "+ GestureDetected(_gestureAccuracy, 0.7f, 1f) + " | " + GestureDetected(e.Progress, 0.7f, 1f));
+				if (GestureDetected(_gestureAccuracy, 0.7f, 1f) && _bothFeetUp)
 				{					
 					
 					_durationManager.StartTimer();
@@ -390,9 +397,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 					if (MinTimeReached()) audioSuccess.Play();
 
 					confidenceIterator++;
-					_currentRepetitionConfidence += e.Progress * 100;
+					_currentRepetitionConfidence += _gestureAccuracy * 100;
 
-					testText.text = "if CONTINUOUS: " + e.Progress;
+					testText.text = "if CONTINUOUS: " + _gestureAccuracy;
 
 				}
 				else
@@ -415,7 +422,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 						ToggleAndCheckRepetition();
 					}
 				
-					testText.text = "else CONTINUOUS: " + e.Progress;
+					testText.text = "else CONTINUOUS: " + _gestureAccuracy;
 				}
 //			}
 		}
@@ -427,8 +434,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 	// -----------------------------------------
 	private bool GestureDetected(float progress, float minGoal, float maxGoal)
 	{
-		if (progress > 1.0f) progress = 1.0f;
-			
 		pufferList.Add(progress);
 		var success = false;
 

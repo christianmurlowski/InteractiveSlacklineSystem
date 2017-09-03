@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 public class DurationManager : MonoBehaviour
 {
 	public GameObject progressGroup;
-	public Image durationImage;
+	public Image imageRingTime;
 //	public Image imageRingConfidence;
 	public Text counterText;
 	public Slider slider;
@@ -49,12 +49,12 @@ public class DurationManager : MonoBehaviour
 		_attemptExecutionTime = new Stopwatch();
 		
 		// Duration donut
-		durationImage.GetComponent<Image>();
+		imageRingTime.GetComponent<Image>();
 		counterText.GetComponent<Text>();
 		
-		durationImage.type = Image.Type.Filled;
-		durationImage.fillMethod = Image.FillMethod.Radial360;
-		durationImage.fillAmount = 0f;
+		imageRingTime.type = Image.Type.Filled;
+		imageRingTime.fillMethod = Image.FillMethod.Radial360;
+		imageRingTime.fillAmount = 0f;
 		
 		// Colors for duration donut
 		red = MainColors.Red();
@@ -88,18 +88,18 @@ public class DurationManager : MonoBehaviour
 		counterText.text = _attemptExecutionTimeInt.ToString();
 
 		// Update progress circle
-		durationImage.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / 
+		imageRingTime.fillAmount = _attemptExecutionTime.ElapsedMilliseconds * 0.001f / 
 		                           (UserDataObject.GetCurrentRepetition().minTime);
 
-		if (durationImage.fillAmount >= 1.0)
+		if (imageRingTime.fillAmount >= 1.0)
 		{
 			ChangeColor(green);
 		}
-		else if (durationImage.fillAmount > 0.66)
+		else if (imageRingTime.fillAmount > 0.66)
 		{
 			ChangeColor(yellow);
 		}
-		else if (durationImage.fillAmount > 0.33)
+		else if (imageRingTime.fillAmount > 0.33)
 		{
 			ChangeColor(darkOrange);
 		}
@@ -111,7 +111,7 @@ public class DurationManager : MonoBehaviour
 		
 		_attemptExecutionTime.Reset();
 		counterText.text = "0";
-		durationImage.fillAmount = 0.0f;
+		imageRingTime.fillAmount = 0.0f;
 		ChangeColor(red);
 	}
 
@@ -122,7 +122,7 @@ public class DurationManager : MonoBehaviour
 	
 	public void ChangeColor(Color32 color)
 	{
-//		durationImage.color = color;
+		imageRingTime.color = color;
 //		counterText.color = color;
 	}
 

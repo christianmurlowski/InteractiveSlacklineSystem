@@ -109,7 +109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 423fc1750a50c4d48b9642c08ed5e26a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 114819048180641398}
   buttonBgImage: {fileID: 114777195900741702}
-  isInteractable: 0
+  buttonNumber: {fileID: 0}
 --- !u!222 &222250515174405332
 CanvasRenderer:
   m_ObjectHideFlags: 1
