@@ -26,7 +26,8 @@ public class ExerciseSummaryManager : MonoBehaviour
 					 confidenceSpacer,
 					 attemptsSpacer;
 	
-	public Text exerciseNameText;
+	public Text exerciseNameText,
+				textStandingLeg;
 
 	
 	private KinectManager _kinectManager;
@@ -71,7 +72,8 @@ public class ExerciseSummaryManager : MonoBehaviour
 		imageAttemptsValue = new List<float>();
 		
 		// Set the title of current exercise
-		exerciseNameText.text = UserDataObject.GetCurrentExerciseAndSideName().ToUpper();
+		exerciseNameText.text = UserDataObject.GetCurrentExerciseName().ToUpper();
+		textStandingLeg.text = UserDataObject.GetCurrentSide().direction;
 		
 		// Output summary data from exercise
 		OutputData();

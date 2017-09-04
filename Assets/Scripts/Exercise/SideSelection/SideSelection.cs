@@ -12,9 +12,14 @@ public class SideSelection : MonoBehaviour
 	public Button exerciseLeftButton, 
 				  exerciseRightButton;
 	
-	public Text leftButtonText, 
-				rightButtonText,
-				exerciseName;
+	public Text exerciseName;
+
+	public Toggle toggleLeft,
+				  toggleRight;
+	public Image imageToggleLeftBG,
+				 imageToggleLeftBGShadow,		 
+				 imageToggleRightBG,
+				 imageToggleRightBGShadow;
 
 
 	private KinectManager _kinectManager;
@@ -35,13 +40,17 @@ public class SideSelection : MonoBehaviour
 			{
 				if(side.direction == "Left")
 				{
-					leftButtonText.text = side.direction + " side\n(accomplished)";
-					leftButtonText.color = green;
+					toggleLeft.isOn = true;
+					imageToggleLeftBG.sprite = Resources.Load<Sprite>("Images/Toggle");
+					imageToggleLeftBG.color = MainColors.ToggleIsOn();
+					imageToggleLeftBGShadow.color = MainColors.SideSelectionShadow();
 				}
 				else if(side.direction == "Right")
 				{
-					rightButtonText.text = side.direction + " side\n(accomplished)";
-					rightButtonText.color = green;
+					toggleRight.isOn = true;
+					imageToggleRightBG.sprite = Resources.Load<Sprite>("Images/Toggle");
+					imageToggleRightBG.color = MainColors.ToggleIsOn();
+					imageToggleRightBGShadow.color = MainColors.SideSelectionShadow();
 				}
 			}
 		}

@@ -21,6 +21,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public GameObject toggle;
 	public Transform toggleGroup;
 	public Text titleText,
+				standingLegText,
 				testText, // TODO Just for test purposes -> Delete in production
 				rightFootHeightText,
 				leftFootHeightText,
@@ -105,7 +106,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// -----------------------------------------
 		
 		// Exercise name
-		titleText.text = UserDataObject.GetCurrentExerciseAndSideName().ToUpper();
+		titleText.text = UserDataObject.GetCurrentExerciseName().ToUpper();
+		standingLegText.text = UserDataObject.GetCurrentSide().direction;
 		successPanel = successPanel.GetComponent<CanvasGroup>(); // TODO implement success animation for rep
 		
 		// Array of Toggles

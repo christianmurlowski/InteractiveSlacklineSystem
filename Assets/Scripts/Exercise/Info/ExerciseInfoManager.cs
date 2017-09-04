@@ -8,15 +8,16 @@ using UnityEngine.UI;
 public class ExerciseInfoManager : MonoBehaviour
 {
 
-	public GameObject exerciseTipPanel,
-					  KinectManager;
-	public Transform buttonExerciseStart,
-					 spacer;
-	public Text exerciseName,
-				exerciseRepetitions,
-				exerciseMinTime;
-	public AudioSource audioSuccess,
-					   audioFail;
+	public GameObject 	exerciseTipPanel,
+					  	KinectManager;
+	public Transform 	buttonExerciseStart,
+					 	spacer;
+	public Text 		exerciseName,
+						textStandingLeg,
+						exerciseRepetitions,
+						exerciseMinTime;
+	public AudioSource 	audioSuccess,
+					   	audioFail;
 	
 	private KinectManager _kinectManager;
 	private KinectInterop.JointType _jointFootRight,
@@ -31,7 +32,9 @@ public class ExerciseInfoManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		exerciseName.text = UserDataObject.GetCurrentExerciseAndSideName();
+		exerciseName.text = UserDataObject.GetCurrentExerciseName().ToUpper();
+		textStandingLeg.text = UserDataObject.GetCurrentSide().direction;
+		
 		
 		KinectManager = GameObject.Find("KinectManager");
 		if (KinectManager == null)

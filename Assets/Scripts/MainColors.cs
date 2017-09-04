@@ -48,5 +48,15 @@ public class MainColors : MonoBehaviour {
 	{
 		return new Color32(255, 220, 20, 255);
 	}
+	
+	public static Color32 ToggleIsOn()
+	{
+		return new Color32(60, 120, 0, 255);
+	}
+	
+	public static Color32 SideSelectionShadow()
+	{
+		return new Color32(22, 19, 12, 255);
+	}
 
 }
