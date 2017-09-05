@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressGroup: {fileID: 1716637442}
-  durationImage: {fileID: 554405519}
+  imageRingTime: {fileID: 0}
   counterText: {fileID: 1256693709}
   slider: {fileID: 1197255728}
 --- !u!1001 &550430428
@@ -5358,7 +5358,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: dadf25476a58ceb46bc00c83f3414be8, type: 3}
+    m_Font: {fileID: 12800000, guid: 9d7e896c6d9c19a4f883108cc5f9005b, type: 3}
     m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
@@ -6895,7 +6895,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: dadf25476a58ceb46bc00c83f3414be8, type: 3}
+    m_Font: {fileID: 12800000, guid: 2a424615a50290846a0f360388b98ec4, type: 3}
     m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 0
@@ -9155,6 +9155,7 @@ MonoBehaviour:
   toggle: {fileID: 1494147699481274, guid: bfafe3f459dc40c49861c6795b21141b, type: 2}
   toggleGroup: {fileID: 1913673927}
   titleText: {fileID: 2052749361}
+  standingLegText: {fileID: 0}
   testText: {fileID: 712080024}
   rightFootHeightText: {fileID: 331144518}
   leftFootHeightText: {fileID: 1398460704}
@@ -9163,6 +9164,7 @@ MonoBehaviour:
   initialRightFootText: {fileID: 989216920}
   initialLeftFootText: {fileID: 170981399}
   bothFeetUpText: {fileID: 1207378415}
+  textReps: {fileID: 0}
 --- !u!4 &2084021402
 Transform:
   m_ObjectHideFlags: 0

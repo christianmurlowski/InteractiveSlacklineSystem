@@ -29,7 +29,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				leftFootDepthText,
 				initialRightFootText,
 				initialLeftFootText,
-				bothFeetUpText;
+				bothFeetUpText,
+				textReps;
 	
 	// Kinect stuff
 	private Body[] _bodies = null;
@@ -56,7 +57,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private int confidenceIterator, 
 				attemptsIterator,
 				sideAccomplishedCounter, // for calculating average confidence
-				heightTestIterator;
+				heightTestIterator,
+				_repsIterator;
 	private bool _firstCheckpoint,
 				_secondCheckpoint,
 				_thirdCheckpoint,
@@ -100,6 +102,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_durationManager = durationManager.GetComponent<DurationManager>();
 		
 		_minTimeAlreadyReached = false;
+		_repsIterator = 0;
 		
 		// -----------------------------------------
 		// ------------- UI COMPONENTS -------------
@@ -127,6 +130,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				// look for accomplished reps, check regarding toggles and set current rep
 				if (repetition.accomplished)
 				{
+					_repsIterator += 1;
 					currentToggle.GetComponent<Toggle>().isOn = true;
 				}
 				else if (_currentRepetition == null)
@@ -149,6 +153,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			// Append GO to group
 			gameObjectToggle.transform.SetParent(toggleGroup, false);
 		}
+		textReps.text = "Reps " + _repsIterator + "/" + UserDataObject.GetCurrentRepetitionsArray().Length; 
 		
 		// Set ID of current repetition
 		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
@@ -339,8 +344,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 				_durationManager.StopTimer();
 				
 				// if tracked time is greater than given time of the repetition
-				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime) 
+				if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
 				{
+					_repsIterator += 1;
 					ToggleAndCheckRepetition();
 				}					
 				
@@ -421,6 +427,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 					// if tracked time is greater than given time of the repetition
 					if (_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
 					{
+						_repsIterator += 1;
 						ToggleAndCheckRepetition();
 					}
 				
@@ -470,6 +477,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_minTimeAlreadyReached = false;
 		_bothFeetUp = false;
 		_inStartingPosition = false;
+		
+		textReps.text = "Reps " + _repsIterator + "/" + UserDataObject.GetCurrentRepetitionsArray().Length; 
+
 		Debug.Log("ACCOMPLISHED REPETITION");
 		
 		// Save the time and confidence for the current repetition

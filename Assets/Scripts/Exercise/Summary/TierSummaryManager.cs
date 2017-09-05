@@ -8,6 +8,11 @@ using UnityEngine.UI;
 public class TierSummaryManager : MonoBehaviour
 {
 
+	public GameObject KinectManager;
+	
+	private KinectManager _kinectManager;
+	private TierData _currentTierData;
+	
 	[Tooltip("Prefab of goal panel")]
 	public Transform timeSpacer, 
 					 attemptsSpacer, 
@@ -21,12 +26,16 @@ public class TierSummaryManager : MonoBehaviour
 
 	public Text tierNameText;
 	
-	private TierData _currentTierData;
 	
 	// Use this for initialization
 	void Start ()
 	{
+		KinectManager = GameObject.Find("KinectManager");
 
+		if (KinectManager) _kinectManager = KinectManager.GetComponent<KinectManager>();
+
+		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
+		
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
 		tierNameText.text = UserDataObject.GetCurrentTier().tierName + " average data";

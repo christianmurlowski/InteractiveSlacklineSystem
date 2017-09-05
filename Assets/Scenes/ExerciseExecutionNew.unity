@@ -3640,17 +3640,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 812025072}
-  m_LocalRotation: {x: -0.012827337, y: -0.094753034, z: 0.006195899, w: 0.99539894}
-  m_LocalPosition: {x: 0, y: 0, z: 993.4}
+  m_LocalRotation: {x: -0.009790481, y: -0.1304408, z: 0.007512582, w: 0.9913793}
+  m_LocalPosition: {x: 0, y: 0, z: 988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308905643}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.396, y: -10.886001, z: 0.846}
+  m_LocalEulerAnglesHint: {x: -1, y: -15, z: 1}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -387.7, y: 344.4}
-  m_SizeDelta: {x: 180, y: 80}
+  m_AnchoredPosition: {x: -415.6, y: 346.3}
+  m_SizeDelta: {x: 349.1, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &812025074
 MonoBehaviour:
@@ -3678,13 +3678,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 200
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Reps
+  m_Text: Reps 0/3
 --- !u!222 &812025075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7401,7 +7401,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: dadf25476a58ceb46bc00c83f3414be8, type: 3}
+    m_Font: {fileID: 12800000, guid: 2a424615a50290846a0f360388b98ec4, type: 3}
     m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 0
@@ -7556,15 +7556,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4530319312924234, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.44
+      value: -3.589
       objectReference: {fileID: 0}
     - target: {fileID: 4530319312924234, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.351
+      value: 1.353
       objectReference: {fileID: 0}
     - target: {fileID: 4530319312924234, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.581
+      value: 7.541
       objectReference: {fileID: 0}
     - target: {fileID: 4530319312924234, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7596,7 +7596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4530319312924234, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.11009689
+      value: 0.18631198
       objectReference: {fileID: 0}
     - target: {fileID: 1409383821994600, guid: fa50c8e9d55c6fa45bb35751f440faa6, type: 2}
       propertyPath: m_Name
@@ -9605,6 +9605,7 @@ MonoBehaviour:
   initialRightFootText: {fileID: 989216920}
   initialLeftFootText: {fileID: 170981399}
   bothFeetUpText: {fileID: 1207378415}
+  textReps: {fileID: 812025074}
 --- !u!4 &2084021402
 Transform:
   m_ObjectHideFlags: 0
