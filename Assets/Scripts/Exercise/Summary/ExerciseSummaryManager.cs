@@ -199,16 +199,16 @@ public class ExerciseSummaryManager : MonoBehaviour
 			switch (repetitionId)
 			{
 				case 1:
-					reptitionText += "st";
+					reptitionText += "st rep";
 					break;
 				case 2:
-					reptitionText += "nd";
+					reptitionText += "nd rep";
 					break;
 				case 3:
-					reptitionText += "rd";
+					reptitionText += "rd rep";
 					break;
 				default:
-					reptitionText += "th";
+					reptitionText += "th rep";
 					break;
 			}
 			

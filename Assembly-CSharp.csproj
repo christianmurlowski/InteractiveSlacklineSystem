@@ -206,6 +206,7 @@
     <Compile Include="Assets\Scripts\UserSelection\UserSelectionButton.cs" />
     <Compile Include="Assets\Scripts\UserSelection\UserSelectionManager.cs" />
     <Compile Include="Assets\TierSummaryExerciseNumber.cs" />
+    <Compile Include="Assets\TierSummaryNew.cs" />
     <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Scripts\TBS_CameraMovement.cs" />
     <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Water\TBS_Water.cs" />
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />

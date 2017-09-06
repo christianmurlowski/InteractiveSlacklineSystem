@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TierSummaryManager : MonoBehaviour
+public class TierSummaryNew : MonoBehaviour
 {
 
 	public GameObject KinectManager;
@@ -19,15 +20,20 @@ public class TierSummaryManager : MonoBehaviour
 					 confidenceSpacer,
 					 exerciseNumberSpacer;
 
-	public GameObject exerciseTimeImage,
-	   				  exerciseAttemptsImage,
-					  exerciseConfidenceImage;
+	public GameObject exerciseTimeImage, 
+					  exerciseAttemptsImage, 
+					  exerciseConfidenceImage,
+					  exerciseNumberText;
 
 	public Text tierNameText,
-				textTimeExName,
-				textAttemptsExName,
-				textConfidenceExName;
-	
+				textTimeNumber,
+				textAttemptsNumber,
+				textConfidenceNumber,
+				textAttemptsExerciseName,
+				textConfidenceExerciseName,
+				textTimeExerciseName;
+
+	private int _exerciseIterator;
 	
 	// Use this for initialization
 	void Start ()
@@ -41,7 +47,7 @@ public class TierSummaryManager : MonoBehaviour
 		_currentTierData = UserDataObject.GetCurrentTier();
 		
 		tierNameText.text = UserDataObject.GetCurrentTier().tierName + " average data";
-		
+		_exerciseIterator = 0;
 		FillSummaryList();
 	}
 
@@ -73,11 +79,22 @@ public class TierSummaryManager : MonoBehaviour
 		
 		foreach (var exercise in _currentTierData.exercises)
 		{
-			textTimeExName.text = textAttemptsExName.text = textConfidenceExName.text = exercise.exerciseName;
+			_exerciseIterator += 1;
+
+			textTimeNumber.text = _exerciseIterator.ToString();
+			textAttemptsNumber.text = _exerciseIterator.ToString();
+			textConfidenceNumber.text = _exerciseIterator.ToString();
+
+			textAttemptsExerciseName.text = exercise.exerciseName;
+			textConfidenceExerciseName.text = exercise.exerciseName;
+			textTimeExerciseName.text = exercise.exerciseName;
 			
 			GameObject gameObjectTierExerciseTime = Instantiate(exerciseTimeImage) as GameObject;
 			GameObject gameObjectTierExerciseConfidence = Instantiate(exerciseConfidenceImage) as GameObject;
 			GameObject gameObjectTierExerciseAttempts = Instantiate(exerciseAttemptsImage) as GameObject;
+			
+			GameObject gameObjectTierExercisNumber = Instantiate(exerciseNumberText) as GameObject;
+
 			
 			TierSummaryExerciseTimeImage summaryTimeImage =
 				gameObjectTierExerciseTime.GetComponent<TierSummaryExerciseTimeImage>();
@@ -96,9 +113,13 @@ public class TierSummaryManager : MonoBehaviour
 			summaryAttemptImage.avgAttempt.text = exercise.attempts.ToString();
 			summaryAttemptImage.GetComponent<Image>().fillAmount = exercise.attempts / UserDataObject.GetCurrentTierAllExercisesHighestAttempt();
 			
+			
+			gameObjectTierExercisNumber.GetComponent<Text>().text += (_currentTierData.exercises.IndexOf(exercise)+1);
+			
 			gameObjectTierExerciseTime.transform.SetParent(timeSpacer, false);
 			gameObjectTierExerciseConfidence.transform.SetParent(confidenceSpacer, false);
 			gameObjectTierExerciseAttempts.transform.SetParent(attemptsSpacer, false);
+			gameObjectTierExercisNumber.transform.SetParent(exerciseNumberSpacer, false);
 		}
 	}
 }

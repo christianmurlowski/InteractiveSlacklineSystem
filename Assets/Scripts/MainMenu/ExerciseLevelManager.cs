@@ -106,8 +106,8 @@ public class ExerciseLevelManager : MonoBehaviour
 			// If exercise locked
 			if (!exercise.isInteractable)
 			{
-				button.bgImage.color = MainColors.WhiteTransparent(5);
-				gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/LockExercise");
+				button.bgImage.color = MainColors.WhiteTransparent(3);
+				gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/LockExercise2");
 				gameObjectButton.GetComponent<Image>().color = MainColors.White();
 			}
 			
