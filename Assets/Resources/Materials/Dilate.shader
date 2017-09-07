@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced 'texRECT' with 'tex2D'
+﻿// Upgrade NOTE: replaced 'texRECT' with 'tex2D'
 
 Shader "Custom/Dilate" {
     Properties
@@ -33,7 +31,7 @@ Shader "Custom/Dilate" {
             v2f vert (appdata_base v)
             {
                 v2f o;
-                o.pos = UnityObjectToClipPos (v.vertex);
+                o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
                 o.uv = TRANSFORM_TEX (v.texcoord, _MainTex);
                 return o;
             }

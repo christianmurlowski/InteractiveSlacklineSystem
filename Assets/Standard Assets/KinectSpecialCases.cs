@@ -1,4 +1,5 @@
-﻿using RootSystem = System;
+﻿#if (UNITY_STANDALONE_WIN)
+using RootSystem = System;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -602,3 +603,4 @@ namespace Windows.Kinect
         }
     }
 }
+#endif

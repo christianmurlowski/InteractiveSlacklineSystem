@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Avatar scaler is the component that scales avatar's body, according to body measures of the user.
+/// </summary>
 [RequireComponent(typeof(Animator))]
 public class AvatarScaler : MonoBehaviour 
 {
@@ -10,32 +13,29 @@ public class AvatarScaler : MonoBehaviour
 	[Tooltip("Whether the avatar is facing the player or not.")]
 	public bool mirroredAvatar = false;
 
-	[Tooltip("Full body scale factor (incl. height, arms and legs) that might be used for fine tuning of body-scale.")]
-	[Range(0.5f, 1.5f)]
+	[Tooltip("Body scale factor (incl. arms and legs) that may be used for fine tuning of model-scale.")]
+	[Range(0.0f, 2.0f)]
 	public float bodyScaleFactor = 1.0f;
 
-	[Tooltip("Body width scale factor that might be used for fine tuning of body-scale.")]
-	[Range(0.5f, 1.5f)]
+	[Tooltip("Body width scale factor that may be used for fine tuning of model-width scale.")]
+	[Range(0.0f, 2.0f)]
 	public float bodyWidthFactor = 1.0f;
 
-	[Tooltip("Additional scale factor for arms that might be used for fine tuning of arm-scale.")]
-	[Range(0.5f, 1.5f)]
+	[Tooltip("Additional scale factor for arms that may be used for fine tuning of model arm-scale.")]
+	[Range(0.0f, 2.0f)]
 	public float armScaleFactor = 1.0f;
 
-	[Tooltip("Additional scale factor for legs that might be used for fine tuning of leg-scale.")]
-	[Range(0.5f, 1.5f)]
+	[Tooltip("Additional scale factor for legs that may be used for fine tuning of model leg-scale.")]
+	[Range(0.0f, 2.0f)]
 	public float legScaleFactor = 1.0f;
 	
 	[Tooltip("Whether the scale is updated continuously or just after the calibration pose.")]
 	public bool continuousScaling = true;
 	
-//	[Tooltip("Whether to use body height and width for continuous scaling. Requires instance of BodySlicer component in the scene.")]
-//	public bool useBodyHeightWidth = false;
-
 	[Tooltip("Scale smoothing factor used in case of continuous scaling.")]
 	public float smoothFactor = 5f;
 
-	[Tooltip("Camera that will be used to overlay the model over the background.")]
+	[Tooltip("Camera used to overlay the model over the background.")]
 	public Camera foregroundCamera;
 	
 //	[Tooltip("Whether to put the clothing model hip and shoulder joints where the user joints are.")]
@@ -53,11 +53,13 @@ public class AvatarScaler : MonoBehaviour
 	public bool scalerInited = false;
 
 	// class references
-	private KinectManager kinectManager;
-	//private BodySlicer bodySlicer;
+	private KinectManager kinectManager = null;
+	private AvatarController avtController = null;
 
 	// model transforms for scaling
 	private Transform bodyScaleTransform;
+	//private Transform bodyHipsTransform;
+	
 	private Transform leftShoulderScaleTransform;
 	private Transform leftElbowScaleTransform;
 	private Transform rightShoulderScaleTransform;
@@ -118,15 +120,18 @@ public class AvatarScaler : MonoBehaviour
 	{
 		// get references to other components
 		kinectManager = KinectManager.Instance;
-		//bodySlicer = BodySlicer.Instance;
+		avtController = gameObject.GetComponent<AvatarController>();
 
 		// get model transforms
 		Animator animatorComponent = GetComponent<Animator>();
 		AvatarController avatarController = GetComponent<AvatarController>();
 
+		// use the root transform for body scale
+		bodyScaleTransform = transform;
+
 		if (animatorComponent && animatorComponent.GetBoneTransform (HumanBodyBones.Hips)) 
 		{
-			bodyScaleTransform = animatorComponent.GetBoneTransform (HumanBodyBones.Hips);
+			//bodyHipsTransform = animatorComponent.GetBoneTransform (HumanBodyBones.Hips);
 
 			leftShoulderScaleTransform = animatorComponent.GetBoneTransform (HumanBodyBones.LeftUpperArm);
 			leftElbowScaleTransform = animatorComponent.GetBoneTransform (HumanBodyBones.LeftLowerArm);
@@ -140,7 +145,7 @@ public class AvatarScaler : MonoBehaviour
 		} 
 		else if (avatarController) 
 		{
-			bodyScaleTransform = avatarController.GetBoneTransform(avatarController.GetBoneIndexByJoint(KinectInterop.JointType.SpineBase, false));
+			//bodyHipsTransform = avatarController.GetBoneTransform(avatarController.GetBoneIndexByJoint(KinectInterop.JointType.SpineBase, false));
 
 			leftShoulderScaleTransform = avatarController.GetBoneTransform(avatarController.GetBoneIndexByJoint(KinectInterop.JointType.ShoulderLeft, false));
 			leftElbowScaleTransform = avatarController.GetBoneTransform(avatarController.GetBoneIndexByJoint(KinectInterop.JointType.ElbowLeft, false));
@@ -187,7 +192,7 @@ public class AvatarScaler : MonoBehaviour
 			GetModelBoneLength(animatorComponent, HumanBodyBones.RightLowerLeg, HumanBodyBones.RightFoot, ref modelRightLowerLegLength);
 
 			scalerInited = true;
-		} 
+		}
 		else if (avatarController) 
 		{
 			GetModelBodyHeight(avatarController, ref modelBodyHeight, ref modelBodyWidth);
@@ -244,15 +249,7 @@ public class AvatarScaler : MonoBehaviour
 		
 		if(bBody)
 		{
-//			if (useBodyHeightWidth && bodySlicer) 
-//			{
-//				GetModelBoxHeight(ref modelBodyHeight, ref modelBodyWidth);
-//				GetUserBoxHeight(bodySlicer, bodyScaleFactor, ref userBodyHeight, ref userBodyWidth);
-//			} 
-//			else 
-			{
-				GetUserBodyHeight(kinectManager, bodyScaleFactor, bodyWidthFactor, ref userBodyHeight, ref userBodyWidth);
-			}
+			GetUserBodyHeight(kinectManager, bodyScaleFactor, bodyWidthFactor, ref userBodyHeight, ref userBodyWidth);
 		}
 		
 		if(bArms)
@@ -289,44 +286,59 @@ public class AvatarScaler : MonoBehaviour
 //			return;
 
 		// scale body
-//		SetupBoneScale(bodyScaleTransform, modelBodyScale, modelBodyHeight, 
-//		               userBodyHeight, 0f, fSmooth, ref fScaleBodyHeight);
-		SetupBodyScale(bodyScaleTransform, modelBodyScale, modelBodyHeight, modelBodyWidth, userBodyHeight, userBodyWidth, 
-			fSmooth, ref fScaleBodyHeight, ref fScaleBodyWidth);
+		if (bodyScaleFactor > 0f) 
+		{
+//			SetupBoneScale(bodyScaleTransform, modelBodyScale, modelBodyHeight, 
+//			               userBodyHeight, 0f, fSmooth, ref fScaleBodyHeight);
+			SetupBodyScale(bodyScaleTransform, modelBodyScale, modelBodyHeight, modelBodyWidth, userBodyHeight, userBodyWidth, 
+				fSmooth, ref fScaleBodyHeight, ref fScaleBodyWidth);
+
+			if (avtController) 
+			{
+				// recalibrate avatar position due to transform scale change
+				avtController.offsetCalibrated = false;
+			}
+		}
 
 		// scale arms
-		float fLeftUpperArmLength = !mirroredAvatar ? leftUpperArmLength : rightUpperArmLength;
-		SetupBoneScale(leftShoulderScaleTransform, modelLeftShoulderScale, modelLeftUpperArmLength, 
-		               fLeftUpperArmLength, fScaleBodyHeight, fSmooth, ref fScaleLeftUpperArm);
+		if (armScaleFactor > 0f) 
+		{
+			float fLeftUpperArmLength = !mirroredAvatar ? leftUpperArmLength : rightUpperArmLength;
+			SetupBoneScale(leftShoulderScaleTransform, modelLeftShoulderScale, modelLeftUpperArmLength, 
+				fLeftUpperArmLength, fScaleBodyHeight, fSmooth, ref fScaleLeftUpperArm);
 
-		float fLeftLowerArmLength = !mirroredAvatar ? leftLowerArmLength : rightLowerArmLength;
-		SetupBoneScale(leftElbowScaleTransform, modelLeftElbowScale, modelLeftLowerArmLength, 
-		               fLeftLowerArmLength, fScaleLeftUpperArm, fSmooth, ref fScaleLeftLowerArm);
+			float fLeftLowerArmLength = !mirroredAvatar ? leftLowerArmLength : rightLowerArmLength;
+			SetupBoneScale(leftElbowScaleTransform, modelLeftElbowScale, modelLeftLowerArmLength, 
+				fLeftLowerArmLength, fScaleLeftUpperArm, fSmooth, ref fScaleLeftLowerArm);
 
-		float fRightUpperArmLength = !mirroredAvatar ? rightUpperArmLength : leftUpperArmLength;
-		SetupBoneScale(rightShoulderScaleTransform, modelRightShoulderScale, modelRightUpperArmLength, 
-		               fRightUpperArmLength, fScaleBodyHeight, fSmooth, ref fScaleRightUpperArm);
-		
-		float fRightLowerArmLength = !mirroredAvatar ? rightLowerArmLength : leftLowerArmLength;
-		SetupBoneScale(rightElbowScaleTransform, modelRightElbowScale, modelLeftLowerArmLength, 
-		               fRightLowerArmLength, fScaleRightUpperArm, fSmooth, ref fScaleRightLowerArm);
+			float fRightUpperArmLength = !mirroredAvatar ? rightUpperArmLength : leftUpperArmLength;
+			SetupBoneScale(rightShoulderScaleTransform, modelRightShoulderScale, modelRightUpperArmLength, 
+				fRightUpperArmLength, fScaleBodyHeight, fSmooth, ref fScaleRightUpperArm);
+
+			float fRightLowerArmLength = !mirroredAvatar ? rightLowerArmLength : leftLowerArmLength;
+			SetupBoneScale(rightElbowScaleTransform, modelRightElbowScale, modelLeftLowerArmLength, 
+				fRightLowerArmLength, fScaleRightUpperArm, fSmooth, ref fScaleRightLowerArm);
+		}
 
 		// scale legs
-		float fLeftUpperLegLength = !mirroredAvatar ? leftUpperLegLength : rightUpperLegLength;
-		SetupBoneScale(leftHipScaleTransform, modelLeftHipScale, modelLeftUpperLegLength, 
-		               fLeftUpperLegLength, fScaleBodyHeight, fSmooth, ref fScaleLeftUpperLeg);
-		
-		float fLeftLowerLegLength = !mirroredAvatar ? leftLowerLegLength : rightLowerLegLength;
-		SetupBoneScale(leftKneeScaleTransform, modelLeftKneeScale, modelLeftLowerLegLength, 
-		               fLeftLowerLegLength, fScaleLeftUpperLeg, fSmooth, ref fScaleLeftLowerLeg);
-		
-		float fRightUpperLegLength = !mirroredAvatar ? rightUpperLegLength : leftUpperLegLength;
-		SetupBoneScale(rightHipScaleTransform, modelRightHipScale, modelRightUpperLegLength, 
-		               fRightUpperLegLength, fScaleBodyHeight, fSmooth, ref fScaleRightUpperLeg);
-		
-		float fRightLowerLegLength = !mirroredAvatar ? rightLowerLegLength : leftLowerLegLength;
-		SetupBoneScale(rightKneeScaleTransform, modelRightKneeScale, modelRightLowerLegLength, 
-		               fRightLowerLegLength, fScaleRightUpperLeg, fSmooth, ref fScaleRightLowerLeg);
+		if (legScaleFactor > 0) 
+		{
+			float fLeftUpperLegLength = !mirroredAvatar ? leftUpperLegLength : rightUpperLegLength;
+			SetupBoneScale(leftHipScaleTransform, modelLeftHipScale, modelLeftUpperLegLength, 
+				fLeftUpperLegLength, fScaleBodyHeight, fSmooth, ref fScaleLeftUpperLeg);
+
+			float fLeftLowerLegLength = !mirroredAvatar ? leftLowerLegLength : rightLowerLegLength;
+			SetupBoneScale(leftKneeScaleTransform, modelLeftKneeScale, modelLeftLowerLegLength, 
+				fLeftLowerLegLength, fScaleLeftUpperLeg, fSmooth, ref fScaleLeftLowerLeg);
+
+			float fRightUpperLegLength = !mirroredAvatar ? rightUpperLegLength : leftUpperLegLength;
+			SetupBoneScale(rightHipScaleTransform, modelRightHipScale, modelRightUpperLegLength, 
+				fRightUpperLegLength, fScaleBodyHeight, fSmooth, ref fScaleRightUpperLeg);
+
+			float fRightLowerLegLength = !mirroredAvatar ? rightLowerLegLength : leftLowerLegLength;
+			SetupBoneScale(rightKneeScaleTransform, modelRightKneeScale, modelRightLowerLegLength, 
+				fRightLowerLegLength, fScaleRightUpperLeg, fSmooth, ref fScaleRightLowerLeg);
+		}
 
 		if(debugText != null)
 		{
@@ -483,28 +495,6 @@ public class AvatarScaler : MonoBehaviour
 		return false;
 	}
 	
-//	private bool GetUserBoxHeight(BodySlicer bodySlicer, float scaleFactor, ref float height, ref float width)
-//	{
-//		height = 0f;
-//		width = 0f;
-//
-//		if (!bodySlicer)
-//			return false;
-//
-//		BodySliceData sliceHeight = bodySlicer.getBodySliceData(BodySlice.HEIGHT);
-//		BodySliceData sliceWidth = bodySlicer.getBodySliceData(BodySlice.WIDTH);
-//
-//		if(sliceHeight.isSliceValid && sliceWidth.isSliceValid)
-//		{
-//			height = sliceHeight.diameter * scaleFactor;
-//			width = sliceWidth.diameter * scaleFactor;
-//
-//			return true;
-//		}
-//
-//		return false;
-//	}
-
 	private bool GetUserBoneLength(KinectManager manager, KinectInterop.JointType baseJoint, KinectInterop.JointType endJoint, float scaleFactor, ref float length)
 	{
 		length = 0f;
@@ -541,9 +531,13 @@ public class AvatarScaler : MonoBehaviour
 			heightScale = userHeight / modelHeight;
 		}
 
-		if(modelWidth > 0f && userWidth > 0f)
+		if (modelWidth > 0f && userWidth > 0f) 
 		{
 			widthScale = userWidth / modelWidth;
+		}
+		else 
+		{
+			widthScale = heightScale;
 		}
 
 		if(scaleTrans && heightScale > 0f && widthScale > 0f)
@@ -659,8 +653,9 @@ public class AvatarScaler : MonoBehaviour
 				// get the color overlay position
 				vPosJoint = manager.GetJointPosColorOverlay(currentUserId, joint, foregroundCamera, backgroundRect);
 			}
-			else
-			//if(vPosJoint == Vector3.zero)
+
+//			else
+			if(vPosJoint == Vector3.zero)
 			{
 				vPosJoint = manager.GetJointPosition(currentUserId, joint);
 			}

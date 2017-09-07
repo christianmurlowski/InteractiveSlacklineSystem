@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-class SimpleUserMovie : MonoBehaviour
+class UserMovieSequence : MonoBehaviour
 {
 	[Tooltip("Index of the player, tracked by this component. 0 means the 1st player, 1 - the 2nd one, 2 - the 3rd one, etc.")]
 	public int playerIndex = 0;
@@ -9,10 +9,16 @@ class SimpleUserMovie : MonoBehaviour
 	[Tooltip("How far left or right from the camera may be the user, in meters.")]
 	public float limitLeftRight = 1.2f;
 
-	[Tooltip("Number of frames in the movie.")]
-    public int numberOfFrames = 100;
+	[Tooltip("GUI texture to display the movie frames.")]
+	public GUITexture movieGuiTexture = null;
 
-	[Tooltip("Current frame number.")]
+	[Tooltip("List of frames in the movie sequence.")]
+	public Texture[] frameTextures = null;
+
+	[Tooltip("Smooth factor used for frame interpolation.")]
+	public float smoothFactor = 10f;
+
+	[Tooltip("Current frame number (as estimated).")]
 	public int currentFrame = 0;
 
 	[Tooltip("GUI-Text to display status messages.")]
@@ -20,11 +26,16 @@ class SimpleUserMovie : MonoBehaviour
 
 
 	private KinectManager kinectManager;
+	private int numberOfFrames;
+	private float fCurrentFrame;
+
 
 
 	void Start()
 	{
 		kinectManager = KinectManager.Instance;
+		numberOfFrames = frameTextures != null ? frameTextures.Length : 0;
+		fCurrentFrame = 0f;
 	}
 
 	void Update()
@@ -33,7 +44,7 @@ class SimpleUserMovie : MonoBehaviour
 		{
 			long userId = kinectManager.GetUserIdByIndex(playerIndex);
 
-			if (kinectManager.IsUserTracked(userId) && kinectManager.IsJointTracked(userId, (int)KinectInterop.JointType.SpineBase)) 
+			if (kinectManager.IsUserTracked (userId) && kinectManager.IsJointTracked (userId, (int)KinectInterop.JointType.SpineBase)) 
 			{
 				Vector3 userPos = kinectManager.GetJointPosition (userId, (int)KinectInterop.JointType.SpineBase);
 
@@ -41,17 +52,32 @@ class SimpleUserMovie : MonoBehaviour
 				{
 					// calculate the relative position in the movie
 					float relPos = (userPos.x + limitLeftRight) / (2f * limitLeftRight);
-					currentFrame = Mathf.RoundToInt(relPos * (numberOfFrames - 1));
+					fCurrentFrame = (fCurrentFrame != 0f) ? Mathf.Lerp (fCurrentFrame, relPos * (numberOfFrames - 1), smoothFactor * Time.deltaTime) : (relPos * (numberOfFrames - 1));
+
+					// current frame index
+					currentFrame = Mathf.RoundToInt(fCurrentFrame);
 
 					if (statusText) 
 					{
-						statusText.text = string.Format("X-Pos: {0:F2}, RelPos: {1:F3}, Frame: {2}", userPos.x, relPos, currentFrame);
+						statusText.text = string.Format ("X-Pos: {0:F2}, RelPos: {1:F3}, Frame: {2}", userPos.x, relPos, currentFrame);
 					}
 				}
-			}
+			} 
+//			else 
+//			{
+//				fCurrentFrame = 0f;
+//			}
 
-			// add here code to display the frame with 'currentFrame' number
-			// ...
+			// display the frame with 'currentFrame' index
+			if(frameTextures != null && currentFrame >= 0 && currentFrame < frameTextures.Length) 
+			{
+				Texture tex = frameTextures[currentFrame];
+
+				if (movieGuiTexture) 
+				{
+					movieGuiTexture.texture = tex;
+				}
+			}
 
 		}
 	}

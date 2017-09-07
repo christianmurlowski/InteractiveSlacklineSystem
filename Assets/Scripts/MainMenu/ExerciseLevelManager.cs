@@ -10,18 +10,27 @@ using UnityEngine.UI;
 public class ExerciseLevelManager : MonoBehaviour
 {
 	public GameObject exerciseLevelButton,
-					  KinectManager;
-
+					  KinectManager,
+					  HandCursor;
 	public Transform spacerHorizontal;
-	
 	public Image progressImage;
-
 	public ScrollRect scrollView;
-
+	public Scrollbar scrollBar;
+	public Text textHandLeft,
+				textHandRight,
+				textHandLeftX,
+				textHandRightX;
+	
 	private KinectManager _kinectManager;
+	private InteractionManager _interactionManager;
+	private KinectInterop.JointType _jointHandRight,
+									_jointHandLeft;
+	
 	private TierData _currTier;
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
+
+	private Image imageHandCursor;
 	
 	// Use this for initialization
 	void Start ()
@@ -29,13 +38,29 @@ public class ExerciseLevelManager : MonoBehaviour
 		
 		KinectManager = GameObject.Find("KinectManager");
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
+		_interactionManager = KinectManager.GetComponent<InteractionManager>();
 
+		HandCursor = GameObject.Find("ImageHandCursor");
+		imageHandCursor = HandCursor.GetComponent<Image>();
+		
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
-
+		
+		_jointHandRight = KinectInterop.JointType.HandRight;
+		_jointHandLeft = KinectInterop.JointType.HandLeft;
+		
 		_currTier = UserDataObject.GetCurrentTier();
 			
 		FillMenu();
 //		ScrollToCurrentTier();
+	}
+
+	private void Update()
+	{
+//		if (imageHandCursor.transform.localPosition.x > 850) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
+//		else if (imageHandCursor.transform.localPosition.x < -850) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
+
+		if (_interactionManager.GetCursorPosition().x > 0.9) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
+		else if (_interactionManager.GetCursorPosition().x < 0.1) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
 	}
 
 	public void LoadPreviousScene()

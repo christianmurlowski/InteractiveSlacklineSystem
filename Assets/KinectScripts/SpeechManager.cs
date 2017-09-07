@@ -21,11 +21,11 @@ public interface SpeechRecognitionInterface
 }
 
 /// <summary>
-/// Speech manager is the component that deals with Kinect speech recognition.
+/// Speech manager is the component that manages the Kinect speech recognition.
 /// </summary>
 public class SpeechManager : MonoBehaviour 
 {
-	[Tooltip("File name of the grammar file, used by the speech recognizer. The file will be copied from Resources, if does not exist.")]
+	[Tooltip("File name of the grammar file, used by the speech recognizer. The file will be copied from Resources, if it does not exist.")]
 	public string grammarFileName = "SpeechGrammar.grxml";
 
 	[Tooltip("Whether the grammar is dynamic or static. Dynamic grammars allow adding phrases at run-time.")]
@@ -37,7 +37,7 @@ public class SpeechManager : MonoBehaviour
 	[Tooltip("Minimum confidence required, to consider a phrase as recognized. Confidence varies between 0.0 and 1.0.")]
 	public float requiredConfidence = 0f;
 
-	[Tooltip("List of the utilized speech recognition listeners. They must implement SpeechRecognitionInterface. If the list is empty, the available gesture listeners will be detected at start up.")]
+	[Tooltip("List of the speech recognition listeners in the scene. If the list is empty, the available gesture listeners will be detected at the scene start up.")]
 	public List<MonoBehaviour> speechRecognitionListeners;
 
 	[Tooltip("GUI-Text to display the speech-manager debug messages.")]
@@ -293,7 +293,30 @@ public class SpeechManager : MonoBehaviour
 					if(textRes != null)
 					{
 						string sResText = textRes.text;
+
+#if !NETFX_CORE
 						File.WriteAllText(grammarFileName, sResText);
+#else
+						System.Threading.Tasks.Task task = null;
+
+//						UnityEngine.WSA.Application.InvokeOnUIThread(() =>
+//						{
+							task = CopyGrammarFileToStorageAsync(grammarFileName, sResText);
+//						}, true);
+						
+						while (task != null && !task.IsCompleted && !task.IsFaulted)
+						{
+							task.Wait(100);
+						}
+
+						if(task != null)
+						{
+							if(task == null)
+								throw new Exception("Could not create task for CopyGrammarFileToStorageAsync()");
+							else if(task.IsFaulted)
+								throw task.Exception;
+						}
+#endif
 					}
 					else
 					{
@@ -323,7 +346,7 @@ public class SpeechManager : MonoBehaviour
 
 			if(debugText != null)
 			{
-				debugText.text = "Ready.";
+				debugText.text = "Speech recognizer is ready.";
 			}
 
 			// try to automatically detect the available speech recognition listeners in the scene
@@ -354,6 +377,17 @@ public class SpeechManager : MonoBehaviour
 				debugText.text = ex.Message;
 		}
 	}
+
+#if NETFX_CORE
+	private async System.Threading.Tasks.Task CopyGrammarFileToStorageAsync(string grammarFileName, string grammarContent)
+	{
+		Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+		Windows.Storage.StorageFile grammarFile = await storageFolder.CreateFileAsync(grammarFileName,
+			Windows.Storage.CreationCollisionOption.ReplaceExisting);
+		
+		await Windows.Storage.FileIO.WriteTextAsync(grammarFile, grammarContent);
+	}
+#endif
 
 	void OnDestroy()
 	{

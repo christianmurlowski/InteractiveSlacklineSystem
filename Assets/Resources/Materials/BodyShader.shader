@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "Kinect/BodyShader" {
+﻿Shader "Kinect/BodyShader" {
 //    Properties {
 //        _MainTex ("Base (RGB)", 2D) = "black" {}
 //    }
@@ -34,7 +32,7 @@ Shader "Kinect/BodyShader" {
 			{
 				v2f o;
 				
-				o.pos = UnityObjectToClipPos (v.vertex);
+				o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
 				o.uv = v.texcoord;
 				
 				return o;

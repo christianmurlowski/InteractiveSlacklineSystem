@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if (UNITY_STANDALONE_WIN)
+using UnityEditor;
 using UnityEditor.Callbacks;
 using System;
 
@@ -10,3 +11,4 @@ public static class KinectFacePostBuildCopyPluginData
         KinectCopyPluginDataHelper.CopyPluginData (target, path, "NuiDatabase");
     }
 }
+#endif

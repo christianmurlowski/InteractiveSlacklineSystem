@@ -58,6 +58,8 @@
     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
     <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
     <Compile Include="Assets\KinectScripts\AvatarScaler.cs" />
+    <Compile Include="Assets\KinectScripts\BackgroundColorImage.cs" />
+    <Compile Include="Assets\KinectScripts\BackgroundDepthImage.cs" />
     <Compile Include="Assets\KinectScripts\BackgroundRemovalManager.cs" />
     <Compile Include="Assets\KinectScripts\BodySlicer.cs" />
     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
@@ -65,13 +67,17 @@
     <Compile Include="Assets\KinectScripts\FacetrackingManager.cs" />
     <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
     <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\JointVelocitiesFilter.cs" />
+    <Compile Include="Assets\KinectScripts\ForegroundBlender.cs" />
     <Compile Include="Assets\KinectScripts\InteractionInputModule.cs" />
     <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
     <Compile Include="Assets\KinectScripts\Interfaces\DepthSensorInterface.cs" />
     <Compile Include="Assets\KinectScripts\Interfaces\DummyK2Interface.cs" />
     <Compile Include="Assets\KinectScripts\Interfaces\Kinect1Interface.cs" />
     <Compile Include="Assets\KinectScripts\Interfaces\Kinect2Interface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\Kinect2UwpInterface.cs" />
     <Compile Include="Assets\KinectScripts\Interfaces\OpenNI2Interface.cs" />
+    <Compile Include="Assets\KinectScripts\KinectDataClient.cs" />
     <Compile Include="Assets\KinectScripts\KinectDataServer.cs" />
     <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
     <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
@@ -93,6 +99,7 @@
     <Compile Include="Assets\KinectScripts\Samples\MouseControl.cs" />
     <Compile Include="Assets\KinectScripts\Samples\PointCloudView.cs" />
     <Compile Include="Assets\KinectScripts\Samples\RaiseHandListener.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SequentialGestureListener.cs" />
     <Compile Include="Assets\KinectScripts\Samples\SimpleBackgroundRemoval.cs" />
     <Compile Include="Assets\KinectScripts\Samples\SimpleGestureListener.cs" />
     <Compile Include="Assets\KinectScripts\Samples\SimpleInteractionListener.cs" />
@@ -100,6 +107,7 @@
     <Compile Include="Assets\KinectScripts\Samples\SimpleVisualGestureListener.cs" />
     <Compile Include="Assets\KinectScripts\SpeechErrorHandler.cs" />
     <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
+    <Compile Include="Assets\KinectScripts\Utilities\AsyncTask.cs" />
     <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -211,6 +219,7 @@
     <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Water\TBS_Water.cs" />
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\Resources\Materials\BlurShader.shader" />
+    <None Include="Assets\Resources\MedianShader.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
@@ -228,6 +237,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+    <None Include="Assets\Resources\ForegroundBlendShader.shader" />
     <None Include="Assets\Resources\Materials\BlurShader2.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
@@ -236,7 +246,10 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\StreamingAssets\JSONData\Exercises\test.txt" />
+    <None Include="Assets\Resources\Color2DepthShaderInv.shader" />
     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\Plugins\UWP\Attribution.txt" />
+    <None Include="Assets\Resources\CoordMapper.compute" />
     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
@@ -258,6 +271,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\Resources\Materials\BlurShader5.shader" />
+    <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
     <None Include="Assets\Resources\Materials\Color2BodyShader.shader" />
@@ -285,10 +299,10 @@
       <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>E:/Masterthesis/Unity Projects/test/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/Masterthesis/Unity Projects/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>E:/Masterthesis/Unity Projects/test/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

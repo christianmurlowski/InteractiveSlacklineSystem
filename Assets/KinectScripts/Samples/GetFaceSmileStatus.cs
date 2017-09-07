@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if (UNITY_STANDALONE_WIN)
+using UnityEngine;
 using System.Collections;
 
 public class GetFaceSmileStatus : MonoBehaviour 
@@ -58,3 +59,4 @@ public class GetFaceSmileStatus : MonoBehaviour
 	}
 
 }
+#endif

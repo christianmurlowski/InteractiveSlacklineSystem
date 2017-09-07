@@ -5,6 +5,9 @@ using System.Collections;
 
 public class JointOrientationView : MonoBehaviour 
 {
+	[Tooltip("Index of the player, tracked by this component. 0 means the 1st player, 1 - the 2nd one, 2 - the 3rd one, etc.")]
+	public int playerIndex = 0;
+
 	[Tooltip("The Kinect joint we want to track.")]
 	public KinectInterop.JointType trackedJoint = KinectInterop.JointType.SpineBase;
 
@@ -34,9 +37,9 @@ public class JointOrientationView : MonoBehaviour
 		{
 			int iJointIndex = (int)trackedJoint;
 
-			if(manager.IsUserDetected())
+			if(manager.IsUserDetected(playerIndex))
 			{
-				long userId = manager.GetPrimaryUserID();
+				long userId = manager.GetUserIdByIndex(playerIndex);
 				
 				if(manager.IsJointTracked(userId, iJointIndex))
 				{

@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Custom/BlurShader" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
@@ -27,7 +25,7 @@ Shader "Custom/BlurShader" {
 	v2f vert (appdata_img v)
 	{
 		v2f o;
-		o.pos = UnityObjectToClipPos (v.vertex);
+		o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
 		o.uv = v.texcoord.xy;
 		return o;
 	}
@@ -35,7 +33,7 @@ Shader "Custom/BlurShader" {
 	v2f_off vertOff (appdata_img v)
 	{
 		v2f_off o;
-		o.pos = UnityObjectToClipPos (v.vertex);
+		o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
 
 		float2 uv = v.texcoord.xy;
 		float2 up = float2(0.0, _MainTex_TexelSize.y) * _Amount;

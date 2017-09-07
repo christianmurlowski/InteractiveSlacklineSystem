@@ -1,3 +1,4 @@
+#if (UNITY_STANDALONE_WIN)
 using UnityEngine;
 using System.Collections;
 using Windows.Kinect;
@@ -63,12 +64,12 @@ public class Kinect2Interface : DepthSensorInterface
 	[DllImport("Kinect2SpeechWrapper", EntryPoint = "LoadSpeechGrammar")]
 	private static extern int LoadSpeechGrammarNative([MarshalAs(UnmanagedType.LPWStr)]string sFileName, short iNewLangCode, bool bDynamic);
 
+	[DllImport("Kinect2SpeechWrapper", EntryPoint = "AddSpeechGrammar")]
+	private static extern int AddSpeechGrammarNative([MarshalAs(UnmanagedType.LPWStr)]string sFileName, short iNewLangCode, bool bDynamic);
+
 	[DllImport("Kinect2SpeechWrapper", EntryPoint = "AddGrammarPhrase")]
 	private static extern int AddGrammarPhraseNative([MarshalAs(UnmanagedType.LPWStr)]string sFromRule, [MarshalAs(UnmanagedType.LPWStr)]string sToRule, [MarshalAs(UnmanagedType.LPWStr)]string sPhrase, bool bClearRule, bool bCommitGrammar);
 
-	[DllImport("Kinect2SpeechWrapper", EntryPoint = "AddSpeechGrammar")]
-	private static extern int AddSpeechGrammarNative([MarshalAs(UnmanagedType.LPWStr)]string sFileName, short iNewLangCode, bool bDynamic);
-	
 	[DllImport("Kinect2SpeechWrapper", EntryPoint = "AddPhraseToGrammar")]
 	private static extern int AddPhraseToGrammarNative([MarshalAs(UnmanagedType.LPWStr)]string sGrammarName, [MarshalAs(UnmanagedType.LPWStr)]string sFromRule, [MarshalAs(UnmanagedType.LPWStr)]string sToRule, [MarshalAs(UnmanagedType.LPWStr)]string sPhrase, bool bClearRule, bool bCommitGrammar);
 	
@@ -579,13 +580,6 @@ public class Kinect2Interface : DepthSensorInterface
 						// cache the body joints (following the advice of Brian Chasalow)
 						Dictionary<Windows.Kinect.JointType, Windows.Kinect.Joint> bodyJoints = body.Joints;
 
-						// calculate the inter-frame time
-						float frameTime = 0f;
-						if(bodyFrame.bTurnAnalisys && bodyFrame.liPreviousTime > 0)
-						{
-							frameTime = (float)(bodyFrame.liRelativeTime - bodyFrame.liPreviousTime) / 100000000000;
-						}
-
 						for(int j = 0; j < sensorData.jointCount; j++)
 						{
 							Windows.Kinect.Joint joint = bodyJoints[(Windows.Kinect.JointType)j];
@@ -614,23 +608,6 @@ public class Kinect2Interface : DepthSensorInterface
 							bodyFrame.bodyData[i].joint[j] = jointData;
 						}
 
-						if(bodyFrame.bTurnAnalisys && bodyFrame.liPreviousTime > 0)
-						{
-							for(int j = 0; j < sensorData.jointCount; j++)
-							{
-								KinectInterop.JointData jointData = bodyFrame.bodyData[i].joint[j];
-
-								int p = (int)GetParentJoint((KinectInterop.JointType)j);
-								Vector3 parentPos = bodyFrame.bodyData[i].joint[p].position;
-								
-								jointData.posRel = jointData.position - parentPos;
-								jointData.posDrv = frameTime > 0f ? (jointData.position - jointData.posPrev) / frameTime : Vector3.zero;
-								jointData.posPrev = jointData.position;
-
-								bodyFrame.bodyData[i].joint[j] = jointData;
-							}
-						}
-						
 						// tranfer hand states
 						bodyFrame.bodyData[i].leftHandState = (KinectInterop.HandState)body.HandLeftState;
 						bodyFrame.bodyData[i].leftHandConfidence = (KinectInterop.TrackingConfidence)body.HandLeftConfidence;
@@ -783,7 +760,7 @@ public class Kinect2Interface : DepthSensorInterface
 				// face = Off
 				if(bodyData.joint[(int)KinectInterop.JointType.Head].posRel.x <= -0.02f)
 				{
-					bBodyTurned = (bodyData.joint[(int)KinectInterop.JointType.Neck].posDrv.x > 0.08f);
+					bBodyTurned = (bodyData.joint[(int)KinectInterop.JointType.Neck].posVel.x > 0.08f);
 				}
 				else
 				{
@@ -1768,3 +1745,4 @@ public class Kinect2Interface : DepthSensorInterface
 	}
 	
 }
+#endif

@@ -2,9 +2,12 @@
 using System.Collections;
 using System.IO;
 
+/// <summary>
+/// Kinect recorder and player is the component that manages recording and replaying of Kinect body-data files.
+/// </summary>
 public class KinectRecorderPlayer : MonoBehaviour 
 {
-	[Tooltip("Path to the file used to save or play the recorded data.")]
+	[Tooltip("Path to the file used to record or replay the recorded data.")]
 	public string filePath = "BodyRecording.txt";
 
 	[Tooltip("GUI-Text to display information messages.")]

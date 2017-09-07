@@ -4,6 +4,9 @@ using System.IO;
 
 public class GetJointPositionDemo : MonoBehaviour 
 {
+	[Tooltip("Index of the player, tracked by this component. 0 means the 1st player, 1 - the 2nd one, 2 - the 3rd one, etc.")]
+	public int playerIndex = 0;
+
 	[Tooltip("The Kinect joint we want to track.")]
 	public KinectInterop.JointType joint = KinectInterop.JointType.HandRight;
 
@@ -60,9 +63,9 @@ public class GetJointPositionDemo : MonoBehaviour
 
 		if(manager && manager.IsInitialized())
 		{
-			if(manager.IsUserDetected())
+			if(manager.IsUserDetected(playerIndex))
 			{
-				long userId = manager.GetPrimaryUserID();
+				long userId = manager.GetUserIdByIndex(playerIndex);
 
 				if(manager.IsJointTracked(userId, (int)joint))
 				{

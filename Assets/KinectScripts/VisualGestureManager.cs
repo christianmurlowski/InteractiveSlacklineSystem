@@ -2,11 +2,12 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Kinect.VisualGestureBuilder;
-using Windows.Kinect;
 using System.IO;
 using System.Text;
-
+#if (UNITY_STANDALONE_WIN)
+using Microsoft.Kinect.VisualGestureBuilder;
+using Windows.Kinect;
+#endif
 
 /// <summary>
 /// This interface needs to be implemented by all visual gesture listeners
@@ -34,7 +35,7 @@ public interface VisualGestureListenerInterface
 }
 
 /// <summary>
-/// Visual gesture data structure.
+/// Visual gesture data container.
 /// </summary>
 public struct VisualGestureData
 {
@@ -52,7 +53,7 @@ public struct VisualGestureData
 }
 
 /// <summary>
-/// Visual gesture manager is the component dealing with VGB gestures.
+/// Visual gesture manager is the component that manages the visual (VGB) gestures.
 /// </summary>
 public class VisualGestureManager : MonoBehaviour 
 {
@@ -62,13 +63,13 @@ public class VisualGestureManager : MonoBehaviour
 	[Tooltip("File name of the VG database, used by the visual gesture recognizer. The file will be copied from Resources, if does not exist.")]
 	public string gestureDatabase = string.Empty;
 
-	[Tooltip("List of the tracked visual gestures. If the list is empty, all gestures found in the database will be tracked.")]
+	[Tooltip("List of the tracked visual gestures. If left empty, all gestures found in the database will be tracked.")]
 	public List<string> gestureNames = new List<string>();
 
 	[Tooltip("Minimum confidence required, to consider discrete gestures as completed. Confidence varies between 0.0 and 1.0.")]
 	public float minConfidence = 0.1f;
 
-	[Tooltip("List of the utilized visual gesture listeners. They must implement VisualGestureListenerInterface. If the list is empty, the available gesture listeners will be detected at start up.")]
+	[Tooltip("List of the visual gesture listeners in the scene. If the list is empty, the available gesture listeners will be detected at the scene start up.")]
 	public List<MonoBehaviour> visualGestureListeners;
 	
 	[Tooltip("GUI-Text to display the VG-manager debug messages.")]
@@ -81,11 +82,15 @@ public class VisualGestureManager : MonoBehaviour
 	// gesture data holders for each tracked gesture
 	private Dictionary<string, VisualGestureData> gestureData = new Dictionary<string, VisualGestureData>();
 
+#if (UNITY_STANDALONE_WIN)
+
 	// gesture frame source which should be tied to a body tracking ID
 	private VisualGestureBuilderFrameSource vgbFrameSource = null;
 	
 	// gesture frame reader which will handle gesture events
 	private VisualGestureBuilderFrameReader vgbFrameReader = null;
+
+#endif
 	
 	// primary sensor data structure
 	//private KinectInterop.SensorData sensorData = null;
@@ -403,12 +408,13 @@ public class VisualGestureManager : MonoBehaviour
 	}
 
 	//----------------------------------- end of public functions --------------------------------------//
-	
 
 	void Awake()
 	{
 		instance = this;
 	}
+
+#if (UNITY_STANDALONE_WIN)
 
 	void Start() 
 	{
@@ -794,4 +800,5 @@ public class VisualGestureManager : MonoBehaviour
 		return true;
 	}
 	
+	#endif
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// Sets the color background image in portrait mode. The aspect ratio of the game view should be set to 9:16 for Kinect v2 or 3:4 for Kinect v1.
+/// Sets the color background image in portrait mode. The aspect ratio of the game view should be set to 9:16 for Kinect-v2 or 3:4 for Kinect-v1.
 /// </summary>
 public class PortraitBackground : MonoBehaviour 
 {

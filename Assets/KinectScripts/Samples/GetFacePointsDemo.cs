@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if (UNITY_STANDALONE_WIN)
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Kinect.Face;
@@ -118,3 +119,4 @@ public class GetFacePointsDemo : MonoBehaviour
 
 
 }
+#endif

@@ -24,6 +24,9 @@ public class PointmanController : MonoBehaviour
 	[Tooltip("Whether the z-movement is inverted or not.")]
 	public bool invertedZMovement = false;
 	
+	[Tooltip("Camera that may be used to overlay the mesh over the color background.")]
+	public Camera foregroundCamera;
+
 	public GameObject bodyJoint;
 	public GameObject skeletonLine;
 
@@ -118,7 +121,7 @@ public class PointmanController : MonoBehaviour
 		}
 		
 		// set the position in space
-		Vector3 posPointMan = manager.GetUserPosition(userID);
+		Vector3 posPointMan = GetJointPosition(manager, userID, (int)KinectInterop.JointType.SpineBase);
 
 		Vector3 posPointManWorld = new Vector3(posPointMan.x, posPointMan.y, invertedZMovement ? -posPointMan.z : posPointMan.z) + originPosition;
 		Vector3 posPointManHips = new Vector3(posPointMan.x, posPointMan.y, !mirroredMovement ? -posPointMan.z : posPointMan.z) + originPosition;
@@ -135,11 +138,11 @@ public class PointmanController : MonoBehaviour
 			float fFootPosY = 0f;
 			if(manager.IsJointTracked(userID, (int)KinectInterop.JointType.FootLeft))
 			{
-				fFootPosY = manager.GetJointPosition(userID, (int)KinectInterop.JointType.FootLeft).y;
+				fFootPosY = GetJointPosition(manager, userID, (int)KinectInterop.JointType.FootLeft).y;
 			}
 			else if(manager.IsJointTracked(userID, (int)KinectInterop.JointType.FootRight))
 			{
-				fFootPosY = manager.GetJointPosition(userID, (int)KinectInterop.JointType.FootRight).y;
+				fFootPosY = GetJointPosition(manager, userID, (int)KinectInterop.JointType.FootRight).y;
 			}
 			
 			initialPosOffset.y = posPointManWorld.y - (fFootPosY + originPosition.y);
@@ -154,7 +157,7 @@ public class PointmanController : MonoBehaviour
 
 		if(manager.IsJointTracked(userID, (int)KinectInterop.JointType.Head))
 		{
-//			float fHeadPosY = manager.GetJointPosition(userID, (int)KinectInterop.JointType.Head).y + originPosition.y;
+//			float fHeadPosY = GetJointPosition(manager, userID, (int)KinectInterop.JointType.Head).y + originPosition.y;
 //			float halfHeight = Mathf.Abs(fHeadPosY - posPointManWorld.y);
 //
 //			CapsuleCollider collider = GetComponent<CapsuleCollider>();
@@ -189,8 +192,19 @@ public class PointmanController : MonoBehaviour
 				{
 					bones[i].gameObject.SetActive(true);
 					
-					Vector3 posJoint = manager.GetJointPosition(userID, joint);
+					Vector3 posJoint = GetJointPosition(manager, userID, joint);
 					posJoint.z = !mirroredMovement ? -posJoint.z : posJoint.z;
+
+					if (posJoint == Vector3.zero) 
+					{
+						bones[i].gameObject.SetActive(false);
+						if(lines[i] != null)
+						{
+							lines[i].gameObject.SetActive(false);
+						}
+
+						continue;
+					}
 
 					posJoint += originPosition;
 					posJoint -= posPointManHips;
@@ -218,17 +232,23 @@ public class PointmanController : MonoBehaviour
 					{
 						int jParent = (int)manager.GetParentJoint((KinectInterop.JointType)joint);
 
-						if(manager.IsJointTracked(userID, jParent))
+						if (manager.IsJointTracked (userID, jParent)) 
 						{
-							lines[i].gameObject.SetActive(true);
+							lines[i].gameObject.SetActive (true);
 
-							Vector3 posJoint2 = manager.GetJointPosition(userID, jParent);
+							Vector3 posJoint2 = GetJointPosition (manager, userID, jParent);
 							posJoint2.z = !mirroredMovement ? -posJoint2.z : posJoint2.z;
+
+							if (posJoint2 == Vector3.zero) 
+							{
+								lines[i].gameObject.SetActive (false);
+								continue;
+							}
 
 							posJoint2 += originPosition;
 							posJoint2 -= posPointManHips;
 
-							if(mirroredMovement)
+							if (mirroredMovement) 
 							{
 								posJoint2.x = -posJoint2.x;
 								posJoint2.z = -posJoint2.z;
@@ -236,11 +256,15 @@ public class PointmanController : MonoBehaviour
 
 							Vector3 dirFromParent = posJoint - posJoint2;
 
-							lines[i].transform.localPosition = posJoint2 + dirFromParent / 2f;
-							lines[i].transform.up = transform.rotation * dirFromParent.normalized;
+							lines [i].transform.localPosition = posJoint2 + dirFromParent / 2f;
+							lines [i].transform.up = transform.rotation * dirFromParent.normalized;
 
-							Vector3 lineScale = lines[i].transform.localScale;
-							lines[i].transform.localScale = new Vector3(lineScale.x, dirFromParent.magnitude / 2f, lineScale.z);
+							Vector3 lineScale = lines [i].transform.localScale;
+							lines [i].transform.localScale = new Vector3 (lineScale.x, dirFromParent.magnitude / 2f, lineScale.z);
+						} 
+						else 
+						{
+							lines[i].gameObject.SetActive(false);
 						}
 					}
 
@@ -258,6 +282,28 @@ public class PointmanController : MonoBehaviour
 					}
 				}
 			}	
+		}
+	}
+
+
+	// returns the world- or camera-overlay joint position 
+	private Vector3 GetJointPosition(KinectManager manager, long userID, int iJoint)
+	{
+		if (foregroundCamera) 
+		{
+			Rect backgroundRect = foregroundCamera.pixelRect;
+			PortraitBackground portraitBack = PortraitBackground.Instance;
+
+			if (portraitBack && portraitBack.enabled) 
+			{
+				backgroundRect = portraitBack.GetBackgroundRect ();
+			}
+
+			return manager.GetJointPosColorOverlay(userID, iJoint, foregroundCamera, backgroundRect);
+		} 
+		else
+		{
+			return manager.GetJointPosition(userID, iJoint);
 		}
 	}
 

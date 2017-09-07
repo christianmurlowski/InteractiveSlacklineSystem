@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if (UNITY_STANDALONE_WIN)
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -89,3 +90,4 @@ public class K2SensorChecker : MonoBehaviour
 	}
 	
 }
+#endif

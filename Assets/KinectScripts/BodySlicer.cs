@@ -1,5 +1,5 @@
 using UnityEngine;
-using Windows.Kinect;
+//using Windows.Kinect;
 
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +21,9 @@ public enum BodySlice
 	COUNT = 6
 }
 
+/// <summary>
+/// Data structure used by the body slicer.
+/// </summary>
 public struct BodySliceData
 {
 	public bool isSliceValid;
@@ -41,6 +44,9 @@ public struct BodySliceData
 }
 
 
+/// <summary>
+/// Body slicer is component that estimates the user height, as well as several other body measures, from the depth image data.
+/// </summary>
 public class BodySlicer : MonoBehaviour
 {
 	[Tooltip("Index of the player, tracked by this component. 0 means the 1st player, 1 - the 2nd one, 2 - the 3rd one, etc.")]
@@ -64,14 +70,11 @@ public class BodySlicer : MonoBehaviour
 //	// background image texture, if any
 //	public GUITexture bgImage;
 
-	//Is Kinect initialized and user calibrated?
-	private bool kinectConnected = false;
-
 	private long calibratedUserId;
 	private byte userBodyIndex;
 
 
-	// The singleton instance of KinectController
+	// The singleton instance of BodySlicer
 	private static BodySlicer instance = null;
 	private KinectManager manager;
 	private KinectInterop.SensorData sensorData;
@@ -174,13 +177,12 @@ public class BodySlicer : MonoBehaviour
 	void Start()
 	{
 		manager = KinectManager.Instance;
-		kinectConnected = manager ? manager.IsInitialized() : false;
-		sensorData = manager.GetSensorData();
+		sensorData = manager ? manager.GetSensorData() : null;
 	}
 
 	void Update()
 	{
-		if(!manager || !kinectConnected)
+		if(!manager || !manager.IsInitialized())
 			return;
 
 		// get required player
@@ -254,7 +256,7 @@ public class BodySlicer : MonoBehaviour
 			lastDepthFrameTime = sensorData.lastDepthFrameTime;
 			bSliceSuccess = true;
 
-			Vector2 pointSpineBase = manager.MapSpacePointToDepthCoords(manager.GetJointKinectPosition(userId, (int)JointType.SpineBase));
+			Vector2 pointSpineBase = manager.MapSpacePointToDepthCoords(manager.GetJointKinectPosition(userId, (int)KinectInterop.JointType.SpineBase));
 
 			if (estimateBodyHeight) 
 			{
@@ -266,10 +268,10 @@ public class BodySlicer : MonoBehaviour
 				bodySlices[(int)BodySlice.WIDTH] = GetUserWidthParams(pointSpineBase);
 			}
 
-			if(estimateBodySlices && manager.IsJointTracked(userId, (int)JointType.SpineBase) && manager.IsJointTracked(userId, (int)JointType.Neck))
+			if(estimateBodySlices && manager.IsJointTracked(userId, (int)KinectInterop.JointType.SpineBase) && manager.IsJointTracked(userId, (int)KinectInterop.JointType.Neck))
 			{
 				Vector2 point1 = pointSpineBase;
-				Vector2 point2 = manager.MapSpacePointToDepthCoords(manager.GetJointKinectPosition(userId, (int)JointType.Neck));
+				Vector2 point2 = manager.MapSpacePointToDepthCoords(manager.GetJointKinectPosition(userId, (int)KinectInterop.JointType.Neck));
 				Vector2 sliceDir = (point2 - point1) / 4f;
 
 				Vector2 vSlicePoint = point1;

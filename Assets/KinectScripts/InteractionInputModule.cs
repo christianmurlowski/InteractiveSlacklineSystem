@@ -1,21 +1,52 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.EventSystems;
 
-
+/// <summary>
+/// Interaction IM is the input module that may be used as component of the Unity-UI EventSystem.
+/// </summary>
 public class InteractionInputModule : PointerInputModule, InteractionListenerInterface
 {
-	private InteractionManager m_IntManager;
-	private bool m_isLeftHandDrag = false;
-	private Vector3 m_screenNormalPos = Vector3.zero;
+	[Tooltip("Index of the player, tracked by this component. 0 means the 1st player, 1 - the 2nd one, 2 - the 3rd one, etc.")]
+	public int playerIndex = 0;
+
+	[Tooltip("Whether to process the hand cursor movements (i.e for hovering ui-elements), or not.")]
+	public bool processCursorMovement = false;
+
+
+	//private bool m_isLeftHand = false;
+	private bool m_leftHandGrip = false;
+	private bool m_rightHandGrip = false;
+	private Vector3 m_handCursorPos = Vector3.zero;
+	private Vector2 m_lastCursorPos = Vector2.zero;
 
 	private PointerEventData.FramePressState m_framePressState = PointerEventData.FramePressState.NotChanged;
 	private readonly MouseState m_MouseState = new MouseState();
 
+	// interaction manager for the same player
+	private InteractionManager intManager;
+
+	// The single instance of InteractionInputModule
+	private static InteractionInputModule instance;
+
+
+	/// <summary>
+	/// Gets the single InteractionInputModule instance.
+	/// </summary>
+	/// <value>The InteractionInputModule instance.</value>
+	public static InteractionInputModule Instance
+	{
+		get
+		{
+			return instance;
+		}
+	}
 
 	protected InteractionInputModule()
     {
+		instance = this;
 	}
 
 
@@ -40,52 +71,117 @@ public class InteractionInputModule : PointerInputModule, InteractionListenerInt
         if (!base.ShouldActivateModule())
             return false;
 
-        bool shouldActivate = m_ForceModuleActive;
-	    shouldActivate |= (InteractionManager.Instance != null && InteractionManager.Instance.IsInteractionInited());
+		if (intManager == null) 
+		{
+			intManager = GetInteractionManager();
+		}
+
+		//bool shouldActivate |= (InteractionManager.Instance != null && InteractionManager.Instance.IsInteractionInited());
+		bool shouldActivate = m_ForceModuleActive || (m_framePressState != PointerEventData.FramePressState.NotChanged);
+
+		if (!shouldActivate && processCursorMovement && intManager &&
+			(intManager.IsLeftHandPrimary() || intManager.IsRightHandPrimary())) 
+		{
+			bool bIsLeftHand = intManager.IsLeftHandPrimary();
+
+			// check for cursor pos change
+			Vector2 handCursorPos = bIsLeftHand ? intManager.GetLeftHandScreenPos() : intManager.GetRightHandScreenPos();
+
+			if (handCursorPos != m_lastCursorPos) 
+			{
+				m_lastCursorPos = handCursorPos;
+				shouldActivate = true;
+			}
+		}
 
         return shouldActivate;
     }
 
-    public override void ActivateModule()
-    {
-        base.ActivateModule();
-	    
-	    m_IntManager = InteractionManager.Instance;
-		m_isLeftHandDrag = m_IntManager.IsLeftHandPrimary();
+//    public override void ActivateModule()
+//    {
+//        base.ActivateModule();
+//	    
+//        var toSelect = eventSystem.currentSelectedGameObject;
+//        if (toSelect == null)
+//            toSelect = eventSystem.firstSelectedGameObject;
+//
+//        eventSystem.SetSelectedGameObject(toSelect, GetBaseEventData());
+//    }
 
-        var toSelect = eventSystem.currentSelectedGameObject;
-        if (toSelect == null)
-            toSelect = eventSystem.firstSelectedGameObject;
-
-        eventSystem.SetSelectedGameObject(toSelect, GetBaseEventData());
-    }
-
-    public override void DeactivateModule()
-    {
-        base.DeactivateModule();
-        ClearSelection();
-    }
+//    public override void DeactivateModule()
+//    {
+//        base.DeactivateModule();
+//        ClearSelection();
+//    }
 
     public override void Process()
     {
+		if (intManager == null) 
+		{
+			intManager = GetInteractionManager();
+		}
+
+		CheckGrippedCursorPosition();
         ProcessInteractionEvent();
     }
 
+	private InteractionManager GetInteractionManager()
+	{
+		// find the proper interaction manager
+		MonoBehaviour[] monoScripts = FindObjectsOfType(typeof(MonoBehaviour)) as MonoBehaviour[];
+
+		foreach(MonoBehaviour monoScript in monoScripts)
+		{
+			if((monoScript is InteractionManager) && monoScript.enabled)
+			{
+				InteractionManager manager = (InteractionManager)monoScript;
+
+				if (manager.playerIndex == playerIndex) 
+				{
+					return manager;
+				}
+			}
+		}
+
+		// not found
+		return null;
+	}
+
+	private void CheckGrippedCursorPosition()
+	{
+		if (intManager) 
+		{
+			bool bIsLeftHand = intManager.IsLeftHandPrimary();
+
+			// check for gripped hand
+			bool bHandGrip = bIsLeftHand ? m_leftHandGrip : m_rightHandGrip;
+
+			// check for cursor pos change
+			Vector2 handCursorPos = bIsLeftHand ? intManager.GetLeftHandScreenPos() : intManager.GetRightHandScreenPos();
+
+			if (bHandGrip && handCursorPos != (Vector2)m_handCursorPos) 
+			{
+				// emulate new press
+				m_framePressState = PointerEventData.FramePressState.Pressed;
+				m_handCursorPos = handCursorPos;
+			}
+			else if(processCursorMovement)
+			{
+				m_handCursorPos = handCursorPos;
+			}
+		}
+	}
+
 	protected void ProcessInteractionEvent()
     {
-		ProcessInteractionEvent(0);
-    }
-
-	protected void ProcessInteractionEvent(int id)
-    {
 		// Emulate mouse data
-        var mouseData = GetMousePointerEventData(id);
-        var leftButtonData = mouseData.GetButtonState(PointerEventData.InputButton.Left).eventData;
+		var mouseData = GetMousePointerEventData(0);
+		var leftButtonData = mouseData.GetButtonState(PointerEventData.InputButton.Left).eventData;
 
-        // Process the interaction data
+		// Process the interaction data
 		ProcessHandPressRelease(leftButtonData);
-        ProcessMove(leftButtonData.buttonData);
-        ProcessDrag(leftButtonData.buttonData);
+		ProcessMove(leftButtonData.buttonData);
+		ProcessDrag(leftButtonData.buttonData);
     }
 
 	protected override MouseState GetMousePointerEventData(int id)
@@ -96,8 +192,7 @@ public class InteractionInputModule : PointerInputModule, InteractionListenerInt
 
 		leftData.Reset();
 
-		m_screenNormalPos = m_isLeftHandDrag ? m_IntManager.GetLeftHandScreenPos() : m_IntManager.GetRightHandScreenPos();
-		Vector2 handPos = new Vector2(m_screenNormalPos.x * Screen.width, m_screenNormalPos.y * Screen.height);
+		Vector2 handPos = new Vector2(m_handCursorPos.x * Screen.width, m_handCursorPos.y * Screen.height);
 
 		if (created) 
 		{
@@ -224,27 +319,63 @@ public class InteractionInputModule : PointerInputModule, InteractionListenerInt
 
 	public void HandGripDetected(long userId, int userIndex, bool isRightHand, bool isHandInteracting, Vector3 handScreenPos)
 	{
-		if (!isHandInteracting)
+		if (userIndex != playerIndex || !isHandInteracting)
 			return;
 
+		//Debug.Log("HandGripDetected");
+
 		m_framePressState = PointerEventData.FramePressState.Pressed;
-		m_isLeftHandDrag = !isRightHand;
-		m_screenNormalPos = handScreenPos;
+		//m_isLeftHand = !isRightHand;
+		m_handCursorPos = handScreenPos;
+
+		if (!isRightHand)
+			m_leftHandGrip = true;
+		else
+			m_rightHandGrip = true;
 	}
 
 	public void HandReleaseDetected(long userId, int userIndex, bool isRightHand, bool isHandInteracting, Vector3 handScreenPos)
 	{
-		if (!isHandInteracting)
+		if (userIndex != playerIndex || !isHandInteracting)
 			return;
 
+		//Debug.Log("HandReleaseDetected");
+
 		m_framePressState = PointerEventData.FramePressState.Released;
-		m_isLeftHandDrag = !isRightHand;
-		m_screenNormalPos = handScreenPos;
+		//m_isLeftHand = !isRightHand;
+		m_handCursorPos = handScreenPos;
+
+		if (!isRightHand)
+			m_leftHandGrip = false;
+		else
+			m_rightHandGrip = false;
 	}
 
 	public bool HandClickDetected(long userId, int userIndex, bool isRightHand, Vector3 handScreenPos)
 	{
+		if (userIndex != playerIndex)
+			return false;
+
+		//Debug.Log("HandClickDetected");
+
+		StartCoroutine(EmulateMouseClick(isRightHand, handScreenPos));
 		return true;
+	}
+
+
+	private IEnumerator EmulateMouseClick(bool isRightHand, Vector3 handScreenPos)
+	{
+		m_framePressState = PointerEventData.FramePressState.Pressed;
+		//m_isLeftHand = !isRightHand;
+		m_handCursorPos = handScreenPos;
+
+		yield return new WaitForSeconds(0.2f);
+
+		m_framePressState = PointerEventData.FramePressState.Released;
+		//m_isLeftHand = !isRightHand;
+		m_handCursorPos = handScreenPos;
+
+		yield return null;
 	}
 
 

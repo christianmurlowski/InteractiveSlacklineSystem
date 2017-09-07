@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if (UNITY_STANDALONE_WIN)
+using System;
 using System.Runtime.InteropServices;
 
 namespace Helper
@@ -48,3 +49,4 @@ namespace Helper
         }
     }
 }
+#endif

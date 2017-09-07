@@ -288,8 +288,11 @@ MonoBehaviour:
   ignoreInferredJoints: 0
   ignoreZCoordinates: 0
   lateUpdateAvatars: 0
+  skipRemoteAvatars: 0
   smoothing: 1
   useBoneOrientationConstraints: 0
+  estimateJointVelocities: 0
+  velocitySmoothing: 2
   allowTurnArounds: 0
   allowedHandRotations: 1
   waitTimeBeforeRemove: 1

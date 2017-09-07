@@ -4,10 +4,36 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// This interface needs to be implemented by the Kinect gesture managers, like KinectGestures-class itself
+/// </summary>
+public interface GestureManagerInterface
+{
+	/// <summary>
+	/// Gets the list of gesture joint indexes.
+	/// </summary>
+	/// <returns>The needed joint indexes.</returns>
+	/// <param name="manager">The KinectManager instance</param>
+	int[] GetNeededJointIndexes (KinectManager manager);
+
+
+	/// <summary>
+	/// Estimate the state and progress of the given gesture.
+	/// </summary>
+	/// <param name="userId">User ID</param>
+	/// <param name="gestureData">Gesture-data structure</param>
+	/// <param name="timestamp">Current time</param>
+	/// <param name="jointsPos">Joints-position array</param>
+	/// <param name="jointsTracked">Joints-tracked array</param>
+	void CheckForGesture (long userId, ref KinectGestures.GestureData gestureData, float timestamp, ref Vector3[] jointsPos, ref bool[] jointsTracked);
+}
+
+
 /// <summary>
 /// KinectGestures is utility class that processes programmatic Kinect gestures
 /// </summary>
-public class KinectGestures : MonoBehaviour
+public class KinectGestures : MonoBehaviour, GestureManagerInterface
 {
 
 	/// <summary>
@@ -64,7 +90,7 @@ public class KinectGestures : MonoBehaviour
 		bool GestureCancelled(long userId, int userIndex, Gestures gesture, 
 		                      KinectInterop.JointType joint);
 	}
-	
+
 
 	/// <summary>
 	/// The gesture types.
@@ -102,6 +128,9 @@ public class KinectGestures : MonoBehaviour
 		KickRight,
 		Run,
 
+        RaisedRightHorizontalLeftHand,   // by Andrzej W
+        RaisedLeftHorizontalRightHand, 
+
 		UserGesture1 = 101,
 		UserGesture2 = 102,
 		UserGesture3 = 103,
@@ -116,7 +145,7 @@ public class KinectGestures : MonoBehaviour
 	
 	
 	/// <summary>
-	/// Gesture data structure.
+	/// Programmatic gesture data container.
 	/// </summary>
 	public struct GestureData
 	{
@@ -309,9 +338,8 @@ public class KinectGestures : MonoBehaviour
 	}
 
 	
-	// estimate the next state and completeness of the gesture
 	/// <summary>
-	/// estimate the state and progress of the given gesture.
+	/// Estimate the state and progress of the given gesture.
 	/// </summary>
 	/// <param name="userId">User ID</param>
 	/// <param name="gestureData">Gesture-data structure</param>
@@ -414,11 +442,11 @@ public class KinectGestures : MonoBehaviour
 				{
 					case 0:  // gesture detection
 						if(jointsTracked[rightHandIndex] && jointsTracked[rightElbowIndex] && jointsTracked[rightShoulderIndex] &&
-					       Mathf.Abs(jointsPos[rightElbowIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.07f
-					       Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
-					   	   jointsTracked[leftHandIndex] && jointsTracked[leftElbowIndex] && jointsTracked[leftShoulderIndex] &&
-					  	   Mathf.Abs(jointsPos[leftElbowIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f &&
-					       Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f)
+                            Mathf.Abs(jointsPos[rightElbowIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.07f
+                            Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
+                            jointsTracked[leftHandIndex] && jointsTracked[leftElbowIndex] && jointsTracked[leftShoulderIndex] &&
+                            Mathf.Abs(jointsPos[leftElbowIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f &&
+                            Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f)
 						{
 							SetGestureJoint(ref gestureData, timestamp, rightHandIndex, jointsPos[rightHandIndex]);
 						}
@@ -426,11 +454,11 @@ public class KinectGestures : MonoBehaviour
 						
 					case 1:  // gesture complete
 						bool isInPose = jointsTracked[rightHandIndex] && jointsTracked[rightElbowIndex] && jointsTracked[rightShoulderIndex] &&
-								Mathf.Abs(jointsPos[rightElbowIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
-							    Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
-							    jointsTracked[leftHandIndex] && jointsTracked[leftElbowIndex] && jointsTracked[leftShoulderIndex] &&
-								Mathf.Abs(jointsPos[leftElbowIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f &&
-							    Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f;
+							Mathf.Abs(jointsPos[rightElbowIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
+							Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.1f &&  // 0.7f
+							jointsTracked[leftHandIndex] && jointsTracked[leftElbowIndex] && jointsTracked[leftShoulderIndex] &&
+							Mathf.Abs(jointsPos[leftElbowIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f &&
+							Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.1f;
 						
 						Vector3 jointPos = jointsPos[gestureData.joint];
 						CheckPoseComplete(ref gestureData, timestamp, jointPos, isInPose, KinectInterop.Constants.PoseCompleteDuration);
@@ -466,6 +494,71 @@ public class KinectGestures : MonoBehaviour
 							(jointsPos[leftHandIndex].y - jointsPos[leftHipIndex].y) < 0.2f &&
 						 	(jointsPos[leftHandIndex].x - jointsPos[leftHipIndex].x) <= -0.4f);
 
+						Vector3 jointPos = jointsPos[gestureData.joint];
+						CheckPoseComplete(ref gestureData, timestamp, jointPos, isInPose, KinectInterop.Constants.PoseCompleteDuration);
+						break;
+				}
+				break;
+
+			// check for raised right hand & horizontal left hand 
+			case Gestures.RaisedRightHorizontalLeftHand:
+				switch(gestureData.state)
+				{
+					case 0:  // gesture detection
+						if( jointsTracked[rightHandIndex] && jointsTracked[rightShoulderIndex] && // check right hand is straight up 
+						   (jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) > 0.5f &&  // ensure right hand is higher than shoulder 
+                           Mathf.Abs(jointsPos[rightHandIndex].z - jointsPos[rightShoulderIndex].z) < 0.35f &&   // ensue hand is vertical straight enough 
+                           Mathf.Abs(jointsPos[rightHandIndex].x - jointsPos[rightShoulderIndex].x) < 0.35f &&   // ensue hand is vertical straight enough                             
+					   	   jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] &&  // check left hand is straight flat 
+					       Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.25f &&       // ensure hand and shoulder are on close height 
+					       (jointsPos[leftHandIndex] - jointsPos[leftShoulderIndex]).sqrMagnitude > 0.25f )  // ensure hand and shoulder are horizontal straight enough 						
+                        {
+                            SetGestureJoint(ref gestureData, timestamp, rightHandIndex, jointsPos[rightHandIndex]);
+                        }
+                        break;
+
+						
+					case 1:  // gesture complete
+						bool isInPose = jointsTracked[rightHandIndex] && jointsTracked[rightShoulderIndex] && // check right hand is straight up 
+						   (jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) > 0.5f &&  // ensure right hand is higher than shoulder 
+                           Mathf.Abs(jointsPos[rightHandIndex].z - jointsPos[rightShoulderIndex].z) < 0.35f &&   // ensue hand is vertical straight enough 
+                           Mathf.Abs(jointsPos[rightHandIndex].x - jointsPos[rightShoulderIndex].x) < 0.35f &&   // ensue hand is vertical straight enough                             
+					   	   jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] &&  // check left hand is straight flat 
+					       Mathf.Abs(jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) < 0.25f &&       // ensure hand and shoulder are on close height 
+					       (jointsPos[leftHandIndex] - jointsPos[leftShoulderIndex]).sqrMagnitude > 0.25f;  // ensure hand and shoulder are horizontal straight enough
+				
+						Vector3 jointPos = jointsPos[gestureData.joint];
+						CheckPoseComplete(ref gestureData, timestamp, jointPos, isInPose, KinectInterop.Constants.PoseCompleteDuration);
+						break;
+				}
+				break;
+				
+			// check for raised left hand & horizontal right hand 
+			case Gestures.RaisedLeftHorizontalRightHand:
+				switch(gestureData.state)
+				{
+					case 0:  // gesture detection
+						if( jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && // check left hand is straight up 
+						   (jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) > 0.5f &&  // ensure left hand is higher than shoulder 
+                           Mathf.Abs(jointsPos[leftHandIndex].z - jointsPos[leftShoulderIndex].z) < 0.35f &&   // ensue hand is vertical straight enough 
+                           Mathf.Abs(jointsPos[leftHandIndex].x - jointsPos[leftShoulderIndex].x) < 0.35f &&   // ensue hand is vertical straight enough                             
+					   	   jointsTracked[rightHandIndex] && jointsTracked[rightShoulderIndex] &&  // check right hand is straight flat 
+					       Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.25f &&       // ensure hand and shoulder are on close height 
+						   (jointsPos[rightHandIndex] - jointsPos[rightShoulderIndex]).sqrMagnitude > 0.25f )  // ensure hand and shoulder are horizontal straight enough 
+						{
+							SetGestureJoint(ref gestureData, timestamp, leftHandIndex, jointsPos[leftHandIndex]);
+						}
+						break;
+						
+					case 1:  // gesture complete
+						bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && // check left hand is straight up 
+					       (jointsPos[leftHandIndex].y - jointsPos[leftShoulderIndex].y) > 0.5f &&  // ensure left hand is higher than shoulder 
+                           Mathf.Abs(jointsPos[leftHandIndex].z - jointsPos[leftShoulderIndex].z) < 0.35f &&   // ensue hand is vertical straight enough 
+                           Mathf.Abs(jointsPos[leftHandIndex].x - jointsPos[leftShoulderIndex].x) < 0.35f &&   // ensue hand is vertical straight enough                             
+					   	   jointsTracked[rightHandIndex] && jointsTracked[rightShoulderIndex] &&  // check right hand is straight flat 
+					       Mathf.Abs(jointsPos[rightHandIndex].y - jointsPos[rightShoulderIndex].y) < 0.25f &&       // ensure hand and shoulder are on close height 
+					       (jointsPos[rightHandIndex] - jointsPos[rightShoulderIndex]).sqrMagnitude > 0.25f;  // ensure hand and shoulder are horizontal straight enough
+				
 						Vector3 jointPos = jointsPos[gestureData.joint];
 						CheckPoseComplete(ref gestureData, timestamp, jointPos, isInPose, KinectInterop.Constants.PoseCompleteDuration);
 						break;

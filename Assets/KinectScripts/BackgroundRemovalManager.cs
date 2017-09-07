@@ -6,14 +6,14 @@ using System.IO;
 
 
 /// <summary>
-/// Background removal manager is the component that deals with Kinect background removal.
+/// Background removal manager is the component that manages Kinect background removal, i.e. cutting out user body silhouettes.
 /// </summary>
 public class BackgroundRemovalManager : MonoBehaviour 
 {
 	[Tooltip("Index of the player, tracked by this component. -1 means all players, 0 - the 1st player only, 1 - the 2nd player only, etc.")]
 	public int playerIndex = -1;
 	
-	[Tooltip("Camera used to display the foreground texture on the screen. Leave empty, if on-screen display of the foreground texture is not required.")]
+	[Tooltip("Camera that may be used to display the foreground texture as GUI texture on the screen.")]
 	public Camera foregroundCamera;
 
 	[Tooltip("Whether the hi-res (color camera resolution) is preferred for the foreground image. Otherwise the depth camera resolution will be used.")]
@@ -22,17 +22,20 @@ public class BackgroundRemovalManager : MonoBehaviour
 	[Tooltip("Whether only the body alpha texture is needed.")]
 	public bool computeBodyTexOnly = false;
 
+	[Tooltip("Whether the color texture will be inverted or not. Leave disabled for silhouettes, enable for background.")]
+	public bool invertAlphaColorMask = false;
+
 	[Tooltip("Color used to paint pixels, where the foreground color data is not available.")]
 	private Color32 defaultColor = new Color32(64, 64, 64, 255);
 
-	[Tooltip("(Advanced) Number of erode iterations used.")]
+	[Tooltip("(Advanced) Number of erode iterations used by the erode/dilate filter.")]
 	[Range(0, 9)]
 	public int erodeIterations = 0; // 3;
 
-	[Tooltip("(Advanced) Number of dilate iterations used.")]
+	[Tooltip("(Advanced) Number of dilate iterations used by the erode/dilate filter.")]
 	[Range(0, 9)]
 	public int dilateIterations = 0; // 3;
-	
+
 	[Tooltip("GUI-Text to display the BR-Manager debug messages.")]
 	public GUIText debugText;
 
@@ -119,8 +122,10 @@ public class BackgroundRemovalManager : MonoBehaviour
 		{
 			if(sensorData.alphaBodyTexture != null)
 				return sensorData.alphaBodyTexture;
+			else if(foregroundTex != null)
+				return foregroundTex;  // fallback for k1
 			else
-				return sensorData.bodyIndexTexture;
+				return sensorData.bodyIndexTexture;  // general fallback (may have different dimensions)
 		}
 
 		return null;
@@ -167,6 +172,24 @@ public class BackgroundRemovalManager : MonoBehaviour
 				throw new Exception(sInterfaceName + ": Background removal is not supported!");
 			}
 			
+			// inverted alpha-body mask to color texture
+			sensorData.invertAlphaColorMask = invertAlphaColorMask;
+
+			if(invertAlphaColorMask &&
+				(sensorData.sensorInterface.GetSensorPlatform() == KinectInterop.DepthSensorPlatform.KinectSDKv1))
+			{
+				// enable the foreground blender if found
+				ForegroundBlender foreBlender = ForegroundBlender.Instance;
+
+				if(foreBlender)
+				{
+					foreBlender.enabled = true;
+
+					// disable the foreground camera, too
+					foregroundCamera = null;
+				}
+			}
+
 			// Initialize the background removal
 			bSuccess = sensorData.sensorInterface.InitBackgroundRemoval(sensorData, colorCameraResolution);
 
