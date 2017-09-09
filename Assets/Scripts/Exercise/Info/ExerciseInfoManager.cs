@@ -22,11 +22,13 @@ public class ExerciseInfoManager : MonoBehaviour
 	private KinectManager _kinectManager;
 	private KinectInterop.JointType _jointFootRight,
 									_jointFootLeft;
-	private float tolerance = 0.1f;
+	private float tolerance = 0.15f;
 	
 	// DEV TESTING
-	public Text footLeftText,
-				footRightText,
+	public Text depthFootLeftText,
+				depthFootRightText,
+				heightFootLeftText,
+				heightFootRightText,
 				inRange;
 	
 	// Use this for initialization
@@ -95,8 +97,10 @@ public class ExerciseInfoManager : MonoBehaviour
 				float jointPosFootLeftDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft).z;
 				float jointPosFootRightDepth = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight).z;			
 				
-				footLeftText.text = jointPosFootLeftDepth.ToString();
-				footRightText.text = jointPosFootRightDepth.ToString();
+				depthFootLeftText.text = "L Depth: " + jointPosFootLeftDepth.ToString();
+				depthFootRightText.text = "R Depth: " + jointPosFootRightDepth.ToString();				
+				heightFootLeftText.text = "L Height: " + jointPosFootLeftHeight.ToString();
+				heightFootRightText.text = "R Height: " + jointPosFootRightHeight.ToString();
 				
 				if (((jointPosFootLeftDepth > jointPosFootRightDepth - tolerance) && (jointPosFootLeftDepth < jointPosFootRightDepth + tolerance) &&
 				    (jointPosFootRightDepth > jointPosFootLeftDepth - tolerance) && (jointPosFootRightDepth < jointPosFootLeftDepth + tolerance)) &&

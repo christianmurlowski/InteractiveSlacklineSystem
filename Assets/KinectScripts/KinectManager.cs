@@ -1394,7 +1394,7 @@ public class KinectManager : MonoBehaviour
 				if(bodyData.joint[(int)KinectInterop.JointType.ShoulderRight].trackingState != KinectInterop.TrackingState.NotTracked &&
 				   bodyData.joint[(int)KinectInterop.JointType.HipLeft].trackingState != KinectInterop.TrackingState.NotTracked)
 				{
-					rightTopFront.x = bodyData.joint[(int)KinectInterop.JointType.ShoulderRight].position.x;
+					rightTopFront.x = bodyData.joint[(int)KinectInterop.JointType.Head].position.x;
 					leftBotBack.x = rightTopFront.x - 2 * (rightTopFront.x - bodyData.joint[(int)KinectInterop.JointType.HipLeft].position.x);
 				}
 				else
@@ -1460,7 +1460,7 @@ public class KinectManager : MonoBehaviour
 				if(bodyData.joint[(int)KinectInterop.JointType.ShoulderLeft].trackingState != KinectInterop.TrackingState.NotTracked &&
 				   bodyData.joint[(int)KinectInterop.JointType.HipRight].trackingState != KinectInterop.TrackingState.NotTracked)
 				{
-					leftBotBack.x = bodyData.joint[(int)KinectInterop.JointType.ShoulderLeft].position.x;
+					leftBotBack.x = bodyData.joint[(int)KinectInterop.JointType.Head].position.x;
 					rightTopFront.x = leftBotBack.x + 2 * (bodyData.joint[(int)KinectInterop.JointType.HipRight].position.x - leftBotBack.x);
 				}
 				else
@@ -2516,7 +2516,7 @@ public class KinectManager : MonoBehaviour
 					float displayWidth = cameraRect.width * displayMapsWidthPercent;
 					float displayHeight = cameraRect.width * displayMapsHeightPercent;
 					
-					usersMapRect = new Rect(cameraRect.width - displayWidth, cameraRect.height, displayWidth, -displayHeight);
+					usersMapRect = new Rect(cameraRect.width/2 - displayWidth/2, cameraRect.height, displayWidth, -displayHeight);
 				}
 		        if (displayUserMapSmall && !smallIsSet)
 				{

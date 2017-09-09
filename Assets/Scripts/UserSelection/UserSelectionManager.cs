@@ -9,25 +9,49 @@ public class UserSelectionManager : MonoBehaviour
 {
 
     public GameObject userSelectionButton,
-                      KinectManager;
+                      KinectManager,
+                      HandCursor;
     
     public Transform spacer;
-    
+    public ScrollRect scrollView;
+    public Scrollbar scrollBar;
     public static UserDataObject currentUserDataObject;
 
+    public Text CursorPositionText;
+
     private KinectManager _kinectManager;
+    private InteractionManager _interactionManager;
+    private KinectInterop.JointType _jointHandRight,
+                                    _jointHandLeft;        
     private string allUsersFilePath = "/StreamingAssets/JSONData/Users/";
 
+    private Image imageHandCursor;
+    
     void Start()
     {
         KinectManager = GameObject.Find("KinectManager");
         _kinectManager = KinectManager.GetComponent<KinectManager>();
         if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
-            
+        _interactionManager = KinectManager.GetComponent<InteractionManager>();
+
+        HandCursor = GameObject.Find("ImageHandCursor");
+        imageHandCursor = HandCursor.GetComponent<Image>();
+		
+        _jointHandRight = KinectInterop.JointType.HandRight;
+        _jointHandLeft = KinectInterop.JointType.HandLeft;
+        
         currentUserDataObject = new UserDataObject();
         LoadAllUsers();
     }
-    
+
+    private void Update()
+    {
+        if (_interactionManager.GetCursorPosition().y > 0.9) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
+        else if (_interactionManager.GetCursorPosition().y < 0.1) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
+
+        CursorPositionText.text = _interactionManager.GetCursorPosition().y.ToString();
+    }
+
     private void LoadAllUsers()
     {
         DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + allUsersFilePath);

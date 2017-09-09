@@ -15,7 +15,7 @@ public class StartingPositionManager : MonoBehaviour
 	private KinectManager _kinectManager;
 	private KinectInterop.JointType _jointFootLeft,
 									_jointFootRight;
-	private float tolerance = 0.1f;
+	private float tolerance = 0.5f;
 	
 	void Start () {
 		
