@@ -164,7 +164,6 @@
     <Compile Include="Assets\Scripts\Data\TipsData.cs" />
     <Compile Include="Assets\Scripts\Data\UserData.cs" />
     <Compile Include="Assets\Scripts\Data\UserDataObject.cs" />
-    <Compile Include="Assets\Scripts\Exercise\Execution\BackButtonScript.cs" />
     <Compile Include="Assets\Scripts\Exercise\Execution\BodyManager.cs" />
     <Compile Include="Assets\Scripts\Exercise\Execution\BodyView.cs" />
     <Compile Include="Assets\Scripts\Exercise\Execution\DurationManager.cs" />

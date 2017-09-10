@@ -173,8 +173,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_bodies = _bodyManager.GetBodies();
 		Debug.Log(_bodyManager + " | " + _bodies);
 		
+		// Initialize gesture detector object
 		_gestureDetectorList = new List<GestureDetector>();
-		
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
 		{
 			_gestureDetectorList.Add(new GestureDetector(_kinectSensor));
@@ -396,7 +396,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 //				}
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
 				
-			Debug.Log(_bothFeetUp +  " | " + _gestureAccuracy + " | " + e.Progress + " | "+ GestureDetected(_gestureAccuracy, 0.7f, 1f) + " | " + GestureDetected(e.Progress, 0.7f, 1f));
+//				Debug.Log(_bothFeetUp +  " | " + _gestureAccuracy + " | " + e.Progress + " | "+ GestureDetected(_gestureAccuracy, 0.7f, 1f) + " | " + GestureDetected(e.Progress, 0.7f, 1f));
 				if (GestureDetected(_gestureAccuracy, 0.7f, 1f) && _bothFeetUp)
 				{					
 					
@@ -619,6 +619,14 @@ public class ExerciseExecutionManager : MonoBehaviour
 			StartCoroutine("StartTracking");
 		}
 	}
+	
+	public void LoadPreviousScene()
+	{
+		StopTracking();
+		DisposeGestures();
+		SceneManager.LoadScene("ExerciseInfo");
+	}
+	
 
 	public void StopTracking()
 	{
@@ -674,6 +682,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	private void LoadSummaryScene()
 	{
+		StopTracking();
 		DisposeGestures();
 //		DisposeBodyManager();
 		SceneManager.LoadScene("ExerciseSummary");
@@ -682,6 +691,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	IEnumerator loadSummaryScene()
 	{
 		yield return new WaitForSeconds(audioSuccess.clip.length);
+		StopTracking();
+		DisposeGestures();
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	
