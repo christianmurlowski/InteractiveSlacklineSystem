@@ -57,21 +57,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -104,20 +90,6 @@
               "direction": "Left",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 2.0,
@@ -170,21 +142,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -219,21 +177,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -328,21 +272,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -380,21 +310,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -447,21 +363,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -502,21 +404,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -618,20 +506,6 @@
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
                 }
               ],
               "tips": [
@@ -661,20 +535,6 @@
               "direction": "Left",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 3.0,
@@ -727,21 +587,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -779,21 +625,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -885,21 +717,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -934,21 +752,7 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
