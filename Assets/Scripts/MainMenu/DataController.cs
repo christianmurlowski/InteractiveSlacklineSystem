@@ -16,7 +16,7 @@ public class DataController : MonoBehaviour
 
 	public UserData currentUser;
 
-	private string exerciseDataFileName = "JSONData/exerciseDataProduction.json";
+	private string exerciseDataFileName = "JSONData/Exercises/exerciseDataProduction.json";
 	
 	void Start ()
 	{
@@ -100,6 +100,7 @@ public class DataController : MonoBehaviour
 	
 	private void SaveUserData(UserData currentUserData)
 	{
+		Debug.Log("save user data: " + currentUserData);
 		string currentUserDataFilePath = PlayerPrefs.GetString("CurrentUserFilePath");
 		string currentUserDataAsJson = JsonUtility.ToJson(currentUserData);
 		string filePath = currentUserDataFilePath;

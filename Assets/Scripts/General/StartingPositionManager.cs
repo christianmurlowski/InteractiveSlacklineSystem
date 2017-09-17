@@ -15,12 +15,12 @@ public class StartingPositionManager : MonoBehaviour
 	private KinectManager _kinectManager;
 	private KinectInterop.JointType _jointFootLeft,
 									_jointFootRight;
-	private float tolerance = 0.5f;
+	private float tolerance = 0.15f;
 	
 	void Start () {
 		
 		KinectManager = GameObject.Find("KinectManager");
-
+		
 		if (KinectManager == null)
 		{
 			return;

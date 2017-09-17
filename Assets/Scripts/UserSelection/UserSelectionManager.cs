@@ -40,6 +40,8 @@ public class UserSelectionManager : MonoBehaviour
         _jointHandRight = KinectInterop.JointType.HandRight;
         _jointHandLeft = KinectInterop.JointType.HandLeft;
         
+        scrollBar.value = 1.0f;
+        
         currentUserDataObject = new UserDataObject();
         LoadAllUsers();
     }
