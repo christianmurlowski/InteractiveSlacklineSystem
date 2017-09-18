@@ -61,7 +61,7 @@ public class StartingPositionManager : MonoBehaviour
 						audioSuccess.Play();
 						
 						buttonUserSelectionStart.GetComponent<Button>().interactable = true;
-						buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Click me!";						
+						buttonUserSelectionStart.GetComponentInChildren<Text>().text = "Click me";						
 					}
 				}
 				else

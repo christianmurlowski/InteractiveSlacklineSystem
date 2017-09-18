@@ -24,6 +24,11 @@ public class MainColors : MonoBehaviour {
 		return new Color32(0, 0, 0, 255);
 	}
 	
+	public static Color32 Grey()
+	{
+		return new Color32(150, 150, 150, 255);
+	}
+	
 	public static Color32 GreenLight()
 	{
 		return new Color32(100, 240, 0, 255);

@@ -41,7 +41,7 @@ public class UserSelectionManager : MonoBehaviour
         _jointHandLeft = KinectInterop.JointType.HandLeft;
         
         scrollBar.value = 1.0f;
-        
+        Debug.Log("asdasdasd");   
         currentUserDataObject = new UserDataObject();
         LoadAllUsers();
     }

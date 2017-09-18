@@ -133,7 +133,7 @@ public class ExerciseLevelManager : MonoBehaviour
 			{
 				button.bgImage.color = MainColors.WhiteTransparent(3);
 				gameObjectButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/LockExercise2");
-				gameObjectButton.GetComponent<Image>().color = MainColors.White();
+				gameObjectButton.GetComponent<Image>().color = MainColors.Grey();
 			}
 			
 			// Fill progress in button

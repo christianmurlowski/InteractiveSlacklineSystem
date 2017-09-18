@@ -38,6 +38,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private DurationManager _durationManager;
 	private ExerciseData _currentExerciseData;
 	private KinectManager _kinectManager;
+	private InteractionManager _interactionManager;
 	private KinectInterop.JointType _jointFootRight,
 									_jointFootLeft;
 	private KinectSensor _kinectSensor;
@@ -86,11 +87,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
-
-//		if (_kinectManager)
-//		{
-//			_kinectManager.showHandCursor = false;
-//		}
+		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
+		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = false;
 		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		

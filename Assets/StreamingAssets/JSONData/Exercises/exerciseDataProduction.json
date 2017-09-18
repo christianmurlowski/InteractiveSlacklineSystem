@@ -662,6 +662,9 @@
                   "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
                 },
                 {
+                  "description": "Arms are bent and over your shoulder"
+                },
+                {
                   "description": "Hold this position for a short time"
                 }
               ],
@@ -709,6 +712,9 @@
                 },
                 {
                   "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
+                },
+                {
+                  "description": "Arms are bent and over your shoulder"
                 },
                 {
                   "description": "Hold this position for a short time"
@@ -775,6 +781,9 @@
                   "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
                 },
                 {
+                  "description": "Arms are bent and over your shoulder"
+                },
+                {
                   "description": "Hold this position for a short time"
                 }
               ],
@@ -824,6 +833,9 @@
                   "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
                 },
                 {
+                  "description": "Arms are bent and over your shoulder"
+                },
+                {
                   "description": "Hold this position for a short time"
                 }
               ],
@@ -864,9 +876,6 @@
         },
         {
           "description": "Your foot should be always in alignment with the slackline"
-        },
-        {
-          "description": "Don't forget to have your arms over the shoulder and bent in about 135 degree position"
         },
         {
           "description": "Troubles with holding your arms up? Turn your palms to the top and your hands will raise automatically"
@@ -918,10 +927,10 @@
                   "description": "Sit down along with the line, slightly more to the right direction"
                 },
                 {
-                  "description": "The right is bent and on the ground, like in regular sitting"
+                  "description": "The right leg is bent and on the ground, like in regular sitting"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Stretch your other leg forward along with the line and raise it up"
                 },
                 {
                   "description": "Be sure your arms are bent and over your shoulder"
@@ -970,10 +979,10 @@
                   "description": "Sit down along with the line, slightly more to the left direction"
                 },
                 {
-                  "description": "The left is bent and on the ground, like in regular sitting"
+                  "description": "The left leg is bent and on the ground, like in regular sitting"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Stretch your other leg forward along with the line and raise it up"
                 },
                 {
                   "description": "Be sure your arms are bent and over your shoulder"
@@ -1037,10 +1046,10 @@
                   "description": "Sit down along with the line, slightly more to the right direction"
                 },
                 {
-                  "description": "The right foot is on the ground and stretched out forward"
+                  "description": "The right leg is on the ground and stretched out forward"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Stretch your other leg forward along with the line and raise it up"
                 },
                 {
                   "description": "Be sure your arms are bent and over your shoulder"
@@ -1089,10 +1098,10 @@
                   "description": "Sit down along with the line, slightly more to the left direction"
                 },
                 {
-                  "description": "The left foot is on the ground and stretched out forward"
+                  "description": "The left leg is on the ground and stretched out forward"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Stretch your other leg forward along with the line and raise it up"
                 },
                 {
                   "description": "Be sure your arms are bent and over your shoulder"
@@ -1123,7 +1132,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -1276,7 +1285,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -1449,7 +1458,7 @@
           "description": "Your non standing foot serves also as balance support"
         },
         {
-          "description": "Troubles with staying on the line? Keep the balancing leg in line with the standing leg, then raise it to the side"
+          "description": "Troubles with getting up the line? Keep the balancing leg in line with the standing leg, then raise it to the side"
         },
         {
           "description": "The pressure is mostly around the ball of your foot"
@@ -1462,7 +1471,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -1603,7 +1612,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -1744,7 +1753,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -1891,7 +1900,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -2038,7 +2047,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -2215,7 +2224,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -2356,7 +2365,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -2503,7 +2512,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
