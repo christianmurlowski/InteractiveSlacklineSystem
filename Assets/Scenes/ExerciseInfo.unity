@@ -4274,6 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movieTexture: {fileID: 15200000, guid: 821fe3240dcbb964f8afd89fe3e10d04, type: 3}
+  meshRenderer: {fileID: 1007193074}
 --- !u!23 &1007193074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6448,7 +6449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1674083071
 MonoBehaviour:
   m_ObjectHideFlags: 0

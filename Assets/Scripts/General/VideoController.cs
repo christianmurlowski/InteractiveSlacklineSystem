@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class VideoController : MonoBehaviour
 {
 	public MovieTexture movieTexture;
+	public MeshRenderer meshRenderer;
 	
 	// Use this for initialization
 	void Start ()
@@ -17,7 +18,9 @@ public class VideoController : MonoBehaviour
 //		PlayerPrefs.SetInt("CurrentSideId", 0);
 //		
 //		RawImage rim = GetComponent<RawImage>();
-////		movieTexture = (MovieTexture)rim.mainTexture;
+//		movieTexture = (MovieTexture)rim.mainTexture;
+		if (UserDataObject.GetCurrentExerciseFileName() == "BobOne") meshRenderer.material = Resources.Load("Videos/Materials/MaterialMovieBob") as Material;
+		
 		movieTexture = Resources.Load("Videos/" + UserDataObject.GetCurrentTierFileName() + "/"
 		                              + UserDataObject.GetCurrentExerciseFileName() + "_"
 		                              + UserDataObject.GetCurrentSide().direction) as MovieTexture;
@@ -29,6 +32,7 @@ public class VideoController : MonoBehaviour
 		GetComponent<Renderer>().material.mainTexture = movieTexture;
 		movieTexture.Play();
 		movieTexture.loop = true;
+
 
 	}
 	
