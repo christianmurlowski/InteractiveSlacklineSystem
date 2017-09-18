@@ -54,7 +54,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				  _initialStartingHeightRight = 0.0f,
 				  _startingHeightDifference = 0.0f,
 				  _footDepthTolerance = 0.25f,
-				  _gestureAccuracy;
+				  _gestureAccuracy,
+				  _progressMinConfidence = 0.7f;
 	private int confidenceIterator, 
 				attemptsIterator,
 				sideAccomplishedCounter, // for calculating average confidence
@@ -201,6 +202,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 		_bothFeetUp = false;
 		_inStartingPosition = false;
+
+
+		if (UserDataObject.GetCurrentExerciseFileName() == "WalkForward") _progressMinConfidence = 0.9f;
+		Debug.Log("_progressMinConfidence: " + _progressMinConfidence);
 	}
 
 	// Update is called once per frame
@@ -395,9 +400,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
 				
 //				Debug.Log(_bothFeetUp +  " | " + _gestureAccuracy + " | " + e.Progress + " | "+ GestureDetected(_gestureAccuracy, 0.7f, 1f) + " | " + GestureDetected(e.Progress, 0.7f, 1f));
-				if (GestureDetected(_gestureAccuracy, 0.7f, 1f) && _bothFeetUp)
-				{					
+				
+				
 					
+				if (GestureDetected(_gestureAccuracy, _progressMinConfidence, 1f) && _bothFeetUp)
+				{					
 					_durationManager.StartTimer();
 
 					if (MinTimeReached()) audioSuccess.Play();
