@@ -150,6 +150,7 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Scripts\Data\ChecksData.cs" />
      <Compile Include="Assets\Scripts\Data\ExerciseData.cs" />
      <Compile Include="Assets\Scripts\Data\ExerciseObject.cs" />
      <Compile Include="Assets\Scripts\Data\GoalData.cs" />
@@ -164,6 +165,7 @@
      <Compile Include="Assets\Scripts\Exercise\Execution\BodyView.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\DurationManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionManager.cs" />
+     <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionValidationManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\SkeletonOverlayer.cs" />
      <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoStartButton.cs" />

@@ -253,6 +253,13 @@ public class UserDataObject {
     {
         return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].tips;
     }
+    // -----------------------------------------
+    // ----------------- CHECKS ------------------
+    // -----------------------------------------
+    public static ChecksData[] GetCurrentChecksArray()
+    {
+        return currentUser.tierData[PlayerPrefs.GetInt("CurrentTierId")].exercises[PlayerPrefs.GetInt("CurrentExerciseId")].sides[PlayerPrefs.GetInt("CurrentSideId")].checks;
+    }
     
 //    public static ExerciseData GetCurrentTierLastExercise()
 //    {

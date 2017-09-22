@@ -94,6 +94,18 @@
                   "description": "And focus on a point in front of you"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsLoose",
+                  "description": "Both arms loose?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -147,6 +159,18 @@
                 },
                 {
                   "description": "And focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsLoose",
+                  "description": "Both arms loose?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -213,6 +237,18 @@
                   "description": "Focus on a point in front of you"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -260,6 +296,18 @@
                 },
                 {
                   "description": "Focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -326,6 +374,18 @@
                   "description": "Straight but relaxed upper body"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnKnee",
+                  "description": "Left foot on knee?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -373,6 +433,18 @@
                 },
                 {
                   "description": "Straight but relaxed upper body"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnKnee",
+                  "description": "Right foot on knee?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -439,6 +511,18 @@
                   "description": "Fixate now your lifted leg with your hands as far as you can"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "LeftFootStretchedFront",
+                  "description": "Left foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnLeftKneeFront",
+                  "description": "Both hands on left knee?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -486,6 +570,18 @@
                 },
                 {
                   "description": "Fixate now your lifted leg with your hands as far as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "RightFootInFront",
+                  "description": "Right foot in front?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnRightKneeFront",
+                  "description": "Both hands on right knee?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -552,6 +648,18 @@
                   "description": "And fixate your lifted leg with your hands as far as you can"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "LeftFootInFront",
+                  "description": "Left foot in front?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnLeftKneeSide",
+                  "description": "Both hands on left knee?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -599,6 +707,18 @@
                 },
                 {
                   "description": "And fixate your lifted leg with your hands as far as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnRightKneeSide",
+                  "description": "Both hands on right knee?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -668,6 +788,18 @@
                   "description": "Hold this position for a short time"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootBehind",
+                  "description": "Left foot behind?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -718,6 +850,18 @@
                 },
                 {
                   "description": "Hold this position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootBehind",
+                  "description": "Right foot behind?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -787,6 +931,18 @@
                   "description": "Hold this position for a short time"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFront",
+                  "description": "Left foot in front?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -837,6 +993,18 @@
                 },
                 {
                   "description": "Hold this position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFront",
+                  "description": "Right foot in front?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -942,6 +1110,23 @@
                   "description": "And your upper body doesn’t have to be strictly straight"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootBent",
+                  "description": "Right foot bent?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -992,6 +1177,23 @@
                 },
                 {
                   "description": "And your upper body doesn’t have to be strictly straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootBent",
+                  "description": "Left foot bent?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1061,6 +1263,23 @@
                   "description": "Your upper body doesn’t have to be strictly straight"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedFront",
+                  "description": "Right foot stretched?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1111,6 +1330,23 @@
                 },
                 {
                   "description": "Your upper body doesn’t have to be strictly straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedFront",
+                  "description": "Left foot stretched?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1197,6 +1433,18 @@
                   "description": "Bend the knees of the standing leg slightly"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1264,6 +1512,18 @@
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1347,6 +1607,23 @@
                   "description": "Bend the knees of the standing leg slightly"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1411,6 +1688,23 @@
                 },
                 {
                   "description": "Bend the knees of the standing leg slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1530,6 +1824,18 @@
                   "description": "Stay on the line and balance out with your arms and the left leg"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1591,6 +1897,18 @@
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the right leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1671,6 +1989,23 @@
                   "description": "Stay on the line and balance out with your arms and the left leg"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1732,6 +2067,23 @@
                 },
                 {
                   "description": "Stay on the line and balance out with your arms and the right leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1815,6 +2167,23 @@
                   "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFrontOfRight",
+                  "description": "Left foot in front of right?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -1879,6 +2248,23 @@
                 },
                 {
                   "description": "Stay on the line and balance out with your hips, upper body, and arms"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFrontOfLeft",
+                  "description": "Right foot in front of left?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -1962,6 +2348,28 @@
                   "description": "Stay on the line and balance out with your hips, upper body, and arms"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFrontOfRight",
+                  "description": "Left foot in front of right?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -2026,6 +2434,28 @@
                 },
                 {
                   "description": "Stay on the line and balance out with your hips, upper body, and arms"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFrontOfLeft",
+                  "description": "Right foot in front of left?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -2106,6 +2536,18 @@
                   "description": "Try to do a squat like in the exercises before and hold the lower position a while"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -2167,6 +2609,18 @@
                 },
                 {
                   "description": "Try to do a squat like in the exercises before and hold the lower position a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -2283,6 +2737,18 @@
                   "description": "Hold the position as long as you can"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -2344,6 +2810,18 @@
                 },
                 {
                   "description": "Hold the position as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -2427,6 +2905,23 @@
                   "description": "Hold the position as long as you can"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -2491,6 +2986,23 @@
                 },
                 {
                   "description": "Hold the position as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -2571,6 +3083,18 @@
                   "description": "Repeat step 1 to 4 until you reach the end of the line"
                 }
               ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
               "userTime": 0.0,
               "confidence": 0.0,
               "attempts": 0,
@@ -2632,6 +3156,18 @@
                 },
                 {
                   "description": "Repeat step 1 to 4 until you reach the end of the line"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,

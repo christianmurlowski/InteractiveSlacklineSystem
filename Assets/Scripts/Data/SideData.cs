@@ -8,10 +8,9 @@ public class SideData
 {
     public string direction;
     public bool accomplished;
-    
     public RepetitionData[] repetitions;
     public TipsData[] tips;
-    
+    public ChecksData[] checks;
     public float userTime;
     public float confidence;
     public int attempts;

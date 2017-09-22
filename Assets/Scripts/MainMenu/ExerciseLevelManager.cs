@@ -20,17 +20,15 @@ public class ExerciseLevelManager : MonoBehaviour
 				textHandRight,
 				textHandLeftX,
 				textHandRightX;
-	
 	private KinectManager _kinectManager;
 	private InteractionManager _interactionManager;
 	private KinectInterop.JointType _jointHandRight,
 									_jointHandLeft;
-	
 	private TierData _currTier;
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
-
 	private Image imageHandCursor;
+	private long userId;
 	
 	// Use this for initialization
 	void Start ()
@@ -45,24 +43,38 @@ public class ExerciseLevelManager : MonoBehaviour
 		
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
 		
-		_jointHandRight = KinectInterop.JointType.HandRight;
-		_jointHandLeft = KinectInterop.JointType.HandLeft;
-		
 		_currTier = UserDataObject.GetCurrentTier();
-			
+
 		FillMenu();
 //		ScrollToCurrentTier();
 	}
 
 	private void Update()
-	{
-//		if (imageHandCursor.transform.localPosition.x > 850) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
-//		else if (imageHandCursor.transform.localPosition.x < -850) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
+	{			
+ 		devTrackHandJoints();
 
 		if (_interactionManager.GetCursorPosition().x > 0.9) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
 		else if (_interactionManager.GetCursorPosition().x < 0.1) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
 	}
+	public void devTrackHandJoints() {		
+		userId = _kinectManager.GetPrimaryUserID();
 
+		if (_kinectManager.IsJointTracked(userId, (int) _jointHandRight) && 
+			_kinectManager.IsJointTracked(userId, (int) _jointHandLeft))
+		{
+	
+			_jointHandRight = KinectInterop.JointType.HandRight;
+			_jointHandLeft = KinectInterop.JointType.HandLeft;
+
+			textHandLeft.text	= "x left: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandLeft).x.ToString(); 
+			textHandRight.text	= "x Right: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandRight).x.ToString(); 
+			textHandLeftX.text	= "y left: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandLeft).y.ToString(); 
+			textHandRightX.text	= "z right: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandRight).z.ToString();
+			
+			// textHandLeftX.text	= "z left: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandLeft).z.ToString(); 
+			// textHandRightX.text	= "z right: " + _kinectManager.GetJointKinectPosition(userId, (int) _jointHandRight).z.ToString();
+		}	
+	}
 	public void LoadPreviousScene()
 	{
 		SceneManager.LoadScene("TierMenu");

@@ -13,12 +13,13 @@ using AudioSource = UnityEngine.AudioSource;
 public class ExerciseExecutionManager : MonoBehaviour
 {
 	public AudioSource audioSuccess,
-					  audioFail;
+					   audioFail;
 	public CanvasGroup successPanel;
-	public GameObject KinectManager;
-	public GameObject bodyManager;
-	public GameObject durationManager;
-	public GameObject toggle;
+	public GameObject KinectManager, 
+	  				  bodyManager, 
+					  durationManager,
+					  ExerciseExecutionValidationManager, 
+					  toggle;
 	public Transform toggleGroup;
 	public Text titleText,
 				standingLegText,
@@ -30,7 +31,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				initialRightFootText,
 				initialLeftFootText,
 				bothFeetUpText,
-				textReps;
+				textReps,
+				armsUpText;
 	
 	// Kinect stuff
 	private Body[] _bodies = null;
@@ -44,6 +46,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private KinectSensor _kinectSensor;
 	private List<GestureDetector> _gestureDetectorList = null;
 	private RepetitionData _currentRepetition;
+	private ExerciseExecutionValidationManager _exerciseExecutionValidationManager;
 
 	// Unity
 	private Toggle[] _toggleArray;
@@ -61,7 +64,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 				sideAccomplishedCounter, // for calculating average confidence
 				heightTestIterator,
 				_repsIterator;
-	private bool _firstCheckpoint,
+	
+	private bool _checksPassed = true, 
+				_firstCheckpoint,
 				_secondCheckpoint,
 				_thirdCheckpoint,
 				startTrackingAgain,
@@ -92,6 +97,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = false;
 		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
+		_exerciseExecutionValidationManager = ExerciseExecutionValidationManager.GetComponent<ExerciseExecutionValidationManager>();
 		
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
@@ -311,6 +317,13 @@ public class ExerciseExecutionManager : MonoBehaviour
 				}
 			}
 
+		}
+		
+		foreach (var check in UserDataObject.GetCurrentChecksArray())
+		{
+			if (!_exerciseExecutionValidationManager.GetMethodToCheck(check)) _checksPassed = false;
+			Debug.Log(_exerciseExecutionValidationManager.GetMethodToCheck(check));
+			armsUpText.text = _checksPassed.ToString();
 		}
 		
 		bothFeetUpText.text = "DIFF: " + _startingHeightDifference + " |UP: " +  _bothFeetUp + "| INPOS: " + _inStartingPosition;
@@ -713,6 +726,13 @@ public class ExerciseExecutionManager : MonoBehaviour
 		File.WriteAllText(currentUsersFilePath, currentExerciseDataAsJson);
 	}
 	
+
+	public float GetLeftFootStartingHeight(){
+		return _initialStartingHeightLeft + _startingHeightDifference;
+	}
+	public float GetRightFootStartingHeight(){
+		return _initialStartingHeightRight + _startingHeightDifference;
+	}
 	
 
 //	
