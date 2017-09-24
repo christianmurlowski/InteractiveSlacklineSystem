@@ -163,6 +163,7 @@
      <Compile Include="Assets\Scripts\Data\UserDataObject.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\BodyManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\BodyView.cs" />
+     <Compile Include="Assets\Scripts\Exercise\Execution\CheckItem.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\DurationManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionManager.cs" />
      <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionValidationManager.cs" />

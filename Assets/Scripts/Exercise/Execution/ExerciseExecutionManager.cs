@@ -16,11 +16,13 @@ public class ExerciseExecutionManager : MonoBehaviour
 					   audioFail;
 	public CanvasGroup successPanel;
 	public GameObject KinectManager, 
+					  ExerciseExecutionValidationManager, 
 	  				  bodyManager, 
 					  durationManager,
-					  ExerciseExecutionValidationManager, 
-					  toggle;
-	public Transform toggleGroup;
+					  toggle,
+					  checkItem;
+	public Transform toggleGroup,
+					 checkSpacer;
 	public Text titleText,
 				standingLegText,
 				testText, // TODO Just for test purposes -> Delete in production
@@ -50,7 +52,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	// Unity
 	private Toggle[] _toggleArray;
+	private Toggle[] _toggleCheckArray;
+
 	private List<float> pufferList = new List<float>();
+	private List<CheckItem> checkItemList = new List<CheckItem>();
 	private float progress = 0.0f,
 				  _currentRepetitionConfidence = 0.0f,
 				  _initialStartingHeightLeft = 0.0f,
@@ -118,6 +123,18 @@ public class ExerciseExecutionManager : MonoBehaviour
 		standingLegText.text = UserDataObject.GetCurrentSide().direction;
 		successPanel = successPanel.GetComponent<CanvasGroup>(); // TODO implement success animation for rep
 		
+		foreach (var check in UserDataObject.GetCurrentChecksArray())
+		{
+			GameObject gameObjectCheckItem = Instantiate(checkItem);
+			CheckItem currentCheckItem = gameObjectCheckItem.GetComponent<CheckItem>();
+
+			currentCheckItem.methodName = check.methodName;
+			currentCheckItem.description.text = check.description;
+			checkItemList.Add(currentCheckItem);
+
+			gameObjectCheckItem.transform.SetParent(checkSpacer, false);
+		}
+
 		// Array of Toggles
 		_toggleArray = new Toggle[UserDataObject.GetCurrentRepetitionsArray().Length];
 		
@@ -318,11 +335,24 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 
 		}
-		
+		// Check if user is in right position
 		foreach (var check in UserDataObject.GetCurrentChecksArray())
 		{
-			if (!_exerciseExecutionValidationManager.GetMethodToCheck(check)) _checksPassed = false;
-			Debug.Log(_exerciseExecutionValidationManager.GetMethodToCheck(check));
+			if (_exerciseExecutionValidationManager.GetMethodToCheck(check))
+			{
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkToggle.isOn = true;
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.sprite = Resources.Load<Sprite>("Images/Toggle");
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.color = MainColors.ToggleIsOn();
+			}
+			else
+			{
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkToggle.isOn = false;
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.sprite = Resources.Load<Sprite>("Images/IconNotChecked");
+				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.color = MainColors.White();
+				_checksPassed = false;				
+			}
+				
+			// Debug.Log(_exerciseExecutionValidationManager.GetMethodToCheck(check));
 			armsUpText.text = _checksPassed.ToString();
 		}
 		
@@ -426,7 +456,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 					_currentRepetitionConfidence += _gestureAccuracy * 100;
 
 					testText.text = "if CONTINUOUS: " + _gestureAccuracy;
-
 				}
 				else
 				{

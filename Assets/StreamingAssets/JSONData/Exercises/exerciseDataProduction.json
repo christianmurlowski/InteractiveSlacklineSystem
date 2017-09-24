@@ -650,8 +650,8 @@
               ],
               "checks": [
                 {
-                  "methodName": "LeftFootInFront",
-                  "description": "Left foot in front?",
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
                   "done": false
                 },
                 {
