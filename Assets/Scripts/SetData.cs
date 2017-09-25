@@ -8,8 +8,8 @@ public class SetData : MonoBehaviour {
 	{
 		// TODO Just for test purposes -> Delete in production
 		UserSelectionManager.TestSetCurrentUser();
-		PlayerPrefs.SetInt("CurrentTierId", 0);
-		PlayerPrefs.SetInt("CurrentExerciseId", 1);
+		PlayerPrefs.SetInt("CurrentTierId", 1);
+		PlayerPrefs.SetInt("CurrentExerciseId", 4);
 		PlayerPrefs.SetInt("CurrentSideId", 0);
 		Debug.Log("CurrentTierId: " + PlayerPrefs.GetInt("CurrentTierId"));
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));

@@ -1112,11 +1112,6 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
                   "methodName": "SitsOnLine",
                   "description": "Sits on line?",
                   "done": false
@@ -1124,6 +1119,16 @@
                 {
                   "methodName": "RightFootBent",
                   "description": "Right foot bent?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootUp",
+                  "description": "Left foot up?",
                   "done": false
                 }
               ],
@@ -1181,11 +1186,6 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
                   "methodName": "SitsOnLine",
                   "description": "Sits on line?",
                   "done": false
@@ -1193,6 +1193,16 @@
                 {
                   "methodName": "LeftFootBent",
                   "description": "Left foot bent?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootUp",
+                  "description": "Right foot up?",
                   "done": false
                 }
               ],
@@ -1265,11 +1275,6 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
                   "methodName": "SitsOnLine",
                   "description": "Sits on line?",
                   "done": false
@@ -1277,6 +1282,16 @@
                 {
                   "methodName": "RightFootStretchedFront",
                   "description": "Right foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootUp",
+                  "description": "Left foot up?",
                   "done": false
                 }
               ],
@@ -1334,11 +1349,6 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
                   "methodName": "SitsOnLine",
                   "description": "Sits on line?",
                   "done": false
@@ -1346,6 +1356,16 @@
                 {
                   "methodName": "LeftFootStretchedFront",
                   "description": "Left foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootUp",
+                  "description": "Right foot up?",
                   "done": false
                 }
               ],
@@ -1435,13 +1455,13 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
                   "done": false
                 },
                 {
-                  "methodName": "RightFootOnLine",
-                  "description": "Right foot on line?",
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
                   "done": false
                 }
               ],
@@ -1516,13 +1536,13 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
                   "done": false
                 },
                 {
-                  "methodName": "LeftFootOnLine",
-                  "description": "Left foot on line?",
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
                   "done": false
                 }
               ],
@@ -1609,8 +1629,8 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
                   "done": false
                 },
                 {
@@ -1619,8 +1639,8 @@
                   "done": false
                 },
                 {
-                  "methodName": "FootCrossed",
-                  "description": "Foots crossed?",
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
                   "done": false
                 }
               ],
@@ -1692,8 +1712,8 @@
               ],
               "checks": [
                 {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
                   "done": false
                 },
                 {
@@ -1702,8 +1722,8 @@
                   "done": false
                 },
                 {
-                  "methodName": "FootCrossed",
-                  "description": "Foots crossed?",
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
                   "done": false
                 }
               ],

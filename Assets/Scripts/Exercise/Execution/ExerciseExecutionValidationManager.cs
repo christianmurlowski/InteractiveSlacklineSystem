@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -116,29 +117,31 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 		return false;
 	}
 	public bool RightFootStretchedToSide() {
-		if (_kinectManager.IsJointTracked(userId, (int) _jointFootRight) &&
+		if (_kinectManager.IsJointTracked(userId, (int) _jointFootLeft) &&
+			_kinectManager.IsJointTracked(userId, (int) _jointFootRight) &&
 			_kinectManager.IsJointTracked(userId, (int) _jointShoulderRight))
 		{
+			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionShoulderRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointHipRight);
 
-			
-			if (_positionFootRight.x > _positionShoulderRight.x && // Maybe + 0.1
-				_positionFootRight.y > -0.9) 
+			if (_positionFootRight.x > _positionShoulderRight.x &&
+				_positionFootRight.y > _positionFootLeft.y + 0.1) 
 				return true;
 		}
 		return false;
 	}
 	public bool LeftFootStretchedToSide() {
 		if (_kinectManager.IsJointTracked(userId, (int) _jointFootLeft) &&
+			_kinectManager.IsJointTracked(userId, (int) _jointFootRight) &&
 			_kinectManager.IsJointTracked(userId, (int) _jointShoulderLeft))
 		{
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
+			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionShoulderLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointHipLeft);
-
 			
-			if (_positionFootLeft.x < _positionShoulderLeft.x && // Maybe + 0.1
-				_positionFootLeft.y > -0.9)
+			if (_positionFootLeft.x < _positionShoulderLeft.x &&
+				_positionFootLeft.y > _positionFootRight.y + 0.1)
 				return true;
 		}
 		return false;
@@ -193,10 +196,10 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			
 			if (_positionHandRight.z < (_positionKneeRight.z + 0.25) &&
 				_positionHandLeft.z < (_positionKneeRight.z + 0.25) &&
-				_positionHandRight.y < (_positionKneeRight.y + 0.2) &&
-				_positionHandRight.y > (_positionKneeRight.y - 0.2) &&
-				_positionHandLeft.y < (_positionKneeRight.y + 0.2) &&
-				_positionHandLeft.y > (_positionKneeRight.y - 0.2))
+				_positionHandRight.y < (_positionKneeRight.y + 0.25) &&
+				_positionHandRight.y > (_positionKneeRight.y - 0.25) &&
+				_positionHandLeft.y < (_positionKneeRight.y + 0.25) &&
+				_positionHandLeft.y > (_positionKneeRight.y - 0.25))
 				return true;
 		}
 		return false;
@@ -212,10 +215,10 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			
 			if (_positionHandRight.z < (_positionKneeLeft.z + 0.25) &&
 				_positionHandLeft.z < (_positionKneeLeft.z + 0.25) &&
-				_positionHandRight.y < (_positionKneeLeft.y + 0.2) &&
-				_positionHandRight.y > (_positionKneeLeft.y - 0.2) &&
-				_positionHandLeft.y < (_positionKneeLeft.y + 0.2) &&
-				_positionHandLeft.y > (_positionKneeLeft.y - 0.2))
+				_positionHandRight.y < (_positionKneeLeft.y + 0.25) &&
+				_positionHandRight.y > (_positionKneeLeft.y - 0.25) &&
+				_positionHandLeft.y < (_positionKneeLeft.y + 0.25) &&
+				_positionHandLeft.y > (_positionKneeLeft.y - 0.25))
 				return true;
 		}
 		return false;
@@ -264,7 +267,7 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 		{
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 
-			if (_positionFootLeft.y > (_exerciseExecutionManager.GetLeftFootStartingHeight()))
+			if (_positionFootLeft.y > _exerciseExecutionManager.GetLeftFootStartingHeight())
 				return true;
 		}
 		return false;
@@ -274,7 +277,7 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 		{
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 
-			if (_positionFootRight.y > (_exerciseExecutionManager.GetRightFootStartingHeight()))
+			if (_positionFootRight.y > _exerciseExecutionManager.GetRightFootStartingHeight())
 				return true;
 		}
 		return false;
@@ -286,7 +289,7 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 
-			if (_positionFootRight.z < (_positionFootLeft.z - 0.2) &&
+			if (_positionFootRight.z < _positionFootLeft.z - 0.2 &&
 				_positionFootRight.y > -0.9)
 				return true;
 		}
@@ -299,7 +302,7 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 
-			if (_positionFootLeft.z < (_positionFootRight.z - 0.2) &&
+			if (_positionFootLeft.z < _positionFootRight.z - 0.2 &&
 				_positionFootLeft.y > -0.9)
 				return true;
 		}
@@ -337,33 +340,41 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 		{
 			_positionSpineBase = _kinectManager.GetJointKinectPosition(userId, (int) _jointSpineBase);
 			
-			if (_positionSpineBase.y < (-0.5))
+			Debug.Log("_positionSpineBase: " + _positionSpineBase.y);
+			
+			if (_positionSpineBase.y < -0.45)
 				return true;
 		}
 		return false;
 	}
 	public bool RightFootBent() {
 		if (_kinectManager.IsJointTracked(userId, (int) _jointFootRight) &&
-			_kinectManager.IsJointTracked(userId, (int) _jointKneeRight))
+			_kinectManager.IsJointTracked(userId, (int) _jointKneeRight)&&
+		    _kinectManager.IsJointTracked(userId, (int) _jointSpineBase))
 		{
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionKneeRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointKneeRight);
-			
-			if (_positionFootRight.z > (_positionKneeRight.z - 0.3) &&
-				_positionFootRight.z < (_positionKneeRight.z + 0.3))
+			_positionSpineBase = _kinectManager.GetJointKinectPosition(userId, (int) _jointSpineBase);
+
+			if (_positionFootRight.z > (_positionKneeRight.z - 0.25) &&
+				_positionFootRight.z < (_positionKneeRight.z + 0.25) &&
+			    _positionSpineBase.y < -0.5)
 				return true;
 		}
 		return false;
 	}
 	public bool LeftFootBent() {
 		if (_kinectManager.IsJointTracked(userId, (int) _jointFootLeft) &&
-			_kinectManager.IsJointTracked(userId, (int) _jointKneeLeft))
+			_kinectManager.IsJointTracked(userId, (int) _jointKneeLeft) &&
+		    _kinectManager.IsJointTracked(userId, (int) _jointSpineBase))
 		{
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 			_positionKneeLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointKneeLeft);
-			
-			if (_positionFootLeft.z > (_positionKneeLeft.z - 0.3) &&
-				_positionFootLeft.z < (_positionKneeLeft.z + 0.3))
+			_positionSpineBase = _kinectManager.GetJointKinectPosition(userId, (int) _jointSpineBase);
+
+			if (_positionFootLeft.z > (_positionKneeLeft.z - 0.25) &&
+				_positionFootLeft.z < (_positionKneeLeft.z + 0.25) &&
+			    _positionSpineBase.y < -0.5)
 				return true;
 		}
 		return false;
@@ -388,6 +399,30 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			_positionKneeLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointKneeLeft);
 			
 			if (_positionFootLeft.z < (_positionKneeLeft.z - 0.2))
+				return true;
+		}
+		return false;
+	}	
+	public bool LeftFootUp() {
+		if (_kinectManager.IsJointTracked(userId, (int) _jointFootLeft) &&
+		    _kinectManager.IsJointTracked(userId, (int) _jointFootRight))
+		{
+			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
+			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
+			
+			if (_positionFootLeft.y > _positionFootRight.y + 0.1)
+				return true;
+		}
+		return false;
+	}	
+	public bool RightFootUp() {
+		if (_kinectManager.IsJointTracked(userId, (int) _jointFootLeft) &&
+			_kinectManager.IsJointTracked(userId, (int) _jointFootRight))
+		{
+			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
+			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
+			
+			if (_positionFootRight.y > _positionFootLeft.y + 0.1)
 				return true;
 		}
 		return false;
@@ -469,17 +504,23 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			case "LeftFootInFront":
 				return LeftFootInFront();
 
-			case "LeftFootOnKnee":
-				return LeftFootOnKnee();
-
 			case "LeftFootInFrontOfRight":
 				return LeftFootInFrontOfRight();
 
+			case "LeftFootOnKnee":
+				return LeftFootOnKnee();
+				
+			case "LeftFootOnLine":
+				return LeftFootOnLine();
+				
 			case "LeftFootStretchedFront":
 				return LeftFootStretchedFront();
 
 			case "LeftFootStretchedToSide":
 				return LeftFootStretchedToSide();
+
+			case "LeftFootUp":
+				return LeftFootUp();
 
 			case "RightFootBehind":
 				return RightFootBehind();
@@ -490,21 +531,24 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			case "RightFootInFront":
 				return RightFootInFront();
 
+			case "RightFootInFrontOfLeft":
+				return RightFootInFrontOfLeft();
+
 			case "RightFootOnKnee":
 				return RightFootOnKnee();
 
 			case "RightFootOnLine":
 				return RightFootOnLine();
 
-			case "RightFootInFrontOfLeft":
-				return RightFootInFrontOfLeft();
-
 			case "RightFootStretchedFront":
 				return RightFootStretchedFront();
 
 			case "RightFootStretchedToSide":
 				return RightFootStretchedToSide();
-
+			
+			case "RightFootUp":
+				return RightFootUp();
+			
 			case "SitsOnLine":
 				return SitsOnLine();
 

@@ -9587,7 +9587,7 @@ GameObject:
   - component: {fileID: 2008484567}
   - component: {fileID: 2008484566}
   m_Layer: 5
-  m_Name: TextConfidence
+  m_Name: TextCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
