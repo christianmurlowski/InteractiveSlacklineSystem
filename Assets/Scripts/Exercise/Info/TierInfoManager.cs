@@ -47,7 +47,7 @@ public class TierInfoManager : MonoBehaviour
 		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
 		
 		SceneManager.LoadScene("MainMenu");
-	}
+	}	
 	
 	void FillGoalList()
 	{

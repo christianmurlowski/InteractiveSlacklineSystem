@@ -91,13 +91,16 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 	public bool BothArmsUp() {
 		if (_kinectManager.IsJointTracked(userId, (int) _jointHandRight) && 
 			_kinectManager.IsJointTracked(userId, (int) _jointHandLeft) &&
-			_kinectManager.IsJointTracked(userId, (int) _jointSpineShoulder))
+			_kinectManager.IsJointTracked(userId, (int) _jointShoulderRight) &&
+			_kinectManager.IsJointTracked(userId, (int) _jointShoulderLeft))
 		{
 			_positionHandRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointHandRight); 
 			_positionHandLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointHandLeft);
-			_positionSpineShoulder = _kinectManager.GetJointKinectPosition(userId, (int) _jointSpineShoulder); 
+			_positionShoulderRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointShoulderRight); 
+			_positionShoulderLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointShoulderLeft); 
 			
-			if (_positionHandRight.y > _positionSpineShoulder.y && _positionHandLeft.y > _positionSpineShoulder.y)
+			if (_positionHandRight.y > _positionShoulderRight.y && 
+			    _positionHandLeft.y > _positionShoulderLeft.y)
 				return true;
 		}
 		return false;
@@ -434,7 +437,7 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 			_positionFootRight = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootRight);
 			_positionFootLeft = _kinectManager.GetJointKinectPosition(userId, (int) _jointFootLeft);
 			
-			if (_positionFootRight.x < _positionFootLeft.x)
+			if (_positionFootRight.x < _positionFootLeft.x || RightFootOnLine() || LeftFootOnLine())
 				return true;
 		}
 		return false;

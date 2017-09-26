@@ -54,18 +54,12 @@ public class Engagement : MonoBehaviour
 					Vector3 jointPosHead = _kinectManager.GetJointKinectPosition(userId, (int) _jointHead);			
 
 					if (!audioSuccess.isPlaying && ((jointPosHandRight.y > jointPosHead.y) || (jointPosHandLeft.y > jointPosHead.y)))
-					{
-						StartCoroutine(loadNextScene());					
+					{	
+						SceneManager.LoadScene("TutHandPush");
 					}
 				}
 			}
 		}
 	} // Update
 
-	IEnumerator loadNextScene()
-	{
-		audioSuccess.Play();
-		yield return new WaitForSeconds(audioSuccess.clip.length);
-		SceneManager.LoadScene("TutHandPush");
-	}
 }

@@ -10,7 +10,8 @@ using Debug = UnityEngine.Debug;
 
 public class ExerciseSummaryManager : MonoBehaviour
 {
-	public GameObject KinectManager,
+	public GameObject CanvasHandCursor,
+					  KinectManager,
 					  timePanel,
 					  confidencePanel,
 					  attemptsPanel,
@@ -63,8 +64,9 @@ public class ExerciseSummaryManager : MonoBehaviour
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
-		if (!_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = true;
-		
+//		if (!_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = true;
+		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().enabled = true;
+
 		Debug.Log("Enable handcursor");
 
 		imageConfidenceList = new List<Image>();
@@ -109,16 +111,28 @@ public class ExerciseSummaryManager : MonoBehaviour
 			if (sideNotAccomplished)
 			{
 				buttonNextExercise.GetComponentInChildren<Text>().text = "Next Side";
+				buttonNextExercise.onClick.AddListener(() =>
+				{
+					if (PlayerPrefs.GetInt("CurrentSideId") == 0)
+					{
+						PlayerPrefs.SetInt("CurrentSideId", 1);
+						LoadNextScene("Left");
+					}
+					else if (PlayerPrefs.GetInt("CurrentSideId") == 0)
+					{
+						PlayerPrefs.SetInt("CurrentSideId", 0);
+						LoadNextScene("Right");
+					}
+				});
 			}
 			else
 			{
 				PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId") + 1);
-			}
-			
-			buttonNextExercise.onClick.AddListener(() =>
-			{
-				SceneManager.LoadScene("ExerciseSideSelection");
-			});
+				buttonNextExercise.onClick.AddListener(() =>
+				{
+					SceneManager.LoadScene("ExerciseSideSelection");
+				});
+			}			
 		}
 		else
 		{
@@ -126,7 +140,12 @@ public class ExerciseSummaryManager : MonoBehaviour
 			Destroy(nextExercisePlatform);
 		}
 	}
-
+	
+	private void LoadNextScene(string side)
+	{
+		PlayerPrefs.SetString("CurrentSide", side);
+		SceneManager.LoadScene("ExerciseInfo");		
+	}
 
 	private void Update()
 	{

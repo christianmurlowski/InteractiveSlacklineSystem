@@ -98,7 +98,7 @@ public class GestureDetector : IDisposable
             {
 //                this.vgbFrameSource.AddGesture(gesture);
 //                
-                Debug.Log("foreach gesture name: " + gesture.Name);
+//                Debug.Log("foreach gesture name: " + gesture.Name);
                 if (gesture.Name.Equals(this.gestureName))
                 {
                     this.vgbFrameSource.AddGesture(gesture);

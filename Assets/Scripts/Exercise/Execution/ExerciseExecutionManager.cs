@@ -15,7 +15,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public AudioSource audioSuccess,
 					   audioFail;
 	public CanvasGroup successPanel;
-	public GameObject KinectManager, 
+	public GameObject CanvasHandCursor,
+				  	  KinectManager, 
 					  ExerciseExecutionValidationManager, 
 	  				  bodyManager, 
 					  durationManager,
@@ -88,6 +89,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// ------------ INITIALIZATIONS ------------
 		// -----------------------------------------
 		
+		CanvasHandCursor = GameObject.Find("CanvasHandCursor");
+		CanvasHandCursor.gameObject.SetActive(false);
+		
 		// Disable handcursor in execution mode TODO all disable in testmode, enable in production
 		bodyManager = GameObject.Find("BodyManager");
 		
@@ -99,9 +103,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
-		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = false;
+//		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = false;
+		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().enabled = false;
 		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
+		
+		
 		_exerciseExecutionValidationManager = ExerciseExecutionValidationManager.GetComponent<ExerciseExecutionValidationManager>();
 		
 		// Reference to exercise data of current user
@@ -227,7 +234,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_inStartingPosition = false;
 
 
-		if (UserDataObject.GetCurrentExerciseFileName() == "WalkForward") _progressMinConfidence = 0.9f;
+		if (UserDataObject.GetCurrentExerciseFileName() == "WalkForward") _progressMinConfidence = 0.8f;
 		Debug.Log("_progressMinConfidence: " + _progressMinConfidence);
 	}
 
@@ -674,7 +681,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		SceneManager.LoadScene("ExerciseInfo");
 	}
 	
-
 	public void StopTracking()
 	{
 		startTrackingAgain = false;
@@ -740,6 +746,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		yield return new WaitForSeconds(audioSuccess.clip.length);
 		StopTracking();
 		DisposeGestures();
+		CanvasHandCursor.gameObject.SetActive(true);
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	

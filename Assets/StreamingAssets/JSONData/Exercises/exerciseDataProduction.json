@@ -2016,13 +2016,13 @@
                   "done": false
                 },
                 {
-                  "methodName": "RightFootOnLine",
-                  "description": "Right foot on line?",
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
                   "done": false
                 },
                 {
-                  "methodName": "FootCrossed",
-                  "description": "Foots crossed?",
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
                   "done": false
                 }
               ],
@@ -2096,13 +2096,13 @@
                   "done": false
                 },
                 {
-                  "methodName": "LeftFootOnLine",
-                  "description": "Left foot on line?",
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
                   "done": false
                 },
                 {
-                  "methodName": "FootCrossed",
-                  "description": "Foots crossed?",
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
                   "done": false
                 }
               ],
@@ -2133,35 +2133,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2216,35 +2216,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2314,35 +2314,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2402,35 +2402,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0

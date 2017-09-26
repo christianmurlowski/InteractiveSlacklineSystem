@@ -3128,6 +3128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3985b27b34a6004c9aa5fc74b69766f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSuccess: {fileID: 1739466438}
 --- !u!4 &756210365
 Transform:
   m_ObjectHideFlags: 0
@@ -5750,6 +5751,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1739466438 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82573597339365086, guid: 2bf61d6bffe9fa843bf7dbb863bf37cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1739466437}
 --- !u!1 &1756043879
 GameObject:
   m_ObjectHideFlags: 0
