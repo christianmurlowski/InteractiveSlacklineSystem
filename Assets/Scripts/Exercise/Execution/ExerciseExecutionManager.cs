@@ -89,8 +89,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// ------------ INITIALIZATIONS ------------
 		// -----------------------------------------
 		
-		CanvasHandCursor = GameObject.Find("CanvasHandCursor");
-		CanvasHandCursor.gameObject.SetActive(false);
+		CanvasHandCursor = GameObject.Find("CanvasHandCursor");	
 		
 		// Disable handcursor in execution mode TODO all disable in testmode, enable in production
 		bodyManager = GameObject.Find("BodyManager");
@@ -103,9 +102,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
-//		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = false;
-		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().enabled = false;
-		
+
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		
 		
@@ -374,6 +371,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 			if (GestureDetected(_gestureAccuracy, 0.4f, 1f) && _bothFeetUp)
 			{
+				if (CanvasHandCursor.activeSelf)
+				{
+					_interactionManager.enabled = false;
+					CanvasHandCursor.gameObject.SetActive(false);
+				}
+				
 				_durationManager.StartTimer();
 									
 				if (MinTimeReached()) audioSuccess.Play();
@@ -387,7 +390,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 			{
 				if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
 				{
-					audioFail.Play();						
+					audioFail.Play();
+					if (!CanvasHandCursor.activeSelf)
+					{
+						CanvasHandCursor.gameObject.SetActive(true);
+						_interactionManager.enabled = true;
+					}
 				}
 				
 				if (_durationManager.IsTimerRunning())
@@ -454,7 +462,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 				
 					
 				if (GestureDetected(_gestureAccuracy, _progressMinConfidence, 1f) && _bothFeetUp)
-				{					
+				{		
+					if (CanvasHandCursor.activeSelf)
+					{
+						_interactionManager.enabled = false;
+						CanvasHandCursor.gameObject.SetActive(false);
+					}
 					_durationManager.StartTimer();
 
 					if (MinTimeReached()) audioSuccess.Play();
@@ -468,7 +481,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 				{
 					if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
 					{
-						audioFail.Play();						
+						audioFail.Play();		
+						if (!CanvasHandCursor.activeSelf)
+						{
+							CanvasHandCursor.gameObject.SetActive(true);
+							_interactionManager.enabled = true;
+						}
 					}
 					
 					if (_durationManager.IsTimerRunning())

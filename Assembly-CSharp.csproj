@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{1FE355A1-2489-8B96-8538-9E1E186F3A72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -34,278 +38,280 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>E:/Programme/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>E:/Programme/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Examples\Gesture\GestureDetector.cs" />
-     <Compile Include="Assets\Examples\Gesture\GestureKinectManager.cs" />
-     <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceManager.cs" />
-     <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceView.cs" />
-     <Compile Include="Assets\Examples\KinectView\Scripts\DisableOnStart.cs" />
-     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
-     <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
-     <Compile Include="Assets\KinectScripts\AvatarScaler.cs" />
-     <Compile Include="Assets\KinectScripts\BackgroundColorImage.cs" />
-     <Compile Include="Assets\KinectScripts\BackgroundDepthImage.cs" />
-     <Compile Include="Assets\KinectScripts\BackgroundRemovalManager.cs" />
-     <Compile Include="Assets\KinectScripts\BodySlicer.cs" />
-     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
-     <Compile Include="Assets\KinectScripts\Cubeman\PointmanController.cs" />
-     <Compile Include="Assets\KinectScripts\FacetrackingManager.cs" />
-     <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
-     <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
-     <Compile Include="Assets\KinectScripts\Filters\JointVelocitiesFilter.cs" />
-     <Compile Include="Assets\KinectScripts\ForegroundBlender.cs" />
-     <Compile Include="Assets\KinectScripts\InteractionInputModule.cs" />
-     <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\DepthSensorInterface.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\DummyK2Interface.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\Kinect1Interface.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\Kinect2Interface.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\Kinect2UwpInterface.cs" />
-     <Compile Include="Assets\KinectScripts\Interfaces\OpenNI2Interface.cs" />
-     <Compile Include="Assets\KinectScripts\KinectDataClient.cs" />
-     <Compile Include="Assets\KinectScripts\KinectDataServer.cs" />
-     <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
-     <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
-     <Compile Include="Assets\KinectScripts\KinectManager.cs" />
-     <Compile Include="Assets\KinectScripts\KinectRecorderPlayer.cs" />
-     <Compile Include="Assets\KinectScripts\MultiScene\LoadFirstLevel.cs" />
-     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenNoUser.cs" />
-     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenUserDetected.cs" />
-     <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWithDelay.cs" />
-     <Compile Include="Assets\KinectScripts\MultiScene\LocateAvatarsAndGestureListeners.cs" />
-     <Compile Include="Assets\KinectScripts\PortraitBackground.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\FollowUserRotation.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\GetFacePointsDemo.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\GetFaceSmileStatus.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\GetJointPositionDemo.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\JointOrientationView.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\JointPositionView.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\K2SensorChecker.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\MouseControl.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\PointCloudView.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\RaiseHandListener.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SequentialGestureListener.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SimpleBackgroundRemoval.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SimpleGestureListener.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SimpleInteractionListener.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SimpleUserMovie.cs" />
-     <Compile Include="Assets\KinectScripts\Samples\SimpleVisualGestureListener.cs" />
-     <Compile Include="Assets\KinectScripts\SpeechErrorHandler.cs" />
-     <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
-     <Compile Include="Assets\KinectScripts\Utilities\AsyncTask.cs" />
-     <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
-     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
-     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
-     <Compile Include="Assets\Scripts\Data\ChecksData.cs" />
-     <Compile Include="Assets\Scripts\Data\ExerciseData.cs" />
-     <Compile Include="Assets\Scripts\Data\ExerciseObject.cs" />
-     <Compile Include="Assets\Scripts\Data\GoalData.cs" />
-     <Compile Include="Assets\Scripts\Data\RepetitionData.cs" />
-     <Compile Include="Assets\Scripts\Data\SideData.cs" />
-     <Compile Include="Assets\Scripts\Data\TierData.cs" />
-     <Compile Include="Assets\Scripts\Data\TierDataObject.cs" />
-     <Compile Include="Assets\Scripts\Data\TipsData.cs" />
-     <Compile Include="Assets\Scripts\Data\UserData.cs" />
-     <Compile Include="Assets\Scripts\Data\UserDataObject.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\BodyManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\BodyView.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\CheckItem.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\DurationManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionValidationManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Execution\SkeletonOverlayer.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoStartButton.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\GoalPanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\InformationPanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\TierInfoManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Info\TipPanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\SideSelection\SideSelection.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\AverageAttemptsPanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\AverageConfidencePanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\AverageTimePanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\ExerciseSummaryManager.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionAttemptsPanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionConfidencePanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionTimePanel.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseAttemptImage.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseConfidenceImage.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseTimeImage.cs" />
-     <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryManager.cs" />
-     <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
-     <Compile Include="Assets\Scripts\General\Engagement.cs" />
-     <Compile Include="Assets\Scripts\General\HandClickManager.cs" />
-     <Compile Include="Assets\Scripts\General\HandPushManager.cs" />
-     <Compile Include="Assets\Scripts\General\StartingPositionManager.cs" />
-     <Compile Include="Assets\Scripts\General\VideoController.cs" />
-     <Compile Include="Assets\Scripts\KinectUIModule\KinectInputModule.cs" />
-     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\AbstractKinectUICursor.cs" />
-     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUICursor.cs" />
-     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitCursor.cs" />
-     <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitOverButton.cs" />
-     <Compile Include="Assets\Scripts\KinectView\UserView.cs" />
-     <Compile Include="Assets\Scripts\KinectView\UserViewManager.cs" />
-     <Compile Include="Assets\Scripts\Levels\LevelButton.cs" />
-     <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\Levels\Timer.cs" />
-     <Compile Include="Assets\Scripts\MainColors.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\DataController.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelButton.cs" />
-     <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelManager.cs" />
-     <Compile Include="Assets\Scripts\SetData.cs" />
-     <Compile Include="Assets\Scripts\TierMenu\TierMenuButton.cs" />
-     <Compile Include="Assets\Scripts\TierMenu\TierMenuManager.cs" />
-     <Compile Include="Assets\Scripts\UserSelection\UserSelectionButton.cs" />
-     <Compile Include="Assets\Scripts\UserSelection\UserSelectionManager.cs" />
-     <Compile Include="Assets\TierSummaryExerciseNumber.cs" />
-     <Compile Include="Assets\TierSummaryNew.cs" />
-     <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Scripts\TBS_CameraMovement.cs" />
-     <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Water\TBS_Water.cs" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
-     <None Include="Assets\Resources\Materials\BlurShader.shader" />
-     <None Include="Assets\Resources\MedianShader.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
-     <None Include="Assets\Resources\Materials\DepthShader.shader" />
-     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
-     <None Include="Assets\Resources\Materials\BlurShader3.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
-     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
-     <None Include="Assets\Resources\Materials\Color2DepthShader.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
-     <None Include="Assets\Resources\ForegroundBlendShader.shader" />
-     <None Include="Assets\Resources\Materials\BlurShader2.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
-     <None Include="Assets\StreamingAssets\JSONData\Exercises\test.txt" />
-     <None Include="Assets\Resources\Color2DepthShaderInv.shader" />
-     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
-     <None Include="Assets\Plugins\UWP\Attribution.txt" />
-     <None Include="Assets\Resources\CoordMapper.compute" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
-     <None Include="Assets\Resources\Materials\Depth2ColorShader.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
-     <None Include="Assets\Resources\Materials\RadialGradientSurfaceShader.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
-     <None Include="Assets\Resources\Materials\Erode.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
-     <None Include="Assets\Resources\Materials\BodyShader.shader" />
-     <None Include="Assets\Resources\Materials\Dilate.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
-     <None Include="Assets\Resources\Materials\BlurShader5.shader" />
-     <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
-     <None Include="Assets\Resources\Materials\Color2BodyShader.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-     <None Include="Assets\Resources\Videos\1_Tier\Materials\NewUnlitShader.shader" />
-     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
-     <None Include="Assets\Resources\Materials\BlurShader4.shader" />
-     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
- <Reference Include="UnityEngine.UI">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.PlaymodeTestsRunner">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VR">
- <HintPath>E:/Programme/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
- <Reference Include="LZ4Sharp">
- <HintPath>E:/Masterthesis/Unity Projects/InterSlackSysTest/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>E:/Masterthesis/Unity Projects/InterSlackSysTest/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Examples\Gesture\GestureDetector.cs" />
+    <Compile Include="Assets\Examples\Gesture\GestureKinectManager.cs" />
+    <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceManager.cs" />
+    <Compile Include="Assets\Examples\KinectView\Scripts\BodySourceView.cs" />
+    <Compile Include="Assets\Examples\KinectView\Scripts\DisableOnStart.cs" />
+    <Compile Include="Assets\KinectScripts\AvatarController.cs" />
+    <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
+    <Compile Include="Assets\KinectScripts\AvatarScaler.cs" />
+    <Compile Include="Assets\KinectScripts\BackgroundColorImage.cs" />
+    <Compile Include="Assets\KinectScripts\BackgroundDepthImage.cs" />
+    <Compile Include="Assets\KinectScripts\BackgroundRemovalManager.cs" />
+    <Compile Include="Assets\KinectScripts\BodySlicer.cs" />
+    <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
+    <Compile Include="Assets\KinectScripts\Cubeman\PointmanController.cs" />
+    <Compile Include="Assets\KinectScripts\FacetrackingManager.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\JointVelocitiesFilter.cs" />
+    <Compile Include="Assets\KinectScripts\ForegroundBlender.cs" />
+    <Compile Include="Assets\KinectScripts\InteractionInputModule.cs" />
+    <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\DepthSensorInterface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\DummyK2Interface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\Kinect1Interface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\Kinect2Interface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\Kinect2UwpInterface.cs" />
+    <Compile Include="Assets\KinectScripts\Interfaces\OpenNI2Interface.cs" />
+    <Compile Include="Assets\KinectScripts\KinectDataClient.cs" />
+    <Compile Include="Assets\KinectScripts\KinectDataServer.cs" />
+    <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
+    <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
+    <Compile Include="Assets\KinectScripts\KinectManager.cs" />
+    <Compile Include="Assets\KinectScripts\KinectRecorderPlayer.cs" />
+    <Compile Include="Assets\KinectScripts\MultiScene\LoadFirstLevel.cs" />
+    <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenNoUser.cs" />
+    <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWhenUserDetected.cs" />
+    <Compile Include="Assets\KinectScripts\MultiScene\LoadLevelWithDelay.cs" />
+    <Compile Include="Assets\KinectScripts\MultiScene\LocateAvatarsAndGestureListeners.cs" />
+    <Compile Include="Assets\KinectScripts\PortraitBackground.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\FollowUserRotation.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\GetFacePointsDemo.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\GetFaceSmileStatus.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\GetJointPositionDemo.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\JointOrientationView.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\JointPositionView.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\K2SensorChecker.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\MouseControl.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\PointCloudView.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\RaiseHandListener.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SequentialGestureListener.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SimpleBackgroundRemoval.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SimpleGestureListener.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SimpleInteractionListener.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SimpleUserMovie.cs" />
+    <Compile Include="Assets\KinectScripts\Samples\SimpleVisualGestureListener.cs" />
+    <Compile Include="Assets\KinectScripts\SpeechErrorHandler.cs" />
+    <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
+    <Compile Include="Assets\KinectScripts\Utilities\AsyncTask.cs" />
+    <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+    <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\Data\ChecksData.cs" />
+    <Compile Include="Assets\Scripts\Data\ExerciseData.cs" />
+    <Compile Include="Assets\Scripts\Data\ExerciseObject.cs" />
+    <Compile Include="Assets\Scripts\Data\GoalData.cs" />
+    <Compile Include="Assets\Scripts\Data\RepetitionData.cs" />
+    <Compile Include="Assets\Scripts\Data\SideData.cs" />
+    <Compile Include="Assets\Scripts\Data\TierData.cs" />
+    <Compile Include="Assets\Scripts\Data\TierDataObject.cs" />
+    <Compile Include="Assets\Scripts\Data\TipsData.cs" />
+    <Compile Include="Assets\Scripts\Data\UserData.cs" />
+    <Compile Include="Assets\Scripts\Data\UserDataObject.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\BodyManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\BodyView.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\CheckItem.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\DurationManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\ExerciseExecutionValidationManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Execution\SkeletonOverlayer.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\ExerciseInfoStartButton.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\GoalPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\InformationPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\TierInfoManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Info\TipPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\SideSelection\SideSelection.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\AverageAttemptsPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\AverageConfidencePanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\AverageTimePanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\ExerciseSummaryManager.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionAttemptsPanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionConfidencePanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\RepetitionTimePanel.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseAttemptImage.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseConfidenceImage.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryExerciseTimeImage.cs" />
+    <Compile Include="Assets\Scripts\Exercise\Summary\TierSummaryManager.cs" />
+    <Compile Include="Assets\Scripts\General\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Scripts\General\Engagement.cs" />
+    <Compile Include="Assets\Scripts\General\HandClickManager.cs" />
+    <Compile Include="Assets\Scripts\General\HandPushManager.cs" />
+    <Compile Include="Assets\Scripts\General\StartingPositionManager.cs" />
+    <Compile Include="Assets\Scripts\General\VideoController.cs" />
+    <Compile Include="Assets\Scripts\KinectUIModule\KinectInputModule.cs" />
+    <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\AbstractKinectUICursor.cs" />
+    <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUICursor.cs" />
+    <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitCursor.cs" />
+    <Compile Include="Assets\Scripts\KinectUIModule\KinectUI\KinectUIWaitOverButton.cs" />
+    <Compile Include="Assets\Scripts\KinectView\UserView.cs" />
+    <Compile Include="Assets\Scripts\KinectView\UserViewManager.cs" />
+    <Compile Include="Assets\Scripts\Levels\LevelButton.cs" />
+    <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Levels\Timer.cs" />
+    <Compile Include="Assets\Scripts\MainColors.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\DataController.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelButton.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ExerciseLevelManager.cs" />
+    <Compile Include="Assets\Scripts\SetData.cs" />
+    <Compile Include="Assets\Scripts\TierMenu\TierMenuButton.cs" />
+    <Compile Include="Assets\Scripts\TierMenu\TierMenuManager.cs" />
+    <Compile Include="Assets\Scripts\UserSelection\UserSelectionButton.cs" />
+    <Compile Include="Assets\Scripts\UserSelection\UserSelectionManager.cs" />
+    <Compile Include="Assets\TierSummaryExerciseNumber.cs" />
+    <Compile Include="Assets\TierSummaryNew.cs" />
+    <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Scripts\TBS_CameraMovement.cs" />
+    <Compile Include="Assets\TornadoBanditsStudio\Low Poly Free Pack\Water\TBS_Water.cs" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader.shader" />
+    <None Include="Assets\Resources\MedianShader.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
+    <None Include="Assets\Resources\Materials\DepthShader.shader" />
+    <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader3.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
+    <None Include="Assets\Resources\Materials\Color2DepthShader.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+    <None Include="Assets\Resources\ForegroundBlendShader.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader2.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+    <None Include="Assets\StreamingAssets\JSONData\Exercises\test.txt" />
+    <None Include="Assets\Resources\Color2DepthShaderInv.shader" />
+    <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\Plugins\UWP\Attribution.txt" />
+    <None Include="Assets\Resources\CoordMapper.compute" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+    <None Include="Assets\Resources\Materials\Depth2ColorShader.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+    <None Include="Assets\Resources\Materials\RadialGradientSurfaceShader.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
+    <None Include="Assets\Resources\Materials\Erode.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+    <None Include="Assets\Resources\Materials\BodyShader.shader" />
+    <None Include="Assets\Resources\Materials\Dilate.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\Resources\Materials\BlurShader5.shader" />
+    <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
+    <None Include="Assets\Resources\Materials\Color2BodyShader.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+    <None Include="Assets\Resources\Videos\1_Tier\Materials\NewUnlitShader.shader" />
+    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+    <None Include="Assets\Resources\Materials\BlurShader4.shader" />
+    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PlaymodeTestsRunner">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4Sharp">
+      <HintPath>D:/cmurlowski/IntTest/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>D:/cmurlowski/IntTest/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5F32022E-316C-1043-6380-494EB1210194}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{5F32022E-316C-1043-6380-494EB1210194}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -315,5 +321,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
