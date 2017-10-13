@@ -765,6 +765,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		StopTracking();
 		DisposeGestures();
 		CanvasHandCursor.gameObject.SetActive(true);
+		_interactionManager.enabled = true;
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	

@@ -32,7 +32,6 @@ public class ExerciseSummaryManager : MonoBehaviour
 
 	
 	private KinectManager _kinectManager;
-	private InteractionManager _interactionManager;
 
 	private ExerciseData _currentExercise,
 						 _nextExercise,
@@ -62,10 +61,7 @@ public class ExerciseSummaryManager : MonoBehaviour
 //		KinectManager.GetComponent<InteractionManager>().showHandCursor = true;
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
-		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
-//		if (!_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().allowPushToClick = true;
-		if (_interactionManager.allowPushToClick) _kinectManager.GetComponent<InteractionManager>().enabled = true;
 
 		Debug.Log("Enable handcursor");
 

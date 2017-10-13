@@ -200,10 +200,10 @@
       <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>D:/cmurlowski/IntTest/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/cmurlowski/IntTest/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>D:/cmurlowski/Unity52/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

@@ -18,7 +18,6 @@ public class ExerciseInfoManager : MonoBehaviour
 						exerciseMinTime;
 	
 	private KinectManager _kinectManager;
-	private InteractionManager _interactionManager;
 	private KinectInterop.JointType _jointFootRight,
 									_jointFootLeft;
 	private float tolerance = 0.15f;
@@ -44,9 +43,8 @@ public class ExerciseInfoManager : MonoBehaviour
 		}
 
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
-		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
-		if (!_interactionManager.allowPushToClick) _interactionManager.allowPushToClick = true;
-		
+		if (_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = false;
+
 		_jointFootRight = KinectInterop.JointType.FootRight;
 		_jointFootLeft = KinectInterop.JointType.FootLeft;
 		
