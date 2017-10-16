@@ -12,6 +12,7 @@ using AudioSource = UnityEngine.AudioSource;
 
 public class ExerciseExecutionManager : MonoBehaviour
 {
+	public Transform SuccessGroupTransform;
 	public AudioSource audioSuccess,
 					   audioFail;
 	public CanvasGroup successPanel;
@@ -183,6 +184,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		// Set ID of current repetition
 		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
+
+		AnimateSuccess();
 		
 		// -----------------------------------------
 		// ---------------- KINECT -----------------
@@ -281,8 +284,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 			}
 		}*/
-	}
-	
+	}	
 	
 	// -----------------------------------------
 	// ----------- GESTURE DETECTION ----------- 
@@ -391,6 +393,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
 				{
 					audioFail.Play();
+					Debug.Log("Activate handcursor");
 					if (!CanvasHandCursor.activeSelf)
 					{
 						CanvasHandCursor.gameObject.SetActive(true);
@@ -481,7 +484,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 				{
 					if (_durationManager.IsTimerRunning() && _durationManager.GetlatestTimeInSeconds() <= _currentRepetition.minTime)
 					{
-						audioFail.Play();		
+						audioFail.Play();
+						Debug.Log("Activate handcursor");
 						if (!CanvasHandCursor.activeSelf)
 						{
 							CanvasHandCursor.gameObject.SetActive(true);
@@ -553,6 +557,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 		textReps.text = "Reps " + _repsIterator + "/" + UserDataObject.GetCurrentRepetitionsArray().Length; 
 
 		Debug.Log("ACCOMPLISHED REPETITION");
+		Debug.Log("Activate Handcursor");
+		if (!CanvasHandCursor.activeSelf)
+		{
+			CanvasHandCursor.gameObject.SetActive(true);
+			_interactionManager.enabled = true;
+		}
 		
 		// Save the time and confidence for the current repetition
 		_currentRepetition.userTime = _durationManager.GetlatestTimeInSeconds();
@@ -655,7 +665,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			
 			// Load the summary scene
 //			LoadSummaryScene();
-			StartCoroutine(loadSummaryScene());					
+			StartCoroutine(loadSummaryScene());
 
 		} // If not last repetition --> current repetition is next repetition
 		else
@@ -697,6 +707,38 @@ public class ExerciseExecutionManager : MonoBehaviour
 		StopTracking();
 		DisposeGestures();
 		SceneManager.LoadScene("ExerciseInfo");
+	}
+	
+	public void LoadSkipExercise()
+	{
+//		StopTracking();
+//		DisposeGestures();
+		_currentExerciseData.accomplished = true;
+		
+		if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
+		{
+			UserDataObject.GetCurrentTier().accomplished = true;
+			// If last tier reached --> do nothing
+			if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
+			{
+
+			}
+			else // If not last tier --> unlock next tier
+			{
+				TierData nextTier = UserDataObject.GetNextTier();
+				nextTier.isInteractable = true;
+			}
+		}
+		else // If not last exercise --> unlock next exercise
+		{
+			ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
+
+			nextExerciseData.isInteractable = true;
+			nextExerciseData.unlocked = 1;
+		}
+		SaveCurrentExerciseData();
+		
+		StartCoroutine(loadSkipExerciseScene());
 	}
 	
 	public void StopTracking()
@@ -769,6 +811,16 @@ public class ExerciseExecutionManager : MonoBehaviour
 		SceneManager.LoadScene("ExerciseSummary");
 	}
 	
+	IEnumerator loadSkipExerciseScene()
+	{
+		yield return new WaitForSeconds(0.5f);
+		StopTracking();
+		DisposeGestures();
+		CanvasHandCursor.gameObject.SetActive(true);
+		_interactionManager.enabled = true;
+		SceneManager.LoadScene("ExerciseSummary");
+	}
+	
 	// TODO CHECK Adjust it, call it from an extra json saving class
 	public void SaveCurrentExerciseData()
 	{        
@@ -788,6 +840,16 @@ public class ExerciseExecutionManager : MonoBehaviour
 	public float GetRightFootStartingHeight(){
 		return _initialStartingHeightRight + _startingHeightDifference;
 	}
+
+	private void AnimateSuccess()
+	{
+		for (int i = 0; i < 500; i++)
+		{		
+			SuccessGroupTransform.Translate(Vector3.up * 1.0f * Time.deltaTime);
+		}
+	}
+	
+
 	
 
 //	

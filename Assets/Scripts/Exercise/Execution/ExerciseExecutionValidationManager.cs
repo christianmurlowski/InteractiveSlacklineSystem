@@ -343,8 +343,6 @@ public class ExerciseExecutionValidationManager : MonoBehaviour {
 		{
 			_positionSpineBase = _kinectManager.GetJointKinectPosition(userId, (int) _jointSpineBase);
 			
-			Debug.Log("_positionSpineBase: " + _positionSpineBase.y);
-			
 			if (_positionSpineBase.y < -0.45)
 				return true;
 		}

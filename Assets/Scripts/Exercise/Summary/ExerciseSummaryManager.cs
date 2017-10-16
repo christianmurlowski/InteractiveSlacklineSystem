@@ -109,12 +109,14 @@ public class ExerciseSummaryManager : MonoBehaviour
 				buttonNextExercise.GetComponentInChildren<Text>().text = "Next Side";
 				buttonNextExercise.onClick.AddListener(() =>
 				{
+					Debug.Log("currentside id : " + PlayerPrefs.GetInt("CurrentSideId"));
+
 					if (PlayerPrefs.GetInt("CurrentSideId") == 0)
 					{
 						PlayerPrefs.SetInt("CurrentSideId", 1);
 						LoadNextScene("Left");
 					}
-					else if (PlayerPrefs.GetInt("CurrentSideId") == 0)
+					else if (PlayerPrefs.GetInt("CurrentSideId") == 1)
 					{
 						PlayerPrefs.SetInt("CurrentSideId", 0);
 						LoadNextScene("Right");
@@ -132,8 +134,11 @@ public class ExerciseSummaryManager : MonoBehaviour
 		}
 		else
 		{
-			Destroy(buttonNextExercise.gameObject);
-			Destroy(nextExercisePlatform);
+			buttonNextExercise.GetComponentInChildren<Text>().text = "Tier Summary";
+			buttonNextExercise.onClick.AddListener(() =>
+			{
+				SceneManager.LoadScene("TierSummary");
+			});
 		}
 	}
 	

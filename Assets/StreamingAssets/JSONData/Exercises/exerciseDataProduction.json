@@ -1780,7 +1780,7 @@
       ],
       "exercises": [
         {
-          "fileName": "NearStayOne",
+          "fileName": "NearStart",
           "exerciseName": "Stay One Foot I",
           "accomplished": false,
           "description": "example description",
@@ -1945,7 +1945,7 @@
           "isInteractable": false
         },
         {
-          "fileName": "CrossStayOne",
+          "fileName": "CrossStart",
           "exerciseName": "Stay One Foot II",
           "accomplished": false,
           "description": "example description",
