@@ -1,12 +1,13 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{5F32022E-316C-1043-6380-494EB1210194}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveSlacklineSystem", "Assembly-CSharp-firstpass.csproj", "{5F32022E-316C-1043-6380-494EB1210194}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1FE355A1-2489-8B96-8538-9E1E186F3A72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveSlacklineSystem", "Assembly-CSharp.csproj", "{1FE355A1-2489-8B96-8538-9E1E186F3A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{F771F388-7594-1389-7FE2-ED78F3F4BD35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveSlacklineSystem", "Assembly-CSharp-Editor-firstpass.csproj", "{F771F388-7594-1389-7FE2-ED78F3F4BD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{6484425B-DC74-1EEC-41CC-ABBDD06F15B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveSlacklineSystem", "Assembly-CSharp-Editor.csproj", "{6484425B-DC74-1EEC-41CC-ABBDD06F15B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

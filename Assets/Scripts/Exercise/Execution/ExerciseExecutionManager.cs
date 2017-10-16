@@ -27,6 +27,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 					 checkSpacer;
 	public Text titleText,
 				standingLegText,
+        successSubText,
 				testText, // TODO Just for test purposes -> Delete in production
 				rightFootHeightText,
 				leftFootHeightText,
@@ -181,11 +182,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 			gameObjectToggle.transform.SetParent(toggleGroup, false);
 		}
 		textReps.text = "Reps " + _repsIterator + "/" + UserDataObject.GetCurrentRepetitionsArray().Length; 
-		
+
 		// Set ID of current repetition
 		PlayerPrefs.SetInt("CurrentRepetitionId", Array.IndexOf(UserDataObject.GetCurrentRepetitionsArray(), _currentRepetition));
-
-		AnimateSuccess();
 		
 		// -----------------------------------------
 		// ---------------- KINECT -----------------
@@ -461,8 +460,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 //				else if (_firstCheckpoint && GestureDetected(e.Progress, 0.4f, 0.7f))
 				
 //				Debug.Log(_bothFeetUp +  " | " + _gestureAccuracy + " | " + e.Progress + " | "+ GestureDetected(_gestureAccuracy, 0.7f, 1f) + " | " + GestureDetected(e.Progress, 0.7f, 1f));
-				
-				
 					
 				if (GestureDetected(_gestureAccuracy, _progressMinConfidence, 1f) && _bothFeetUp)
 				{		
@@ -550,6 +547,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
+
+    if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last()) successSubText.text = "Exercise finished!";
+    StartCoroutine("StartAnimateSuccess");
+
 		_minTimeAlreadyReached = false;
 		_bothFeetUp = false;
 		_inStartingPosition = false;
@@ -699,6 +700,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		if (startTrackingAgain)
 		{
 			StartCoroutine("StartTracking");
+      StartCoroutine("RewindAnimateSuccess");
+      
 		}
 	}
 	
@@ -800,7 +803,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		DisposeBodyManager();
 		SceneManager.LoadScene("ExerciseSummary");
 	}
-	
 	IEnumerator loadSummaryScene()
 	{
 		yield return new WaitForSeconds(audioSuccess.clip.length);
@@ -841,11 +843,20 @@ public class ExerciseExecutionManager : MonoBehaviour
 		return _initialStartingHeightRight + _startingHeightDifference;
 	}
 
-	private void AnimateSuccess()
+	IEnumerator StartAnimateSuccess()
 	{
-		for (int i = 0; i < 500; i++)
-		{		
+		for (int i = 0; i < 10; i++)
+		{	
+			yield return new WaitForSeconds(0.01f);
 			SuccessGroupTransform.Translate(Vector3.up * 1.0f * Time.deltaTime);
+		}
+	}
+	IEnumerator RewindAnimateSuccess()
+	{
+		for (int i = 0; i < 10; i++)
+		{	
+			yield return new WaitForSeconds(0.01f);
+			SuccessGroupTransform.Translate(Vector3.down * 1.0f * Time.deltaTime);
 		}
 	}
 	
