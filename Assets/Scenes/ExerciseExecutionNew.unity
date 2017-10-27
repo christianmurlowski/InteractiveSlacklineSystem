@@ -4137,7 +4137,7 @@ GameObject:
   - component: {fileID: 843109132}
   - component: {fileID: 843109131}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextFirst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4193,7 +4193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Success
+  m_Text: Success!
 --- !u!222 &843109132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5514,7 +5514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1152265243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6373,7 +6373,7 @@ GameObject:
   - component: {fileID: 1249561172}
   - component: {fileID: 1249561171}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TextSub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8340,7 +8340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1590695099
 Transform:
   m_ObjectHideFlags: 0
@@ -10923,7 +10923,7 @@ MonoBehaviour:
   checkSpacer: {fileID: 798471162}
   titleText: {fileID: 1430257868}
   standingLegText: {fileID: 589064995}
-  successSubText: {fileID: 0}
+  successSubText: {fileID: 1249561171}
   testText: {fileID: 712080024}
   rightFootHeightText: {fileID: 331144518}
   leftFootHeightText: {fileID: 1398460704}
