@@ -1778,35 +1778,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1856,35 +1856,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1949,35 +1949,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2032,35 +2032,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 3.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2144,21 +2144,21 @@
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2230,21 +2230,21 @@
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2331,21 +2331,21 @@
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2422,21 +2422,21 @@
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2514,35 +2514,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2592,35 +2592,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 1.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2721,35 +2721,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2802,35 +2802,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2898,35 +2898,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2984,35 +2984,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 1.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0

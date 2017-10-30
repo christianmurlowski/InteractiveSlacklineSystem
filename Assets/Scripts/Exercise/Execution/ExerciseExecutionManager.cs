@@ -379,8 +379,22 @@ public class ExerciseExecutionManager : MonoBehaviour
 				}
 				
 				_durationManager.StartTimer();
-									
-				if (MinTimeReached()) audioSuccess.Play();
+
+				if (MinTimeReached())
+				{
+					audioSuccess.Play();
+					
+					if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
+					{
+						Debug.Log("LASTREP");
+						successSubText.text = "Exercise finished!";
+						StartCoroutine("StartLastAnimateSuccess");
+					}
+					else
+					{
+						StartCoroutine("StartAnimateSuccess");
+					}
+				}
 				
 				confidenceIterator++;
 				_currentRepetitionConfidence += _gestureAccuracy * 100;
@@ -470,7 +484,21 @@ public class ExerciseExecutionManager : MonoBehaviour
 					}
 					_durationManager.StartTimer();
 
-					if (MinTimeReached()) audioSuccess.Play();
+					if (MinTimeReached())
+					{
+						audioSuccess.Play();
+					
+						if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
+						{
+							Debug.Log("LASTREP");
+							successSubText.text = "Exercise finished!";
+							StartCoroutine("StartLastAnimateSuccess");
+						}
+						else
+						{
+							StartCoroutine("StartAnimateSuccess");
+						}
+					}
 
 					confidenceIterator++;
 					_currentRepetitionConfidence += _gestureAccuracy * 100;
@@ -547,13 +575,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private void ToggleAndCheckRepetition()
 	{
 		StopTracking();
-
-		if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
-		{
-			Debug.Log("LASTREPLOL");
-			successSubText.text = "Exercise finished!";
-		}
-    	StartCoroutine("StartAnimateSuccess");
 
 		_minTimeAlreadyReached = false;
 		_bothFeetUp = false;
@@ -851,35 +872,34 @@ public class ExerciseExecutionManager : MonoBehaviour
 		for (int i = 0; i < 30; i++)
 		{	
 			yield return new WaitForSeconds(0.01f);
-			SuccessGroupTransform.Translate(Vector3.up * 1.0f * Time.deltaTime);
+			SuccessGroupTransform.Translate(Vector3.up * 0.02f);
 		}
 		Debug.Log("---------------------");
 		Debug.Log("STOPAnimateSuccess");
 		yield return new WaitForSeconds(2f);
 		Debug.Log("---------------------");
 		Debug.Log("RewindAnimateSuccess");
-		for (int i = 0; i < 35; i++)
+		for (int i = 0; i < 30; i++)
 		{	
 			yield return new WaitForSeconds(0.01f);
-			SuccessGroupTransform.Translate(Vector3.down * 1.0f * Time.deltaTime);
+			SuccessGroupTransform.Translate(Vector3.down * 0.02f);
 		}
 		Debug.Log("---------------------");
 		Debug.Log("STOPRewindAnimateSuccess");
-	}
-	IEnumerator RewindAnimateSuccess()
+	}	
+	
+	IEnumerator StartLastAnimateSuccess()
 	{
 		Debug.Log("---------------------");
-		Debug.Log("RewindAnimateSuccess");
-		Debug.Log("---------------------");
-		for (int i = 0; i < 20; i++)
+		Debug.Log("StartAnimateSuccess");
+		for (int i = 0; i < 32; i++)
 		{	
 			yield return new WaitForSeconds(0.01f);
-			SuccessGroupTransform.Translate(Vector3.down * 1.0f * Time.deltaTime);
+			SuccessGroupTransform.Translate(Vector3.up * 0.02f);
 		}
+		Debug.Log("---------------------");
+		Debug.Log("STOPAnimateSuccess");
 	}
-	
-
-	
 
 //	
 //	IEnumerator SuccessFadeIn()
