@@ -7524,7 +7524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Exercise Menu
 --- !u!222 &1574150487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7854,7 +7854,7 @@ Prefab:
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 224504133750052804, guid: 6897e4b67f0e12e4e9018360865a03e4,
         type: 2}
@@ -8799,6 +8799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21dc96e751c287c42b2134264f9f51b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanvasHandCursor: {fileID: 0}
   KinectManager: {fileID: 0}
   timePanel: {fileID: 1623034612689924, guid: ec79325659ae4244a87f3d28ec58f2f8, type: 2}
   confidencePanel: {fileID: 1296344564918388, guid: 6aef0875b876bd643b2ce93cabab1b88,

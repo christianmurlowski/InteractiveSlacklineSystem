@@ -745,21 +745,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -806,21 +820,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -882,21 +910,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -943,21 +985,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1734,7 +1790,7 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "You will fulfill static exercises and first approaches for walking"
+          "description": "You will execute static exercises and first approaches for walking"
         },
         {
           "description": "You learn the basics for staying and the preparation to walk on the line"

@@ -94,6 +94,8 @@ public class ExerciseSummaryManager : MonoBehaviour
 		// If a side is not accomplished --> go to next side
 		foreach (var side in _currentExercise.sides)
 		{
+			Debug.Log(side.direction);
+			Debug.Log(side.accomplished);
 			if (side.accomplished == false)
 			{
 				sideNotAccomplished = true;
@@ -113,11 +115,13 @@ public class ExerciseSummaryManager : MonoBehaviour
 
 					if (PlayerPrefs.GetInt("CurrentSideId") == 0)
 					{
+						Debug.Log("LOAD LEFT");
 						PlayerPrefs.SetInt("CurrentSideId", 1);
 						LoadNextScene("Left");
 					}
 					else if (PlayerPrefs.GetInt("CurrentSideId") == 1)
 					{
+						Debug.Log("LOAD RIGHT");
 						PlayerPrefs.SetInt("CurrentSideId", 0);
 						LoadNextScene("Right");
 					}
@@ -134,7 +138,7 @@ public class ExerciseSummaryManager : MonoBehaviour
 		}
 		else
 		{
-			buttonNextExercise.GetComponentInChildren<Text>().text = "Tier Summary";
+			buttonNextExercise.GetComponentInChildren<Text>().text = "Level Summary";
 			buttonNextExercise.onClick.AddListener(() =>
 			{
 				SceneManager.LoadScene("TierSummary");

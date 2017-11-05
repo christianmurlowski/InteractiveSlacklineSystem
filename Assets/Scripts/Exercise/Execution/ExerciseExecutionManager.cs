@@ -239,6 +239,17 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
+		// If left arrow pressed --> exercise info scene
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			LoadPreviousScene();
+		}
+		// If right arrow pressed --> skip exercise
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			LoadSkipExercise();
+		}
+
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
 		{
 			var body = _bodies[bodyIndex];
@@ -363,6 +374,14 @@ public class ExerciseExecutionManager : MonoBehaviour
 		
 		bothFeetUpText.text = "DIFF: " + _startingHeightDifference + " |UP: " +  _bothFeetUp + "| INPOS: " + _inStartingPosition;
 
+		if (_exerciseExecutionValidationManager.LeftFootOnLine() || _exerciseExecutionValidationManager.RightFootOnLine())
+		{
+			if (CanvasHandCursor.activeSelf)
+			{
+				_interactionManager.enabled = false;
+				CanvasHandCursor.gameObject.SetActive(false);
+			}
+		}
 		// Discrete Gesture tracking
 		if ((e.GestureType == GestureType.Discrete))
 		{
@@ -407,6 +426,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				{
 					audioFail.Play();
 					Debug.Log("Activate handcursor");
+
 					if (!CanvasHandCursor.activeSelf)
 					{
 						CanvasHandCursor.gameObject.SetActive(true);
@@ -690,7 +710,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 			SaveCurrentExerciseData();
 			
 			// Load the summary scene
-//			LoadSummaryScene();
 			StartCoroutine(loadSummaryScene());
 
 		} // If not last repetition --> current repetition is next repetition
@@ -742,7 +761,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		StopTracking();
 //		DisposeGestures();
 		_currentExerciseData.accomplished = true;
-		
+		UserDataObject.GetCurrentSide().accomplished = true;
+		// If last exercise reached --> unlock next tier
 		if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
 		{
 			UserDataObject.GetCurrentTier().accomplished = true;
@@ -817,13 +837,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		_gestureDetectorList = null;
 	}
 
-	private void LoadSummaryScene()
-	{
-		StopTracking();
-		DisposeGestures();
-//		DisposeBodyManager();
-		SceneManager.LoadScene("ExerciseSummary");
-	}
 	IEnumerator loadSummaryScene()
 	{
 		yield return new WaitForSeconds(audioSuccess.clip.length);
