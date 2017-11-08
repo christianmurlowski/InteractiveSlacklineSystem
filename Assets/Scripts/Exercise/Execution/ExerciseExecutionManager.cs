@@ -234,6 +234,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 
 		if (UserDataObject.GetCurrentExerciseFileName() == "WalkForward") _progressMinConfidence = 0.8f;
+		if (UserDataObject.GetCurrentExerciseFileName() == "BobOne") _progressMinConfidence = 0.4f;
 		Debug.Log("_progressMinConfidence: " + _progressMinConfidence);
 	}
 

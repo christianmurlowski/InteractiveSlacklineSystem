@@ -82,11 +82,6 @@ public class ExerciseSummaryManager : MonoBehaviour
 		_currentExercise = UserDataObject.GetCurrentExercise();
 		_lastExercise = UserDataObject.GetLastTierExercise();
 		
-		buttonMainMenu.onClick.AddListener(() =>
-		{
-			SceneManager.LoadScene("MainMenu");
-		});
-
 		Debug.Log("GetCurrentExercise: " + UserDataObject.GetCurrentExercise().fileName);
 		Debug.Log("GetLastTierExercise " + UserDataObject.GetLastTierExercise().fileName);
 		Debug.Log(PlayerPrefs.GetInt("CurrentExerciseId"));
@@ -145,8 +140,13 @@ public class ExerciseSummaryManager : MonoBehaviour
 			});
 		}
 	}
-	
-	private void LoadNextScene(string side)
+
+	public void LoadMainMenuScene()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
+
+	public void LoadNextScene(string side)
 	{
 		PlayerPrefs.SetString("CurrentSide", side);
 		SceneManager.LoadScene("ExerciseInfo");		
@@ -154,6 +154,27 @@ public class ExerciseSummaryManager : MonoBehaviour
 
 	private void Update()
 	{
+/*		// If left arrow pressed --> Main menu
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			LoadMainMenuScene();
+		}
+		// If right arrow pressed --> next exercise/side
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			if (PlayerPrefs.GetInt("CurrentSideId") == 0)
+			{
+				Debug.Log("LOAD LEFT");
+				PlayerPrefs.SetInt("CurrentSideId", 1);
+				LoadNextScene("Left");
+			}
+			else if (PlayerPrefs.GetInt("CurrentSideId") == 1)
+			{
+				Debug.Log("LOAD RIGHT");
+				PlayerPrefs.SetInt("CurrentSideId", 0);
+				LoadNextScene("Right");
+			}
+		}*/
 		if (startAnim)
 		{
 			if (startTimeAnim)

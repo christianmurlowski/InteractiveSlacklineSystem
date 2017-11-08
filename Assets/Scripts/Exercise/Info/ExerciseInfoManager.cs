@@ -35,7 +35,6 @@ public class ExerciseInfoManager : MonoBehaviour
 		exerciseName.text = UserDataObject.GetCurrentExerciseName().ToUpper();
 		textStandingLeg.text = UserDataObject.GetCurrentSide().direction;
 		
-		
 		KinectManager = GameObject.Find("KinectManager");
 		if (KinectManager == null)
 		{
@@ -82,7 +81,18 @@ public class ExerciseInfoManager : MonoBehaviour
 	}
 
 	private void Update()
-	{
+	{		
+		// If left arrow pressed --> side selection
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			LoadPreviousScene();
+		}
+		// If right arrow pressed --> start exercise
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			LoadNextScene();
+		}
+		
 		if (_kinectManager && _kinectManager.IsInitialized() && _kinectManager.IsUserDetected())
 		{
 			long userId = _kinectManager.GetPrimaryUserID();
