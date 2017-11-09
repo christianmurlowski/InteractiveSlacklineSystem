@@ -28,23 +28,22 @@ public class TierInfoManager : MonoBehaviour
 		FillGoalList();
 	}
 
+	private void Update()
+	{
+		// If right arrow pressed --> start exercise
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			LoadNextScene();
+		}
+	}
+
 	public void LoadNextScene()
 	{
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise());
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
-		
-		
 		if (!UserDataObject.GetFirstTierExercise().isInteractable)
 		{
-			Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 			UserDataObject.GetFirstTierExercise().isInteractable = true;
 			UserDataObject.GetFirstTierExercise().unlocked = 1;	
 		}
-		
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise());
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().isInteractable);
-		Debug.Log("TIERINFO: " + UserDataObject.GetFirstTierExercise().unlocked);
 		
 		SceneManager.LoadScene("MainMenu");
 	}	

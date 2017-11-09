@@ -31,6 +31,12 @@ public class Engagement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		// If right arrow pressed --> start tutorial
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			SceneManager.LoadScene("TutHandPush");
+		}
+		
 		if (KinectManager == null)
 		{
 			return;

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-public class ExerciseSummaryManager : MonoBehaviour
+public class 		ExerciseSummaryManager : MonoBehaviour
 {
 	public GameObject CanvasHandCursor,
 					  KinectManager,
@@ -154,27 +154,6 @@ public class ExerciseSummaryManager : MonoBehaviour
 
 	private void Update()
 	{
-/*		// If left arrow pressed --> Main menu
-		if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			LoadMainMenuScene();
-		}
-		// If right arrow pressed --> next exercise/side
-		if (Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			if (PlayerPrefs.GetInt("CurrentSideId") == 0)
-			{
-				Debug.Log("LOAD LEFT");
-				PlayerPrefs.SetInt("CurrentSideId", 1);
-				LoadNextScene("Left");
-			}
-			else if (PlayerPrefs.GetInt("CurrentSideId") == 1)
-			{
-				Debug.Log("LOAD RIGHT");
-				PlayerPrefs.SetInt("CurrentSideId", 0);
-				LoadNextScene("Right");
-			}
-		}*/
 		if (startAnim)
 		{
 			if (startTimeAnim)

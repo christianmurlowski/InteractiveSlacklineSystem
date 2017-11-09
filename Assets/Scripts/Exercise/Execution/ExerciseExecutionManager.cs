@@ -27,7 +27,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 					 checkSpacer;
 	public Text titleText,
 				standingLegText,
-        successSubText,
+        		successSubText,
 				testText, // TODO Just for test purposes -> Delete in production
 				rightFootHeightText,
 				leftFootHeightText,
@@ -750,46 +750,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 	}
 	
-	public void LoadPreviousScene()
-	{
-		StopTracking();
-		DisposeGestures();
-		SceneManager.LoadScene("ExerciseInfo");
-	}
-	
-	public void LoadSkipExercise()
-	{
-//		StopTracking();
-//		DisposeGestures();
-		_currentExerciseData.accomplished = true;
-		UserDataObject.GetCurrentSide().accomplished = true;
-		// If last exercise reached --> unlock next tier
-		if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
-		{
-			UserDataObject.GetCurrentTier().accomplished = true;
-			// If last tier reached --> do nothing
-			if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
-			{
-
-			}
-			else // If not last tier --> unlock next tier
-			{
-				TierData nextTier = UserDataObject.GetNextTier();
-				nextTier.isInteractable = true;
-			}
-		}
-		else // If not last exercise --> unlock next exercise
-		{
-			ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
-
-			nextExerciseData.isInteractable = true;
-			nextExerciseData.unlocked = 1;
-		}
-		SaveCurrentExerciseData();
-		
-		StartCoroutine(loadSkipExerciseScene());
-	}
-	
 	public void StopTracking()
 	{
 		startTrackingAgain = false;
@@ -837,6 +797,47 @@ public class ExerciseExecutionManager : MonoBehaviour
 		}
 //		_gestureDetectorList = null;
 	}
+	
+	public void LoadPreviousScene()
+	{
+		StopTracking();
+		DisposeGestures();
+		SceneManager.LoadScene("ExerciseInfo");
+	}
+	
+	public void LoadSkipExercise()
+	{
+//		StopTracking();
+//		DisposeGestures();
+		_currentExerciseData.accomplished = true;
+		UserDataObject.GetCurrentSide().accomplished = true;
+		// If last exercise reached --> unlock next tier
+		if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
+		{
+			UserDataObject.GetCurrentTier().accomplished = true;
+			// If last tier reached --> do nothing
+			if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
+			{
+
+			}
+			else // If not last tier --> unlock next tier
+			{
+				TierData nextTier = UserDataObject.GetNextTier();
+				nextTier.isInteractable = true;
+			}
+		}
+		else // If not last exercise --> unlock next exercise
+		{
+			ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
+
+			nextExerciseData.isInteractable = true;
+			nextExerciseData.unlocked = 1;
+		}
+		SaveCurrentExerciseData();
+		
+		StartCoroutine(loadSkipExerciseScene());
+	}
+	
 
 	IEnumerator loadSummaryScene()
 	{

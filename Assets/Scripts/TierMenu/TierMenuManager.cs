@@ -27,9 +27,16 @@ public class TierMenuManager : MonoBehaviour
 
 		_allTiers = UserDataObject.GetAllTiers();
 		
-		FillTierMenu();
+		FillTierMenu();	
+	}
 
-		
+	private void Update()
+	{
+		// If left arrow pressed --> side selection
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			LoadPreviousScene();
+		}
 	}
 
 	private void FillTierMenu()

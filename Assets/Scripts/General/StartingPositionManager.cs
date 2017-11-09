@@ -40,7 +40,13 @@ public class StartingPositionManager : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		// If right arrow pressed --> load user menu
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			LoadNextScene();
+		}
 
 		if (_kinectManager && _kinectManager.IsInitialized() && _kinectManager.IsUserDetected())
 		{

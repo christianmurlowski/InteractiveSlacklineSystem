@@ -25,8 +25,6 @@ public class UserSelectionManager : MonoBehaviour
                                     _jointHandLeft;        
     private string allUsersFilePath = "/StreamingAssets/JSONData/Users/";
 
-    private Image imageHandCursor;
-    
     void Start()
     {
         KinectManager = GameObject.Find("KinectManager");
@@ -35,13 +33,11 @@ public class UserSelectionManager : MonoBehaviour
         _interactionManager = KinectManager.GetComponent<InteractionManager>();
 
         HandCursor = GameObject.Find("ImageHandCursor");
-        imageHandCursor = HandCursor.GetComponent<Image>();
 		
         _jointHandRight = KinectInterop.JointType.HandRight;
         _jointHandLeft = KinectInterop.JointType.HandLeft;
         
         scrollBar.value = 1.0f;
-        Debug.Log("asdasdasd");   
         currentUserDataObject = new UserDataObject();
         LoadAllUsers();
     }

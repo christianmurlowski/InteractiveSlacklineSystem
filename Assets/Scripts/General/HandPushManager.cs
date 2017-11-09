@@ -11,6 +11,15 @@ public class HandPushManager : MonoBehaviour {
 		audioSuccess.Play();
 	}
 
+	private void Update()
+	{
+		// If right arrow pressed --> start tutorial hand click
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			LoadNextScene();
+		}
+	}
+
 	public void LoadNextScene()
 	{
 		SceneManager.LoadScene("TutHandClick");

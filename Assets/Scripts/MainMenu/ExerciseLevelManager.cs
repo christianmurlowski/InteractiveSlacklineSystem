@@ -27,7 +27,6 @@ public class ExerciseLevelManager : MonoBehaviour
 	private TierData _currTier;
 	private List<TierData> _allTierData;
 	private ExerciseData[] _allTierExercises;
-	private Image imageHandCursor;
 	private long userId;
 	
 	// Use this for initialization
@@ -37,9 +36,6 @@ public class ExerciseLevelManager : MonoBehaviour
 		KinectManager = GameObject.Find("KinectManager");
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		_interactionManager = KinectManager.GetComponent<InteractionManager>();
-
-		HandCursor = GameObject.Find("ImageHandCursor");
-		imageHandCursor = HandCursor.GetComponent<Image>();
 		
 		if (!_kinectManager.displayUserMapSmall) _kinectManager.displayUserMapSmall = true;
 		
@@ -50,9 +46,15 @@ public class ExerciseLevelManager : MonoBehaviour
 	}
 
 	private void Update()
-	{			
+	{
+		// If left arrow pressed --> side selection
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			LoadPreviousScene();
+		}
+		
  		devTrackHandJoints();
-
+		
 		if (_interactionManager.GetCursorPosition().x > 0.9) scrollBar.value +=  Mathf.Lerp(0, 1, 0.01f);
 		else if (_interactionManager.GetCursorPosition().x < 0.1) scrollBar.value -= Mathf.Lerp(0, 1, 0.01f);
 	}
