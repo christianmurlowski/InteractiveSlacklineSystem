@@ -959,7 +959,7 @@
       "exercises": [
         {
           "fileName": "SitGroundBent",
-          "exerciseName": "Sit Foot Bent Ground",
+          "exerciseName": "Sit Foot Bent",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": false,
@@ -1122,7 +1122,7 @@
         },
         {
           "fileName": "SitGroundStretched",
-          "exerciseName": "Sit Foot Stretched Ground",
+          "exerciseName": "Sit Foot Stretched",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": false,
