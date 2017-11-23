@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-public class 		ExerciseSummaryManager : MonoBehaviour
+public class ExerciseSummaryManager : MonoBehaviour
 {
 	public GameObject CanvasHandCursor,
 					  KinectManager,

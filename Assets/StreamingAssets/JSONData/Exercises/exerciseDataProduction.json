@@ -21,9 +21,6 @@
       ],
       "tips": [
         {
-          "description": "Best experience with barefoot or socks"
-        },
-        {
           "description": "Bend your knees slightly. This will bring you into a better initial position for movement compensation"
         },
         {
@@ -54,21 +51,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -118,21 +115,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -197,21 +194,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -258,21 +255,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -334,21 +331,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -395,21 +392,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 5.0,
+                  "minTime": 4.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -441,143 +438,6 @@
                 {
                   "methodName": "RightFootOnKnee",
                   "description": "Right foot on knee?",
-                  "done": false
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "attempts": 0,
-              "unlocked": 0,
-              "isInteractable": false
-            }
-          ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "attempts": 0,
-          "unlocked": 0,
-          "isInteractable": false
-        },
-        {
-          "fileName": "FixateFront",
-          "exerciseName": "Fixate Leg Front",
-          "accomplished": false,
-          "description": "Stay on your right foot and raise your other leg to the front. Lean forward with your upper body and fixate the left leg with both arms",
-          "isProgressGesture": false,
-          "startingHeightDifference": -0.2,
-          "sides": [
-            {
-              "direction": "Right",
-              "accomplished": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Right leg servers as standing leg"
-                },
-                {
-                  "description": "Raise the left leg upwards"
-                },
-                {
-                  "description": "Lean your body towards the left leg"
-                },
-                {
-                  "description": "Stretch your arms out to the front"
-                },
-                {
-                  "description": "Fixate left knee with your hands"
-                }
-              ],
-              "checks": [
-                {
-                  "methodName": "LeftFootStretchedFront",
-                  "description": "Left foot stretched?",
-                  "done": false
-                },
-                {
-                  "methodName": "HandsOnLeftKneeFront",
-                  "description": "Both hands on left knee?",
-                  "done": false
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "attempts": 0,
-              "unlocked": 1,
-              "isInteractable": true
-            },
-            {
-              "direction": "Left",
-              "accomplished": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 3.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Left leg servers as standing leg"
-                },
-                {
-                  "description": "Raise the right leg upwards"
-                },
-                {
-                  "description": "Lean your body towards the right leg"
-                },
-                {
-                  "description": "Stretch your arms out to the front"
-                },
-                {
-                  "description": "Fixate right knee with your hands"
-                }
-              ],
-              "checks": [
-                {
-                  "methodName": "RightFootInFront",
-                  "description": "Right foot in front?",
-                  "done": false
-                },
-                {
-                  "methodName": "HandsOnRightKneeFront",
-                  "description": "Both hands on right knee?",
                   "done": false
                 }
               ],
@@ -1834,35 +1694,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1912,35 +1772,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2005,35 +1865,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2088,35 +1948,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 2.0,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2540,177 +2400,6 @@
                 {
                   "methodName": "RightFootInFrontOfLeft",
                   "description": "Right foot in front of left?",
-                  "done": false
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "attempts": 0,
-              "unlocked": 0,
-              "isInteractable": false
-            }
-          ],
-          "userTime": 0.0,
-          "confidence": 0.0,
-          "attempts": 0,
-          "unlocked": 0,
-          "isInteractable": false
-        },
-        {
-          "fileName": "BobOne",
-          "exerciseName": "Squat Line",
-          "accomplished": false,
-          "description": "example description",
-          "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
-          "sides": [
-            {
-              "direction": "Right",
-              "accomplished": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Stay left from the slackline"
-                },
-                {
-                  "description": "Place the right foot on the line"
-                },
-                {
-                  "description": "Raise your hands above your shoulder"
-                },
-                {
-                  "description": "Get up and try to stay"
-                },
-                {
-                  "description": "Do a squat by bending the right knee"
-                },
-                {
-                  "description": "Hold the lower position for a while"
-                }
-              ],
-              "checks": [
-                {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
-                  "methodName": "RightFootOnLine",
-                  "description": "Right foot on line?",
-                  "done": false
-                }
-              ],
-              "userTime": 0.0,
-              "confidence": 0.0,
-              "attempts": 0,
-              "unlocked": 1,
-              "isInteractable": true
-            },
-            {
-              "direction": "Left",
-              "accomplished": false,
-              "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                }
-              ],
-              "tips": [
-                {
-                  "description": "Stay right from the slackline"
-                },
-                {
-                  "description": "Place the left foot on the line"
-                },
-                {
-                  "description": "Raise your hands above your shoulder"
-                },
-                {
-                  "description": "Get up and try to stay"
-                },
-                {
-                  "description": "Do a squat by bending the left knee"
-                },
-                {
-                  "description": "Hold the lower position for a while"
-                }
-              ],
-              "checks": [
-                {
-                  "methodName": "BothArmsUp",
-                  "description": "Both arms up?",
-                  "done": false
-                },
-                {
-                  "methodName": "LeftFootOnLine",
-                  "description": "Left foot on line?",
                   "done": false
                 }
               ],
