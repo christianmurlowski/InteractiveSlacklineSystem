@@ -396,6 +396,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 		if ((e.GestureType == GestureType.Discrete))
 		{
 			_gestureAccuracy = e.DetectionConfidence;
+			
+			for (int i = 0; i < _methodCheckedArray; i++)
+			{
+				if (_methodCheckedArray[i] == false)
+				{
+					_gestureAccuracy -= 0.1;
+				}
+			}
+
 			if (_gestureAccuracy > 1.0f) _gestureAccuracy = 1.0f;
 			_durationManager.SetProgress(_gestureAccuracy);
 
