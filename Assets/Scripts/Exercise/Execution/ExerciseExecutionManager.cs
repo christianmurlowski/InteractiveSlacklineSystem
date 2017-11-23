@@ -43,7 +43,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	private Body[] _bodies = null;
 	private BodyManager _bodyManager;
 	private DurationManager _durationManager;
-	private ExerciseData _currentExerciseData;
+	private ExerciseData _currentExerciseData,
+						 _lastExercise;
 	private KinectManager _kinectManager;
 	private InteractionManager _interactionManager;
 	private KinectInterop.JointType _jointFootRight,
@@ -80,7 +81,10 @@ public class ExerciseExecutionManager : MonoBehaviour
 				startTrackingAgain,
 				_bothFeetUp,
 				_inStartingPosition,
-				_minTimeAlreadyReached;
+				_minTimeAlreadyReached,
+				_sideNotAccomplished;
+
+	private bool[] _methodCheckedArray;
 	private float time = 0.0f;
 	private float interpolationPeriod = 0.5f;
 	
@@ -113,12 +117,15 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// Reference to exercise data of current user
 //		_currentExerciseData = UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")];
 		_currentExerciseData = UserDataObject.GetCurrentExercise();
+		_lastExercise = UserDataObject.GetLastTierExercise();
 		
 		// Duration manager
 		_durationManager = durationManager.GetComponent<DurationManager>();
 		
 		_minTimeAlreadyReached = false;
 		_repsIterator = 0;
+		
+		_methodCheckedArray = new bool[UserDataObject.GetCurrentChecksArray().Length];
 		
 		// -----------------------------------------
 		// ------------- UI COMPONENTS -------------
@@ -352,7 +359,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 			}
 
 		}
-		// Check if user is in right position
+		// Check positions of joints of current exercise
 		foreach (var check in UserDataObject.GetCurrentChecksArray())
 		{
 			if (_exerciseExecutionValidationManager.GetMethodToCheck(check))
@@ -360,20 +367,22 @@ public class ExerciseExecutionManager : MonoBehaviour
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkToggle.isOn = true;
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.sprite = Resources.Load<Sprite>("Images/Toggle");
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.color = MainColors.ToggleIsOn();
+				_methodCheckedArray[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)] = true;
 			}
 			else
 			{
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkToggle.isOn = false;
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.sprite = Resources.Load<Sprite>("Images/IconNotChecked");
 				checkItemList[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)].checkImage.color = MainColors.White();
-				_checksPassed = false;				
+				_methodCheckedArray[Array.IndexOf(UserDataObject.GetCurrentChecksArray(), check)] = false;
+				_checksPassed = false;
 			}
 				
 			// Debug.Log(_exerciseExecutionValidationManager.GetMethodToCheck(check));
 			armsUpText.text = _checksPassed.ToString();
 		}
 		
-		bothFeetUpText.text = "DIFF: " + _startingHeightDifference + " |UP: " +  _bothFeetUp + "| INPOS: " + _inStartingPosition;
+		bothFeetUpText.text = "DIFF: " + _startingHeightDifference + " |UP: " + _bothFeetUp + "| INPOS: " + _inStartingPosition;
 
 		if (_exerciseExecutionValidationManager.LeftFootOnLine() || _exerciseExecutionValidationManager.RightFootOnLine())
 		{
@@ -847,7 +856,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 		DisposeGestures();
 		CanvasHandCursor.gameObject.SetActive(true);
 		_interactionManager.enabled = true;
-		SceneManager.LoadScene("ExerciseSummary");
+		ManageNextScene();
+//		SceneManager.LoadScene("ExerciseSummary");
 	}
 	
 	IEnumerator loadSkipExerciseScene()
@@ -857,7 +867,75 @@ public class ExerciseExecutionManager : MonoBehaviour
 		DisposeGestures();
 		CanvasHandCursor.gameObject.SetActive(true);
 		_interactionManager.enabled = true;
-		SceneManager.LoadScene("ExerciseSummary");
+		ManageNextScene();
+//		SceneManager.LoadScene("ExerciseSummary");
+	}
+
+	public void ManageNextScene()
+	{
+		Debug.Log("GetCurrentExercise: " + UserDataObject.GetCurrentExercise().fileName);
+		Debug.Log("GetLastTierExercise: " + UserDataObject.GetLastTierExercise().fileName);
+		Debug.Log("CurrentExercise ID: " + PlayerPrefs.GetInt("CurrentExerciseId"));
+		
+		// Check if a side is not accomplished
+		foreach (var side in _currentExerciseData.sides)
+		{
+			Debug.Log("side direction: " + side.direction);
+			Debug.Log("side accomplished: " + side.accomplished);
+			if (side.accomplished == false)
+			{
+				_sideNotAccomplished = true;
+			}
+		}
+		
+		// Not last exercise --> load following side
+		if (_currentExerciseData != _lastExercise || _sideNotAccomplished)
+		{
+			Debug.Log("any sideNotAccomplished? : " + _sideNotAccomplished);
+			if (_sideNotAccomplished)
+			{
+				// TODO change subtitle of success GO
+				
+				if (PlayerPrefs.GetInt("CurrentSideId") == 0)
+				{
+					Debug.Log("LOAD LEFT");
+					PlayerPrefs.SetInt("CurrentSideId", 1);
+					PlayerPrefs.SetString("CurrentSide", "Left");
+					LoadNextScene("ExerciseInfo");
+				}
+				else if (PlayerPrefs.GetInt("CurrentSideId") == 1)
+				{
+					Debug.Log("LOAD RIGHT");
+					PlayerPrefs.SetInt("CurrentSideId", 0);
+					PlayerPrefs.SetString("CurrentSide", "Right");
+					LoadNextScene("ExerciseInfo");
+				}
+			}
+			else // all sides accomplished --> load next exercise
+			{
+				// TODO change subtitle of success GO
+
+				PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId") + 1);
+				LoadNextScene("ExerciseSideSelection");
+			}			
+		}
+		else // all exercises completed --> load TierMenu
+		{
+			// TODO change subtitle of success GO
+			
+			if (!UserDataObject.GetCurrentExercise().isInteractable)
+			{
+				UserDataObject.GetCurrentExercise().isInteractable = true;
+				UserDataObject.GetCurrentExercise().unlocked = 1;	
+			}
+			
+			LoadNextScene("TierMenu");
+		}
+	}
+	
+	public void LoadNextScene(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);		
 	}
 	
 	// TODO CHECK Adjust it, call it from an extra json saving class

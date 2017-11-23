@@ -14,7 +14,7 @@ public class Engagement : MonoBehaviour
 	private KinectInterop.JointType _jointHandRight,
 									_jointHandLeft,
 									_jointHead;
-
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -27,7 +27,7 @@ public class Engagement : MonoBehaviour
 		Debug.Log("CurrentExerciseId: " + PlayerPrefs.GetInt("CurrentExerciseId"));
 		Debug.Log("CurrentSide: " + PlayerPrefs.GetString("CurrentSide"));
 	} // Start
-	
+
 	// Update is called once per frame
 	void Update ()
 	{

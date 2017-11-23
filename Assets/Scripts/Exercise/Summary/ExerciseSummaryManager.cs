@@ -86,7 +86,7 @@ public class ExerciseSummaryManager : MonoBehaviour
 		Debug.Log("GetLastTierExercise " + UserDataObject.GetLastTierExercise().fileName);
 		Debug.Log(PlayerPrefs.GetInt("CurrentExerciseId"));
 		
-		// If a side is not accomplished --> go to next side
+		// Check if a side is not accomplished
 		foreach (var side in _currentExercise.sides)
 		{
 			Debug.Log(side.direction);
@@ -122,7 +122,7 @@ public class ExerciseSummaryManager : MonoBehaviour
 					}
 				});
 			}
-			else
+			else // all sides accomplished --> load next exercise
 			{
 				PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId") + 1);
 				buttonNextExercise.onClick.AddListener(() =>
@@ -131,7 +131,7 @@ public class ExerciseSummaryManager : MonoBehaviour
 				});
 			}			
 		}
-		else
+		else // all exercises completed --> load TierMenu
 		{
 			buttonNextExercise.GetComponentInChildren<Text>().text = "Level Summary";
 			buttonNextExercise.onClick.AddListener(() =>
