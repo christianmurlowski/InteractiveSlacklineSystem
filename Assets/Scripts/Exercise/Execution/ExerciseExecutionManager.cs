@@ -27,6 +27,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 					 checkSpacer;
 	public Text titleText,
 				standingLegText,
+				successMainText,
         		successSubText,
 				testText, // TODO Just for test purposes -> Delete in production
 				rightFootHeightText,
@@ -397,12 +398,13 @@ public class ExerciseExecutionManager : MonoBehaviour
 		{
 			_gestureAccuracy = e.DetectionConfidence;
 			
-			for (int i = 0; i < _methodCheckedArray; i++)
+			for (int i = 0; i < _methodCheckedArray.Length; i++)
 			{
 				if (_methodCheckedArray[i] == false)
 				{
-					_gestureAccuracy -= 0.1;
+					_gestureAccuracy -= 0.1f;
 				}
+				testText.text = _gestureAccuracy.ToString();
 			}
 
 			if (_gestureAccuracy > 1.0f) _gestureAccuracy = 1.0f;
@@ -425,7 +427,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 					if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
 					{
 						Debug.Log("LASTREP");
-						successSubText.text = "Exercise finished!";
+						successMainText.text = "Exercise finished!";
+						successSubText.text = "Preparing next exercise";
 						StartCoroutine("StartLastAnimateSuccess");
 					}
 					else
@@ -437,7 +440,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 				confidenceIterator++;
 				_currentRepetitionConfidence += _gestureAccuracy * 100;
 				
-				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
+//				testText.text = "if DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
 			}
 			else
 			{
@@ -466,13 +469,23 @@ public class ExerciseExecutionManager : MonoBehaviour
 					ToggleAndCheckRepetition();
 				}					
 				
-				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
+//				testText.text = "else DISCRETE: " +  e.IsGestureDetected.ToString() + " " + _gestureAccuracy;
 			}
 //				testText.text = "DISCRETE: " +  e.IsGestureDetected.ToString() + " " + e.DetectionConfidence;
 		}
 		else if ((e.GestureType == GestureType.Continuous))
 		{
-			_gestureAccuracy = e.Progress;			
+			_gestureAccuracy = e.Progress;
+			
+			for (int i = 0; i < _methodCheckedArray.Length; i++)
+			{
+				if (_methodCheckedArray[i] == false)
+				{
+					_gestureAccuracy -= 0.1f;
+				}
+				testText.text = _gestureAccuracy.ToString();
+			}
+			
 			if (_gestureAccuracy > 1.0f) _gestureAccuracy = 1.0f;
 			_durationManager.SetProgress(_gestureAccuracy);
 
@@ -530,7 +543,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 						if (_currentRepetition == UserDataObject.GetCurrentRepetitionsArray().Last())
 						{
 							Debug.Log("LASTREP");
-							successSubText.text = "Exercise finished!";
+							
+							successMainText.text = "Exercise finished!";
+							successSubText.text = "Preparing next exercise";
 							StartCoroutine("StartLastAnimateSuccess");
 						}
 						else
@@ -542,7 +557,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 					confidenceIterator++;
 					_currentRepetitionConfidence += _gestureAccuracy * 100;
 
-					testText.text = "if CONTINUOUS: " + _gestureAccuracy;
+//					testText.text = "if CONTINUOUS: " + _gestureAccuracy;
 				}
 				else
 				{
@@ -571,7 +586,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 						ToggleAndCheckRepetition();
 					}
 				
-					testText.text = "else CONTINUOUS: " + _gestureAccuracy;
+//					testText.text = "else CONTINUOUS: " + _gestureAccuracy;
 				}
 //			}
 		}
@@ -603,7 +618,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	private bool MinTimeReached()
 	{
-		if (!_minTimeAlreadyReached &&_durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
+		if (!_minTimeAlreadyReached && _durationManager.GetlatestTimeInSeconds() >= _currentRepetition.minTime)
 		{
 			_minTimeAlreadyReached = true;
 			return true;
@@ -783,7 +798,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 		enabled = false;
 
 		Debug.Log("STOP TRACKING");
-
 	}    
     
 	IEnumerator StartTracking()
@@ -805,7 +819,6 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	private void DisposeGestures()
 	{
-		
 		// Dispose gesture
 		Debug.Log("Dispose gesturedetector");
 		foreach (var gesture in _gestureDetectorList)
@@ -859,7 +872,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 	IEnumerator loadSummaryScene()
 	{
-		yield return new WaitForSeconds(audioSuccess.clip.length);
+		yield return new WaitForSeconds(2.5f);
 		Debug.Log("LOAD SUMMARY SCENE");
 		StopTracking();
 		DisposeGestures();
@@ -952,8 +965,8 @@ public class ExerciseExecutionManager : MonoBehaviour
 	{        
 		string currentUsersFilePath = PlayerPrefs.GetString("CurrentUserFilePath");
 		
-// TODO	check if needed	because of reference
-//		UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")] = _currentExerciseData;
+		// TODO	check if needed	because of reference
+		//		UserDataObject.currentUser.exerciseData[PlayerPrefs.GetInt("CurrentExerciseId")] = _currentExerciseData;
 		
 		string currentExerciseDataAsJson = JsonUtility.ToJson(UserDataObject.currentUser);
 		File.WriteAllText(currentUsersFilePath, currentExerciseDataAsJson);

@@ -7,47 +7,41 @@
       "isInteractable": true,
       "goals": [
         {
-          "description": "These preliminary exercises serve as preparation for the subsequent exercises on the slackline"
+          "description": "Preliminary exercises serve as preparation for further slackline training"
         },
         {
-          "description": "The system will guide you through more and more challenging exercises and show how you can strengthen your physical balance"
+          "description": "System guides you through exercises"
         },
         {
-          "description": "This will give you first insights about how your body behaves to unexpected movements"
+          "description": "Teach you basics of slacklining"
         },
         {
-          "description": "Pay attention the coherence of your perception and motoric movements"
-        },
-        {
-          "description": "On the right side you will find general tips that are helpful for the entire tier level and adaptable to slacklining itself"
+          "description": "Strengthen your general physical balance"
         }
       ],
       "tips": [
         {
-          "description": "For a better experience it is recommended to train barefoot or with socks, but this is up to you"
-        },
-        {
           "description": "Bend your knees slightly. This will bring you into a better initial position for movement compensation"
         },
         {
-          "description": "Set a focus point in front of you. In each execution screen you will see a dot that represents this"
+          "description": "Set a focus point in front of you"
         },
         {
-          "description": "In almost each exercise your hand should be over your shoulder and bent in about 135 degree to the side"
+          "description": "Hands over shoulder and bent in about 135 degree to the side"
         },
         {
-          "description": "Slow but controlled execution, feel the imbalance and counteract"
+          "description": "Slow but controlled execution"
         },
         {
-          "description": "Relax yourself to react faster to imbalances but have a straight upper body to hold you in the right position"
+          "description": "Straight upper body to hold you in the right position"
         }
       ],
       "exercises": [
         {
-          "fileName": "FixateFront",
-          "exerciseName": "Fixate Leg Front",
+          "fileName": "Ground",
+          "exerciseName": "Ground balance",
           "accomplished": false,
-          "description": "Stay on your right foot and raise your other leg to the front. Lean forward with your upper body and fixate the left leg with both arms",
+          "description": "Stay on your right foot and balance with the left one",
           "isProgressGesture": false,
           "startingHeightDifference": -0.2,
           "sides": [
@@ -57,7 +51,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -65,19 +73,34 @@
               ],
               "tips": [
                 {
-                  "description": "Your chosen sides leg servers as standing leg on the ground"
+                  "description": "Looping video on the right shows the correct execution"
                 },
                 {
-                  "description": "Raise the other one to the front as high as you can"
+                  "description": "Right leg servers as standing leg"
                 },
                 {
-                  "description": "Now lean your body towards the upper leg"
+                  "description": "Raise the left leg to the side and stretch it"
                 },
                 {
-                  "description": "Stretch your arms out to the front"
+                  "description": "Straight upper body"
                 },
                 {
-                  "description": "Fixate now your lifted leg with your hands as far as you can"
+                  "description": "Both arms should be loose"
+                },
+                {
+                  "description": "Focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsLoose",
+                  "description": "Both arms loose?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -92,7 +115,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -100,19 +137,445 @@
               ],
               "tips": [
                 {
-                  "description": "Your chosen sides leg servers as standing leg on the ground"
+                  "description": "Looping video on the right shows the correct execution"
                 },
                 {
-                  "description": "Raise the other one to the front as high as you can"
+                  "description": "Left leg servers as standing leg"
                 },
                 {
-                  "description": "Now lean your body towards the upper leg"
+                  "description": "Raise the right leg to the side and stretch it"
                 },
                 {
-                  "description": "Stretch your arms out to the front"
+                  "description": "Straight upper body"
                 },
                 {
-                  "description": "Fixate now your lifted leg with your hands as far as you can"
+                  "description": "Both arms should be loose"
+                },
+                {
+                  "description": "Focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsLoose",
+                  "description": "Both arms loose?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "ArmsOut",
+          "exerciseName": "Arms Out",
+          "accomplished": false,
+          "description": "Stay on your right foot, other in the air and arms stretched out",
+          "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Right leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the left leg to the side and stretch it"
+                },
+                {
+                  "description": "Straight upper body"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Left leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the right leg to the side and stretch it"
+                },
+                {
+                  "description": "Straight upper body"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Focus on a point in front of you"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "Knee",
+          "exerciseName": "Tree",
+          "accomplished": false,
+          "description": "Stay on your right foot. Bent your other leg and stabilize it sideways with the sole into your knee. Stretch your arms out.",
+          "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Right leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the left foot upwards and bent it"
+                },
+                {
+                  "description": "Left foot stabilized sideways on your right knee"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Straight but relaxed upper body"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnKnee",
+                  "description": "Left foot on knee?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Left leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the right foot upwards and bent it"
+                },
+                {
+                  "description": "Right foot stabilized sideways on your left knee"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Straight but relaxed upper body"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnKnee",
+                  "description": "Right foot on knee?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "FixateSide",
+          "exerciseName": "Fixate Leg Side",
+          "accomplished": false,
+          "description": "Stay on your right foot and raise your other leg to the side. Lean sideward with your upper body and fixate the left leg with both arms",
+          "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Right leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the left leg sideways"
+                },
+                {
+                  "description": "Lean your body towards the left leg"
+                },
+                {
+                  "description": "Stretch your arms out to the side"
+                },
+                {
+                  "description": "Fixate left knee with your hands"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "LeftFootStretchedToSide",
+                  "description": "Left foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnLeftKneeSide",
+                  "description": "Both hands on left knee?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Left leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the right leg sideways"
+                },
+                {
+                  "description": "Lean your body towards the right leg"
+                },
+                {
+                  "description": "Stretch your arms out to the side"
+                },
+                {
+                  "description": "Fixate right knee with your hands"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "RightFootStretchedToSide",
+                  "description": "Right foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "HandsOnRightKneeSide",
+                  "description": "Both hands on right knee?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -142,7 +605,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -150,19 +641,31 @@
               ],
               "tips": [
                 {
-                  "description": "Your chosen sides leg servers as standing leg on the ground"
+                  "description": "Right leg servers as standing leg"
                 },
                 {
-                  "description": "Raise your other foot upwards"
+                  "description": "Raise the left leg upwards"
                 },
                 {
-                  "description": "Move it to the back of your body"
+                  "description": "Move left leg to the back of your body"
                 },
                 {
-                  "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
+                  "description": "Do a squat by bending your knee"
                 },
                 {
-                  "description": "Hold this position for a short time"
+                  "description": "Hold position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootBehind",
+                  "description": "Left foot behind?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -177,7 +680,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -185,19 +716,196 @@
               ],
               "tips": [
                 {
-                  "description": "Your chosen sides leg servers as standing leg on the ground"
+                  "description": "Left leg servers as standing leg"
                 },
                 {
-                  "description": "Raise your other foot upwards"
+                  "description": "Raise the right leg upwards"
                 },
                 {
-                  "description": "Move it to the back of your body"
+                  "description": "Move right leg to the back of your body"
                 },
                 {
-                  "description": "Now do a squat by bending your standing legs knee and going down with your whole body"
+                  "description": "Do a squat by bending your knee"
                 },
                 {
-                  "description": "Hold this position for a short time"
+                  "description": "Hold position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootBehind",
+                  "description": "Right foot behind?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "SquatsFront",
+          "exerciseName": "Squats Front",
+          "accomplished": false,
+          "description": "Stay on your right foot. Other foot up and stretch it in front of your body. Arms are stretched out. Now bend your standing leg, go down until you feel confident and go up.",
+          "isProgressGesture": true,
+          "startingHeightDifference": -0.2,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Right leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the left leg upwards"
+                },
+                {
+                  "description": "Move left leg to the front of your body"
+                },
+                {
+                  "description": "Do a squat by bending your knee"
+                },
+                {
+                  "description": "Hold position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFront",
+                  "description": "Left foot in front?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Left leg servers as standing leg"
+                },
+                {
+                  "description": "Raise the right leg upwards"
+                },
+                {
+                  "description": "Move right leg to the front of your body"
+                },
+                {
+                  "description": "Do a squat by bending your knee"
+                },
+                {
+                  "description": "Hold position for a short time"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFront",
+                  "description": "Right foot in front?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -222,45 +930,36 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Congratulations you accomplished the first exercises! Here you will have your first contact with the slackline"
+          "description": "First contact with the slackline"
         },
         {
-          "description": "Get a feeling for the slackline, become familiar with it, feel the imbalance of your body and stay calm"
+          "description": "Get a feeling for the line, become familiar with it and feel the imbalance of your body"
         },
         {
-          "description": "You will notice how your body behaves and how to counteract these unpredictable movement"
-        },
-        {
-          "description": "At the end you should be able to get up line and hold yourself for a short time"
-        },
-        {
-          "description": "If you are unsure about any execution, please ask me and/or try it with external help"
+          "description": "You should be able to get on line and hold yourself for a short time at the end"
         }
       ],
       "tips": [
         {
-          "description": "Start at the sweet-spot, which is in about 1/4 of the line. This is generally a good area with pleasant vibration characteristic"
+          "description": "Starting at the sweet-spot (ca. 1/4 of the line) is easier"
         },
         {
-          "description": "Your foot should be always in alignment with the slackline"
+          "description": "Foot is always in alignment with the slackline"
         },
         {
-          "description": "Don't forget to have your arms over the shoulder and bent in about 135 degree position"
+          "description": "Turn your palms to the top and your hands will raise automatically"
         },
         {
-          "description": "If you have troubles with the arms, turn your palms to the top, which will automatically raise your arms"
+          "description": "Head is up and set a focus point"
         },
         {
-          "description": "Your head is up and focus set to a specific point in front of you"
-        },
-        {
-          "description": "Learn the interplay with your arms, upper and lower body for counterbalancing"
+          "description": "Counterbalance with your arms, upper and lower body"
         }
       ],
       "exercises": [
         {
           "fileName": "SitGroundBent",
-          "exerciseName": "Sit Foot Bent Ground",
+          "exerciseName": "Sit Foot Bent",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": false,
@@ -272,7 +971,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -280,22 +993,44 @@
               ],
               "tips": [
                 {
-                  "description": "Sit down along with the line, slightly more to the direction you choosed"
+                  "description": "Sit down along with the line, slightly to the left"
                 },
                 {
-                  "description": "The chosen foot is bent and on the ground, like in regular sitting"
+                  "description": "Right leg bent on the ground"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Left leg stretched forward and raised"
                 },
                 {
-                  "description": "Be sure your arms are bent and over your shoulder"
+                  "description": "Both arms over shoulder and bent"
                 },
                 {
-                  "description": "You can lean a little bit backwards"
+                  "description": "Leaning backward could make it more comfortable"
                 },
                 {
-                  "description": "And your upper body doesn’t have to be strictly straight"
+                  "description": "Upper body doesn’t have be straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootBent",
+                  "description": "Right foot bent?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootUp",
+                  "description": "Left foot up?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -310,30 +1045,229 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 1.5,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 }
               ],
               "tips": [
-                  {
-                  "description": "Sit down along with the line, slightly more to the direction you choosed"
+                {
+                  "description": "Sit down along with the line, slightly to the right"
                 },
                 {
-                  "description": "The chosen foot is bent and on the ground, like in regular sitting"
+                  "description": "Left leg bent on the ground"
                 },
                 {
-                  "description": "Stretch your other foot forward along with the line and raise it up"
+                  "description": "Right leg stretched forward and raised"
                 },
                 {
-                  "description": "Be sure your arms are bent and over your shoulder"
+                  "description": "Both arms over shoulder and bent"
                 },
                 {
-                  "description": "You can lean a little bit backwards"
+                  "description": "Leaning backward could make it more comfortable"
                 },
                 {
-                  "description": "And your upper body doesn’t have to be strictly straight"
+                  "description": "Upper body doesn’t have be straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootBent",
+                  "description": "Left foot bent?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootUp",
+                  "description": "Right foot up?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "SitGroundStretched",
+          "exerciseName": "Sit Foot Stretched",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": false,
+          "startingHeightDifference": -0.2,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Sit down along with the line, slightly to the left"
+                },
+                {
+                  "description": "Right leg stretched on the ground"
+                },
+                {
+                  "description": "Left leg stretched forward and raised"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Leaning backward could make it more comfortable"
+                },
+                {
+                  "description": "Upper body doesn’t have be straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootStretchedFront",
+                  "description": "Right foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootUp",
+                  "description": "Left foot up?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Sit down along with the line, slightly to the right"
+                },
+                {
+                  "description": "Left leg stretched on the ground"
+                },
+                {
+                  "description": "Right leg stretched forward and raised"
+                },
+                {
+                  "description": "Both arms over shoulder and bent"
+                },
+                {
+                  "description": "Leaning backward could make it more comfortable"
+                },
+                {
+                  "description": "Upper body doesn’t have be straight"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "SitsOnLine",
+                  "description": "Sits on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootStretchedFront",
+                  "description": "Left foot stretched?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootUp",
+                  "description": "Right foot up?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -355,7 +1289,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -363,7 +1297,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -371,25 +1333,37 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay left from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the right foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Right foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "At the same time raise your arms up"
+                  "description": "Get up with a little momentum and try to stay"
                 },
                 {
-                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
+                  "description": "Left foot stretched to side for balancing"
                 },
                 {
-                  "description": "Bend the knees of the standing leg slightly"
+                  "description": "Bend knees slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -404,7 +1378,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -412,25 +1414,218 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay right from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the left foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Left foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "At the same time raise your arms up"
+                  "description": "Get up with a little momentum and try to stay"
                 },
                 {
-                  "description": "Your other foot is stretched out to the side and serves also as a unit for counterbalancing"
+                  "description": "Right foot stretched to side for balancing"
                 },
                 {
-                  "description": "Bend the knees of the standing leg slightly"
+                  "description": "Bend knees slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "CrossStart",
+          "exerciseName": "Start II",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": true,
+          "startingHeightDifference": 0.13,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay right from the slackline"
+                },
+                {
+                  "description": "Place the right foot across the left on the line"
+                },
+                {
+                  "description": "Right foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Left foot stretched to side for balancing"
+                },
+                {
+                  "description": "Bend knees slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay left from the slackline"
+                },
+                {
+                  "description": "Place the left foot across the right on the line"
+                },
+                {
+                  "description": "Left foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Right foot stretched to side for balancing"
+                },
+                {
+                  "description": "Bend knees slightly"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -455,33 +1650,30 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "You've reached tier 3! Now it gets more difficult for you. All former learned techniques play an important role"
+          "description": "You will execute static exercises and first approaches for walking"
         },
         {
-          "description": "You will fulfill static exercises and first approaches for walking on the line"
+          "description": "You learn the basics for staying and the preparation to walk on the line"
         },
         {
-          "description": "With this you learn the basics for staying and the preparation to walk"
-        },
-        {
-          "description": "At the end you should be able to stay a couple of seconds on the line and feel more confident on it"
+          "description": "You should be able to stay a couple of seconds on the line and feel more confident on it"
         }
       ],
       "tips": [
         {
-          "description": "At first you might not be able to stay on the slackline because of the unexpected body movements. But this is okay! Just focus and try it again"
+          "description": "Could take more attempts to accomplish exercises"
         },
         {
-          "description": "Keep in mind: focus point, sweet-spot, foot in line, knees slightly bent, arms up, relaxed muscles but straight upper body"
+          "description": "Keep in mind: focus point, sweet-spot, foot in line, knees slightly bent, straight upper body"
         },
         {
-          "description": "Perform slowly and controlled, no need to hurry"
+          "description": "Slow and controlled performance"
         },
         {
-          "description": "Your non standing foot serves also as balance support"
+          "description": "Non standing foot serves also as balance support"
         },
         {
-          "description": "It might help, when going up, to keep your non standing leg vertical in line with your other standing leg and after that raise it to the side"
+          "description": "Troubles with staying on the line? Keep the balancing leg in line with the standing leg when going up, then raise it to the side"
         },
         {
           "description": "The pressure is mostly around the ball of your foot"
@@ -489,12 +1681,12 @@
       ],
       "exercises": [
         {
-          "fileName": "NearStayOne",
+          "fileName": "NearStart",
           "exerciseName": "Stay One Foot I",
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -502,7 +1694,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -510,19 +1730,34 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay left from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the right foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Right foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Stay on the line and balance out with your arms and the other leg"
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Balance with your arms and left leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -537,7 +1772,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -545,19 +1808,215 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay right from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the left foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Left foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Stay on the line and balance out with your arms and the other leg"
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Balance with your arms and right leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "CrossStart",
+          "exerciseName": "Stay One Foot II",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": true,
+          "startingHeightDifference": 0.13,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay right from the slackline"
+                },
+                {
+                  "description": "Place the right foot across the left on the line"
+                },
+                {
+                  "description": "Right foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Balance with your arms and left leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay left from the slackline"
+                },
+                {
+                  "description": "Place the left foot across the right on the line"
+                },
+                {
+                  "description": "Left foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Balance with your arms and right leg"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -579,7 +2038,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -587,7 +2046,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -595,22 +2082,42 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay left from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the right foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Right foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Place your balancing foot carefully in front of your standing foot"
+                  "description": "Get up with a little momentum and try to stay"
                 },
                 {
-                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
+                  "description": "Place your left foot in front of your right"
+                },
+                {
+                  "description": "Stay as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFrontOfRight",
+                  "description": "Left foot in front of right?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -625,7 +2132,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -633,22 +2168,239 @@
               ],
               "tips": [
                 {
-                  "description": "Stay next to the line on the opposite side you’ve selected"
+                  "description": "Stay right from the slackline"
                 },
                 {
-                  "description": "Now put your foot next to the slackline up on the line"
+                  "description": "Place the left foot on the line"
                 },
                 {
-                  "description": "This foot should be parallel with the line"
+                  "description": "Left foot is parallel with the line"
                 },
                 {
-                  "description": "With a little momentum get up and try to stay"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Place your balancing foot carefully in front of your standing foot"
+                  "description": "Get up with a little momentum and try to stay"
                 },
                 {
-                  "description": "Stay on the line and balance out with your hips, upper body, and arms"
+                  "description": "Place your right foot in front of your left"
+                },
+                {
+                  "description": "Stay as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFrontOfLeft",
+                  "description": "Right foot in front of left?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "CrossStayBoth",
+          "exerciseName": "Stay Both Feet II",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": true,
+          "startingHeightDifference": 0.13,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay right from the slackline"
+                },
+                {
+                  "description": "Place the right foot across the left on the line"
+                },
+                {
+                  "description": "Right foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Place your left foot in front of your right"
+                },
+                {
+                  "description": "Stay as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootInFrontOfRight",
+                  "description": "Left foot in front of right?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay left from the slackline"
+                },
+                {
+                  "description": "Place the left foot across the right on the line"
+                },
+                {
+                  "description": "Left foot is parallel with the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get up with a little momentum and try to stay"
+                },
+                {
+                  "description": "Place your right foot in front of your left"
+                },
+                {
+                  "description": "Stay as long as you can"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootInFrontOfLeft",
+                  "description": "Right foot in front of left?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -673,33 +2425,30 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "Congratulations and welcome to the last couple of exercises!"
+          "description": "You are now able to stay confidently on the line with one foot and both feet"
         },
         {
-          "description": "For this last tier you will learn how to make your first steps, which will give you the ability for walking on the line"
+          "description": "You will learn how to make your first steps"
         },
         {
-          "description": "Remind yourself of the former learned tips"
-        },
-        {
-          "description": "After you've all exercises accomplished we will have a small talk about your experience during the interaction with the system"
+          "description": "The goal is to be able to switch your standing leg and walk a few steps on the slackline"
         }
       ],
       "tips": [
         {
-          "description": "When making a step you can guide your non standing foot to the side of the line and shift it forward. With this you won't miss the line"
+          "description": "When making a step you can guide your non standing foot to the side of the line and shift it forward"
         },
         {
-          "description": "Also let your knees together when walking forward, so your legs can support each other"
+          "description": "Let your knees together, so your legs can support each other"
         },
         {
-          "description": "Make small steps because the center of gravity of your body doesn't have to be shifted that much forward, which will results in less balancing problems"
+          "description": "Make small steps → center of gravity doesn't have to be shifted that much forward"
         },
         {
-          "description": "Use your whole body to counterbalance"
+          "description": "Use the whole body to counterbalance"
         },
         {
-          "description": "Remember to stay calm and execute the exercise slowly and controlled, especially for this tier"
+          "description": "Remember: stay calm, execute exercises slowly and controlled"
         }
       ],
       "exercises": [
@@ -709,7 +2458,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.2,
+          "startingHeightDifference": 0.13,
           "sides": [
             {
               "direction": "Right",
@@ -717,7 +2466,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -725,19 +2502,37 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your selected foot next to the line"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing foot"
+                  "description": "Set a focus point"
                 },
                 {
-                  "description": "Shift your body slightly to the front and put your weight on the front foot"
+                  "description": "Get on the line with your right foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
+                  "description": "Place your left foot in front of your right"
                 },
                 {
-                  "description": "Hold the position as long as you can"
+                  "description": "Shift your body to the front"
+                },
+                {
+                  "description": "Release the right foot from the line and balance"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,
@@ -752,7 +2547,35 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 3.0,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -760,19 +2583,395 @@
               ],
               "tips": [
                 {
-                  "description": "Get on the line with your selected foot next to the line"
+                  "description": "Raise your hands above your shoulder"
                 },
                 {
-                  "description": "Now put your balancing foot in front of your standing foot"
+                  "description": "Set a focus point"
                 },
                 {
-                  "description": "Shift your body slightly to the front and put your weight on the front foot"
+                  "description": "Get on the line with your left foot"
                 },
                 {
-                  "description": "As soon as you feel confident and safe remove the rear standing leg slowly from the line and raise it to the side to balance"
+                  "description": "Place your right foot in front of your left"
                 },
                 {
-                  "description": "Hold the position as long as you can"
+                  "description": "Shift your body to the front"
+                },
+                {
+                  "description": "Release the left foot from the line and balance"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "CrossSwitchFront",
+          "exerciseName": "Switch Standing Leg II",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": true,
+          "startingHeightDifference": 0.13,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay on the right side from the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get on the line with your right foot"
+                },
+                {
+                  "description": "Place your left foot in front of your right"
+                },
+                {
+                  "description": "Shift your body to the front"
+                },
+                {
+                  "description": "Release the right foot from the line and balance"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Stay on the left side from the line"
+                },
+                {
+                  "description": "Raise your hands above your shoulder"
+                },
+                {
+                  "description": "Get on the line with your left foot"
+                },
+                {
+                  "description": "Place your right foot in front of your left"
+                },
+                {
+                  "description": "Shift your body to the front"
+                },
+                {
+                  "description": "Release the left foot from the line and balance"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "FootCrossed",
+                  "description": "Foots crossed?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 0,
+              "isInteractable": false
+            }
+          ],
+          "userTime": 0.0,
+          "confidence": 0.0,
+          "attempts": 0,
+          "unlocked": 0,
+          "isInteractable": false
+        },
+        {
+          "fileName": "WalkForward",
+          "exerciseName": "Walk Forward",
+          "accomplished": false,
+          "description": "example description",
+          "isProgressGesture": true,
+          "startingHeightDifference": 0.13,
+          "sides": [
+            {
+              "direction": "Right",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Get on the line with your right foot"
+                },
+                {
+                  "description": "Place your left foot in front of your right"
+                },
+                {
+                  "description": "Shift your body to the front and release the right foot"
+                },
+                {
+                  "description": "Place your right foot in front of your left"
+                },
+                {
+                  "description": "Shift your body to the front and release the left foot"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "RightFootOnLine",
+                  "description": "Right foot on line?",
+                  "done": false
+                }
+              ],
+              "userTime": 0.0,
+              "confidence": 0.0,
+              "attempts": 0,
+              "unlocked": 1,
+              "isInteractable": true
+            },
+            {
+              "direction": "Left",
+              "accomplished": false,
+              "repetitions": [
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                },
+                {
+                  "accomplished": false,
+                  "minTime": 0.5,
+                  "userTime": 0.0,
+                  "confidence": 0.0,
+                  "attempts": 0
+                }
+              ],
+              "tips": [
+                {
+                  "description": "Get on the line with your left foot"
+                },
+                {
+                  "description": "Place your right foot in front of your left"
+                },
+                {
+                  "description": "Shift your body to the front and release the left foot"
+                },
+                {
+                  "description": "Place your left foot in front of your right"
+                },
+                {
+                  "description": "Shift your body to the front and release the right foot"
+                },
+                {
+                  "description": "Hold this position for a while"
+                }
+              ],
+              "checks": [
+                {
+                  "methodName": "BothArmsUp",
+                  "description": "Both arms up?",
+                  "done": false
+                },
+                {
+                  "methodName": "LeftFootOnLine",
+                  "description": "Left foot on line?",
+                  "done": false
                 }
               ],
               "userTime": 0.0,

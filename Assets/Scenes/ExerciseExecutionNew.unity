@@ -1500,7 +1500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330748537
 Transform:
   m_ObjectHideFlags: 0
@@ -1662,7 +1662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &339539993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3808,7 +3808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &811311486
 Transform:
   m_ObjectHideFlags: 0
@@ -4966,7 +4966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 0, y: -579}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1050931841
@@ -5628,7 +5628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1153659341
 Transform:
   m_ObjectHideFlags: 0
@@ -10899,6 +10899,7 @@ MonoBehaviour:
   checkSpacer: {fileID: 798471162}
   titleText: {fileID: 1430257868}
   standingLegText: {fileID: 589064995}
+  successMainText: {fileID: 843109131}
   successSubText: {fileID: 1249561171}
   testText: {fileID: 712080024}
   rightFootHeightText: {fileID: 331144518}
