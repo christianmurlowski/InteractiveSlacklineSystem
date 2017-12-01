@@ -110,6 +110,12 @@ public class ExerciseExecutionManager : MonoBehaviour
 		_kinectManager = KinectManager.GetComponent<KinectManager>();
 		_interactionManager = _kinectManager.GetComponent<InteractionManager>();
 
+		if (CanvasHandCursor.activeSelf)
+		{
+			_interactionManager.enabled = false;
+			CanvasHandCursor.gameObject.SetActive(false);
+		}
+		
 		Debug.Log("IsUserDetected: " + _kinectManager.IsUserDetected());
 		
 		
@@ -449,11 +455,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 					audioFail.Play();
 					Debug.Log("Activate handcursor");
 
-					if (!CanvasHandCursor.activeSelf)
-					{
-						CanvasHandCursor.gameObject.SetActive(true);
-						_interactionManager.enabled = true;
-					}
+//					if (!CanvasHandCursor.activeSelf)
+//					{
+//						CanvasHandCursor.gameObject.SetActive(true);
+//						_interactionManager.enabled = true;
+//					}
 				}
 				
 				if (_durationManager.IsTimerRunning())
@@ -565,11 +571,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 					{
 						audioFail.Play();
 						Debug.Log("Activate handcursor");
-						if (!CanvasHandCursor.activeSelf)
-						{
-							CanvasHandCursor.gameObject.SetActive(true);
-							_interactionManager.enabled = true;
-						}
+//						if (!CanvasHandCursor.activeSelf)
+//						{
+//							CanvasHandCursor.gameObject.SetActive(true);
+//							_interactionManager.enabled = true;
+//						}
 					}
 					
 					if (_durationManager.IsTimerRunning())
@@ -638,11 +644,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 
 		Debug.Log("ACCOMPLISHED REPETITION");
 		Debug.Log("Activate Handcursor");
-		if (!CanvasHandCursor.activeSelf)
-		{
-			CanvasHandCursor.gameObject.SetActive(true);
-			_interactionManager.enabled = true;
-		}
+//		if (!CanvasHandCursor.activeSelf)
+//		{
+//			CanvasHandCursor.gameObject.SetActive(true);
+//			_interactionManager.enabled = true;
+//		}
 		
 		// Save the time and confidence for the current repetition
 		_currentRepetition.userTime = _durationManager.GetlatestTimeInSeconds();
