@@ -257,12 +257,13 @@ public class ExerciseExecutionManager : MonoBehaviour
 		// If left arrow pressed --> exercise info scene
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
 		{
-			LoadPreviousScene();
+			StartCoroutine(LoadPreviousScene());
 		}
 		// If right arrow pressed --> skip exercise
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			LoadSkipExercise();
+//			LoadSkipExercise();
+			StartCoroutine(loadSkipExerciseScene());
 		}
 
 		for (int bodyIndex = 0; bodyIndex < _bodies.Length; bodyIndex++)
@@ -835,66 +836,47 @@ public class ExerciseExecutionManager : MonoBehaviour
 //		_gestureDetectorList = null;
 	}
 	
-	public void LoadPreviousScene()
+	IEnumerator LoadPreviousScene()
 	{
+		yield return new WaitForSeconds(0.5f);
+
+		CanvasHandCursor.gameObject.SetActive(true);
+		_interactionManager.enabled = true;
+		
 		StopTracking();
 		DisposeGestures();
 		SceneManager.LoadScene("ExerciseInfo");
 	}
 	
-	public void LoadSkipExercise()
+	IEnumerator loadSkipExerciseScene()
 	{
-//		StopTracking();
-//		DisposeGestures();
-		_currentExerciseData.accomplished = true;
-		UserDataObject.GetCurrentSide().accomplished = true;
-		// If last exercise reached --> unlock next tier
-		if (PlayerPrefs.GetInt("CurrentExerciseId") == UserDataObject.GetCurrentTierErcisesLength() - 1)
-		{
-			UserDataObject.GetCurrentTier().accomplished = true;
-			// If last tier reached --> do nothing
-			if (PlayerPrefs.GetInt("CurrentTierId") == UserDataObject.GetAllTiers().Count - 1)
-			{
+		yield return new WaitForSeconds(0.5f);
 
-			}
-			else // If not last tier --> unlock next tier
-			{
-				TierData nextTier = UserDataObject.GetNextTier();
-				nextTier.isInteractable = true;
-			}
-		}
-		else // If not last exercise --> unlock next exercise
-		{
-			ExerciseData nextExerciseData = UserDataObject.GetNextExercise();
-
-			nextExerciseData.isInteractable = true;
-			nextExerciseData.unlocked = 1;
-		}
-		SaveCurrentExerciseData();
+		CanvasHandCursor.gameObject.SetActive(true);
+		_interactionManager.enabled = true;
 		
-		StartCoroutine(loadSkipExerciseScene());
+		_currentExerciseData.sides[PlayerPrefs.GetInt("CurrentSideId")].accomplished = true;
+		UserDataObject.GetCurrentSide().accomplished = true;
+		
+		StopTracking();
+		DisposeGestures();
+		ManageNextScene();
+//		SceneManager.LoadScene("ExerciseSummary");
 	}
-	
 
 	IEnumerator loadSummaryScene()
 	{
 		yield return new WaitForSeconds(2.5f);
 		Debug.Log("LOAD SUMMARY SCENE");
-		StopTracking();
-		DisposeGestures();
 		CanvasHandCursor.gameObject.SetActive(true);
 		_interactionManager.enabled = true;
-		ManageNextScene();
-//		SceneManager.LoadScene("ExerciseSummary");
-	}
-	
-	IEnumerator loadSkipExerciseScene()
-	{
-		yield return new WaitForSeconds(0.5f);
+		
+		_currentExerciseData.sides[PlayerPrefs.GetInt("CurrentSideId")].accomplished = true;
+		UserDataObject.GetCurrentSide().accomplished = true;
+		
 		StopTracking();
 		DisposeGestures();
-		CanvasHandCursor.gameObject.SetActive(true);
-		_interactionManager.enabled = true;
+		
 		ManageNextScene();
 //		SceneManager.LoadScene("ExerciseSummary");
 	}
@@ -942,7 +924,9 @@ public class ExerciseExecutionManager : MonoBehaviour
 			else // all sides accomplished --> load next exercise
 			{
 				// TODO change subtitle of success GO
-
+				UserDataObject.GetNextExercise().isInteractable = true;
+				UserDataObject.GetNextExercise().unlocked = 1;
+				
 				PlayerPrefs.SetInt("CurrentExerciseId", PlayerPrefs.GetInt("CurrentExerciseId") + 1);
 				LoadNextScene("ExerciseSideSelection");
 			}			
@@ -950,6 +934,7 @@ public class ExerciseExecutionManager : MonoBehaviour
 		else // all exercises completed --> load TierMenu
 		{
 			// TODO change subtitle of success GO
+			UserDataObject.GetNextTier().isInteractable = true;
 			
 			if (!UserDataObject.GetCurrentExercise().isInteractable)
 			{
@@ -957,8 +942,11 @@ public class ExerciseExecutionManager : MonoBehaviour
 				UserDataObject.GetCurrentExercise().unlocked = 1;	
 			}
 			
+			
 			LoadNextScene("TierMenu");
 		}
+		SaveCurrentExerciseData();
+
 	}
 	
 	public void LoadNextScene(string sceneName)

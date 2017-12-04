@@ -182,7 +182,6 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\Resources\Materials\BlurShader.shader" />
     <None Include="Assets\Resources\MedianShader.shader" />
-    <None Include="Assets\StreamingAssets\JSONData\old\test.txt" />
     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
@@ -232,6 +231,7 @@
     <None Include="Assets\Resources\Materials\BodyShader.shader" />
     <None Include="Assets\Resources\Materials\Dilate.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\StreamingAssets\JSONData\old\test.txt" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\Resources\Materials\BlurShader5.shader" />
     <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />
@@ -262,10 +262,10 @@
       <HintPath>D:/cmurlowski/Unity52/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>D:/cmurlowski/teststudy/InteractiveSlacklineSystem/Assets/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/cmurlowski/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>D:/cmurlowski/teststudy/InteractiveSlacklineSystem/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
