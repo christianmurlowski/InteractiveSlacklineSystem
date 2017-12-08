@@ -10,9 +10,6 @@
           "description": "Preliminary exercises serve as preparation for further slackline training"
         },
         {
-          "description": "System guides you through exercises"
-        },
-        {
           "description": "Teach you basics of slacklining"
         },
         {
@@ -21,19 +18,19 @@
       ],
       "tips": [
         {
-          "description": "Bend your knees slightly. This will bring you into a better initial position for movement compensation"
-        },
-        {
           "description": "Set a focus point in front of you"
         },
         {
           "description": "Hands over shoulder and bent in about 135 degree to the side"
         },
         {
-          "description": "Slow but controlled execution"
+          "description": "Straight upper body to hold you in the right position"
         },
         {
-          "description": "Straight upper body to hold you in the right position"
+          "description": "Bend your knees slightly"
+        },
+        {
+          "description": "Slow but controlled execution"
         }
       ],
       "exercises": [
@@ -73,10 +70,7 @@
               ],
               "tips": [
                 {
-                  "description": "Looping video on the right shows the correct execution"
-                },
-                {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left leg to the side and stretch it"
@@ -99,7 +93,7 @@
                 },
                 {
                   "methodName": "LeftFootStretchedToSide",
-                  "description": "Left foot stretched?",
+                  "description": "Left foot stretched & up?",
                   "done": false
                 }
               ],
@@ -137,10 +131,7 @@
               ],
               "tips": [
                 {
-                  "description": "Looping video on the right shows the correct execution"
-                },
-                {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right leg to the side and stretch it"
@@ -163,7 +154,7 @@
                 },
                 {
                   "methodName": "RightFootStretchedToSide",
-                  "description": "Right foot stretched?",
+                  "description": "Right foot stretched & up?",
                   "done": false
                 }
               ],
@@ -216,7 +207,7 @@
               ],
               "tips": [
                 {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left leg to the side and stretch it"
@@ -239,7 +230,7 @@
                 },
                 {
                   "methodName": "LeftFootStretchedToSide",
-                  "description": "Left foot stretched?",
+                  "description": "Left foot stretched & up?",
                   "done": false
                 }
               ],
@@ -277,7 +268,7 @@
               ],
               "tips": [
                 {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right leg to the side and stretch it"
@@ -300,7 +291,7 @@
                 },
                 {
                   "methodName": "RightFootStretchedToSide",
-                  "description": "Right foot stretched?",
+                  "description": "Right foot stretched & up?",
                   "done": false
                 }
               ],
@@ -353,13 +344,13 @@
               ],
               "tips": [
                 {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left foot upwards and bent it"
                 },
                 {
-                  "description": "Left foot stabilized sideways on your right knee"
+                  "description": "Place your left foot sideways on your right knee"
                 },
                 {
                   "description": "Both arms over shoulder and bent"
@@ -414,13 +405,13 @@
               ],
               "tips": [
                 {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right foot upwards and bent it"
                 },
                 {
-                  "description": "Right foot stabilized sideways on your left knee"
+                  "description": "Place your right foot sideways on your left knee"
                 },
                 {
                   "description": "Both arms over shoulder and bent"
@@ -490,7 +481,7 @@
               ],
               "tips": [
                 {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left leg sideways"
@@ -508,7 +499,7 @@
               "checks": [
                 {
                   "methodName": "LeftFootStretchedToSide",
-                  "description": "Left foot stretched?",
+                  "description": "Left foot stretched & up?",
                   "done": false
                 },
                 {
@@ -551,7 +542,7 @@
               ],
               "tips": [
                 {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right leg sideways"
@@ -569,7 +560,7 @@
               "checks": [
                 {
                   "methodName": "RightFootStretchedToSide",
-                  "description": "Right foot stretched?",
+                  "description": "Right foot stretched & up?",
                   "done": false
                 },
                 {
@@ -641,7 +632,7 @@
               ],
               "tips": [
                 {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left leg upwards"
@@ -716,7 +707,7 @@
               ],
               "tips": [
                 {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right leg upwards"
@@ -806,7 +797,7 @@
               ],
               "tips": [
                 {
-                  "description": "Right leg servers as standing leg"
+                  "description": "Right leg is used as standing leg"
                 },
                 {
                   "description": "Raise the left leg upwards"
@@ -881,7 +872,7 @@
               ],
               "tips": [
                 {
-                  "description": "Left leg servers as standing leg"
+                  "description": "Left leg is used as standing leg"
                 },
                 {
                   "description": "Raise the right leg upwards"
@@ -936,7 +927,7 @@
           "description": "Get a feeling for the line, become familiar with it and feel the imbalance of your body"
         },
         {
-          "description": "You should be able to get on line and hold yourself for a short time at the end"
+          "description": "You should be able to get up the line and hold yourself for a short amount of time"
         }
       ],
       "tips": [
@@ -971,21 +962,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1045,21 +1036,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1134,21 +1125,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1208,21 +1199,21 @@
               "repetitions": [
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
                 },
                 {
                   "accomplished": false,
-                  "minTime": 2.0,
+                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -1670,10 +1661,7 @@
           "description": "Slow and controlled performance"
         },
         {
-          "description": "Non standing foot serves also as balance support"
-        },
-        {
-          "description": "Troubles with staying on the line? Keep the balancing leg in line with the standing leg when going up, then raise it to the side"
+          "description": "Non standing foot is also used as balance support"
         },
         {
           "description": "The pressure is mostly around the ball of your foot"
@@ -1692,13 +1680,6 @@
               "direction": "Right",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 2.0,
@@ -1770,13 +1751,6 @@
               "direction": "Left",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 2.0,
@@ -1890,13 +1864,6 @@
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
                 }
               ],
               "tips": [
@@ -1946,13 +1913,6 @@
               "direction": "Left",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 2.0,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 2.0,
@@ -2071,13 +2031,6 @@
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
                 }
               ],
               "tips": [
@@ -2140,13 +2093,6 @@
                 {
                   "accomplished": false,
                   "minTime": 1,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2258,13 +2204,6 @@
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
                 }
               ],
               "tips": [
@@ -2332,13 +2271,6 @@
                 {
                   "accomplished": false,
                   "minTime": 1,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 1.5,
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
@@ -2425,19 +2357,13 @@
       "isInteractable": false,
       "goals": [
         {
-          "description": "You are now able to stay confidently on the line with one foot and both feet"
-        },
-        {
           "description": "You will learn how to make your first steps"
         },
         {
-          "description": "The goal is to be able to switch your standing leg and walk a few steps on the slackline"
+          "description": "You should be able to switch your standing leg and walk a few steps on the slackline"
         }
       ],
       "tips": [
-        {
-          "description": "When making a step you can guide your non standing foot to the side of the line and shift it forward"
-        },
         {
           "description": "Let your knees together, so your legs can support each other"
         },
@@ -2848,20 +2774,6 @@
                   "userTime": 0.0,
                   "confidence": 0.0,
                   "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
                 }
               ],
               "tips": [
@@ -2906,20 +2818,6 @@
               "direction": "Left",
               "accomplished": false,
               "repetitions": [
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
-                {
-                  "accomplished": false,
-                  "minTime": 0.5,
-                  "userTime": 0.0,
-                  "confidence": 0.0,
-                  "attempts": 0
-                },
                 {
                   "accomplished": false,
                   "minTime": 0.5,
