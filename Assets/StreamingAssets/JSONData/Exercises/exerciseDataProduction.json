@@ -1280,7 +1280,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -1457,7 +1457,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -1674,7 +1674,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -1831,7 +1831,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -1998,7 +1998,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -2171,7 +2171,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -2384,7 +2384,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -2561,7 +2561,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
@@ -2748,7 +2748,7 @@
           "accomplished": false,
           "description": "example description",
           "isProgressGesture": true,
-          "startingHeightDifference": 0.13,
+          "startingHeightDifference": 0.08,
           "sides": [
             {
               "direction": "Right",
